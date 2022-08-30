@@ -1,0 +1,19 @@
+#password_Strength_Status{
+    padding: 5px,10px;
+    color: #ffffff;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+.medium-simpUser_Password_val{
+    background-color: #E4DB11;
+    border: #BBB418 1px solid;
+
+}
+.Weak-simpUser_Password_val{
+    background-color: #AA4502;
+    border: #FF6600 1px solid;
+}
+.strong-simpUser_Password_val{
+    background-color: #12CC1A;
+    border: #0FA015 1px solid;
+}
