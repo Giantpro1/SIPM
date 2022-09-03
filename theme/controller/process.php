@@ -56,3 +56,34 @@ if(isset($_FILES['simpUser_AdsImg'])){
         }
     }
 }
+
+// change password 
+
+    if(isset($_POST['action']) && ($_POST['action'] === 'change_Pass')){
+        $profilePassword = $sipmCur_User->test_input($_POST['profilePassword']);
+        $newSimpUser_Pass = $sipmCur_User->test_input($_POST['newSimpUser_Pass']);
+        $conNewSimp_Pass = $sipmCur_User->test_input($_POST['conNewSimp_Pass']);
+
+        $h_Pass = password_hash($newSimpUser_Pass, PASSWORD_DEFAULT);
+         
+        if($newSimpUser_Pass != $conNewSimp_Pass){
+            echo "password did not match";
+        }else{
+            $uppercase = preg_match('@[A-Z]@', $newSimpUser_Pass);
+                    $lowercase = preg_match('@[a-z]@', $newSimpUser_Pass);
+                    $number = preg_match('@[0-9]@', $newSimpUser_Pass);
+                    $specialChars = preg_match('@[^\W]@', $newSimpUser_Pass);
+                    if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($newSimpUser_Pass) < 8 ){
+                        echo "password must consist of lowercase, uppercase, special characters and must be 8 characters long";
+                    }else{
+                        if(password_verify($profilePassword, $simpUserPass)){
+                            $sipmCur_User->sipmUser_Password($h_Pass, $simp_Cid);
+                            echo "password change successfully";
+                        }else{
+                            echo "current passeword is not correct";
+                        }
+                    }
+        }
+
+   
+    }

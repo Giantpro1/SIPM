@@ -212,21 +212,22 @@
 						<!-- Change Password -->
 					<div class="widget change-password">
 						<h3 class="widget-header user">Edit Password</h3>
-						<form action="#" id="sipmUser_UpdatePassword">
+						<form action="" id="sipmUser_UpdatePassword">
+							<p class="passError text-danger"></p>
 							<!-- Current Password -->
 							<div class="form-group">
 								<label for="current-password">Current Password</label>
-								<input type="password" class="form-control" id="current-password">
+								<input type="password" name="profilePassword" class="form-control" id="current-password">
 							</div>
 							<!-- New Password -->
 							<div class="form-group">
 								<label for="new-password">New Password</label>
-								<input type="password" class="form-control" id="new-password">
+								<input type="password" name="newSimpUser_Pass" class="form-control" id="new-password">
 							</div>
 							<!-- Confirm New Password -->
 							<div class="form-group">
 								<label for="confirm-password">Confirm New Password</label>
-								<input type="password" class="form-control" id="confirm-password">
+								<input type="password" name="conNewSimp_Pass" class="form-control" id="confirm-password">
 							</div>
 							<!-- Submit Button -->
 							<button class="btn btn-transparent" type="submit" id="sipmUser_UpdatePasswordBTN">Change Password</button>
@@ -291,7 +292,7 @@ Essential Scripts
 				cache:false,
 				data: new FormData(this),
 				success: function(response){
-					console.log(response)
+					// console.log(response)
 
 					Swal.fire({
                         icon:'success',
@@ -306,6 +307,42 @@ Essential Scripts
 		})
 	})
 </Script>
+<!--  change-password -->
+			<script>
+			$("#sipmUser_UpdatePasswordBTN").click(function(e){
+				if($("#sipmUser_UpdatePassword")[0].checkValidity()){
+					e.preventDefault()
+					$("#sipmUser_UpdatePasswordBTN").text('PleaseWait...')
+					if($("#newSimpUser_Pass").val() != $("#conNewSimp_Pass").val()){
+						$(".passError").text('password did not match')
+					}else{
+						$.ajax({
+							url: '../controller/process.php',
+							method: 'POST',
+							data: $("#sipmUser_UpdatePassword").serialize()+'&action=change_Pass',
+							success: function(response){
+								// console.log(response)
+								swal.fire({
+									title: 'Oops',
+									text:response,
+									icon: 'error'
+								})
+								$('#sipmUser_UpdatePassword')[0].reset()
+								$('#sipmUser_UpdatePasswordBTN').text('Password Updated')
+								if(response = 'password change successfully'){
+									swal.fire({
+										title: 'Done',
+										text: 'password Update Succesfully',
+										icon: 'success'
+									})
+								}
+							}
+						})
+					}
+				}
+			})
+			</script>
+
 </body>
 
 

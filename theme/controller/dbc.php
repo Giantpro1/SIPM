@@ -100,6 +100,7 @@ class Dbc extends Database{
         return true;
      }
 
+    //  change email
     public function sipmUser_ChangeEmail($simpUser_Email, $id){
        $sql = "UPDATE sipmusers SET simpUser_Email=:simpUser_Email WHERE id=:id";
        $stmt = $this->conn->prepare($sql);
@@ -108,5 +109,16 @@ class Dbc extends Database{
         'id'=>$id
        ]);
 
+    }
+
+    // change password
+
+    public function sipmUser_Password($simpUser_Password, $id){
+        $sql  = "UPDATE sipmusers SET simpUser_Password=:simpUser_Password WHERE id=:id";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute([
+            'simpUser_Password'=>$simpUser_Password,
+            'id'=>$id
+        ]);
     }
 }

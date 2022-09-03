@@ -19,9 +19,17 @@ if(isset($_POST['action']) && $_POST['action'] == 'simp_Reg'){
                 echo "UserName already Exists!!!";
                 }else{
                 if((!empty($simp_UserName)) && (!empty($simpUser_Email)) &&(!empty($simpUser_Password))){
-            $simpUSer->registerSimpUser($simp_UserName, $simpUser_Email, $hpass);
-            echo "Register";
-                    $_SESSION['ourUser'] = $simp_UserName;
+                    $uppercase = preg_match('@[A-Z]@', $simpUser_Password);
+                    $lowercase = preg_match('@[a-z]@', $simpUser_Password);
+                    $number = preg_match('@[0-9]@', $simpUser_Password);
+                    $specialChars = preg_match('@[^\W]@', $simpUser_Password);
+                    if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($simpUser_Password) < 8 ){
+                        echo "password must consist of lowercase, uppercase, special characters and must be 8 characters long";
+                    }else{
+                        $simpUSer->registerSimpUser($simp_UserName, $simpUser_Email, $hpass);
+                        echo "Register";
+                                $_SESSION['ourUser'] = $simp_UserName;
+                    }
         }else{
             echo "Some fields are empty!";
         } 
