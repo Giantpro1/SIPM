@@ -26,4 +26,5 @@ if (!isset($_SESSION['ourUser'])) {
   $simpHidePro = $sipm_Data['sipmUser_HidePro'];
   $simpZipCode = $sipm_Data['simpUser_ZipCode'];
   $simpProfileImg = $sipm_Data['sipmUser_ProfileImg'];
+  $simpUserPass = $sipm_Data['simpUser_Password'];
   
