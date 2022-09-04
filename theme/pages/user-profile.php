@@ -242,12 +242,12 @@
 							<!-- Current Password -->
 							<div class="form-group">
 								<label for="current-email">Current Email</label>
-								<input type="email" class="form-control" id="current-email">
+								<input type="email" name="simp_UserCurEmail" class="form-control" id="current-email">
 							</div>
 							<!-- New email -->
 							<div class="form-group">
 								<label for="new-email">New email</label>
-								<input type="email" class="form-control" id="new-email">
+								<input type="email" name="simp_UserNewEmail" class="form-control" id="new-email">
 							</div>
 							<!-- Submit Button -->
 							<button class="btn btn-transparent" id="sipmUser_UpdateEmailBTN">Change email</button>
@@ -293,7 +293,6 @@ Essential Scripts
 				data: new FormData(this),
 				success: function(response){
 					// console.log(response)
-
 					Swal.fire({
                         icon:'success',
                         text:'profile updated ',
@@ -322,27 +321,97 @@ Essential Scripts
 							data: $("#sipmUser_UpdatePassword").serialize()+'&action=change_Pass',
 							success: function(response){
 								// console.log(response)
-								swal.fire({
-									title: 'Oops',
-									text:response,
-									icon: 'error'
-								})
-								$('#sipmUser_UpdatePassword')[0].reset()
-								$('#sipmUser_UpdatePasswordBTN').text('Password Updated')
-								if(response = 'password change successfully'){
+								if(response == 'password did not match'){
+									swal.fire({
+										title: 'Oops!',
+										text: 'password did not match',
+										icon: 'error'
+									})
+									$('#sipmUser_UpdatePassword')[0].reset()
+								}else if(response == 'password must consist of lowercase, uppercase, special characters and must be 8 characters long'){
+									swal.fire({
+										title: 'Oops!',
+										text: 'password must consist of lowercase, uppercase, special characters and must be 8 characters long',
+										icon: 'error'
+									})
+									$('#sipmUser_UpdatePassword')[0].reset()
+								}else if(response == 'current passeword is not correct'){
+									swal.fire({
+										title: 'Oops!',
+										text: 'current passeword is not correct',
+										icon: 'error'
+									})
+									$('#sipmUser_UpdatePassword')[0].reset()
+								}else if(response == 'some fields are empty'){
+									swal.fire({
+										title: 'Hoo!',
+										text: 'some fields are empty',
+										icon: 'warning'
+									})
+									$('#sipmUser_UpdatePassword')[0].reset()
+								}else if(response == 'password change successfully'){
 									swal.fire({
 										title: 'Done',
-										text: 'password Update Succesfully',
+										text: 'password change successfully',
 										icon: 'success'
 									})
+									$('#sipmUser_UpdatePassword')[0].reset()
+									$('#sipmUser_UpdatePasswordBTN').text('Password Updated')
+								}else{
+
 								}
+										
 							}
 						})
 					}
 				}
 			})
 			</script>
+		 <!-- change Email -->
 
+		 <script>
+			$("#sipmUser_UpdateEmailBTN").click(function(e){
+				if($("#sipmUser_UpdateEmail")[0].checkValidity()){
+					e.preventDefault()
+					$("#sipmUser_UpdateEmailBTN").text('pleaseWait')
+
+					$.ajax({
+						url: '../controller/process.php',
+						method: 'POST',
+						data: $("#sipmUser_UpdateEmail").serialize()+'&action=chang_Email',
+						success: function(data){
+							// console.log(data)
+							if(data == 'some fields are empty!'){
+								swal.fire({
+										title: 'Hoo!',
+										text: 'some fields are empty!',
+										icon: 'warning'
+									})
+									$('#sipmUser_UpdateEmail')[0].reset()
+							}else if(data == 'current email is not correct'){
+								swal.fire({
+										title: 'Oops!',
+										text: 'current email is not correct',
+										icon: 'error'
+									})
+									$('#sipmUser_UpdateEmail')[0].reset()
+							}else if(data == 'Email change successFully'){
+								swal.fire({
+										title: 'Done',
+										text: 'Email change successfully',
+										icon: 'success'
+									})
+									$('#sipmUser_UpdateEmail')[0].reset()
+								$('#sipmUser_UpdateEmailBTN').text('Email Updated')
+							}else{
+
+							}
+
+						}
+					})
+				}
+			})
+		 </script>
 </body>
 
 

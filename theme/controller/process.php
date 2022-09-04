@@ -68,7 +68,9 @@ if(isset($_FILES['simpUser_AdsImg'])){
          
         if($newSimpUser_Pass != $conNewSimp_Pass){
             echo "password did not match";
-        }else{
+        }elseif(empty($profilePassword) && empty($newSimpUser_Pass) && empty($conNewSimp_Pass)){
+            echo"some fields are empty";
+         }else{
             $uppercase = preg_match('@[A-Z]@', $newSimpUser_Pass);
                     $lowercase = preg_match('@[a-z]@', $newSimpUser_Pass);
                     $number = preg_match('@[0-9]@', $newSimpUser_Pass);
@@ -86,4 +88,19 @@ if(isset($_FILES['simpUser_AdsImg'])){
         }
 
    
+    }
+
+    if(isset($_POST['action']) && ($_POST['action'] === 'chang_Email')){
+        $simp_UserCurEmail =$sipmCur_User->test_input($_POST['simp_UserCurEmail']);
+        $simp_UserNewEmail = $sipmCur_User->test_input($_POST['simp_UserNewEmail']);
+            if(empty($simp_UserCurEmail) && empty($simp_UserNewEmail)){
+                echo "some fields are empty!";
+            }elseif($simp_UserCurEmail == $simp_Mail){
+                $sipmCur_User->sipmUser_ChangeEmail($simp_UserNewEmail, $simp_Cid);
+                echo "Email change successFully";
+            }else{
+                echo "current email is not correct";
+            }
+ 
+           
     }

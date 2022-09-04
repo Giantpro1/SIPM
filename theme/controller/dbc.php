@@ -121,4 +121,14 @@ class Dbc extends Database{
             'id'=>$id
         ]);
     }
+
+    // change Email
+    public function sipmUser_ChangEmail($simpUser_Email, $id){
+        $sql  = "UPDATE sipmusers SET simpUser_Email=:simpUser_Email WHERE id=:id";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute([
+            'simpUser_Email'=>$simpUser_Email,
+            'id'=>$id
+        ]);
+    }
 }
