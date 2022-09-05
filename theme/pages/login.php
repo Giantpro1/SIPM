@@ -257,6 +257,7 @@ Essential Scripts
 <script src="../plugins/tether/js/tether.min.js"></script>
 <script src="../plugins/raty/jquery.raty-fa.js"></script>
 <script src="../plugins/slick/slick.min.js"></script>
+<script src="../plugins/jquery-nice-select/js/sweetAlert.js"></script>
 <script src="../plugins/jquery-nice-select/js/jquery.nice-select.min.js"></script>
 <!-- google map -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>
@@ -296,7 +297,7 @@ Essential Scripts
                 $("#simpUSer_login")[0].reset()
               )
             }else{
-              
+
             }
           }
         })
