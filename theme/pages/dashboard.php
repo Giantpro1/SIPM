@@ -160,7 +160,7 @@
                   <span>12</span></a></li>
               <li><a href="dashboard-pending-ads"><i class="fa fa-bolt"></i> Pending Approval<span>23</span></a>
               </li>
-              <li><a href="../index"><i class="fa fa-cog"></i> Logout</a></li>
+              <li><a href="logout"><i class="fa fa-cog"></i> Logout</a></li>
               <li><a href="#!" data-toggle="modal" data-target="#deleteaccount"><i class="fa fa-power-off"></i>Delete Account</a></li>
             </ul>
           </div>
