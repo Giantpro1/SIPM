@@ -2,10 +2,11 @@
 require_once 'config.php';
 
 class Dbc extends Database{
-    public function registerSimpUser($simp_UserName, $simpUser_Email, $simpUser_Password){
-        $sql = "INSERT INTO sipmusers (simp_UserName, simpUser_Email, simpUser_Password) VALUES (:simp_UserName, :simpUser_Email, :simpUser_Password)";
+    public function registerSimpUser($unique_id, $simp_UserName, $simpUser_Email, $simpUser_Password){
+        $sql = "INSERT INTO sipmusers (unique_id, simp_UserName, simpUser_Email, simpUser_Password) VALUES (:unique_id, :simp_UserName, :simpUser_Email, :simpUser_Password)";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute([
+            'unique_id'=>$unique_id,
             'simp_UserName'=>$simp_UserName,
             'simpUser_Email'=>$simpUser_Email,
             'simpUser_Password'=>$simpUser_Password
