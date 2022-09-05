@@ -275,11 +275,28 @@ Essential Scripts
           method:'POST',
           data:$("#simpUSer_login").serialize()+'&action=simp_login',
           success: function(response){
-            console.log(response)
+            // console.log(response)
             if(response === 'login'){
               window.location = "../index"
+            }else if(response === 'password not correct!'){
+              swal.fire({
+                title:'Oops!',
+                icon:'error',
+                text: 'password not correct!'
+              }).then(
+                $("#simpUSer_login")[0].reset()
+              )
+              // $("#form_Error").html(response)
+            }else if(response === 'user not found'){
+              swal.fire({
+                title:'Oops!',
+                icon:'error',
+                text: 'user not found!'
+              }).then(
+                $("#simpUSer_login")[0].reset()
+              )
             }else{
-              $("#form_Error").html(response)
+              
             }
           }
         })

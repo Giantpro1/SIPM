@@ -46,7 +46,7 @@
                     ]);
                 }else {
                     $hpass = password_hash($simpUser_Password, PASSWORD_DEFAULT);
-                    $dbs->registerSimpUser($simp_UserName, $simpUser_Email, $hpass);
+                    $dbs->registerSimpUser($unique_id, $simp_UserName, $simpUser_Email, $hpass);
                     echo json_encode([
                         "message"=>"registration succesfull",
                         "status"=>200
