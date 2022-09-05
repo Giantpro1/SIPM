@@ -95,7 +95,7 @@ if(isset($_FILES['simpUser_AdsImg'])){
         $simp_UserNewEmail = $sipmCur_User->test_input($_POST['simp_UserNewEmail']);
             if(empty($simp_UserCurEmail) && empty($simp_UserNewEmail)){
                 echo "some fields are empty!";
-            }elseif($simp_UserCurEmail == $simp_Mail){
+            }elseif($sipmCur_User->user_exitsEmail($simp_UserCurEmail)){
                 $sipmCur_User->sipmUser_ChangeEmail($simp_UserNewEmail, $simp_Cid);
                 echo "Email change successFully";
             }else{
