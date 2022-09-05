@@ -1,3 +1,4 @@
+<?php include '../controller/session.php'; ?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -138,11 +139,15 @@
 					<div class="widget user-dashboard-profile">
 						<!-- User Image -->
 						<div class="profile-thumb">
+						<?php if(!$simpUser_ProPic):?>
 							<img src="../images/user/user-thumb.jpg" alt="" class="rounded-circle">
+							<?php else: ?>
+							<img src="<?='../controller/'.$simpUser_ProPic; ?>" class="rounded-circle" >
+							<?php endif; ?>
 						</div>
 						<!-- User Name -->
-						<h5 class="text-center">Samanta Doe</h5>
-						<p>Joined February 06, 2017</p>
+						<h5 class="text-center"><?=$simpUserName; ?></h5>
+						<p>Joined <?= date('F d,Y', strtotime($simpUserRegDate)); ?></p>
 						<a href="user-profile" class="btn btn-main-sm">Edit Profile</a>
 					</div>
 					<!-- Dashboard Links -->
@@ -171,7 +176,7 @@
 					<!-- delete-account modal -->
 					<!-- delete account popup modal start-->
 <!-- Modal -->
-<div class="modal fade" id="deleteaccount" tab../index="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+<div class="modal fade" id="deleteaccount" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
   aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
