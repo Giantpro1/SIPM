@@ -174,12 +174,16 @@ require_once '../controller/session.php';
             <div class="price">
               <h6 class="font-weight-bold pt-4 pb-1">Item Price ($ USD):</h6>
               <div class="row px-3">
-                <div class="col-lg-4 rounded my-2 px-0">
+                <div class="col-lg-6 rounded my-2 px-0">
                   <input type="text" name="sipmUser_AdsPrice" class="form-control bg-white" placeholder="Price" id="price">
                 </div>
                 <div class="col-lg-4 ml-lg-4 my-2 pt-2 pb-1 rounded bg-white ">
                   <input type="radio" name="sipmUser_AdsNegotiation" value="Negotiable" id="Negotiable">
                   <label for="Negotiable" class="py-2">Negotiable</label>
+                </div>
+                <div class="col-lg-4 ml-lg-4 my-2 pt-2 pb-1 rounded bg-white ">
+                  <input type="radio" name="sipmUser_AdsNegotiation" value="Not Negotiable" id="Negotiable">
+                  <label for="Negotiable" class="py-2">Not Negotiable</label>
                 </div>
               </div>
             </div>
@@ -303,7 +307,7 @@ Essential Scripts
 <script src="../plugins/tether/js/tether.min.js"></script>
 <script src="../plugins/raty/jquery.raty-fa.js"></script>
 <script src="../plugins/slick/slick.min.js"></script>
-<script src="../plugins/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+<script src="../plugins/jquery-nice-select/js/sweetAlert.js"></script>
 <!-- google map -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>
 <script src="../plugins/google-map/map.js" defer></script>
@@ -324,6 +328,24 @@ Essential Scripts
         data : new FormData(this),
         success : function(response){
           console.log(response)
+
+          if(response === 'product upload successfully' && response === 'product imgs upload successfully'){
+              swal.fire({
+                title: 'Done',
+                icon: 'success',
+                text: 'product upload successfully',
+              }).then(
+                window.reload()
+              )
+          }else if(response ==='some fields are empty!'){
+            swal.fire({
+              title: 'Ooops!',
+              icon: 'error',
+              text: 'some fields are empty!'
+            })
+          }else{
+            
+          }
         }
       })
     })
