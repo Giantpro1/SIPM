@@ -329,19 +329,25 @@ Essential Scripts
         success : function(response){
           console.log(response)
 
-          if(response === 'product upload successfully' && response === 'product imgs upload successfully'){
+          if(response === 'product upload successfully'){
               swal.fire({
                 title: 'Done',
                 icon: 'success',
                 text: 'product upload successfully',
               }).then(
-                window.reload()
+                $('#simpUserAds_Uploading')[0].reset()
               )
           }else if(response ==='some fields are empty!'){
             swal.fire({
               title: 'Ooops!',
               icon: 'error',
               text: 'some fields are empty!'
+            })
+          }else if(response === 'Image fields cannot be empty!'){
+            swal.fire({
+              title: 'Ooops!',
+              icon: 'error',
+              text : 'Image fields cannot be empty!'
             })
           }else{
 
