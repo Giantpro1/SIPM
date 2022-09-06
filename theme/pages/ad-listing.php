@@ -192,7 +192,7 @@ require_once '../controller/session.php';
                 <span class="d-block font-weight-bold text-dark">Drop files anywhere to upload</span>
                 <span class="d-block">or</span>
                 <span class="d-block btn bg-primary text-white my-3 select-files">Select files</span>
-                <span class="d-block">Maximum upload file size: 500 MB</span>
+                <span class="d-block">Maximum upload file size: 5MB</span>
                 <input type="file" class="form-control-file d-none" id="file-upload" multiple name="simpUser_AdsImg[]">
               </label>
             </div>
@@ -344,7 +344,7 @@ Essential Scripts
               text: 'some fields are empty!'
             })
           }else{
-            
+
           }
         }
       })

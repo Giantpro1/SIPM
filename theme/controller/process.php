@@ -48,23 +48,17 @@ if(isset($_FILES['simpUser_AdsImg'])){
     if (isset($_FILES['simpUser_AdsImg']) && ($_FILES['simpUser_AdsImg'] != '')){
         $simpUser_ImgId = rand(100,10000).'_'.time().'?';
         $simpUser_AdsImg = $_FILES['simpUser_AdsImg']['name'];
-        // $simpUser_AdsImgType = $_FILES['simpUser_AdsImg']['type'];
-        // $simpUser_AdsImgSize = $_FILES['simpUser_AdsImg']['size'];
-        // $allowedType  = ["jpg" => "image/jpg"];
-
-        foreach ($simpUser_AdsImg as $i => $value) {
-            $GTR = time(). '_' . rand(2000,100000). '_'.$simpUser_AdsImg[$i];
-            $folderForAdsImg = '../images/adsImages/';
-            $faiPath = $folderForAdsImg.$GTR;
-            $PathName = $_FILES['simpUser_AdsImg']['tmp_name'][$i];
-            move_uploaded_file($PathName,$faiPath);
-
-            
-            $imgResult = $sipmCur_User->simpUser_UploadingAdsImg($simp_Cid, $simpUser_ImgId, $GTR);
-            if($imgResult){
-                echo "product imgs upload successfully";
-            }
-        }
+                            foreach ($simpUser_AdsImg as $i => $value){
+                                $GTR = time(). '_' . rand(2000,100000). '_'.$simpUser_AdsImg[$i];
+                                $folderForAdsImg = '../images/adsImages/';
+                                $faiPath = $folderForAdsImg.$GTR;
+                                $PathName = $_FILES['simpUser_AdsImg']['tmp_name'][$i];
+                                move_uploaded_file($PathName,$faiPath);
+                                $imgResult = $sipmCur_User->simpUser_UploadingAdsImg($simp_Cid, $simpUser_ImgId, $GTR);
+                                if($imgResult){
+                                    echo "product imgs upload successfully";
+                                }
+                            }
     }
 }
 
