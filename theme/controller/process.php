@@ -22,7 +22,7 @@ if(isset($_FILES['sipmUser_ProfileImg'])){
 
 
 if(isset($_POST['simpUser_AdsTitle'])){
-    $sipmuser_PostId =$sipmCur_User->test_input($_POST['sipmuser_PostId']);
+    $sipmuser_PostId = rand(100,10000).'_'.time().'?';
     $simpUser_AdsTitle =$sipmCur_User->test_input($_POST['simpUser_AdsTitle']);
     $sipmUser_AdsType =$sipmCur_User->test_input($_POST['sipmUser_AdsType']);
     $sipmUser_AdsDescripion =$sipmCur_User->test_input($_POST['sipmUser_AdsDescripion']);
@@ -33,16 +33,24 @@ if(isset($_POST['simpUser_AdsTitle'])){
     $sipmUser_AdsContactNumber =$sipmCur_User->test_input($_POST['sipmUser_AdsContactNumber']);
     $sipmUser_AdsContactEmail =$sipmCur_User->test_input($_POST['sipmUser_AdsContactEmail']);
     $sipmUser_AdsContactAddress =$sipmCur_User->test_input($_POST['sipmUser_AdsContactAddress']);
-
-    $result = $sipmCur_User->simpUser_UploadingAds($sipmuser_PostId, $simpUser_AdsTitle, $sipmUser_AdsType, $sipmUser_AdsDescripion, $sipmUser_AdsCategory, $sipmUser_AdsPrice, $sipmUser_AdsNegotiation, $sipmUser_AdsContactName, $sipmUser_AdsContactNumber, $sipmUser_AdsContactEmail, $sipmUser_AdsContactAddress);
+        if(!empty($simpUser_AdsTitle) && !empty($sipmUser_AdsType) && !empty($sipmUser_AdsDescripion) && !empty($sipmUser_AdsCategory) && !empty($sipmUser_AdsPrice) && !empty($sipmUser_AdsNegotiation) && !empty($sipmUser_AdsContactName) && !empty($sipmUser_AdsContactNumber) && !empty($sipmUser_AdsContactEmail) && !empty($sipmUser_AdsContactAddress)){
+            $result = $sipmCur_User->simpUser_UploadingAds($simp_Cid, $sipmuser_PostId, $simpUser_AdsTitle, $sipmUser_AdsType, $sipmUser_AdsDescripion, $sipmUser_AdsCategory, $sipmUser_AdsPrice, $sipmUser_AdsNegotiation, $sipmUser_AdsContactName, $sipmUser_AdsContactNumber, $sipmUser_AdsContactEmail, $sipmUser_AdsContactAddress);
+                if($result){
+                    echo "product upload successfully";
+                }
+        }else{
+            echo "some fields are empty!"; 
+        }
     
 }
 
 if(isset($_FILES['simpUser_AdsImg'])){
     if (isset($_FILES['simpUser_AdsImg']) && ($_FILES['simpUser_AdsImg'] != '')){
-        
-        $simpUser_ImgId = $sipmCur_User->test_input($_POST['simpUser_ImgId']);
+        $simpUser_ImgId = rand(100,10000).'_'.time().'?';
         $simpUser_AdsImg = $_FILES['simpUser_AdsImg']['name'];
+        // $simpUser_AdsImgType = $_FILES['simpUser_AdsImg']['type'];
+        // $simpUser_AdsImgSize = $_FILES['simpUser_AdsImg']['size'];
+        // $allowedType  = ["jpg" => "image/jpg"];
 
         foreach ($simpUser_AdsImg as $i => $value) {
             $GTR = time(). '_' . rand(2000,100000). '_'.$simpUser_AdsImg[$i];
@@ -52,7 +60,10 @@ if(isset($_FILES['simpUser_AdsImg'])){
             move_uploaded_file($PathName,$faiPath);
 
             
-            $imgResult = $sipmCur_User->simpUser_UploadingAdsImg( $simpUser_ImgId, $GTR);
+            $imgResult = $sipmCur_User->simpUser_UploadingAdsImg($simp_Cid, $simpUser_ImgId, $GTR);
+            if($imgResult){
+                echo "product imgs upload successfully";
+            }
         }
     }
 }

@@ -70,10 +70,11 @@ class Dbc extends Database{
             'id'=>$id
         ]);
      }
-     public function simpUser_UploadingAds($sipmuser_PostId, $simpUser_AdsTitle, $sipmUser_AdsType, $sipmUser_AdsDescripion, $sipmUser_AdsCategory, $sipmUser_AdsPrice, $sipmUser_AdsNegotiation, $sipmUser_AdsContactName, $sipmUser_AdsContactNumber, $sipmUser_AdsContactEmail, $sipmUser_AdsContactAddress){
-         $sql = "INSERT INTO sipmusersads (sipmuser_PostId, simpUser_AdsTitle, sipmUser_AdsType, sipmUser_AdsDescripion, sipmUser_AdsCategory, sipmUser_AdsPrice, sipmUser_AdsNegotiation, sipmUser_AdsContactName, sipmUser_AdsContactNumber, sipmUser_AdsContactEmail, sipmUser_AdsContactAddress) VALUES (:sipmuser_PostId, :simpUser_AdsTitle, :sipmUser_AdsType, :sipmUser_AdsDescripion, :sipmUser_AdsCategory, :sipmUser_AdsPrice, :sipmUser_AdsNegotiation, :sipmUser_AdsContactName, :sipmUser_AdsContactNumber, :sipmUser_AdsContactEmail,:sipmUser_AdsContactAddress)";
+     public function simpUser_UploadingAds($simp_Cid, $sipmuser_PostId, $simpUser_AdsTitle, $sipmUser_AdsType, $sipmUser_AdsDescripion, $sipmUser_AdsCategory, $sipmUser_AdsPrice, $sipmUser_AdsNegotiation, $sipmUser_AdsContactName, $sipmUser_AdsContactNumber, $sipmUser_AdsContactEmail, $sipmUser_AdsContactAddress){
+         $sql = "INSERT INTO sipmusersads (simp_Cid, sipmuser_PostId, simpUser_AdsTitle, sipmUser_AdsType, sipmUser_AdsDescripion, sipmUser_AdsCategory, sipmUser_AdsPrice, sipmUser_AdsNegotiation, sipmUser_AdsContactName, sipmUser_AdsContactNumber, sipmUser_AdsContactEmail, sipmUser_AdsContactAddress) VALUES (:simp_Cid, :sipmuser_PostId, :simpUser_AdsTitle, :sipmUser_AdsType, :sipmUser_AdsDescripion, :sipmUser_AdsCategory, :sipmUser_AdsPrice, :sipmUser_AdsNegotiation, :sipmUser_AdsContactName, :sipmUser_AdsContactNumber, :sipmUser_AdsContactEmail,:sipmUser_AdsContactAddress)";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute([
+            'simp_Cid'=>$simp_Cid,
             'sipmuser_PostId'=>$sipmuser_PostId,
             'simpUser_AdsTitle'=>$simpUser_AdsTitle,
             'sipmUser_AdsType'=>$sipmUser_AdsType,
@@ -91,10 +92,11 @@ class Dbc extends Database{
      }
 
 
-     public function simpUser_UploadingAdsImg($simpUser_ImgId, $simpUser_AdsImg){
-        $sql = "INSERT INTO sipmusersads_img (simpUser_ImgId, simpUser_AdsImg) VALUES (:simpUser_ImgId, :simpUser_AdsImg)";
+     public function simpUser_UploadingAdsImg($simp_Cid, $simpUser_ImgId, $simpUser_AdsImg){
+        $sql = "INSERT INTO sipmusersads_img (simp_Cid, simpUser_ImgId, simpUser_AdsImg) VALUES (:simp_Cid, :simpUser_ImgId, :simpUser_AdsImg)";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute([
+            'simp_Cid'=>$simp_Cid,
             'simpUser_ImgId'=>$simpUser_ImgId,
             'simpUser_AdsImg'=>$simpUser_AdsImg
         ]);
