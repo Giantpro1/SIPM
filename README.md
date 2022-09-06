@@ -4,6 +4,6 @@
 
 ## temp gotten from ##themefisher  
 
-## full backend hard by Gianpro 
+## full backend hard code by Gianpro 
 
 ##SIPM is multi vendor e-commerce web application {end to end} 
