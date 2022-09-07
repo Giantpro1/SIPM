@@ -208,7 +208,7 @@
                 <th class="text-center">Action</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="">
               <tr>
                 <td class="product-thumb">
                   <img width="80px" height="auto" src="../images/products/products-1.jpg" alt="image description"></td>
@@ -526,12 +526,29 @@ Essential Scripts
 <script src="../plugins/raty/jquery.raty-fa.js"></script>
 <script src="../plugins/slick/slick.min.js"></script>
 <script src="../plugins/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+<script src="../plugins/jquery-nice-select/js/sweetAlert.js"></script>
 <!-- google map -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>
 <script src="../plugins/google-map/map.js" defer></script>
 
 <script src="../js/script.js"></script>
+                <script>
+                  $(document).ready(function(){
 
+                      //display user Ads in table 
+                    displayAllUSerAds()
+                    function displayAllUSerAds(){
+                      $.ajax({
+                        url:'../controller/process.php',
+                        method: 'post',
+                        data: {action: 'dispayAds'},
+                        success: function(response){
+                          console.log(response)
+                        }
+                      })
+                    }
+                  })
+                </script>
 </body>
 
 </html>

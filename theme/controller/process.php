@@ -35,6 +35,9 @@ if(isset($_POST['simpUser_AdsTitle'])){
     $sipmUser_AdsContactAddress =$sipmCur_User->test_input($_POST['sipmUser_AdsContactAddress']);
         if(!empty($simpUser_AdsTitle) && !empty($sipmUser_AdsType) && !empty($sipmUser_AdsDescripion) && !empty($sipmUser_AdsCategory) && !empty($sipmUser_AdsPrice) && !empty($sipmUser_AdsNegotiation) && !empty($sipmUser_AdsContactName) && !empty($sipmUser_AdsContactNumber) && !empty($sipmUser_AdsContactEmail) && !empty($sipmUser_AdsContactAddress)){
             $resultDetails = $sipmCur_User->simpUser_UploadingAds($simp_Cid, $sipmuser_PostId, $simpUser_AdsTitle, $sipmUser_AdsType, $sipmUser_AdsDescripion, $sipmUser_AdsCategory, $sipmUser_AdsPrice, $sipmUser_AdsNegotiation, $sipmUser_AdsContactName, $sipmUser_AdsContactNumber, $sipmUser_AdsContactEmail, $sipmUser_AdsContactAddress);
+                if($resultDetails){
+                    echo "product upload successfully";
+                }
         }else{
             echo "some fields are empty!"; 
         }
@@ -54,16 +57,16 @@ if(isset($_FILES['simpUser_AdsImg'])){
                     $PathName = $_FILES['simpUser_AdsImg']['tmp_name'][$i];
                     move_uploaded_file($PathName,$faiPath);
                     $imgResult = $sipmCur_User->simpUser_UploadingAdsImg($simp_Cid, $simpUser_ImgId, $GTR);
+                    if($imgResult){
+                        echo  "product upload successfully";
+                    }
                 }
             }else{
                 echo "Image fields cannot be empty!";
             }
     }
 }
-        if(($resultDetails == true) && ($imgResult == true)){
-            echo "product upload successfully";
-        }
-
+ 
 // change password 
 
     if(isset($_POST['action']) && ($_POST['action'] === 'change_Pass')){
@@ -110,4 +113,53 @@ if(isset($_FILES['simpUser_AdsImg'])){
             }
  
            
+    }
+
+    if(isset($_POST['action']) && $_POST['action'] === 'dispayAds'){
+            $output .= '';
+
+            $simpUserAds = $sipmCur_User->get_SipmUSerAds($simp_Cid);
+
+            if($simpUserAds){
+                $output .= '';
+                foreach($simpUserAds as $simpUserAd){
+                    $output .= '
+                    <tr>
+                    <td class="product-thumb">
+                      <img width="80px" height="auto" src="../images/products/products-1.jpg" alt="image description"></td>
+                    <td class="product-details">
+                      <h3 class="title">'.$simpUserAd['simpUser_AdsTitle'].'</h3>
+                      <span class="add-id"><strong>Ad ID:</strong> ng3D5hAMHPajQrM</span>
+                      <span><strong>Posted on: </strong><time>'.date('f j, Y', strtotime($simpUserAd['simpUser_AdsDate'])).'</time> </span>
+                      <span class="status active"><strong>Status</strong>Active</span>
+                      <span class="location"><strong>'.$simpUserAd['sipmUser_AdsContactAddress'].'</strong>Dhaka,Bangladesh</span>
+                    </td>
+                    <td class="product-category"><span class="categories">Laptops</span></td>
+                    <td class="action" data-title="Action">
+                      <div class="">
+                        <ul class="list-inline justify-content-center">
+                          <li class="list-inline-item">
+                            <a data-toggle="tooltip" data-placement="top" title="view"  id="'.$simpUserAd['id'].'" class="btn btn-success viewBtn" >
+                              <i class="fa fa-eye"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a class="edit" data-toggle="tooltip" data-placement="top" title="Edit" href="dashboard">
+                              <i class="fa fa-pencil"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a class="delete" data-toggle="tooltip" data-placement="top" title="Delete" href="dashboard">
+                              <i class="fa fa-trash"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>';
+                }
+                echo $output;
+            }else{
+                echo "You haven't upload any ads";
+            }
     }

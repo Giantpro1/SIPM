@@ -134,4 +134,16 @@ class Dbc extends Database{
             'id'=>$id
         ]);
     }
+
+    // grad all user ads post 
+
+    public function get_SipmUSerAds($simp_Cid){
+        $sql = "SELECT * FROM sipmusersads UNION SELECT * FROM sipmusersads_img WHERE simp_Cid=:simp_Cid";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute([
+            'simp_Cid'=>$simp_Cid
+        ]);
+        $fetchAds = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $fetchAds;
+    }
 }
