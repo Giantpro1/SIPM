@@ -86,15 +86,15 @@
 								</a>
 								<!-- Dropdown list -->
 								<ul class="dropdown-menu">
-									<li><a class="dropdown-item @@category" href="category.html">Ad-Gird View</a></li>
-									<li><a class="dropdown-item @@listView" href="ad-list-view.html">Ad-List View</a></li>
+									<li><a class="dropdown-item @@category" href="category">Ad-Gird View</a></li>
+									<li><a class="dropdown-item @@listView" href="ad-list-view">Ad-List View</a></li>
 									
 									<li class="dropdown dropdown-submenu dropleft">
 										<a class="dropdown-item dropdown-toggle" href="#!" id="dropdown0201" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sub Menu</a>
 					
 										<ul class="dropdown-menu" aria-labelledby="dropdown0201">
-											<li><a class="dropdown-item" href="index.html">Submenu 01</a></li>
-											<li><a class="dropdown-item" href="index.html">Submenu 02</a></li>
+											<li><a class="dropdown-item" href="index">Submenu 01</a></li>
+											<li><a class="dropdown-item" href="index">Submenu 02</a></li>
 										</ul>
 									</li>
 								</ul>
@@ -105,7 +105,7 @@
 								<a class="nav-link login-button" href="login">Login</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link text-white add-button" href="ad-listing.html"><i class="fa fa-plus-circle"></i> Add Listing</a>
+								<a class="nav-link text-white add-button" href="ad-listing"><i class="fa fa-plus-circle"></i> Add Listing</a>
 							</li>
 						</ul>
 					</div>
@@ -195,15 +195,15 @@
         <!-- App promotion -->
         <div class="block-2 app-promotion">
           <div class="mobile d-flex  align-items-center">
-            <a href="index.html">
+            <a href="index">
               <!-- Icon -->
               <img src="../images/footer/phone-icon.png" alt="mobile-icon">
             </a>
             <p class="mb-0">Get the Dealsy Mobile App and Save more</p>
           </div>
           <div class="download-btn d-flex my-3">
-            <a href="index.html"><img src="../images/apps/google-play-store.png" class="img-fluid" alt=""></a>
-            <a href="index.html" class=" ml-3"><img src="../images/apps/apple-app-store.png" class="img-fluid" alt=""></a>
+            <a href="../ndex"><img src="../images/apps/google-play-store.png" class="img-fluid" alt=""></a>
+            <a href="../ndex" class=" ml-3"><img src="../images/apps/apple-app-store.png" class="img-fluid" alt=""></a>
           </div>
         </div>
       </div>
