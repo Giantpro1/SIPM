@@ -138,7 +138,7 @@ class Dbc extends Database{
     // grad all user ads post 
 
     public function get_SipmUSerAds($simp_Cid){
-        $sql = "SELECT * FROM sipmusersads UNION SELECT * FROM sipmusersads_img WHERE simp_Cid=:simp_Cid";
+        $sql = "SELECT * FROM sipmusersads WHERE simp_Cid=:simp_Cid";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute([
             'simp_Cid'=>$simp_Cid
@@ -147,3 +147,6 @@ class Dbc extends Database{
         return $fetchAds;
     }
 }
+// sipmusersads
+// sipmusersads_img
+// simp_Cid

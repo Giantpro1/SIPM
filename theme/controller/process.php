@@ -132,14 +132,14 @@ if(isset($_FILES['simpUser_AdsImg'])){
                       <span class="add-id"><strong>Ad ID:</strong> ng3D5hAMHPajQrM</span>
                       <span><strong>Posted on: </strong><time>'.date('f j, Y', strtotime($simpUserAd['simpUser_AdsDate'])).'</time> </span>
                       <span class="status active"><strong>Status</strong>Active</span>
-                      <span class="location"><strong>'.$simpUserAd['sipmUser_AdsContactAddress'].'</strong>Dhaka,Bangladesh</span>
+                      <span class="location"><strong>'.substr($simpUserAd['sipmUser_AdsContactAddress'],0,18).'</strong></span>
                     </td>
-                    <td class="product-category"><span class="categories">Laptops</span></td>
+                    <td class="product-category"><span class="categories">'.$simpUserAd['sipmUser_AdsCategory'].'</span></td>
                     <td class="action" data-title="Action">
                       <div class="">
                         <ul class="list-inline justify-content-center">
                           <li class="list-inline-item">
-                            <a data-toggle="tooltip" data-placement="top" title="view"  id="'.$simpUserAd['id'].'" class="btn btn-success viewBtn" >
+                            <a data-toggle="tooltip" data-placement="top" title="view"  id="'.$simpUserAd['id'].'" class="view" >
                               <i class="fa fa-eye"></i>
                             </a>
                           </li>

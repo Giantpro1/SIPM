@@ -208,7 +208,7 @@
                 <th class="text-center">Action</th>
               </tr>
             </thead>
-            <tbody id="">
+            <tbody id="displaysimp_UserAds">
               <tr>
                 <td class="product-thumb">
                   <img width="80px" height="auto" src="../images/products/products-1.jpg" alt="image description"></td>
@@ -544,6 +544,7 @@ Essential Scripts
                         data: {action: 'dispayAds'},
                         success: function(response){
                           console.log(response)
+                          // $("#displaysimp_UserAds").html(response)
                         }
                       })
                     }
