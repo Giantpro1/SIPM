@@ -21,7 +21,8 @@ if(isset($_FILES['sipmUser_ProfileImg'])){
 }
 
 
-if(isset($_POST['simpUser_AdsTitle'])){
+
+if(isset($_FILES['simpUser_AdsImg'])){
     $sipmuser_PostId = rand(100,10000).'_'.time().'?';
     $simpUser_AdsTitle =$sipmCur_User->test_input($_POST['simpUser_AdsTitle']);
     $sipmUser_AdsType =$sipmCur_User->test_input($_POST['sipmUser_AdsType']);
@@ -37,29 +38,23 @@ if(isset($_POST['simpUser_AdsTitle'])){
             $resultDetails = $sipmCur_User->simpUser_UploadingAds($simp_Cid, $sipmuser_PostId, $simpUser_AdsTitle, $sipmUser_AdsType, $sipmUser_AdsDescripion, $sipmUser_AdsCategory, $sipmUser_AdsPrice, $sipmUser_AdsNegotiation, $sipmUser_AdsContactName, $sipmUser_AdsContactNumber, $sipmUser_AdsContactEmail, $sipmUser_AdsContactAddress);
                 if($resultDetails){
                     echo "product upload successfully";
+                    $_SESSION['userPostId'] = $sipmuser_PostId;
                 }
         }else{
             echo "some fields are empty!"; 
         }
     
-}
-
-if(isset($_FILES['simpUser_AdsImg'])){
     if (isset($_FILES['simpUser_AdsImg']) && ($_FILES['simpUser_AdsImg'] != '')){
-        $simpUser_ImgId = rand(100,10000).'_'.time().'?';
+        
         $simpUser_AdsImg = $_FILES['simpUser_AdsImg']['name'];
             if(!empty($simpUser_AdsImg)){
-
                 foreach ($simpUser_AdsImg as $i => $value){
                     $GTR = time(). '_' . rand(2000,100000). '_'.$simpUser_AdsImg[$i];
                     $folderForAdsImg = '../images/adsImages/';
                     $faiPath = $folderForAdsImg.$GTR;
                     $PathName = $_FILES['simpUser_AdsImg']['tmp_name'][$i];
                     move_uploaded_file($PathName,$faiPath);
-                    $imgResult = $sipmCur_User->simpUser_UploadingAdsImg($simp_Cid, $simpUser_ImgId, $GTR);
-                    if($imgResult){
-                        echo  "product upload successfully";
-                    }
+                    $imgResult = $sipmCur_User->simpUser_UploadingAdsImg($simp_Cid, $sipmuser_PostId, $GTR);
                 }
             }else{
                 echo "Image fields cannot be empty!";
@@ -114,52 +109,56 @@ if(isset($_FILES['simpUser_AdsImg'])){
  
            
     }
-
     if(isset($_POST['action']) && $_POST['action'] === 'dispayAds'){
+        $simpUserAds = $sipmCur_User->get_SipmUSerAds($simp_Cid);
+        $output = '';
+        if($simpUserAds){
             $output .= '';
-
-            $simpUserAds = $sipmCur_User->get_SipmUSerAds($simp_Cid);
-
-            if($simpUserAds){
-                $output .= '';
-                foreach($simpUserAds as $simpUserAd){
-                    $output .= '
-                    <tr>
-                    <td class="product-thumb">
-                      <img width="80px" height="auto" src="../images/products/products-1.jpg" alt="image description"></td>
-                    <td class="product-details">
-                      <h3 class="title">'.$simpUserAd['simpUser_AdsTitle'].'</h3>
-                      <span class="add-id"><strong>Ad ID:</strong> ng3D5hAMHPajQrM</span>
-                      <span><strong>Posted on: </strong><time>'.date('f j, Y', strtotime($simpUserAd['simpUser_AdsDate'])).'</time> </span>
-                      <span class="status active"><strong>Status</strong>Active</span>
-                      <span class="location"><strong>'.substr($simpUserAd['sipmUser_AdsContactAddress'],0,18).'</strong></span>
-                    </td>
-                    <td class="product-category"><span class="categories">'.$simpUserAd['sipmUser_AdsCategory'].'</span></td>
-                    <td class="action" data-title="Action">
-                      <div class="">
-                        <ul class="list-inline justify-content-center">
-                          <li class="list-inline-item">
-                            <a data-toggle="tooltip" data-placement="top" title="view"  id="'.$simpUserAd['id'].'" class="view" >
-                              <i class="fa fa-eye"></i>
-                            </a>
-                          </li>
-                          <li class="list-inline-item">
-                            <a class="edit" data-toggle="tooltip" data-placement="top" title="Edit" href="dashboard">
-                              <i class="fa fa-pencil"></i>
-                            </a>
-                          </li>
-                          <li class="list-inline-item">
-                            <a class="delete" data-toggle="tooltip" data-placement="top" title="Delete" href="dashboard">
-                              <i class="fa fa-trash"></i>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </td>
-                  </tr>';
+            foreach($simpUserAds as $simpUserAd){
+                $simpUSerAdsImg = $sipmCur_User->get_SipmUSerAdsImg($simpUserAd['sipmuser_PostId']);
+                if($simpUSerAdsImg){
+                    foreach($simpUSerAdsImg as $simpUSerAdsImgs){
+                        $img='<img width="80px" height="auto" src="'.'../images/adsImages/'.$simpUSerAdsImgs['simpUser_AdsImg'].'" alt="image description">';
+                    }
+                    // echo $output;
                 }
-                echo $output;
-            }else{
-                echo "You haven't upload any ads";
+                $output .= '
+                <tr>
+                <td class="product-thumb">
+                    '.$img.'</td>
+                <td class="product-details">
+                    <h3 class="title">'.$simpUserAd['simpUser_AdsTitle'].'</h3>
+                    <span class="add-id"><strong>Ad ID:</strong>ng3D5hAMHPajQrM</span>
+                    <span><strong>Posted on: </strong><time>'.date('F d, Y', strtotime($simpUserAd['simpUser_AdsDate'])).'</time> </span>
+                    <span class="status active"><strong>Status</strong>Active</span>
+                    <span class="location"><strong>Location</strong>'.substr($simpUserAd['sipmUser_AdsContactAddress'],0,18).'</span>
+                </td>
+                <td class="product-category"><span class="categories">'.$simpUserAd['sipmUser_AdsCategory'].'</span></td>
+                <td class="action" data-title="Action">
+                    <div class="">
+                    <ul class="list-inline justify-content-center">
+                        <li class="list-inline-item">
+                        <a data-toggle="tooltip" data-placement="top" title="view"  id="'.$simpUserAd['id'].'" class="view" >
+                            <i class="fa fa-eye"></i>
+                        </a>
+                        </li>
+                        <li class="list-inline-item">
+                        <a class="edit" data-toggle="tooltip" data-placement="top" title="Edit" href="dashboard">
+                            <i class="fa fa-pencil"></i>
+                        </a>
+                        </li>
+                        <li class="list-inline-item">
+                        <a class="delete" data-toggle="tooltip" data-placement="top" title="Delete" href="dashboard">
+                            <i class="fa fa-trash"></i>
+                        </a>
+                        </li>
+                    </ul>
+                    </div>
+                </td>
+                </tr>';
             }
+            echo $output;
+        }else{
+            echo "You haven't upload any ads";
+        }
     }

@@ -231,7 +231,6 @@ require_once '../controller/session.php';
             <h3 class="pb-3">Make Your Ad Featured
               <span class="float-right font-weight-normal text-success" data-toggle="tooltip" data-placement="top" title="Autem, architecto quisquam distinctio totam aut voluptatibus placeat ut nobis molestias rerum!">What is featured ad ?</span>
             </h3>
-
           </div>
           <div class="col-lg-6 my-3">
             <span class="mb-3 d-block">Premium Ad Options:</span>
@@ -329,7 +328,7 @@ Essential Scripts
         success : function(response){
           console.log(response)
 
-          if(response === 'product upload successfully'){
+          if((response === 'product upload successfully')){
               swal.fire({
                 title: 'Done',
                 icon: 'success',

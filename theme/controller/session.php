@@ -12,8 +12,13 @@ if (!isset($_SESSION['ourUser'])) {
 
   $simp_Mail = $_SESSION['ourUser'];
 
-  
+  // $simpPostId = $_SESSION['userPostId'];
+
   $sipm_Data = $sipmCur_User->simp_CurrentUser($simp_Mail);
+
+  // $simpUserPostId = $sipmCur_User->simpUserPostId($simpPostId);
+
+  // $simp_PostId = $simpUserPostId['sipmuser_PostId'];
 
   $simp_Cid = $sipm_Data['id'];
 
@@ -25,7 +30,5 @@ if (!isset($_SESSION['ourUser'])) {
   $simpCommunity = $sipm_Data['sipmUser_CommunityName'];
   $simpHidePro = $sipm_Data['sipmUser_HidePro'];
   $simpZipCode = $sipm_Data['simpUser_ZipCode'];
-  $simpProfileImg = $sipm_Data['sipmUser_ProfileImg'];
   $simpUserPass = $sipm_Data['simpUser_Password'];
   $simpUserRegDate = $sipm_Data['simpUserReg_Date'];
-  

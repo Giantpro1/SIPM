@@ -6,7 +6,7 @@
 
   <!-- ** Basic Page Needs ** -->
   <meta charset="utf-8">
-  <title>SIPM</title>
+  <title>SIMP</title>
 
   <!-- ** Mobile Specific Metas ** -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -57,8 +57,8 @@
 
 								<!-- Dropdown list -->
 								<ul class="dropdown-menu">
-									<li><a class="dropdown-item activePage" href="dashboard">Dashboard</a></li>
-									<li><a class="dropdown-item active" href="dashboard-my-ads">Dashboard My Ads</a></li>
+									<li><a class="dropdown-item active" href="dashboard">Dashboard</a></li>
+									<li><a class="dropdown-item activeMyAds" href="dashboard-my-ads">Dashboard My Ads</a></li>
 									<li><a class="dropdown-item activeFavouriteAds" href="dashboard-favourite-ads">Dashboard Favourite Ads</a></li>
 									<li><a class="dropdown-item activeArchivedAds" href="dashboard-archived-ads">Dashboard Archived Ads</a></li>
 									<li><a class="dropdown-item activePendingAds" href="dashboard-pending-ads">Dashboard Pending Ads</a></li>
@@ -129,52 +129,44 @@
 =            User Profile            =
 ===================================-->
 <section class="dashboard section">
-	<!-- Container Start -->
-	<div class="container">
-		<!-- Row Start -->
-		<div class="row">
-			<div class="col-lg-4">
-				<div class="sidebar">
-					<!-- User Widget -->
-					<div class="widget user-dashboard-profile">
-						<!-- User Image -->
-						<div class="profile-thumb">
-						<?php if(!$simpUser_ProPic):?>
-							<img src="../images/user/user-thumb.jpg" alt="" class="rounded-circle">
-							<?php else: ?>
-							<img src="<?='../controller/'.$simpUser_ProPic; ?>" class="rounded-circle" >
-							<?php endif; ?>
-						</div>
-						<!-- User Name -->
-						<h5 class="text-center"><?=$simpUserName; ?></h5>
-						<p>Joined <?= date('F d,Y', strtotime($simpUserRegDate)); ?></p>
-						<a href="user-profile" class="btn btn-main-sm">Edit Profile</a>
-					</div>
-					<!-- Dashboard Links -->
-					<div class="widget user-dashboard-menu">
-						<ul>
-							<li class="active">
-								<a href="dashboard-my-ads"><i class="fa fa-user"></i> My Ads</a></li>
-							<li>
-								<a href="dashboard-favourite-ads"><i class="fa fa-bookmark-o"></i> Favourite Ads <span>5</span></a>
-							</li>
-							<li>
-								<a href="dashboard-archived-ads"><i class="fa fa-file-archive-o"></i>Archeved Ads <span>12</span></a>
-							</li>
-							<li>
-								<a href="dashboard-pending-ads"><i class="fa fa-bolt"></i> Pending Approval<span>23</span></a>
-							</li>
-							<li>
-								<a href="logout"><i class="fa fa-cog"></i> Logout</a>
-							</li>
-							<li>
-								<a href="#!" data-toggle="modal" data-target="#deleteaccount"><i class="fa fa-power-off"></i>Delete Account</a>
-							</li>
-						</ul>
-					</div>
-
-					<!-- delete-account modal -->
-					<!-- delete account popup modal start-->
+  <!-- Container Start -->
+  <div class="container">
+    <!-- Row Start -->
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="sidebar">
+          <!-- User Widget -->
+          <div class="widget user-dashboard-profile">
+            <!-- User Image -->
+            <div class="profile-thumb">
+              <?php if(!$simpUser_ProPic):?>
+              <img src="../images/user/user-thumb.jpg" alt="" class="rounded-circle">
+              <?php else: ?>
+                <img src="<?='../controller/'.$simpUser_ProPic; ?>" class="rounded-circle" >
+                <?php endif; ?>
+            </div>
+            <!-- User Name -->
+            <h5 class="text-center"><?=$simpUserName; ?></h5>
+            <p>Joined <?= date('F d,Y', strtotime($simpUserRegDate)); ?></p>
+            <a href="user-profile" class="btn btn-main-sm">Edit Profile</a>
+          </div>
+          <!-- Dashboard Links -->
+          <div class="widget user-dashboard-menu">
+            <ul>
+              <li class="active"><a href="dashboard-my-ads"><i class="fa fa-user"></i> My Ads</a></li>
+              <li><a href="dashboard-favourite-ads"><i class="fa fa-bookmark-o"></i> Favourite Ads
+                  <span>5</span></a></li>
+              <li><a href="dashboard-archived-ads"><i class="fa fa-file-archive-o"></i>Archived Ads
+                  <span>12</span></a></li>
+              <li><a href="dashboard-pending-ads"><i class="fa fa-bolt"></i> Pending Approval<span>23</span></a>
+              </li>
+              <li><a href="logout"><i class="fa fa-cog"></i> Logout</a></li>
+              <li><a href="#!" data-toggle="modal" data-target="#deleteaccount"><i class="fa fa-power-off"></i>Delete Account</a></li>
+            </ul>
+          </div>
+          
+          <!-- delete-account modal -->
+          <!-- delete account popup modal start-->
 <!-- Modal -->
 <div class="modal fade" id="deleteaccount" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
   aria-hidden="true">
@@ -199,228 +191,94 @@
   </div>
 </div>
 <!-- delete account popup modal end-->
-					<!-- delete-account modal -->
+          <!-- delete-account modal -->
 
-				</div>
-			</div>
-			<div class="col-lg-8">
-				<!-- Recently Favorited -->
-				<div class="widget dashboard-container my-adslist">
-					<h3 class="widget-header">My Ads</h3>
-					<table class="table table-responsive product-dashboard-table">
-						<thead>
-							<tr>
-								<th>Image</th>
-								<th>Product Title</th>
-								<th class="text-center">Category</th>
-								<th class="text-center">Action</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td class="product-thumb">
-									<img width="80px" height="auto" src="../images/products/products-1.jpg" alt="image description"></td>
-								<td class="product-details">
-									<h3 class="title">Macbook Pro 15inch</h3>
-									<span class="add-id"><strong>Ad ID:</strong> ng3D5hAMHPajQrM</span>
-									<span><strong>Posted on: </strong><time>Jun 27, 2017</time> </span>
-									<span class="status active"><strong>Status</strong>Active</span>
-									<span class="location"><strong>Location</strong>Dhaka,Bangladesh</span>
-								</td>
-								<td class="product-category"><span class="categories">Laptops</span></td>
-								<td class="action" data-title="Action">
-									<div class="">
-										<ul class="list-inline justify-content-center">
-											<li class="list-inline-item">
-												<a data-toggle="tooltip" data-placement="top" title="View" class="view" href="category">
-													<i class="fa fa-eye"></i>
-												</a>
-											</li>
-											<li class="list-inline-item">
-												<a data-toggle="tooltip" data-placement="top" title="Edit" class="edit" href="dashboard-my-ads">
-													<i class="fa fa-pencil"></i>
-												</a>
-											</li>
-											<li class="list-inline-item">
-												<a data-toggle="tooltip" data-placement="top" title="Delete" class="delete" href="dashboard-my-ads">
-													<i class="fa fa-trash"></i>
-												</a>
-											</li>
-										</ul>
-									</div>
-								</td>
-							</tr>
-							<tr>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <!-- Recently Favorited -->
+        <div class="widget dashboard-container my-adslist">
+          <h3 class="widget-header">My Ads</h3>
+          <table class="table table-responsive product-dashboard-table">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Product Title</th>
+                <th class="text-center">Category</th>
+                <th class="text-center">Action</th>
+              </tr>
+            </thead>
+            <tbody id="displaysimp_UserAds">
+              <tr>
+                <td class="product-thumb">
+                  <img width="80px" height="auto" src="../images/products/products-1.jpg" alt="image description"></td>
+                  <!-- <img width="80px" height="auto" src="../images/products/products-1.jpg" alt="image description"></td> -->
+                <td class="product-details">
+                  <h3 class="title">Macbook Pro 15inch</h3>
+                  <span class="add-id"><strong>Ad ID:</strong> ng3D5hAMHPajQrM</span>
+                  <span><strong>Posted on: </strong><time>Jun 27, 2017</time> </span>
+                  <span class="status active"><strong>Status</strong>Active</span>
+                  <span class="location"><strong>Location</strong>Dhaka,Bangladesh</span>
+                </td>
+                <td class="product-category"><span class="categories">Laptops</span></td>
+                <td class="action" data-title="Action">
+                  <div class="">
+                    <ul class="list-inline justify-content-center">
+                      <li class="list-inline-item">
+                        <a data-toggle="tooltip" data-placement="top" title="view" class="view" href="category">
+                          <i class="fa fa-eye"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a class="edit" data-toggle="tooltip" data-placement="top" title="Edit" href="dashboard">
+                          <i class="fa fa-pencil"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a class="delete" data-toggle="tooltip" data-placement="top" title="Delete" href="dashboard">
+                          <i class="fa fa-trash"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
-								<td class="product-thumb">
-									<img width="80px" height="auto" src="../images/products/products-2.jpg" alt="image description"></td>
-								<td class="product-details">
-									<h3 class="title">Study Table Combo</h3>
-									<span class="add-id"><strong>Ad ID:</strong> ng3D5hAMHPajQrM</span>
-									<span><strong>Posted on: </strong><time>Feb 12, 2017</time> </span>
-									<span class="status active"><strong>Status</strong>Active</span>
-									<span class="location"><strong>Location</strong>USA</span>
-								</td>
-								<td class="product-category"><span class="categories">Laptops</span></td>
-								<td class="action" data-title="Action">
-									<div class="">
-										<ul class="list-inline justify-content-center">
-											<li class="list-inline-item">
-												<a data-toggle="tooltip" data-placement="top" title="View" class="view" href="category">
-													<i class="fa fa-eye"></i>
-												</a>
-											</li>
-											<li class="list-inline-item">
-												<a data-toggle="tooltip" data-placement="top" title="Edit" class="edit" href="dashboard-my-ads">
-													<i class="fa fa-pencil"></i>
-												</a>
-											</li>
-											<li class="list-inline-item">
-												<a data-toggle="tooltip" data-placement="top" title="Delete" class="delete" href="dashboard-my-ads">
-													<i class="fa fa-trash"></i>
-												</a>
-											</li>
-										</ul>
-									</div>
-								</td>
-							</tr>
-							<tr>
+        </div>
 
-								<td class="product-thumb">
-									<img width="80px" height="auto" src="../images/products/products-3.jpg" alt="image description"></td>
-								<td class="product-details">
-									<h3 class="title">Macbook Pro 15inch</h3>
-									<span class="add-id"><strong>Ad ID:</strong> ng3D5hAMHPajQrM</span>
-									<span><strong>Posted on: </strong><time>Jun 27, 2017</time> </span>
-									<span class="status active"><strong>Status</strong>Active</span>
-									<span class="location"><strong>Location</strong>Dhaka,Bangladesh</span>
-								</td>
-								<td class="product-category"><span class="categories">Laptops</span></td>
-								<td class="action" data-title="Action">
-									<div class="">
-										<ul class="list-inline justify-content-center">
-											<li class="list-inline-item">
-												<a data-toggle="tooltip" data-placement="top" title="View" class="view" href="category">
-													<i class="fa fa-eye"></i>
-												</a>
-											</li>
-											<li class="list-inline-item">
-												<a data-toggle="tooltip" data-placement="top" title="Edit" class="edit" href="dashboard-my-ads">
-													<i class="fa fa-pencil"></i>
-												</a>
-											</li>
-											<li class="list-inline-item">
-												<a data-toggle="tooltip" data-placement="top" title="Delete" class="delete" href="dashboard-my-ads">
-													<i class="fa fa-trash"></i>
-												</a>
-											</li>
-										</ul>
-									</div>
-								</td>
-							</tr>
-							<tr>
+        <!-- pagination -->
+        <div class="pagination justify-content-center">
+          <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item">
+                <a class="page-link" href="dashboard" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                  <span class="sr-only">Previous</span>
+                </a>
+              </li>
+              <li class="page-item"><a class="page-link" href="dashboard">1</a></li>
+              <li class="page-item active"><a class="page-link" href="dashboard">2</a></li>
+              <li class="page-item"><a class="page-link" href="dashboard">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="dashboard" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <!-- pagination -->
 
-								<td class="product-thumb">
-									<img width="80px" height="auto" src="../images/products/products-4.jpg" alt="image description"></td>
-								<td class="product-details">
-									<h3 class="title">Macbook Pro 15inch</h3>
-									<span class="add-id"><strong>Ad ID:</strong> ng3D5hAMHPajQrM</span>
-									<span><strong>Posted on: </strong><time>Jun 27, 2017</time> </span>
-									<span class="status active"><strong>Status</strong>Active</span>
-									<span class="location"><strong>Location</strong>Dhaka,Bangladesh</span>
-								</td>
-								<td class="product-category"><span class="categories">Laptops</span></td>
-								<td class="action" data-title="Action">
-									<div class="">
-										<ul class="list-inline justify-content-center">
-											<li class="list-inline-item">
-												<a data-toggle="tooltip" data-placement="top" title="View" class="view" href="category">
-													<i class="fa fa-eye"></i>
-												</a>
-											</li>
-											<li class="list-inline-item">
-												<a data-toggle="tooltip" data-placement="top" title="Edit" class="edit" href="dashboard-my-ads">
-													<i class="fa fa-pencil"></i>
-												</a>
-											</li>
-											<li class="list-inline-item">
-												<a data-toggle="tooltip" data-placement="top" title="Delete" class="delete" href="dashboard-my-ads">
-													<i class="fa fa-trash"></i>
-												</a>
-											</li>
-										</ul>
-									</div>
-								</td>
-							</tr>
-							<tr>
-
-								<td class="product-thumb">
-									<img width="80px" height="auto" src="../images/products/products-1.jpg" alt="image description"></td>
-								<td class="product-details">
-									<h3 class="title">Macbook Pro 15inch</h3>
-									<span class="add-id"><strong>Ad ID:</strong> ng3D5hAMHPajQrM</span>
-									<span><strong>Posted on: </strong><time>Jun 27, 2017</time> </span>
-									<span class="status active"><strong>Status</strong>Active</span>
-									<span class="location"><strong>Location</strong>Dhaka,Bangladesh</span>
-								</td>
-								<td class="product-category"><span class="categories">Laptops</span></td>
-								<td class="action" data-title="Action">
-									<div class="">
-										<ul class="list-inline justify-content-center">
-											<li class="list-inline-item">
-												<a data-toggle="tooltip" data-placement="top" title="View" class="view" href="category">
-													<i class="fa fa-eye"></i>
-												</a>
-											</li>
-											<li class="list-inline-item">
-												<a data-toggle="tooltip" data-placement="top" title="Edit" class="edit" href="dashboard-my-ads">
-													<i class="fa fa-pencil"></i>
-												</a>
-											</li>
-											<li class="list-inline-item">
-												<a data-toggle="tooltip" data-placement="top" title="Delete" class="delete" href="dashboard-my-ads">
-													<i class="fa fa-trash"></i>
-												</a>
-											</li>
-										</ul>
-									</div>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-
-				</div>
-
-				<!-- pagination -->
-				<div class="pagination justify-content-center">
-					<nav aria-label="Page navigation example">
-						<ul class="pagination">
-							<li class="page-item">
-								<a class="page-link" href="dashboard-my-ads" aria-label="Previous">
-									<span aria-hidden="true">&laquo;</span>
-									<span class="sr-only">Previous</span>
-								</a>
-							</li>
-							<li class="page-item"><a class="page-link" href="dashboard-my-ads">1</a></li>
-							<li class="page-item active"><a class="page-link" href="dashboard-my-ads">2</a></li>
-							<li class="page-item"><a class="page-link" href="dashboard-my-ads">3</a></li>
-							<li class="page-item">
-								<a class="page-link" href="dashboard-my-ads" aria-label="Next">
-									<span aria-hidden="true">&raquo;</span>
-									<span class="sr-only">Next</span>
-								</a>
-							</li>
-						</ul>
-					</nav>
-				</div>
-				<!-- pagination -->
-
-			</div>
-		</div>
-		<!-- Row End -->
-	</div>
-	<!-- Container End -->
+      </div>
+    </div>
+    <!-- Row End -->
+  </div>
+  <!-- Container End -->
 </section>
+
 <!--============================
 =            Footer            =
 =============================-->
@@ -508,10 +366,10 @@
       <div class="col-lg-6">
         <!-- Social Icons -->
         <ul class="social-media-icons text-center text-lg-right">
-          <li><a class="fa fa-facebook" href="https://www.facebook.com"></a></li>
-          <li><a class="fa fa-twitter" href="https://www.twitter.com"></a></li>
-          <li><a class="fa fa-pinterest-p" href="https://www.pinterest.com"></a></li>
-          <li><a class="fa fa-github-alt" href="https://www.github.com"></a></li>
+          <li><a class="fa fa-facebook" href="https://www.facebook.com/themefisher"></a></li>
+          <li><a class="fa fa-twitter" href="https://www.twitter.com/themefisher"></a></li>
+          <li><a class="fa fa-pinterest-p" href="https://www.pinterest.com/themefisher"></a></li>
+          <li><a class="fa fa-github-alt" href="https://www.github.com/themefisher"></a></li>
         </ul>
       </div>
     </div>
@@ -534,12 +392,30 @@ Essential Scripts
 <script src="../plugins/raty/jquery.raty-fa.js"></script>
 <script src="../plugins/slick/slick.min.js"></script>
 <script src="../plugins/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+<script src="../plugins/jquery-nice-select/js/sweetAlert.js"></script>
 <!-- google map -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>
 <script src="../plugins/google-map/map.js" defer></script>
 
 <script src="../js/script.js"></script>
+                <script>
+                  $(document).ready(function(){
 
+                      //display user Ads in table 
+                    displayAllUSerAds()
+                    function displayAllUSerAds(){
+                      $.ajax({
+                        url:'../controller/process.php',
+                        method: 'post',
+                        data: {action: 'dispayAds'},
+                        success: function(response){
+                        //   console.log(response)
+                          $("#displaysimp_UserAds").html(response)
+                        }
+                      })
+                    }
+                  })
+                </script>
 </body>
 
 </html>

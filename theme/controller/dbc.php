@@ -146,6 +146,17 @@ class Dbc extends Database{
         $fetchAds = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $fetchAds;
     }
+
+    public function get_SipmUSerAdsImg($simpUser_ImgId){
+        $sql = "SELECT * FROM sipmusersads_img WHERE simpUser_ImgId=:simpUser_ImgId";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute([
+            'simpUser_ImgId'=>$simpUser_ImgId
+        ]);
+        $fetchAds = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $fetchAds;
+    }
+
 }
 // sipmusersads
 // sipmusersads_img
