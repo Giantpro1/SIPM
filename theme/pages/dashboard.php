@@ -214,6 +214,21 @@
 
         </div>
 
+        <!-- modal for view -->
+        <div id="viewSimpUser_Ad" class="modal fade viewSimpUserAds" role="dialog" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+                <div class="modal-content">
+                  <span class="mod-close" data-dismiss="modal" aria-hidden="true"> </span>
+                  <div class="modal-body">
+                    <h4> View note here</h4>
+                    <p><span id="v_AdsImgs">hbsdcjhbdcskj</span></p>
+                    <p><span id="v_AdsCategory"></span></p>
+                    <p><span id="v_AdsImgs"></span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
         <!-- pagination -->
         <div class="pagination justify-content-center">
           <nav aria-label="Page navigation example">
@@ -376,12 +391,60 @@ Essential Scripts
                         method: 'post',
                         data: {action: 'dispayAds'},
                         success: function(response){
-                          console.log(response)
+                          // console.log(response)
                           $("#displaysimp_UserAds").html(response)
                         }
                       })
                     }
                   })
+
+                  //delete Ads
+                  $('body').on('click', '.deleteSimpUserAd', function(e){
+                    e.preventDefault()
+                    deleteAds = $(this).attr('id')
+
+                    swal.fire({
+                      title: 'Delete?',
+                      text: 'Are you sure you want to delete this Ads?',
+                      icon: 'warning',
+                      showCancelButton: true,
+                      confirmButtonColor: "#FF0000",
+                      cancelButtonColor: 'blue',
+                      confirmButtonText: 'Delete Ads'
+                    }).then((result)=>{
+                      if(result.value){
+                        $.ajax({
+                          url: '../controller/process.php',
+                          method: 'POST',
+                          data: {deleteAds: deleteAds},
+                          success: function(response){
+                              swal.fire({
+                                icon: 'success',
+                                text: 'You have successfully deleted your Ads',
+                                title: 'Ads Deleted'
+                              }).then(location.reload())
+                              displayAllUSerAds()
+                          }
+                        })
+                      }
+                    })
+                  })
+
+                          // view ads
+                          $('body').on('click', '.viewSimpUserAd', function(e){
+                            e.preventDefault()
+                            viewSimpAds = $(this).attr('id')
+                            console.log(viewSimpAds)
+
+                            $.ajax({
+                              url: '../controller/process.php',
+                              method: 'POST',
+                              data: {viewSimpAds: viewSimpAds},
+                              success: function(response){
+                                data = JSON.parse(response)
+                              }
+                            })
+                          })
                 </script>
 </body>
 

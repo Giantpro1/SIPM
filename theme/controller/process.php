@@ -138,17 +138,17 @@ if(isset($_FILES['simpUser_AdsImg'])){
                     <div class="">
                     <ul class="list-inline justify-content-center">
                         <li class="list-inline-item">
-                        <a data-toggle="tooltip" data-placement="top" title="view"  id="'.$simpUserAd['id'].'" class="view" >
+                        <a data-toggle="tooltip" data-placement="top" title="view"  id="'.$simpUserAd['sipmuser_PostId'].'" class=" view viewSimpUserAd" >
                             <i class="fa fa-eye"></i>
                         </a>
-                        </li>
+                        </li> 
                         <li class="list-inline-item">
-                        <a class="edit" data-toggle="tooltip" data-placement="top" title="Edit" href="dashboard">
+                        <a class="edit editSimpUSerAd" data-toggle="tooltip" data-placement="top" id="'.$simpUserAd['sipmuser_PostId'].'" title="EditBtn" href="dashboard">
                             <i class="fa fa-pencil"></i>
                         </a>
                         </li>
                         <li class="list-inline-item">
-                        <a class="delete" data-toggle="tooltip" data-placement="top" title="Delete" href="dashboard">
+                        <a class="delete deleteSimpUserAd" data-toggle="tooltip" data-placement="top" id="'.$simpUserAd['sipmuser_PostId'].'" title="DeleteBtn" href="dashboard">
                             <i class="fa fa-trash"></i>
                         </a>
                         </li>
@@ -162,3 +162,12 @@ if(isset($_FILES['simpUser_AdsImg'])){
             echo "You haven't upload any ads";
         }
     }
+    // delete ads
+    if(isset($_POST['deleteAds'])){
+        $sipmuser_PostId =$_POST['deleteAds'];
+        $deleteSipmUserAds = $sipmCur_User->deleteSimpUserAds($sipmuser_PostId);
+        if($deleteSipmUserAds){
+            $deleteSipmUserAdImg =$sipmCur_User->deleteSimpUserAdImg($simpUser_ImgId['sipmuser_PostId']);
+        }
+    }
+

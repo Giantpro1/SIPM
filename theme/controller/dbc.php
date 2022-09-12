@@ -157,6 +157,24 @@ class Dbc extends Database{
         return $fetchAds;
     }
 
+        // delete ads
+
+        public function deleteSimpUserAds($sipmuser_PostId){
+            $sql = "DELETE FROM sipmusersads WHERE sipmuser_PostId=:sipmuser_PostId";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([
+                'sipmuser_PostId'=>$sipmuser_PostId
+            ]);
+            return true;
+        }
+        public function deleteSimpUserAdImg($simpUser_ImgId){
+            $sql = "DELETE FROM sipmusersads_img WHERE simpUser_ImgId=:simpUser_ImgId";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([
+                'simpUser_ImgId'=>$simpUser_ImgId
+            ]);
+            return true;
+        }
 }
 // sipmusersads
 // sipmusersads_img
