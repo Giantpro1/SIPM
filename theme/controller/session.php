@@ -12,13 +12,7 @@ if (!isset($_SESSION['ourUser'])) {
 
   $simp_Mail = $_SESSION['ourUser'];
 
-  // $simpPostId = $_SESSION['userPostId'];
-
   $sipm_Data = $sipmCur_User->simp_CurrentUser($simp_Mail);
-
-  // $simpUserPostId = $sipmCur_User->simpUserPostId($simpPostId);
-
-  // $simp_PostId = $simpUserPostId['sipmuser_PostId'];
 
   $simp_Cid = $sipm_Data['id'];
 
