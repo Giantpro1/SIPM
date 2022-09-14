@@ -175,6 +175,25 @@ class Dbc extends Database{
             ]);
             return true;
         }
+
+        public function Viewget_SipmUSerAds($sipmuser_PostId){
+            $sql = "SELECT * FROM sipmusersads WHERE sipmuser_PostId=:sipmuser_PostId";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([
+                'sipmuser_PostId'=>$sipmuser_PostId
+            ]);
+            $fetchAds = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $fetchAds;
+        }
+        public function Viewget_SipmUSerAdsImg($simpUser_ImgId){
+            $sql = "SELECT * FROM sipmusersads_img WHERE simpUser_ImgId=:simpUser_ImgId";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([
+                'simpUser_ImgId'=>$simpUser_ImgId
+            ]);
+            $fetchAds = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $fetchAds;
+        }
 }
 // sipmusersads
 // sipmusersads_img

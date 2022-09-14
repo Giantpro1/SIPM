@@ -222,8 +222,131 @@
                   <div class="modal-body">
                     <h4> View note here</h4>
                     <p><span id="v_AdsImgs">hbsdcjhbdcskj</span></p>
-                    <p><span id="v_AdsCategory"></span></p>
-                    <p><span id="v_AdsImgs"></span></p>
+                    <p><span id="v_AdsTitle"> </span></p>
+                    <p><span id="v_AdsCategory"> </span></p>
+                    <p><span id="v_AdsDescription"> </span></p>
+                    <p><span id="v_AdsType"> </span></p>
+                    <p><span id="v_AdsProductPrices"> </span></p>
+                    <p><span id="v_AdsAdress"> </span></p>
+                    <p><span id="v_AdsEmail"> </span></p>
+                    <p><span id="v_AdsPosterName"> </span></p>
+                    <p><span id="v_AdsNum"> </span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- edit ads modal -->
+
+        <div id="editSimpUser_Ad" class="modal fade editSimpUSerAd" role="dialog" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+                <div class="modal-content">
+                  <span class="mod-close" data-dismiss="modal" aria-hidden="true"> </span>
+                  <div class="modal-body">
+                    <h4> Edit Ads here</h4>
+                    <section class="advt-post bg-gray py-5">
+                        <div class="container">
+                          <form id ="simpUserAds_Update" action="" enctype="multipart/form-data">
+                            <!-- Post Your ad start -->
+                            <fieldset class="border border-gary px-3 px-md-4 py-4 mb-5">
+                              <div class="row">
+                                <div class="col-lg-12">
+                                  <h3>Post Your ad</h3>
+                                </div>
+                                <div class="col-lg-6">
+                                  <input type="hidden" id="adsPostId">
+                                  <h6 class="font-weight-bold pt-4 pb-1">Title Of Ad:</h6>
+                                  <input type="text" name="simpUser_AdsTitle" id="adsTitle" class="form-control bg-white" placeholder="Ad title go There" required>
+                                  <h6 class="font-weight-bold pt-4 pb-1">Ad Type:</h6>
+                                  <div class="row px-3">
+                                    <div class="col-lg-4 mr-lg-4 my-2 pt-2 pb-1 rounded bg-white">
+                                      <input type="radio" name="sipmUser_AdsType" id="adsType" value="personal" id="personal" required>
+                                      <label for="personal" class="py-2">Personal</label>
+                                    </div>
+                                    <div class="col-lg-4 mr-lg-4 my-2 pt-2 pb-1 rounded bg-white ">
+                                      <input type="radio" name="sipmUser_AdsType" id="adsType" value="business" id="business" required>
+                                      <label for="business" class="py-2">Business</label>
+                                    </div>
+                                  </div>
+                                  <h6 class="font-weight-bold pt-4 pb-1">Description:</h6>
+                                  <textarea name="sipmUser_AdsDescripion" id="adsDescription" class="form-control bg-white" rows="7"
+                                    placeholder="Write details about your product" required></textarea>
+                                </div>
+                                <div class="col-lg-6">
+                                  <h6 class="font-weight-bold pt-4 pb-1">Select Ad Category:</h6>
+                                  <select name="sipmUser_AdsCategory" id="adsCategory" class="form-control w-100 bg-white" id="inputGroupSelect">
+                                    <option value="">Select category</option>
+                                    <option value="Electronic/Gadget">Electronic/Gadget</option>
+                                    <option value="Furnitures">Furnitures</option>
+                                    <option value="Real Estate">Real Estate</option>
+                                    <option value="Vehicles">Vehicles</option>
+                                    <option value="Job/Employments">Job/Employments</option>
+                                    <option value="Restaurant">Restaurant</option>
+                                    <option value="Pets">Pets</option>
+                                    <option value="Shopping">Shopping</option>
+                                    <option value="services">services</option>
+                                  </select>
+                                  <div class="price">
+                                    <h6 class="font-weight-bold pt-4 pb-1">Item Price ($ USD):</h6>
+                                    <div class="row px-3">
+                                      <div class="col-lg-6 rounded my-2 px-0">
+                                        <input type="text" name="sipmUser_AdsPrice" id="adsPrice" class="form-control bg-white" placeholder="Price" id="price">
+                                      </div>
+                                      <div class="col-lg-4 ml-lg-4 my-2 pt-2 pb-1 rounded bg-white ">
+                                        <input type="radio" id="adsNegotiaion" name="sipmUser_AdsNegotiation" value="Negotiable" id="Negotiable">
+                                        <label for="Negotiable" class="py-2">Negotiable</label>
+                                      </div>
+                                      <div class="col-lg-4 ml-lg-4 my-2 pt-2 pb-1 rounded bg-white ">
+                                        <input type="radio" id="adsNegotiaion"  name="sipmUser_AdsNegotiation" value="Not Negotiable" id="Negotiable">
+                                        <label for="Negotiable" class="py-2">Not Negotiable</label>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="choose-file text-center my-4 py-4 rounded bg-white">
+                                    <label for="file-upload">
+                                      <span class="d-block font-weight-bold text-dark">Drop files anywhere to upload</span>
+                                      <span class="d-block">or</span>
+                                      <span class="d-block btn bg-primary text-white my-3 select-files">Select files</span>
+                                      <span class="d-block">Maximum upload file size: 5MB</span>
+                                      <input type="file" class="form-control-file d-none" id="file-upload" multiple name="simpUser_AdsImg[]">
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                            </fieldset>
+                            <!-- Post Your ad end -->
+
+                            <!-- seller-information start -->
+                            <fieldset class="border px-3 px-md-4 py-4 my-5 seller-information bg-gray">
+                              <div class="row">
+                                <div class="col-lg-12">
+                                  <h3>Seller Information</h3>
+                                </div>
+                                <div class="col-lg-6">
+                                  <h6 class="font-weight-bold pt-4 pb-1">Contact Name:</h6>
+                                  <input type="text" name="sipmUser_AdsContactName" id="adsPosterName" placeholder="Contact name" class="form-control bg-white" required>
+                                  <h6 class="font-weight-bold pt-4 pb-1">Contact Number:</h6>
+                                  <input type="text" name="sipmUser_AdsContactNumber" id="adsPosterNumber" placeholder="Contact Number" class="form-control bg-white" required>
+                                </div>
+                                <div class="col-lg-6">
+                                  <h6 class="font-weight-bold pt-4 pb-1">Contact Email:</h6>
+                                  <input type="email" name="sipmUser_AdsContactEmail" id="adsPosterEmail" placeholder="name@yourmail.com" class="form-control bg-white" required>
+                                  <h6 class="font-weight-bold pt-4 pb-1">Contact Address:</h6>
+                                  <input type="text" name="sipmUser_AdsContactAddress" id="adsPosterAddress" placeholder="Your address" class="form-control bg-white" required>
+                                </div>
+                              </div>
+                            </fieldset>
+                            <div class="checkbox d-inline-flex">
+                              <input type="checkbox" id="terms-&-condition" class="mt-1">
+                              <label for="terms-&-condition" class="ml-2">By click you must agree with our
+                                <span> <a class="text-success" href="terms-condition">Terms & Condition and Posting
+                                    Rules.</a></span>
+                              </label>
+                            </div>
+                            <button id="simpUserAds_UpdateBtn" type="submit" class="btn btn-primary d-block mt-2">Post Your Ad</button>
+                          </form>
+                        </div>
+                      </section>
                   </div>
                 </div>
               </div>
@@ -434,14 +557,53 @@ Essential Scripts
                           $('body').on('click', '.viewSimpUserAd', function(e){
                             e.preventDefault()
                             viewSimpAds = $(this).attr('id')
-                            console.log(viewSimpAds)
+                            // console.log(viewSimpAds)
 
                             $.ajax({
                               url: '../controller/process.php',
                               method: 'POST',
                               data: {viewSimpAds: viewSimpAds},
                               success: function(response){
+                                // console.log(response)
                                 data = JSON.parse(response)
+                                console.log(data)
+                                // $("#v_AdsImgs").text(data.sipmUser_AdsDescripion)
+                                $("#v_AdsTitle").text(data.simpUser_AdsTitle)
+                                $("#v_AdsCategory").text(data.sipmUser_AdsCategory)
+                                $("#v_AdsDescription").text(data.sipmUser_AdsDescripion)
+                                $("#v_AdsType").text(data.sipmUser_AdsType)
+                                $("#v_AdsProductPrices").text(data.sipmUser_AdsPrice)
+                                $("#v_AdsAdress").text(data.sipmUser_AdsContactAddress)
+                                $("#v_AdsEmail").text(data.sipmUser_AdsContactEmail)
+                                $("#v_AdsPosterName").text(data.sipmUser_AdsContactName)
+                                $("#v_AdsNum").text(data.sipmUser_AdsContactNumber)
+                              }
+                            })
+                          })
+
+                          // edit ads
+                          $('body').on('click', '.editSimpUSerAd', function(e){
+                            e.preventDefault()
+                            editSimpAds = $(this).attr('id')
+                            // console.log(editSimpAds)
+                            $.ajax({
+                              url: '../controller/process.php',
+                              method: 'POST',
+                              data: {editSimpAds: editSimpAds},
+                              success: function(response){
+                                data = JSON.parse(response)
+                                // console.log(data)
+                                $("#adsTitle").val(data.simpUser_AdsTitle)
+                                $("#adsCategory").val(data.sipmUser_AdsCategory)
+                                $("#adsDescription").val(data.sipmUser_AdsDescripion)
+                                $("#adsPrice").val(data.sipmUser_AdsPrice)
+                                $("#adsNegotiaion").val(data.sipmUser_AdsNegotiation)
+                                $("#adsPosterAddress").val(data.sipmUser_AdsContactAddress)
+                                $("#adsPosterEmail").val(data.sipmUser_AdsContactEmail)
+                                $("#adsPosterName").val(data.sipmUser_AdsContactName)
+                                $("#adsPosterNumber").val(data.sipmUser_AdsContactNumber)
+                                $("#adsType").val(data.sipmUser_AdsType)
+                                $("#adsPostId").val(data.sipmuser_PostId)
                               }
                             })
                           })

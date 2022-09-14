@@ -138,17 +138,17 @@ if(isset($_FILES['simpUser_AdsImg'])){
                     <div class="">
                     <ul class="list-inline justify-content-center">
                         <li class="list-inline-item">
-                        <a data-toggle="tooltip" data-placement="top" title="view"  id="'.$simpUserAd['sipmuser_PostId'].'" class=" view viewSimpUserAd" >
+                        <a data-toggle="modal" data-placement="top" title="view" data-target="#viewSimpUser_Ad"  id="'.$simpUserAd['sipmuser_PostId'].'" class=" view viewSimpUserAd" >
                             <i class="fa fa-eye"></i>
                         </a>
                         </li> 
                         <li class="list-inline-item">
-                        <a class="edit editSimpUSerAd" data-toggle="tooltip" data-placement="top" id="'.$simpUserAd['sipmuser_PostId'].'" title="EditBtn" href="dashboard">
+                        <a class="edit editSimpUSerAd" data-toggle="modal" data-target="#editSimpUser_Ad" data-placement="top" id="'.$simpUserAd['sipmuser_PostId'].'" title="EditBtn" href="dashboard">
                             <i class="fa fa-pencil"></i>
                         </a>
                         </li>
                         <li class="list-inline-item">
-                        <a class="delete deleteSimpUserAd" data-toggle="tooltip" data-placement="top" id="'.$simpUserAd['sipmuser_PostId'].'" title="DeleteBtn" href="dashboard">
+                        <a class="delete deleteSimpUserAd" data-toggle="" data-target="#" data-placement="top" id="'.$simpUserAd['sipmuser_PostId'].'" title="DeleteBtn" href="dashboard">
                             <i class="fa fa-trash"></i>
                         </a>
                         </li>
@@ -171,3 +171,26 @@ if(isset($_FILES['simpUser_AdsImg'])){
         }
     }
 
+    // view ads
+
+    if(isset($_POST['viewSimpAds'])){
+        $simp_Cid = $_POST['viewSimpAds'];
+        $viewSimpUserAds = $sipmCur_User->Viewget_SipmUSerAds($simp_Cid);
+        echo json_encode($viewSimpUserAds);
+    }
+            // if($viewSimpUserAds){
+
+        // }
+
+    // if(isset($_POST['viewSimpAds'])){
+    //     $simp_Cid = $_POST['viewSimpAds'];
+    //         $viewSimpUserAdimg = $sipmCur_User->Viewget_SipmUSerAdsImg($simp_Cid['sipmuser_PostId']);
+    //         echo $viewSimpUserAdimg;
+    // }
+
+    //edit ads
+    if(isset($_POST['editSimpAds'])){
+        $simp_Cid = $_POST['editSimpAds'];
+        $viewSimpUserAds = $sipmCur_User->Viewget_SipmUSerAds($simp_Cid);
+        echo json_encode($viewSimpUserAds);
+    }

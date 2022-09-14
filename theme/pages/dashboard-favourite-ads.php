@@ -219,7 +219,6 @@
 						</thead>
 						<tbody>
 							<tr>
-
 								<td class="product-thumb">
 									<img width="80px" height="auto" src="../images/products/products-1.jpg" alt="image description"></td>
 								<td class="product-details">
