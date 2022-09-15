@@ -40,7 +40,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<nav class="navbar navbar-expand-lg navbar-light navigation">
-					<a class="navbar-brand" href="index.html">
+					<a class="navbar-brand" href="../index">
 						<img src="../images/logo.png" alt="">
 					</a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -50,7 +50,7 @@
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav ml-auto main-nav ">
 							<li class="nav-item @@home">
-								<a class="nav-link" href="index.html">Home</a>
+								<a class="nav-link" href="../index">Home</a>
 							</li>
 							<li class="nav-item dropdown dropdown-slide @@dashboard">
 								<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#!">Dashboard<span><i class="fa fa-angle-down"></i></span>
@@ -58,18 +58,18 @@
 
 								<!-- Dropdown list -->
 								<ul class="dropdown-menu">
-									<li><a class="dropdown-item @@dashboardPage" href="dashboard.html">Dashboard</a></li>
-									<li><a class="dropdown-item @@dashboardMyAds" href="dashboard-my-ads.html">Dashboard My Ads</a></li>
-									<li><a class="dropdown-item @@dashboardFavouriteAds" href="dashboard-favourite-ads.html">Dashboard Favourite Ads</a></li>
-									<li><a class="dropdown-item @@dashboardArchivedAds" href="dashboard-archived-ads.html">Dashboard Archived Ads</a></li>
-									<li><a class="dropdown-item @@dashboardPendingAds" href="dashboard-pending-ads.html">Dashboard Pending Ads</a></li>
+									<li><a class="dropdown-item @@dashboardPage" href="dashboard">Dashboard</a></li>
+									<li><a class="dropdown-item @@dashboardMyAds" href="dashboard-my-ads">Dashboard My Ads</a></li>
+									<li><a class="dropdown-item @@dashboardFavouriteAds" href="dashboard-favourite-ads">Dashboard Favourite Ads</a></li>
+									<li><a class="dropdown-item @@dashboardArchivedAds" href="dashboard-archived-ads">Dashboard Archived Ads</a></li>
+									<li><a class="dropdown-item @@dashboardPendingAds" href="dashboard-pending-ads">Dashboard Pending Ads</a></li>
 									
 									<li class="dropdown dropdown-submenu dropright">
 										<a class="dropdown-item dropdown-toggle" href="#!" id="dropdown0501" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sub Menu</a>
 					
 										<ul class="dropdown-menu" aria-labelledby="dropdown0501">
-											<li><a class="dropdown-item" href="index.html">Submenu 01</a></li>
-											<li><a class="dropdown-item" href="index.html">Submenu 02</a></li>
+											<li><a class="dropdown-item" href="../index">Submenu 01</a></li>
+											<li><a class="dropdown-item" href="../index">Submenu 02</a></li>
 										</ul>
 									</li>
 								</ul>
@@ -80,16 +80,16 @@
 								</a>
 								<!-- Dropdown list -->
 								<ul class="dropdown-menu">
-									<li><a class="dropdown-item @@about" href="about-us.html">About Us</a></li>
-									<li><a class="dropdown-item @@contact" href="contact-us.html">Contact Us</a></li>
-									<li><a class="dropdown-item @@profile" href="user-profile.html">User Profile</a></li>
-									<li><a class="dropdown-item @@404" href="404.html">404 Page</a></li>
-									<li><a class="dropdown-item @@package" href="package.html">Package</a></li>
-									<li><a class="dropdown-item @@singlePage" href="single.html">Single Page</a></li>
-									<li><a class="dropdown-item @@store" href="store.html">Store Single</a></li>
-									<li><a class="dropdown-item @@blog" href="blog.html">Blog</a></li>
-									<li><a class="dropdown-item @@singleBlog" href="single-blog.html">Blog Details</a></li>
-									<li><a class="dropdown-item @@terms" href="terms-condition.html">Terms &amp; Conditions</a></li>
+									<li><a class="dropdown-item @@about" href="about-us">About Us</a></li>
+									<li><a class="dropdown-item @@contact" href="contact-us">Contact Us</a></li>
+									<li><a class="dropdown-item @@profile" href="user-profile">User Profile</a></li>
+									<li><a class="dropdown-item @@404" href="404">404 Page</a></li>
+									<li><a class="dropdown-item @@package" href="package">Package</a></li>
+									<li><a class="dropdown-item @@singlePage" href="single">Single Page</a></li>
+									<li><a class="dropdown-item @@store" href="store">Store Single</a></li>
+									<li><a class="dropdown-item @@blog" href="blog">Blog</a></li>
+									<li><a class="dropdown-item @@singleBlog" href="single-blog">Blog Details</a></li>
+									<li><a class="dropdown-item @@terms" href="terms-condition">Terms &amp; Conditions</a></li>
 								</ul>
 							</li>
 							<li class="nav-item dropdown dropdown-slide active">
@@ -98,15 +98,15 @@
 								</a>
 								<!-- Dropdown list -->
 								<ul class="dropdown-menu">
-									<li><a class="dropdown-item @@category" href="category.html">Ad-Gird View</a></li>
-									<li><a class="dropdown-item active" href="ad-list-view.html">Ad-List View</a></li>
+									<li><a class="dropdown-item @@category" href="category">Ad-Gird View</a></li>
+									<li><a class="dropdown-item active" href="ad-list-view">Ad-List View</a></li>
 									
 									<li class="dropdown dropdown-submenu dropleft">
 										<a class="dropdown-item dropdown-toggle" href="#!" id="dropdown0201" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sub Menu</a>
 					
 										<ul class="dropdown-menu" aria-labelledby="dropdown0201">
-											<li><a class="dropdown-item" href="index.html">Submenu 01</a></li>
-											<li><a class="dropdown-item" href="index.html">Submenu 02</a></li>
+											<li><a class="dropdown-item" href="../index">Submenu 01</a></li>
+											<li><a class="dropdown-item" href="../index">Submenu 02</a></li>
 										</ul>
 									</li>
 								</ul>
@@ -114,10 +114,10 @@
 						</ul>
 						<ul class="navbar-nav ml-auto mt-10">
 							<li class="nav-item">
-								<a class="nav-link login-button" href="login.html">Login</a>
+								<a class="nav-link login-button" href="login">Login</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link text-white add-button" href="ad-listing.html"><i class="fa fa-plus-circle"></i> Add Listing</a>
+								<a class="nav-link text-white add-button" href="ad-listing"><i class="fa fa-plus-circle"></i> Add Listing</a>
 							</li>
 						</ul>
 					</div>
@@ -175,22 +175,22 @@
 					<div class="widget category-list">
 	<h4 class="widget-header">All Category</h4>
 	<ul class="category-list">
-		<li><a href="category.html">Laptops <span>93</span></a></li>
-		<li><a href="category.html">Iphone <span>233</span></a></li>
-		<li><a href="category.html">Microsoft  <span>183</span></a></li>
-		<li><a href="category.html">Monitors <span>343</span></a></li>
+		<li><a href="category">Laptops <span>93</span></a></li>
+		<li><a href="category">Iphone <span>233</span></a></li>
+		<li><a href="category">Microsoft  <span>183</span></a></li>
+		<li><a href="category">Monitors <span>343</span></a></li>
 	</ul>
 </div>
 
 <div class="widget category-list">
 	<h4 class="widget-header">Nearby</h4>
 	<ul class="category-list">
-		<li><a href="category.html">New York <span>93</span></a></li>
-		<li><a href="category.html">New Jersy <span>233</span></a></li>
-		<li><a href="category.html">Florida  <span>183</span></a></li>
-		<li><a href="category.html">California <span>120</span></a></li>
-		<li><a href="category.html">Texas <span>40</span></a></li>
-		<li><a href="category.html">Alaska <span>81</span></a></li>
+		<li><a href="category">New York <span>93</span></a></li>
+		<li><a href="category">New Jersy <span>233</span></a></li>
+		<li><a href="category">Florida  <span>183</span></a></li>
+		<li><a href="category">California <span>120</span></a></li>
+		<li><a href="category">Texas <span>40</span></a></li>
+		<li><a href="category">Alaska <span>81</span></a></li>
 	</ul>
 </div>
 
@@ -262,10 +262,10 @@
 								<strong>Views</strong>
 								<ul class="list-inline view-switcher">
 									<li class="list-inline-item">
-										<a href="category.html"><i class="fa fa-th-large"></i></a>
+										<a href="category"><i class="fa fa-th-large"></i></a>
 									</li>
 									<li class="list-inline-item">
-										<a href="category.html" class="text-info"><i class="fa fa-reorder"></i></a>
+										<a href="category" class="text-info"><i class="fa fa-reorder"></i></a>
 									</li>
 								</ul>
 							</div>
@@ -277,7 +277,7 @@
 				<div class="ad-listing-list mt-20">
     <div class="row p-lg-3 p-sm-5 p-4">
         <div class="col-lg-4 align-self-center">
-            <a href="single.html">
+            <a href="single">
                 <img src="../images/products/products-1.jpg" class="img-fluid" alt="">
             </a>
         </div>
@@ -286,10 +286,10 @@
                 <div class="col-lg-6 col-md-10">
                     <div class="ad-listing-content">
                         <div>
-                            <a href="single.html" class="font-weight-bold">11inch Macbook Air</a>
+                            <a href="single" class="font-weight-bold">11inch Macbook Air</a>
                         </div>
                         <ul class="list-inline mt-2 mb-3">
-                            <li class="list-inline-item"><a href="category.html"> <i class="fa fa-folder-open-o"></i> Electronics</a></li>
+                            <li class="list-inline-item"><a href="category"> <i class="fa fa-folder-open-o"></i> Electronics</a></li>
                             <li class="list-inline-item"><a href="category.htm"><i class="fa fa-calendar"></i>26th December</a></li>
                         </ul>
                         <p class="pr-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
@@ -313,7 +313,7 @@
 				<div class="ad-listing-list mt-20">
     <div class="row p-lg-3 p-sm-5 p-4">
         <div class="col-lg-4 align-self-center">
-            <a href="single.html">
+            <a href="single">
                 <img src="../images/products/products-2.jpg" class="img-fluid" alt="">
             </a>
         </div>
@@ -322,10 +322,10 @@
                 <div class="col-lg-6 col-md-10">
                     <div class="ad-listing-content">
                         <div>
-                            <a href="single.html" class="font-weight-bold">Study Table Combo</a>
+                            <a href="single" class="font-weight-bold">Study Table Combo</a>
                         </div>
                         <ul class="list-inline mt-2 mb-3">
-                            <li class="list-inline-item"><a href="category.html"> <i class="fa fa-folder-open-o"></i> Electronics</a></li>
+                            <li class="list-inline-item"><a href="category"> <i class="fa fa-folder-open-o"></i> Electronics</a></li>
                             <li class="list-inline-item"><a href="category.htm"><i class="fa fa-calendar"></i>26th December</a></li>
                         </ul>
                         <p class="pr-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
@@ -349,7 +349,7 @@
 				<div class="ad-listing-list mt-20">
     <div class="row p-lg-3 p-sm-5 p-4">
         <div class="col-lg-4 align-self-center">
-            <a href="single.html">
+            <a href="single">
                 <img src="../images/products/products-3.jpg" class="img-fluid" alt="">
             </a>
         </div>
@@ -358,10 +358,10 @@
                 <div class="col-lg-6 col-md-10">
                     <div class="ad-listing-content">
                         <div>
-                            <a href="single.html" class="font-weight-bold">11inch Macbook Air</a>
+                            <a href="single" class="font-weight-bold">11inch Macbook Air</a>
                         </div>
                         <ul class="list-inline mt-2 mb-3">
-                            <li class="list-inline-item"><a href="category.html"> <i class="fa fa-folder-open-o"></i> Electronics</a></li>
+                            <li class="list-inline-item"><a href="category"> <i class="fa fa-folder-open-o"></i> Electronics</a></li>
                             <li class="list-inline-item"><a href="category.htm"><i class="fa fa-calendar"></i>26th December</a></li>
                         </ul>
                         <p class="pr-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
@@ -385,7 +385,7 @@
 				<div class="ad-listing-list mt-20">
     <div class="row p-lg-3 p-sm-5 p-4">
         <div class="col-lg-4 align-self-center">
-            <a href="single.html">
+            <a href="single">
                 <img src="../images/products/products-4.jpg" class="img-fluid" alt="">
             </a>
         </div>
@@ -394,10 +394,10 @@
                 <div class="col-lg-6 col-md-10">
                     <div class="ad-listing-content">
                         <div>
-                            <a href="single.html" class="font-weight-bold">Study Table Combo</a>
+                            <a href="single" class="font-weight-bold">Study Table Combo</a>
                         </div>
                         <ul class="list-inline mt-2 mb-3">
-                            <li class="list-inline-item"><a href="category.html"> <i class="fa fa-folder-open-o"></i> Electronics</a></li>
+                            <li class="list-inline-item"><a href="category"> <i class="fa fa-folder-open-o"></i> Electronics</a></li>
                             <li class="list-inline-item"><a href="category.htm"><i class="fa fa-calendar"></i>26th December</a></li>
                         </ul>
                         <p class="pr-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
@@ -421,7 +421,7 @@
 				<div class="ad-listing-list mt-20">
     <div class="row p-lg-3 p-sm-5 p-4">
         <div class="col-lg-4 align-self-center">
-            <a href="single.html">
+            <a href="single">
                 <img src="../images/products/products-1.jpg" class="img-fluid" alt="">
             </a>
         </div>
@@ -430,10 +430,10 @@
                 <div class="col-lg-6 col-md-10">
                     <div class="ad-listing-content">
                         <div>
-                            <a href="single.html" class="font-weight-bold">11inch Macbook Air</a>
+                            <a href="single" class="font-weight-bold">11inch Macbook Air</a>
                         </div>
                         <ul class="list-inline mt-2 mb-3">
-                            <li class="list-inline-item"><a href="category.html"> <i class="fa fa-folder-open-o"></i> Electronics</a></li>
+                            <li class="list-inline-item"><a href="category"> <i class="fa fa-folder-open-o"></i> Electronics</a></li>
                             <li class="list-inline-item"><a href="category.htm"><i class="fa fa-calendar"></i>26th December</a></li>
                         </ul>
                         <p class="pr-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
@@ -461,16 +461,16 @@
 					<nav aria-label="Page navigation example">
 						<ul class="pagination">
 							<li class="page-item">
-								<a class="page-link" href="ad-list-view.html" aria-label="Previous">
+								<a class="page-link" href="ad-list-view" aria-label="Previous">
 									<span aria-hidden="true">&laquo;</span>
 									<span class="sr-only">Previous</span>
 								</a>
 							</li>
-							<li class="page-item"><a class="page-link" href="ad-list-view.html">1</a></li>
-							<li class="page-item active"><a class="page-link" href="ad-list-view.html">2</a></li>
-							<li class="page-item"><a class="page-link" href="ad-list-view.html">3</a></li>
+							<li class="page-item"><a class="page-link" href="ad-list-view">1</a></li>
+							<li class="page-item active"><a class="page-link" href="ad-list-view">2</a></li>
+							<li class="page-item"><a class="page-link" href="ad-list-view">3</a></li>
 							<li class="page-item">
-								<a class="page-link" href="ad-list-view.html" aria-label="Next">
+								<a class="page-link" href="ad-list-view" aria-label="Next">
 									<span aria-hidden="true">&raquo;</span>
 									<span class="sr-only">Next</span>
 								</a>
@@ -508,11 +508,11 @@
         <div class="block">
           <h4>Site Pages</h4>
           <ul>
-            <li><a href="dashboard-my-ads.html">My Ads</a></li>
-            <li><a href="dashboard-favourite-ads.html">Favourite Ads</a></li>
-            <li><a href="dashboard-archived-ads.html">Archived Ads</a></li>
-            <li><a href="dashboard-pending-ads.html">Pending Ads</a></li>
-            <li><a href="terms-condition.html">Terms & Conditions</a></li>
+            <li><a href="dashboard-my-ads">My Ads</a></li>
+            <li><a href="dashboard-favourite-ads">Favourite Ads</a></li>
+            <li><a href="dashboard-archived-ads">Archived Ads</a></li>
+            <li><a href="dashboard-pending-ads">Pending Ads</a></li>
+            <li><a href="terms-condition">Terms & Conditions</a></li>
           </ul>
         </div>
       </div>
@@ -521,12 +521,12 @@
         <div class="block">
           <h4>Admin Pages</h4>
           <ul>
-            <li><a href="category.html">Category</a></li>
-            <li><a href="single.html">Single Page</a></li>
-            <li><a href="store.html">Store Single</a></li>
-            <li><a href="single-blog.html">Single Post</a>
+            <li><a href="category">Category</a></li>
+            <li><a href="single">Single Page</a></li>
+            <li><a href="store">Store Single</a></li>
+            <li><a href="single-blog">Single Post</a>
             </li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="blog">Blog</a></li>
 
 
 
@@ -538,15 +538,15 @@
         <!-- App promotion -->
         <div class="block-2 app-promotion">
           <div class="mobile d-flex  align-items-center">
-            <a href="index.html">
+            <a href="../index">
               <!-- Icon -->
               <img src="../images/footer/phone-icon.png" alt="mobile-icon">
             </a>
             <p class="mb-0">Get the Dealsy Mobile App and Save more</p>
           </div>
           <div class="download-btn d-flex my-3">
-            <a href="index.html"><img src="../images/apps/google-play-store.png" class="img-fluid" alt=""></a>
-            <a href="index.html" class=" ml-3"><img src="../images/apps/apple-app-store.png" class="img-fluid" alt=""></a>
+            <a href="../index"><img src="../images/apps/google-play-store.png" class="img-fluid" alt=""></a>
+            <a href="../index" class=" ml-3"><img src="../images/apps/apple-app-store.png" class="img-fluid" alt=""></a>
           </div>
         </div>
       </div>
