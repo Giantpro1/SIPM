@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once(__DIR__ . '/vendor/autoload.php');
+// require_once(__DIR__ . '/vendor/autoload.php');
 require_once 'dbc.php';
 $simpUSer = new Dbc;
 
@@ -45,6 +45,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'simp_Reg'){
         
  
 }
+
 if(isset($_POST['action']) && $_POST['action'] == 'simp_login'){
    
     $simp_UserName =$simpUSer->test_input($_POST['simp_UserName']);
