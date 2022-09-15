@@ -136,7 +136,7 @@
 			<div class="col-lg-4">
 				<div class="sidebar">
 					<!-- User Widget -->
-					<div class="widget user">
+					<div class="widget user shadow">
 						<!-- User Image -->
 						<div class="image d-flex justify-content-center">
 							<?php if (!$simpUser_ProPic) : ?>
@@ -149,7 +149,7 @@
 						<h5 class="text-center"><?=$simpUserName; ?></h5>
 					</div>
 					<!-- Dashboard Links -->
-          <div class="widget user-dashboard-menu">
+          <div class="widget user-dashboard-menu shadow">
             <ul>
               <li><a href="../index">Savings Dashboard</a></li>
               <li><a href="../index">Saved Offer <span>(5)</span></a></li>
@@ -159,16 +159,16 @@
           </div>
 				</div>
 			</div>
-			<div class="col-lg-8">
+			<div class="col-lg-8 ">
 				<!-- Edit Profile Welcome Text -->
-				<div class="widget welcome-message">
+				<div class="widget welcome-message shadow">
 					<h2>Edit profile</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
 				</div>
 				<!-- Edit Personal Info -->
 				<div class="row">
 					<div class="col-lg-6 col-md-6">
-						<div class="widget personal-info">
+						<div class="widget personal-info shadow">
 							<h3 class="widget-header user">Edit Personal Information</h3>
 							<form id="sipmUser_UpdateProfile" action=""  enctype="multipart/form-data">
 								<!-- First Name -->
@@ -210,7 +210,7 @@
 					</div>
 					<div class="col-lg-6 col-md-6">
 						<!-- Change Password -->
-					<div class="widget change-password">
+					<div class="widget change-password shadow">
 						<h3 class="widget-header user">Edit Password</h3>
 						<form action="" id="sipmUser_UpdatePassword">
 							<p class="passError text-danger"></p>
@@ -236,7 +236,7 @@
 					</div>
 					<div class="col-lg-6 col-md-6">
 						<!-- Change Email Address -->
-					<div class="widget change-email mb-0">
+					<div class="widget change-email mb-0 shadow">
 						<h3 class="widget-header user">Edit Email Address</h3>
 						<form action="#" id="sipmUser_UpdateEmail">
 							<!-- Current Password -->

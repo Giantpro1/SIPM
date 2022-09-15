@@ -134,7 +134,7 @@
       <div class="col-lg-4">
         <div class="sidebar">
           <!-- User Widget -->
-          <div class="widget user-dashboard-profile">
+          <div class="widget user-dashboard-profile shadow">
             <!-- User Image -->
             <div class="profile-thumb">
               <?php if(!$simpUser_ProPic):?>
@@ -149,7 +149,7 @@
             <a href="user-profile" class="btn btn-main-sm">Edit Profile</a>
           </div>
           <!-- Dashboard Links -->
-          <div class="widget user-dashboard-menu">
+          <div class="widget user-dashboard-menu shadow">
             <ul>
               <li class="active"><a href="dashboard-my-ads"><i class="fa fa-user"></i> My Ads</a></li>
               <li><a href="dashboard-favourite-ads"><i class="fa fa-bookmark-o"></i> Favourite Ads
@@ -195,7 +195,7 @@
       </div>
       <div class="col-lg-8">
         <!-- Recently Favorited -->
-        <div class="widget dashboard-container my-adslist">
+        <div class="widget dashboard-container my-adslist shadow">
           <h3 class="widget-header">My Ads</h3>
           <table class="table table-responsive product-dashboard-table">
             <thead>
