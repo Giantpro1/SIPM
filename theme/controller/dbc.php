@@ -194,6 +194,37 @@ class Dbc extends Database{
             $fetchAds = $stmt->fetch(PDO::FETCH_ASSOC);
             return $fetchAds;
         }
+
+        public function UpdateSimpUserAds($sipmuser_PostId, $simpUser_AdsTitle, $sipmUser_AdsPrice, $sipmUser_AdsCategory, $sipmUser_AdsType, $sipmUser_AdsDescripion,
+         $sipmUser_AdsNegotiation, $sipmUser_AdsContactAddress, $sipmUser_AdsContactEmail, $sipmUser_AdsContactName, $sipmUser_AdsContactNumber){
+            $sql = "UPDATE sipmusersads SET simpUser_AdsTitle=:simpUser_AdsTitle, sipmUser_AdsPrice=:sipmUser_AdsPrice, sipmUser_AdsCategory=:sipmUser_AdsCategory,
+             sipmUser_AdsType=:sipmUser_AdsType, sipmUser_AdsDescripion=:sipmUser_AdsDescripion, sipmUser_AdsNegotiation=:sipmUser_AdsNegotiation, sipmUser_AdsContactAddress=:sipmUser_AdsContactAddress, sipmUser_AdsContactEmail=:sipmUser_AdsContactEmail, sipmUser_AdsContactName=:sipmUser_AdsContactName, sipmUser_AdsContactNumber=:sipmUser_AdsContactNumber WHERE sipmuser_PostId=:sipmuser_PostId";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([
+                'sipmuser_PostId'=>$sipmuser_PostId,
+                'simpUser_AdsTitle'=>$simpUser_AdsTitle,
+                'sipmUser_AdsPrice'=>$sipmUser_AdsPrice,
+                'sipmUser_AdsCategory'=>$sipmUser_AdsCategory,
+                'sipmUser_AdsType'=>$sipmUser_AdsType,
+                'sipmUser_AdsDescripion'=>$sipmUser_AdsDescripion,
+                'sipmUser_AdsNegotiation'=>$sipmUser_AdsNegotiation,
+                'sipmUser_AdsContactAddress'=>$sipmUser_AdsContactAddress,
+                'sipmUser_AdsContactEmail'=>$sipmUser_AdsContactEmail,
+                'sipmUser_AdsContactName'=>$sipmUser_AdsContactName,
+                'sipmUser_AdsContactNumber'=>$sipmUser_AdsContactNumber
+            ]); 
+            return true;
+        }
+
+        public function UpdateSimpUserAdsImg($simpUser_ImgId, $simpUser_AdsImg){
+            $sql = "UPDATE sipmusersads_img SET simpUser_AdsImg=:simpUser_AdsImg WHERE simpUser_ImgId=:simpUser_ImgId";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([
+                'simpUser_ImgId'=>$simpUser_ImgId,
+                'simpUser_AdsImg'=>$simpUser_AdsImg
+            ]);
+            return true;
+        }
 }
 // sipmusersads
 // sipmusersads_img

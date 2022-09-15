@@ -128,7 +128,7 @@ if(isset($_FILES['simpUser_AdsImg'])){
                     '.$img.'</td>
                 <td class="product-details">
                     <h3 class="title">'.$simpUserAd['simpUser_AdsTitle'].'</h3>
-                    <span class="add-id"><strong>Ad ID:</strong>ng3D5hAMHPajQrM</span>
+                    <span class="add-id"><strong>Ads Product Price:</strong>'.$simpUserAd['sipmUser_AdsPrice'].'</span>
                     <span><strong>Posted on: </strong><time>'.date('F d, Y', strtotime($simpUserAd['simpUser_AdsDate'])).'</time> </span>
                     <span class="status active"><strong>Status</strong>Active</span>
                     <span class="location"><strong>Location</strong>'.substr($simpUserAd['sipmUser_AdsContactAddress'],0,18).'</span>
@@ -177,20 +177,43 @@ if(isset($_FILES['simpUser_AdsImg'])){
         $simp_Cid = $_POST['viewSimpAds'];
         $viewSimpUserAds = $sipmCur_User->Viewget_SipmUSerAds($simp_Cid);
         echo json_encode($viewSimpUserAds);
+        // $sipmuser_PostId = $_POST['viewSimpAds'];
+        // $viewSimpUserAdimg = $sipmCur_User->Viewget_SipmUSerAdsImg($sipmuser_PostId);
+        // echo json_encode($viewSimpUserAdimg);
     }
-            // if($viewSimpUserAds){
-
-        // }
-
-    // if(isset($_POST['viewSimpAds'])){
-    //     $simp_Cid = $_POST['viewSimpAds'];
-    //         $viewSimpUserAdimg = $sipmCur_User->Viewget_SipmUSerAdsImg($simp_Cid['sipmuser_PostId']);
-    //         echo $viewSimpUserAdimg;
-    // }
 
     //edit ads
     if(isset($_POST['editSimpAds'])){
         $simp_Cid = $_POST['editSimpAds'];
         $viewSimpUserAds = $sipmCur_User->Viewget_SipmUSerAds($simp_Cid);
         echo json_encode($viewSimpUserAds);
+    }
+
+    
+    if(isset($_FILES['simpUser_AdsImg'])){
+                $sipmuser_PostId = $sipmCur_User->test_input($_POST['sipmuser_PostId']);
+                $simpUser_AdsTitle = $sipmCur_User->test_input($_POST['simpUser_AdsTitle']);
+                $sipmUser_AdsDescripion = $sipmCur_User->test_input($_POST['sipmUser_AdsDescripion']);
+                $sipmUser_AdsCategory = $sipmCur_User->test_input($_POST['sipmUser_AdsCategory']);
+                $sipmUser_AdsPrice = $sipmCur_User->test_input($_POST['sipmUser_AdsPrice']);
+                $sipmUser_AdsNegotiation = $sipmCur_User->test_input($_POST['sipmUser_AdsNegotiation']);
+                $sipmUser_AdsContactName = $sipmCur_User->test_input($_POST['sipmUser_AdsContactName']);
+                $sipmUser_AdsContactNumber = $sipmCur_User->test_input($_POST['sipmUser_AdsContactNumber']);
+                $sipmUser_AdsContactEmail = $sipmCur_User->test_input($_POST['sipmUser_AdsContactEmail']);
+                $sipmUser_AdsContactAddress = $sipmCur_User->test_input($_POST['sipmUser_AdsContactAddress']);
+        
+                $sipmCur_User->UpdateSimpUserAds($sipmuser_PostId, $simpUser_AdsTitle, $sipmUser_AdsPrice, $sipmUser_AdsCategory, $sipmUser_AdsType, $sipmUser_AdsDescripion, $sipmUser_AdsNegotiation, $sipmUser_AdsContactAddress, $sipmUser_AdsContactEmail, $sipmUser_AdsContactName, $sipmUser_AdsContactNumber);
+
+                if(isset($_FILES['simpUser_AdsImg']) && ($_FILES['simpUser_AdsImg'])){
+
+                    $simpUser_AdsImg = $_FILES['simpUser_AdsImg']['name'];
+                        foreach ($simpUser_AdsImg as $i => $value){
+                            $GTR = time(). '_' . rand(2000,100000). '_'.$simpUser_AdsImg[$i];
+                            $folderForAdsImg = '../images/adsImages/';
+                            $faiPath = $folderForAdsImg.$GTR;
+                            $PathName = $_FILES['simpUser_AdsImg']['tmp_name'][$i];
+                            move_uploaded_file($PathName,$faiPath);
+                            $imgResult = $sipmCur_User->UpdateSimpUserAdsImg($sipmuser_PostId, $GTR);
+                        }
+                }
     }

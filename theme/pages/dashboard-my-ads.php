@@ -218,19 +218,26 @@
         <div id="viewSimpUser_Ad" class="modal fade viewSimpUserAds" role="dialog" tabindex="-1" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered modal-md" role="document">
                 <div class="modal-content">
-                  <span class="mod-close" data-dismiss="modal" aria-hidden="true"> </span>
+                  <div class="modal-header border-bottom-0">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
                   <div class="modal-body">
-                    <h4> View note here</h4>
+                  <h3 class="d-flex justify-content-center text-info"> View Ads here</h3>
+                    <h4>Img Ads</h4>
                     <p><span id="v_AdsImgs">hbsdcjhbdcskj</span></p>
-                    <p><span id="v_AdsTitle"> </span></p>
-                    <p><span id="v_AdsCategory"> </span></p>
-                    <p><span id="v_AdsDescription"> </span></p>
-                    <p><span id="v_AdsType"> </span></p>
-                    <p><span id="v_AdsProductPrices"> </span></p>
-                    <p><span id="v_AdsAdress"> </span></p>
-                    <p><span id="v_AdsEmail"> </span></p>
-                    <p><span id="v_AdsPosterName"> </span></p>
-                    <p><span id="v_AdsNum"> </span></p>
+                    
+                    <h4>Ads Details</h4>
+                    <p class="text-dark text-weight"> Ads Title:<span class="text-primary" id="v_AdsTitle"> </span></p>
+                    <p class="text-dark text-weight"> Ads Category:<span class="text-primary" id="v_AdsCategory"> </span></p>
+                    <p class="text-dark text-weight"> Ads Description: <span class="text-primary" id="v_AdsDescription"> </span></p>
+                    <p class="text-dark text-weight"> Ads Type:<span class="text-primary" id="v_AdsType"> </span></p>
+                    <p class="text-dark text-weight"> Ads Product Price:<span class="text-primary" id="v_AdsProductPrices"> </span></p>
+                    <p class="text-dark text-weight"> Ads Poster Address:<span class="text-primary" id="v_AdsAdress"> </span></p>
+                    <p class="text-dark text-weight"> Ads Poster Email:<span class="text-primary" id="v_AdsEmail"> </span></p>
+                    <p class="text-dark text-weight"> Ads Poster Name:<span class="text-primary" id="v_AdsPosterName"> </span></p>
+                    <p class="text-dark text-weight"> Ads Poster Number:<span class="text-primary" id="v_AdsNum"> </span></p>
                   </div>
                 </div>
               </div>
@@ -241,7 +248,11 @@
         <div id="editSimpUser_Ad" class="modal fade editSimpUSerAd" role="dialog" tabindex="-1" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered modal-md" role="document">
                 <div class="modal-content">
-                  <span class="mod-close" data-dismiss="modal" aria-hidden="true"> </span>
+                  <div class="modal-header border-bottom-0">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
                   <div class="modal-body">
                     <h4> Edit Ads here</h4>
                     <section class="advt-post bg-gray py-5">
@@ -606,6 +617,34 @@ Essential Scripts
                                 $("#adsPostId").val(data.sipmuser_PostId)
                               }
                             })
+                          })
+
+                          // edit ads
+
+                          $("#simpUserAds_Update").submit(function(e){
+                            e.preventDefault()
+                              $.ajax({
+                                url: '../controller/process.php',
+                                method: 'POST',
+                                data: $("#simpUserAds_Update").serialize()+'&action=update_SimpAds',
+                                beforeSend: function(){
+                                  $("#simpUserAds_UpdateBtn").attr('disabled', 'disabled')
+                                  $("#simpUserAds_Update").css('opacity', '.5')
+                                },
+                                success: function(response){
+                                  console.log(response);
+                                  $("#simpUserAds_UpdateBtn").attr('disabled')
+                                  $("#simpUserAds_Update").css('opacity', '')
+                                  $('#simpUserAds_Update')[0].reset()
+                                  $("editSimpUser_Ad").modal('hide')
+                                  Swal.fire({
+                                    icon: 'success',
+                                    text: 'You have successfully Update your Ads',
+                                    title: 'Ads Updated'
+                                  })
+                                  displayAllUSerAds()
+                                }
+                              })
                           })
                 </script>
 
