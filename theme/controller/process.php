@@ -38,7 +38,7 @@ if(isset($_FILES['simpUser_AdsImg'])){
             $resultDetails = $sipmCur_User->simpUser_UploadingAds($simp_Cid, $sipmuser_PostId, $simpUser_AdsTitle, $sipmUser_AdsType, $sipmUser_AdsDescripion, $sipmUser_AdsCategory, $sipmUser_AdsPrice, $sipmUser_AdsNegotiation, $sipmUser_AdsContactName, $sipmUser_AdsContactNumber, $sipmUser_AdsContactEmail, $sipmUser_AdsContactAddress);
                 if($resultDetails){
                     echo "product upload successfully";
-                    $_SESSION['userPostId'] = $sipmuser_PostId;
+                    $_SESSION['sipmuser_PostId'] = $sipmuser_PostId;
                 }
         }else{
             echo "some fields are empty!"; 
@@ -175,11 +175,12 @@ if(isset($_FILES['simpUser_AdsImg'])){
 
     if(isset($_POST['viewSimpAds'])){
         $simp_Cid = $_POST['viewSimpAds'];
+        $sipmuser_PostId = $_POST['viewSimpAds'];
         $viewSimpUserAds = $sipmCur_User->Viewget_SipmUSerAds($simp_Cid);
-        echo json_encode($viewSimpUserAds);
-        // $sipmuser_PostId = $_POST['viewSimpAds'];
-        // $viewSimpUserAdimg = $sipmCur_User->Viewget_SipmUSerAdsImg($sipmuser_PostId);
-        // echo json_encode($viewSimpUserAdimg);
+        $viewSimpUserAdimg = $sipmCur_User->Viewget_SipmUSerAdsImg($sipmuser_PostId);
+
+        $result = array_merge($viewSimpUserAds, $viewSimpUserAdimg);
+        echo json_encode($result);
     }
 
     //edit ads

@@ -225,6 +225,19 @@ class Dbc extends Database{
             ]);
             return true;
         }
+
+        // pending ads
+        public function getPendingAds($sipmuser_PostId){
+            $sql ="SELECT * FROM sipmusersads WHERE sipmuser_PostId=:sipmuser_PostId AND sipmUser_AdsVerified=0";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([
+                'sipmuser_PostId'=>$sipmuser_PostId
+            ]);
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $result;
+        }
+
+        
 }
 // sipmusersads
 // sipmusersads_img

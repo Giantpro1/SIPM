@@ -225,9 +225,10 @@
                     </div>
                   <div class="modal-body">
                   <h3 class="d-flex justify-content-center text-info"> View Ads here</h3>
-                    <h4>Img Ads</h4>
-                    <p><span id="v_AdsImgs">hbsdcjhbdcskj</span></p>
-                    
+                    <h4 class="text-info">Img Ads</h4>
+                    <div id="v_AdsImgs">
+
+                    </div>
                     <h4>Ads Details</h4>
                     <p class="text-dark text-weight"> Ads Title:<span class="text-primary" id="v_AdsTitle"> </span></p>
                     <p class="text-dark text-weight"> Ads Category:<span class="text-primary" id="v_AdsCategory"> </span></p>
@@ -578,7 +579,8 @@ Essential Scripts
                                 // console.log(response)
                                 data = JSON.parse(response)
                                 console.log(data)
-                                // $("#v_AdsImgs").text(data.sipmUser_AdsDescripion)
+                                // $("#v_AdsImgs").val(data.simpUser_AdsImg)
+                                $("#v_AdsImgs").html("<img class='product-thumb rounded-circle img-fluid' src='../images/adsImages/"+data.simpUser_AdsImg+"'>")
                                 $("#v_AdsTitle").text(data.simpUser_AdsTitle)
                                 $("#v_AdsCategory").text(data.sipmUser_AdsCategory)
                                 $("#v_AdsDescription").text(data.sipmUser_AdsDescripion)
@@ -618,7 +620,7 @@ Essential Scripts
                               }
                             })
                           })
-
+                          
                           // edit ads
 
                           $("#simpUserAds_Update").submit(function(e){
