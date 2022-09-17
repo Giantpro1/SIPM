@@ -255,7 +255,7 @@ if(isset($_FILES['simpUser_AdsImg'])){
 												</a>
 											</li>
 											<li class="list-inline-item">
-												<a data-toggle="tooltip" data-placement="top" title="Delete" class="delete" id="'.$simpUserPendingAd['sipmuser_PostId'].'" href="dashboard-pending-ads">
+												<a data-toggle="tooltip" data-placement="top" title="Delete" class="delete deleteSimpUserAd" id="'.$simpUserPendingAd['sipmuser_PostId'].'" href="dashboard-pending-ads">
 													<i class="fa fa-trash"></i>
 												</a>
 											</li> 
