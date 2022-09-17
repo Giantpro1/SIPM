@@ -321,7 +321,7 @@
                                       <span class="d-block">or</span>
                                       <span class="d-block btn bg-primary text-white my-3 select-files">Select files</span>
                                       <span class="d-block">Maximum upload file size: 5MB</span>
-                                      <input type="file" class="form-control-file d-none" id="file-upload" multiple name="simpUser_AdsImg[]">
+                                      <input type="file" class="form-control-file d-none" id="file-upload" multiple name="simpUser_AdsImgUpadte[]">
                                     </label>
                                   </div>
                                 </div>

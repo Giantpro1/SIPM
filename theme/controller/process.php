@@ -192,7 +192,7 @@ if(isset($_FILES['simpUser_AdsImg'])){
     }
 
     
-    if(isset($_FILES['simpUser_AdsImg'])){
+    if(isset($_FILES['simpUser_AdsImgUpadte'])){
                 $sipmuser_PostId = $sipmCur_User->test_input($_POST['sipmuser_PostId']);
                 $simpUser_AdsTitle = $sipmCur_User->test_input($_POST['simpUser_AdsTitle']);
                 $sipmUser_AdsDescripion = $sipmCur_User->test_input($_POST['sipmUser_AdsDescripion']);
@@ -250,12 +250,12 @@ if(isset($_FILES['simpUser_AdsImg'])){
 									<div class="">
 										<ul class="list-inline justify-content-center">
 											<li class="list-inline-item">
-												<a data-toggle="tooltip" data-placement="top" title="Edit" class="edit" id="'.$simpUserPendingAd['sipmuser_PostId'].'" href="dashboard-pending-ads">
+												<a data-toggle="modal" data-placement="top" title="Edit" data-target="#editSimpUserPend_Ad" class="edit editSimpUSerPendAd" id="'.$simpUserPendingAd['sipmuser_PostId'].'" href="dashboard-pending-ads">
 													<i class="fa fa-pencil"></i>
 												</a>
 											</li>
 											<li class="list-inline-item">
-												<a data-toggle="tooltip" data-placement="top" title="Delete" class="delete deleteSimpUserAd" id="'.$simpUserPendingAd['sipmuser_PostId'].'" href="dashboard-pending-ads">
+												<a data-toggle="tooltip" data-placement="top" title="Delete" class="delete deleteSimpUserPendAd" id="'.$simpUserPendingAd['sipmuser_PostId'].'" href="dashboard-pending-ads">
 													<i class="fa fa-trash"></i>
 												</a>
 											</li> 

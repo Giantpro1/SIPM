@@ -114,7 +114,7 @@
                               processData: false,
                               contentType: false,
                               cache: false,
-                              data: new FormData(this),
+                              data: new FormData(this)+ {action : 'updateAds'},
                               beforeSend: function(){
                                 $("#simpUserAds_UpdateBtn").attr('disabled', 'disabled')
                                 $("#simpUserAds_Update").css('opacity', '.5')
