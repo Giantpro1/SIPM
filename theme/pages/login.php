@@ -270,47 +270,7 @@ Essential Scripts
 <script src="../plugins/google-map/map.js" defer></script>
 
 <script src="../js/script.js"></script>
-<script>
-  $(document).ready(function(){
-    $("#simpUSer_loginBtn").click(function(e){
-      if($("#simpUSer_login")[0].checkValidity()){
-        e.preventDefault()
-        $("#simpUSer_loginBtn").text("please Wait...")
-
-        $.ajax({
-          url:'../controller/action.php',
-          method:'POST',
-          data:$("#simpUSer_login").serialize()+'&action=simp_login',
-          success: function(response){
-            // console.log(response)
-            if(response === 'login'){
-              window.location = "../index"
-            }else if(response === 'password not correct!'){
-              swal.fire({
-                title:'Oops!',
-                icon:'error',
-                text: 'password not correct!'
-              }).then(
-                $("#simpUSer_login")[0].reset()
-              )
-              // $("#form_Error").html(response)
-            }else if(response === 'user not found'){
-              swal.fire({
-                title:'Oops!',
-                icon:'error',
-                text: 'user not found!'
-              }).then(
-                $("#simpUSer_login")[0].reset()
-              )
-            }else{
-
-            }
-          }
-        })
-      }
-    })
-  })
-</script>
+<script src="../js/Auth.js"></script>
 
 </body>
 

@@ -260,63 +260,7 @@ Essential Scripts
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>
 <script src="../plugins/google-map/map.js" defer></script>
 <script src="../js/script.js"></script>
-<script>
-  $(document).ready(function(){
-    $("#simp_Register_Btn").click(function(error){
-      if($("#simp_Register")[0].checkValidity()){
-        error.preventDefault();
-        $("#simp_Register_Btn").text("please Wait...");
-          if($("#simpUser_Password_val").val() != $("#simpUser_Password_con").val()){
-            swal.fire({
-              title: 'Oops!',
-              icon: 'error',
-              text: 'password does not match!!!'
-            }).then(
-              $("#simp_Register")[0].reset()
-            )
-              $("#simp_Register_Btn").val("Register")
-          }else{
-            $("#passError").html("");
-  
-            $.ajax({
-              url: "../controller/action.php",
-              method: "POST",
-              data: $("#simp_Register").serialize() + "&action=simp_Reg",
-              success:function(response){
-                // console.log(response)
-                if(response === "Register"){
-                  window.location = "../index";
-                }else if(response === "E-Mail already Exists!!!"){
-                  swal.fire({
-                    title: 'Oops!',
-                    icon: 'error',
-                    text: 'E-Mail already Exists!!!'
-                  })
-                }else if(response === "UserName already Exists!!!"){
-                  swal.fire({
-                    title: 'Oops!',
-                    icon: 'error',
-                    text: 'UserName already Exists!!!'
-                  })
-                }else if(response === "password must consist of lowercase, uppercase, special characters and must be 8 characters long"){
-                  swal.fire({
-                    title: 'Hoo!',
-                    icon: 'warning',
-                    text: 'password must consist of lowercase, uppercase, special characters and must be 8 characters long'
-                  })
-                }else{
-
-                }
-              }
-            });
-          }
-        // }
-        
-         
-      }
-    });
-  });
-</script>
+<script src="../js/Auth.js"></script>
 
 </body>
 
