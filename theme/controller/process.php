@@ -109,6 +109,7 @@ if(isset($_FILES['simpUser_AdsImg'])){
  
            
     }
+
     if(isset($_POST['action']) && $_POST['action'] === 'dispayAds'){
         $simpUserAds = $sipmCur_User->get_SipmUSerAds($simp_Cid);
         $output = '';
@@ -218,3 +219,56 @@ if(isset($_FILES['simpUser_AdsImg'])){
                         }
                 }
     }
+
+    // pending ads
+
+    if(isset($_POST['action']) && $_POST['action'] === 'displayPendAds'){
+        $simpUserPendingAds = $sipmCur_User->getPendingAds($simp_Cid);
+        $output = '';
+        if($simpUserPendingAds){
+            $output.='';
+            foreach($simpUserPendingAds as $simpUserPendingAd){
+                $simpUserPendingAdsImg = $sipmCur_User->getPendingAdsImg($simpUserPendingAd['sipmuser_PostId']);
+                if($simpUserPendingAdsImg){
+                    foreach($simpUserPendingAdsImg as $simpUserPendingAdImg){
+                        $img='<img width="80px" height="auto" src="'.'../images/adsImages/'.$simpUserPendingAdImg['simpUser_AdsImg'].'" alt="image description">';
+                    }
+                }
+                $output .='
+                <tr>
+								<td class="product-thumb">
+									'.$img.'</td>
+								<td class="product-details">
+									<h3 class="title">'.$simpUserPendingAd['simpUser_AdsTitle'].'</h3>
+									<span class="add-id"><strong>Ads Product Price:</strong> '.$simpUserPendingAd['sipmUser_AdsPrice'].'</span>
+									<span><strong>Posted on: </strong><time>'.date('F d, Y', strtotime($simpUserPendingAd['simpUser_AdsDate'])).'</time> </span>
+									<span class="status active"><strong>Status</strong>Active</span>
+									<span class="location"><strong>Location</strong>'.substr($simpUserPendingAd['sipmUser_AdsContactAddress'],0,18).'</span>
+								</td>
+								<td class="product-category"><span class="categories">'.$simpUserPendingAd['sipmUser_AdsCategory'].'</span></td>
+								<td class="action" data-title="Action">
+									<div class="">
+										<ul class="list-inline justify-content-center">
+											<li class="list-inline-item">
+												<a data-toggle="tooltip" data-placement="top" title="Edit" class="edit" id="'.$simpUserPendingAd['sipmuser_PostId'].'" href="dashboard-pending-ads">
+													<i class="fa fa-pencil"></i>
+												</a>
+											</li>
+											<li class="list-inline-item">
+												<a data-toggle="tooltip" data-placement="top" title="Delete" class="delete" id="'.$simpUserPendingAd['sipmuser_PostId'].'" href="dashboard-pending-ads">
+													<i class="fa fa-trash"></i>
+												</a>
+											</li> 
+										</ul>
+									</div>
+								</td>
+							</tr>
+							<tr>';
+            }
+            echo $output;
+        }else{
+            echo "All your have been verified!";
+        }
+
+    }
+

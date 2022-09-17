@@ -227,13 +227,22 @@ class Dbc extends Database{
         }
 
         // pending ads
-        public function getPendingAds($sipmuser_PostId){
-            $sql ="SELECT * FROM sipmusersads WHERE sipmuser_PostId=:sipmuser_PostId AND sipmUser_AdsVerified=0";
+        public function getPendingAds($simp_Cid){
+            $sql ="SELECT * FROM sipmusersads WHERE simp_Cid=:simp_Cid AND sipmUser_AdsVerified=0";
             $stmt = $this->conn->prepare($sql);
             $stmt->execute([
-                'sipmuser_PostId'=>$sipmuser_PostId
+                'simp_Cid'=>$simp_Cid
             ]);
-            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+        }
+        public function getPendingAdsImg($simpUser_ImgId){
+            $sql ="SELECT * FROM sipmusersads_img WHERE simpUser_ImgId=:simpUser_ImgId AND sipmUser_AdsImgVerified=0";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([
+                'simpUser_ImgId'=>$simpUser_ImgId
+            ]);
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             return $result;
         }
 
