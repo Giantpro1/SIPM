@@ -11,6 +11,15 @@
                       success: function(response){
                         // console.log(response)
                         $("#displaysimp_UserAds").html(response)
+                          // pagination
+
+                      // $('#displaysimp_UserAds').pagination({
+                      //   datSource: response,
+                      //   pageSize: 5,
+                      //   callback: function(data, pagination){
+                      //     $("#displaysimp_UserAds").html(data)
+                      //   }
+                      // })
                       }
                     })
                   }
@@ -134,4 +143,19 @@
                               }
                             })
                         })
+                        countPendingAds()
+                        function countPendingAds() {
+                          $.ajax({
+                            url:'../controller/process.php',
+                            method: 'post',
+                            data: {action: 'CountPendingAds'},
+                            success: function(response){
+                              console.log(response)
+                              
+                              
+                            }
+                          })
+                        }
+
+
                       })
