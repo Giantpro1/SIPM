@@ -206,14 +206,14 @@ if(isset($_FILES['simpUser_AdsImg'])){
         
                 $sipmCur_User->UpdateSimpUserAds($sipmuser_PostId, $simpUser_AdsTitle, $sipmUser_AdsPrice, $sipmUser_AdsCategory, $sipmUser_AdsType, $sipmUser_AdsDescripion, $sipmUser_AdsNegotiation, $sipmUser_AdsContactAddress, $sipmUser_AdsContactEmail, $sipmUser_AdsContactName, $sipmUser_AdsContactNumber);
 
-                if(isset($_FILES['simpUser_AdsImg']) && ($_FILES['simpUser_AdsImg'])){
+                if(isset($_FILES['simpUser_AdsImgUpadte']) && ($_FILES['simpUser_AdsImgUpadte'])){
 
-                    $simpUser_AdsImg = $_FILES['simpUser_AdsImg']['name'];
+                    $simpUser_AdsImg = $_FILES['simpUser_AdsImgUpadte']['name'];
                         foreach ($simpUser_AdsImg as $i => $value){
                             $GTR = time(). '_' . rand(2000,100000). '_'.$simpUser_AdsImg[$i];
                             $folderForAdsImg = '../images/adsImages/';
                             $faiPath = $folderForAdsImg.$GTR;
-                            $PathName = $_FILES['simpUser_AdsImg']['tmp_name'][$i];
+                            $PathName = $_FILES['simpUser_AdsImgUpadte']['tmp_name'][$i];
                             move_uploaded_file($PathName,$faiPath);
                             $imgResult = $sipmCur_User->UpdateSimpUserAdsImg($sipmuser_PostId, $GTR);
                         }
@@ -269,6 +269,12 @@ if(isset($_FILES['simpUser_AdsImg'])){
         }else{
             echo "All your have been verified!";
         }
+
+    }
+
+    if(isset($_POST['action']) && $_POST['action'] === 'CountPendingAds'){
+        $CountPend = $sipmCur_User->countPendingAds($simp_Cid);
+        echo $CountPend;
 
     }
 

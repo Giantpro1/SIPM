@@ -152,7 +152,7 @@
           <div class="widget user-dashboard-menu shadow">
             <ul>
               <li class="active"><a href="dashboard-my-ads"><i class="fa fa-user"></i> My Ads</a></li>
-              <li><a href="dashboard-favourite-ads"><i class="fa fa-bookmark-o"></i> Favourite Ads
+              <li><a href="dashboard-favourite-ads"><i class="fa fa-bookmark-o"></i> Verified Ads
                   <span>5</span></a></li>
               <li><a href="dashboard-archived-ads"><i class="fa fa-file-archive-o"></i>Archived Ads
                   <span>12</span></a></li>
@@ -515,7 +515,9 @@ Essential Scripts
 <script src="../plugins/google-map/map.js" defer></script>
 
 <script src="../js/script.js"></script>
-                <script src="../js/adsdash.js"></script>
+<script src="../js/adsdash.js"></script>
+<script src="../js/pagination.js"></script>
+<script src="../js/pagination.min.js"></script>
 </body>
 
 </html>

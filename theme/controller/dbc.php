@@ -217,11 +217,11 @@ class Dbc extends Database{
         }
 
         public function UpdateSimpUserAdsImg($simpUser_ImgId, $simpUser_AdsImg){
-            $sql = "UPDATE sipmusersads_img SET simpUser_AdsImg=:simpUser_AdsImg WHERE simpUser_ImgId=:simpUser_ImgId";
+            $sql = "UPDATE sipmusersads_img SET simpUser_AdsImg=:simpUser_AdsImgUpadte WHERE simpUser_ImgId=:simpUser_ImgId";
             $stmt = $this->conn->prepare($sql);
             $stmt->execute([
                 'simpUser_ImgId'=>$simpUser_ImgId,
-                'simpUser_AdsImg'=>$simpUser_AdsImg
+                'simpUser_AdsImgUpadte'=>$simpUser_AdsImg
             ]);
             return true;
         }
@@ -246,6 +246,14 @@ class Dbc extends Database{
             return $result;
         }
 
+        public function countPendingAds($simp_Cid){
+            $sql = "SELECT COUNT(*) FROM sipmusersads WHERE sipmuser_PostId=:sipmuser_PostId AND sipmUser_AdsVerified=0";
+            $stmt =$this->conn->prepare($sql);
+            $stmt->execute([
+                'sipmuser_PostId'=>$simp_Cid
+            ]);
+            return true;
+        }
         
 }
 // sipmusersads

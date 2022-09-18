@@ -199,9 +199,6 @@
 		</div>
 <!-- delete account popup modal end-->
 					<!-- delete-account modal -->
-Lorem ipsum dolor sit amet consectetur adipisicing elit.
- Tempore sint illum corrupti iure reiciendis odio laborum quisquam,
-  itaque nisi quasi odit esse quam dicta magni delectus voluptate harum incidunt laboriosam!
 				</div>
 			</div>
 			<div class="col-lg-8">
@@ -495,6 +492,7 @@ Essential Scripts
 
 <script src="../js/script.js"></script>
 <script src="../js/pendingAds.js"></script>
+<script src="../js/pagination.js"></script>
 
 </body>
 
