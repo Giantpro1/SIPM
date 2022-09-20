@@ -246,13 +246,43 @@ class Dbc extends Database{
             return $result;
         }
 
-        public function countPendingAds($simp_Cid){
-            $sql = "SELECT COUNT(*) FROM sipmusersads WHERE sipmuser_PostId=:sipmuser_PostId AND sipmUser_AdsVerified=0";
+        //count total pending Ads
+            public function countPendingAds($simp_Cid){
+            $sql = "SELECT * FROM sipmusersads WHERE simp_Cid=:simp_Cid AND sipmUser_AdsVerified=0";
             $stmt =$this->conn->prepare($sql);
             $stmt->execute([
-                'sipmuser_PostId'=>$simp_Cid
+                'simp_Cid'=>$simp_Cid
             ]);
-            return true;
+          $result=   $stmt->rowCount();
+            return $result;
+        }
+            
+            public function getVerifiedAds($simp_Cid){
+            $sql ="SELECT * FROM sipmusersads WHERE simp_Cid=:simp_Cid AND sipmUser_AdsVerified=1";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([
+                'simp_Cid'=>$simp_Cid
+            ]);
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+        }
+        public function getVerifiedAdsImg($simpUser_ImgId){
+            $sql ="SELECT * FROM sipmusersads_img WHERE simpUser_ImgId=:simpUser_ImgId AND sipmUser_AdsImgVerified=1";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([
+                'simpUser_ImgId'=>$simpUser_ImgId
+            ]);
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+        }
+        public function countVerifiedAds($simp_Cid){
+            $sql = "SELECT * FROM sipmusersads WHERE simp_Cid=:simp_Cid AND sipmUser_AdsVerified=1";
+            $stmt =$this->conn->prepare($sql);
+            $stmt->execute([
+                'simp_Cid'=>$simp_Cid
+            ]);
+          $result=   $stmt->rowCount();
+            return $result;
         }
         
 }
