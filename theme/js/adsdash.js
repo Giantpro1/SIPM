@@ -150,8 +150,8 @@
                             method: 'post',
                             data: {action: 'CountPendingAds'},
                             success: function(response){
-                              console.log(response)
-                              
+                              // console.log(response)
+                              $("#showPend").text(response)
                               
                             }
                           })
