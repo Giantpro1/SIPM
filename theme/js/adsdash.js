@@ -157,5 +157,18 @@
                           })
                         }
 
-
+                        // verify ads count
+                        countVerifyAds()
+                        function countVerifyAds() {
+                          $.ajax({
+                            url:'../controller/process.php',
+                            method: 'post',
+                            data: {action: 'CountVerifyAds'},
+                            success: function(response){
+                              // console.log(response)
+                              $("#showVerify").text(response)
+                              
+                            }
+                          })
+                        }
                       })

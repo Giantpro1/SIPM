@@ -104,4 +104,34 @@ $(document).ready(function(){
                                   })
                               })
 
+
+                                                // count verify ads
+
+                  countVerifyAds()
+                  function countVerifyAds() {
+                    $.ajax({
+                      url:'../controller/process.php',
+                      method: 'post',
+                      data: {action: 'CountVerifyAds'},
+                      success: function(response){
+                        // console.log(response)
+                        $("#showVerify").text(response)
+                        
+                      }
+                    })
+                  }
+
+                  countPendingAds()
+                  function countPendingAds() {
+                    $.ajax({
+                      url:'../controller/process.php',
+                      method: 'post',
+                      data: {action: 'CountPendingAds'},
+                      success: function(response){
+                        // console.log(response)
+                        $("#showPend").text(response)
+                        
+                      }
+                    })
+                  }
     })

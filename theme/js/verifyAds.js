@@ -27,7 +27,7 @@
                       data: {action: 'CountVerifyAds'},
                       success: function(response){
                         // console.log(response)
-                        $("#showPend").text(response)
+                        $("#showVerify").text(response)
                         
                       }
                     })
