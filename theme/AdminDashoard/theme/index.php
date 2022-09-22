@@ -82,7 +82,7 @@
           <div id="sidebar" class="sidebar sidebar-with-footer">
             <!-- Aplication Brand -->
             <div class="app-brand">
-              <a href="/index.html">
+              <a href="/index">
                 <img src="images/logo.png" alt="SIPM">
                 <span class="brand-name">SIPM</span>
               </a>
@@ -97,7 +97,7 @@
                   <li
                    class="active"
                    >
-                    <a class="sidenav-item-link" href="index.html">
+                    <a class="sidenav-item-link" href="index">
                       <i class="mdi mdi-briefcase-account-outline"></i>
                       <span class="nav-text">Business Dashboard</span>
                     </a>
@@ -109,7 +109,7 @@
                 
                   <li
                    >
-                    <a class="sidenav-item-link" href="featuredProduct.html">
+                    <a class="sidenav-item-link" href="featuredProduct">
                       <i class="mdi mdi-chart-line"></i>
                       <span class="nav-text">Feature Products</span>
                     </a>
@@ -129,7 +129,7 @@
                 
                   <li
                    >
-                    <a class="sidenav-item-link" href="chat.html">
+                    <a class="sidenav-item-link" href="chat">
                       <i class="mdi mdi-wechat"></i>
                       <span class="nav-text">Chat</span>
                     </a>
@@ -152,7 +152,7 @@
                         
                           
                             <li >
-                              <a class="sidenav-item-link" href="verifyUsers.html">
+                              <a class="sidenav-item-link" href="verifyUsers">
                                 <span class="nav-text">Verify User</span>
                                 
                               </a>
@@ -164,7 +164,7 @@
                         
                           
                             <li >
-                              <a class="sidenav-item-link" href="pendingUsers.html">
+                              <a class="sidenav-item-link" href="pendingUsers">
                                 <span class="nav-text">Pending Users</span>
                                 
                               </a>
@@ -176,7 +176,7 @@
                         
                           
                             <li >
-                              <a class="sidenav-item-link" href="disapprovedUser.html">
+                              <a class="sidenav-item-link" href="disapprovedUser">
                                 <span class="nav-text">Disapproved USers</span>
                                 
                               </a>
@@ -206,7 +206,7 @@
                         
                           
                             <li >
-                              <a class="sidenav-item-link" href="verifyProducts.html">
+                              <a class="sidenav-item-link" href="verifyProducts">
                                 <span class="nav-text">Verify Products</span>
                                 
                               </a>
@@ -218,7 +218,7 @@
                         
                           
                             <li >
-                              <a class="sidenav-item-link" href="pendingProduct.html">
+                              <a class="sidenav-item-link" href="pendingProduct">
                               <span class="nav-text">Pending Products</span>
                                 
                               </a>
@@ -230,7 +230,7 @@
                         
                           
                             <li >
-                              <a class="sidenav-item-link" href="disapproveProduct.html">
+                              <a class="sidenav-item-link" href="disapproveProduct">
                                 <span class="nav-text">Disapproved Products</span>
                                 
                               </a>
@@ -255,7 +255,7 @@
               <div class="sidebar-footer-content">
                 <ul class="d-flex">
                   <li>
-                    <a href="user-account-settings.html" data-toggle="tooltip" title="Profile settings"><i class="mdi mdi-settings"></i></a></li>
+                    <a href="user-account-settings" data-toggle="tooltip" title="Profile settings"><i class="mdi mdi-settings"></i></a></li>
                   <li>
                     <a href="#" data-toggle="tooltip" title="No chat messages"><i class="mdi mdi-chat-processing"></i></a>
                   </li>
@@ -286,7 +286,7 @@
 
                 <!-- search form -->
                 <div class="search-form">
-                  <form action="index.html" method="get">
+                  <form action="index" method="get">
                     <div class="input-group input-group-sm" id="input-group-search">
                       <input type="text" autocomplete="off" name="query" id="search-input" class="form-control" placeholder="Search..." />
                       <div class="input-group-append">
@@ -297,16 +297,16 @@
                   <ul class="dropdown-menu dropdown-menu-search">
 
                     <li class="nav-item">
-                      <a class="nav-link" href="index.html">Morbi leo risus</a>
+                      <a class="nav-link" href="index">Morbi leo risus</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="index.html">Dapibus ac facilisis in</a>
+                      <a class="nav-link" href="index">Dapibus ac facilisis in</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="index.html">Porta ac consectetur ac</a>
+                      <a class="nav-link" href="index">Porta ac consectetur ac</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="index.html">Vestibulum at eros</a>
+                      <a class="nav-link" href="index">Vestibulum at eros</a>
                     </li>
 
                   </ul>
@@ -345,12 +345,12 @@
 
                             <div class="media media-sm bg-warning-10 p-4 mb-0">
                               <div class="media-sm-wrapper">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <img src="images/user/user-sm-02.jpg" alt="User Image">
                                 </a>
                               </div>
                               <div class="media-body">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <span class="title mb-0">John Doe</span>
                                   <span class="discribe">Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible. Afraid at highly months do things on at.</span>
                                   <span class="time">
@@ -362,12 +362,12 @@
 
                             <div class="media media-sm p-4 bg-light mb-0">
                               <div class="media-sm-wrapper bg-primary">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <i class="mdi mdi-calendar-check-outline"></i>
                                 </a>
                               </div>
                               <div class="media-body">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <span class="title mb-0">New event added</span>
                                   <span class="discribe">1/3/2014 (1pm - 2pm)</span>
                                   <span class="time">
@@ -379,12 +379,12 @@
 
                             <div class="media media-sm p-4 mb-0">
                               <div class="media-sm-wrapper">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <img src="images/user/user-sm-03.jpg" alt="User Image">
                                 </a>
                               </div>
                               <div class="media-body">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <span class="title mb-0">Sagge Hudson</span>
                                   <span class="discribe">On disposal of as landlord Afraid at highly months do things on at.</span>
                                   <span class="time">
@@ -396,12 +396,12 @@
 
                             <div class="media media-sm p-4 mb-0">
                               <div class="media-sm-wrapper bg-info-dark">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <i class="mdi mdi-account-multiple-check"></i>
                                 </a>
                               </div>
                               <div class="media-body">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <span class="title mb-0">Add request</span>
                                   <span class="discribe">Add Dany Jones as your contact.</span>
                                   <div class="buttons">
@@ -417,12 +417,12 @@
 
                             <div class="media media-sm p-4 mb-0">
                               <div class="media-sm-wrapper bg-info">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <i class="mdi mdi-playlist-check"></i>
                                 </a>
                               </div>
                               <div class="media-body">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <span class="title mb-0">Task complete</span>
                                   <span class="discribe">Afraid at highly months do things on at.</span>
                                   <span class="time">
@@ -438,12 +438,12 @@
 
                             <div class="media media-sm p-4 mb-0">
                               <div class="media-sm-wrapper">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <img src="images/user/user-sm-01.jpg" alt="User Image">
                                 </a>
                               </div>
                               <div class="media-body">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <span class="title mb-0">Selena Wagner</span>
                                   <span class="discribe">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
                                   <span class="time">
@@ -455,12 +455,12 @@
 
                             <div class="media media-sm p-4 mb-0">
                               <div class="media-sm-wrapper">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <img src="images/user/user-sm-03.jpg" alt="User Image">
                                 </a>
                               </div>
                               <div class="media-body">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <span class="title mb-0">Sagge Hudson</span>
                                   <span class="discribe">On disposal of as landlord Afraid at highly months do things on at.</span>
                                   <span class="time">
@@ -472,12 +472,12 @@
 
                             <div class="media media-sm bg-warning-10 p-4 mb-0">
                               <div class="media-sm-wrapper">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <img src="images/user/user-sm-02.jpg" alt="User Image">
                                 </a>
                               </div>
                               <div class="media-body">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <span class="title mb-0">John Doe</span>
                                   <span class="discribe">Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible. Afraid
                                     at highly months do things on at.</span>
@@ -490,12 +490,12 @@
 
                             <div class="media media-sm p-4 mb-0">
                               <div class="media-sm-wrapper">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <img src="images/user/user-sm-04.jpg" alt="User Image">
                                 </a>
                               </div>
                               <div class="media-body">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <span class="title mb-0">Albrecht Straub</span>
                                   <span class="discribe"> Beatae quia natus assumenda laboriosam, nisi perferendis aliquid consectetur expedita non tenetur.</span>
                                   <span class="time">
@@ -510,12 +510,12 @@
 
                             <div class="media media-sm p-4 bg-light mb-0">
                               <div class="media-sm-wrapper bg-primary">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <i class="mdi mdi-calendar-check-outline"></i>
                                 </a>
                               </div>
                               <div class="media-body">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <span class="title mb-0">New event added</span>
                                   <span class="discribe">1/3/2014 (1pm - 2pm)</span>
                                   <span class="time">
@@ -527,12 +527,12 @@
 
                             <div class="media media-sm p-4 mb-0">
                               <div class="media-sm-wrapper bg-info-dark">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <i class="mdi mdi-account-multiple-check"></i>
                                 </a>
                               </div>
                               <div class="media-body">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <span class="title mb-0">Add request</span>
                                   <span class="discribe">Add Dany Jones as your contact.</span>
                                   <div class="buttons">
@@ -548,12 +548,12 @@
 
                             <div class="media media-sm p-4 mb-0">
                               <div class="media-sm-wrapper bg-info">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <i class="mdi mdi-playlist-check"></i>
                                 </a>
                               </div>
                               <div class="media-body">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <span class="title mb-0">Task complete</span>
                                   <span class="discribe">Afraid at highly months do things on at.</span>
                                   <span class="time">
@@ -583,32 +583,32 @@
                     </button>
                     <ul class="dropdown-menu dropdown-menu-right">
                       <li>
-                        <a class="dropdown-link-item" href="user-profile.html">
+                        <a class="dropdown-link-item" href="user-profile">
                           <i class="mdi mdi-account-outline"></i>
                           <span class="nav-text">My Profile</span>
                         </a>
                       </li>
                       <li>
-                        <a class="dropdown-link-item" href="email-inbox.html">
+                        <a class="dropdown-link-item" href="email-inbox">
                           <i class="mdi mdi-email-outline"></i>
                           <span class="nav-text">Message</span>
                           <span class="badge badge-pill badge-primary">24</span>
                         </a>
                       </li>
                       <li>
-                        <a class="dropdown-link-item" href="user-activities.html">
+                        <a class="dropdown-link-item" href="user-activities">
                           <i class="mdi mdi-diamond-stone"></i>
                           <span class="nav-text">Activitise</span></a>
                       </li>
                       <li>
-                        <a class="dropdown-link-item" href="user-account-settings.html">
+                        <a class="dropdown-link-item" href="user-account-settings">
                           <i class="mdi mdi-settings"></i>
                           <span class="nav-text">Account Setting</span>
                         </a>
                       </li>
 
                       <li class="dropdown-footer">
-                        <a class="dropdown-link-item" href="sign-in.html"> <i class="mdi mdi-logout"></i> Log Out </a>
+                        <a class="dropdown-link-item" href="sign-in"> <i class="mdi mdi-logout"></i> Log Out </a>
                       </li>
                     </ul>
                   </li>
@@ -1736,13 +1736,13 @@
 
                         <div class="media media-sm">
                           <div class="media-sm-wrapper">
-                            <a href="user-profile.html">
+                            <a href="user-profile">
                               <img src="images/user/user-sm-01.jpg" alt="User Image">
                               <span class="active bg-primary"></span>
                             </a>
                           </div>
                           <div class="media-body">
-                            <a href="user-profile.html">
+                            <a href="user-profile">
                               <span class="title">Selena Wagner</span>
                               <span class="discribe">Designer</span>
                             </a>
@@ -1751,13 +1751,13 @@
 
                         <div class="media media-sm">
                           <div class="media-sm-wrapper">
-                            <a href="user-profile.html">
+                            <a href="user-profile">
                               <img src="images/user/user-sm-02.jpg" alt="User Image">
                               <span class="active bg-primary"></span>
                             </a>
                           </div>
                           <div class="media-body">
-                            <a href="user-profile.html">
+                            <a href="user-profile">
                               <span class="title">Walter Reuter</span>
                               <span>Developer</span>
                             </a>
@@ -1766,12 +1766,12 @@
 
                         <div class="media media-sm">
                           <div class="media-sm-wrapper">
-                            <a href="user-profile.html">
+                            <a href="user-profile">
                               <img src="images/user/user-sm-03.jpg" alt="User Image">
                             </a>
                           </div>
                           <div class="media-body">
-                            <a href="user-profile.html">
+                            <a href="user-profile">
                               <span class="title">Larissa Gebhardt</span>
                               <span>Cyber Punk</span>
                             </a>
@@ -1780,13 +1780,13 @@
 
                         <div class="media media-sm">
                           <div class="media-sm-wrapper">
-                            <a href="user-profile.html">
+                            <a href="user-profile">
                               <img src="images/user/user-sm-04.jpg" alt="User Image">
                             </a>
 
                           </div>
                           <div class="media-body">
-                            <a href="user-profile.html">
+                            <a href="user-profile">
                               <span class="title">Albrecht Straub</span>
                               <span>Photographer</span>
                             </a>
@@ -1795,13 +1795,13 @@
 
                         <div class="media media-sm">
                           <div class="media-sm-wrapper">
-                            <a href="user-profile.html">
+                            <a href="user-profile">
                               <img src="images/user/user-sm-05.jpg" alt="User Image">
                               <span class="active bg-danger"></span>
                             </a>
                           </div>
                           <div class="media-body">
-                            <a href="user-profile.html">
+                            <a href="user-profile">
                               <span class="title">Leopold Ebert</span>
                               <span>Fashion Designer</span>
                             </a>
@@ -1810,13 +1810,13 @@
 
                         <div class="media media-sm">
                           <div class="media-sm-wrapper">
-                            <a href="user-profile.html">
+                            <a href="user-profile">
                               <img src="images/user/user-sm-06.jpg" alt="User Image">
                               <span class="active bg-primary"></span>
                             </a>
                           </div>
                           <div class="media-body">
-                            <a href="user-profile.html">
+                            <a href="user-profile">
                               <span class="title">Selena Wagner</span>
                               <span>Photographer</span>
                             </a>

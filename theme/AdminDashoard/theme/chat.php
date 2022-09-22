@@ -17,6 +17,28 @@
   <!-- PLUGINS CSS STYLE -->
   <link href="plugins/nprogress/nprogress.css" rel="stylesheet" />
   
+  
+  
+  
+  <link href="plugins/DataTables/DataTables-1.10.18/css/jquery.dataTables.min.css" rel="stylesheet" />
+  
+  
+  
+  <link href="plugins/jvectormap/jquery-jvectormap-2.0.3.css" rel="stylesheet" />
+  
+  
+  
+  <link href="plugins/daterangepicker/daterangepicker.css" rel="stylesheet" />
+  
+  
+  
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  
+  
+  
+  <link href="plugins/toaster/toastr.min.css" rel="stylesheet" />
+  
+  
   <!-- MONO CSS -->
   <link id="main-css-href" rel="stylesheet" href="css/style.css" />
 
@@ -59,7 +81,7 @@
           <div id="sidebar" class="sidebar sidebar-with-footer">
             <!-- Aplication Brand -->
             <div class="app-brand">
-              <a href="/index.html">
+              <a href="/index">
                 <img src="images/logo.png" alt="SIPM">
                 <span class="brand-name">SIPM</span>
               </a>
@@ -74,7 +96,7 @@
                   <li
                    class="active"
                    >
-                    <a class="sidenav-item-link" href="index.html">
+                    <a class="sidenav-item-link" href="index">
                       <i class="mdi mdi-briefcase-account-outline"></i>
                       <span class="nav-text">Business Dashboard</span>
                     </a>
@@ -86,7 +108,7 @@
                 
                   <li
                    >
-                    <a class="sidenav-item-link" href="analytics.html">
+                    <a class="sidenav-item-link" href="email-details">
                       <i class="mdi mdi-chart-line"></i>
                       <span class="nav-text">Feature Products</span>
                     </a>
@@ -106,7 +128,7 @@
                 
                   <li
                    >
-                    <a class="sidenav-item-link" href="chat.html">
+                    <a class="sidenav-item-link" href="chat">
                       <i class="mdi mdi-wechat"></i>
                       <span class="nav-text">Chat</span>
                     </a>
@@ -129,7 +151,7 @@
                         
                           
                             <li >
-                              <a class="sidenav-item-link" href="verifyUsers.html">
+                              <a class="sidenav-item-link" href="verifyUsers">
                                 <span class="nav-text">Verify User</span>
                                 
                               </a>
@@ -141,7 +163,7 @@
                         
                           
                             <li >
-                              <a class="sidenav-item-link" href="pendingUsers.html">
+                              <a class="sidenav-item-link" href="pendingUsers">
                                 <span class="nav-text">Pending Users</span>
                                 
                               </a>
@@ -153,7 +175,7 @@
                         
                           
                             <li >
-                              <a class="sidenav-item-link" href="email-compose.html">
+                              <a class="sidenav-item-link" href="disapprovedUser">
                                 <span class="nav-text">Disapproved USers</span>
                                 
                               </a>
@@ -171,19 +193,19 @@
 
                 
                   <li  class="has-sub" >
-                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#products"
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#product"
                       aria-expanded="false" aria-controls="email">
                       <i class="mdi mdi-email"></i>
                       <span class="nav-text">User Products</span> <b class="caret"></b>
                     </a>
-                    <ul  class="collapse"  id="products"
+                    <ul  class="collapse"  id="product"
                       data-parent="#sidebar-menu">
                       <div class="sub-menu">
                         
                         
                           
                             <li >
-                              <a class="sidenav-item-link" href="verifyProducts.html">
+                              <a class="sidenav-item-link" href="verifyProducts">
                                 <span class="nav-text">Verify Products</span>
                                 
                               </a>
@@ -195,7 +217,7 @@
                         
                           
                             <li >
-                              <a class="sidenav-item-link" href="">
+                              <a class="sidenav-item-link" href="pendingProduct">
                               <span class="nav-text">Pending Products</span>
                                 
                               </a>
@@ -207,7 +229,7 @@
                         
                           
                             <li >
-                              <a class="sidenav-item-link" href="disapprovedUser.html">
+                              <a class="sidenav-item-link" href="disapproveProduct">
                                 <span class="nav-text">Disapproved Products</span>
                                 
                               </a>
@@ -232,7 +254,7 @@
               <div class="sidebar-footer-content">
                 <ul class="d-flex">
                   <li>
-                    <a href="user-account-settings.html" data-toggle="tooltip" title="Profile settings"><i class="mdi mdi-settings"></i></a></li>
+                    <a href="user-account-settings" data-toggle="tooltip" title="Profile settings"><i class="mdi mdi-settings"></i></a></li>
                   <li>
                     <a href="#" data-toggle="tooltip" title="No chat messages"><i class="mdi mdi-chat-processing"></i></a>
                   </li>
@@ -241,7 +263,6 @@
             </div>
           </div>
         </aside>
-
 
       
 
@@ -258,13 +279,13 @@
                 <span class="sr-only">Toggle navigation</span>
               </button>
 
-              <span class="page-title">Pending USers</span>
+              <span class="page-title">chat</span>
 
               <div class="navbar-right ">
 
                 <!-- search form -->
                 <div class="search-form">
-                  <form action="index.html" method="get">
+                  <form action="index" method="get">
                     <div class="input-group input-group-sm" id="input-group-search">
                       <input type="text" autocomplete="off" name="query" id="search-input" class="form-control" placeholder="Search..." />
                       <div class="input-group-append">
@@ -275,16 +296,16 @@
                   <ul class="dropdown-menu dropdown-menu-search">
 
                     <li class="nav-item">
-                      <a class="nav-link" href="index.html">Morbi leo risus</a>
+                      <a class="nav-link" href="index">Morbi leo risus</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="index.html">Dapibus ac facilisis in</a>
+                      <a class="nav-link" href="index">Dapibus ac facilisis in</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="index.html">Porta ac consectetur ac</a>
+                      <a class="nav-link" href="index">Porta ac consectetur ac</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="index.html">Vestibulum at eros</a>
+                      <a class="nav-link" href="index">Vestibulum at eros</a>
                     </li>
 
                   </ul>
@@ -323,12 +344,12 @@
 
                             <div class="media media-sm bg-warning-10 p-4 mb-0">
                               <div class="media-sm-wrapper">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <img src="images/user/user-sm-02.jpg" alt="User Image">
                                 </a>
                               </div>
                               <div class="media-body">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <span class="title mb-0">John Doe</span>
                                   <span class="discribe">Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible. Afraid at highly months do things on at.</span>
                                   <span class="time">
@@ -340,12 +361,12 @@
 
                             <div class="media media-sm p-4 bg-light mb-0">
                               <div class="media-sm-wrapper bg-primary">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <i class="mdi mdi-calendar-check-outline"></i>
                                 </a>
                               </div>
                               <div class="media-body">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <span class="title mb-0">New event added</span>
                                   <span class="discribe">1/3/2014 (1pm - 2pm)</span>
                                   <span class="time">
@@ -357,12 +378,12 @@
 
                             <div class="media media-sm p-4 mb-0">
                               <div class="media-sm-wrapper">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <img src="images/user/user-sm-03.jpg" alt="User Image">
                                 </a>
                               </div>
                               <div class="media-body">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <span class="title mb-0">Sagge Hudson</span>
                                   <span class="discribe">On disposal of as landlord Afraid at highly months do things on at.</span>
                                   <span class="time">
@@ -374,12 +395,12 @@
 
                             <div class="media media-sm p-4 mb-0">
                               <div class="media-sm-wrapper bg-info-dark">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <i class="mdi mdi-account-multiple-check"></i>
                                 </a>
                               </div>
                               <div class="media-body">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <span class="title mb-0">Add request</span>
                                   <span class="discribe">Add Dany Jones as your contact.</span>
                                   <div class="buttons">
@@ -395,12 +416,12 @@
 
                             <div class="media media-sm p-4 mb-0">
                               <div class="media-sm-wrapper bg-info">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <i class="mdi mdi-playlist-check"></i>
                                 </a>
                               </div>
                               <div class="media-body">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <span class="title mb-0">Task complete</span>
                                   <span class="discribe">Afraid at highly months do things on at.</span>
                                   <span class="time">
@@ -416,12 +437,12 @@
 
                             <div class="media media-sm p-4 mb-0">
                               <div class="media-sm-wrapper">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <img src="images/user/user-sm-01.jpg" alt="User Image">
                                 </a>
                               </div>
                               <div class="media-body">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <span class="title mb-0">Selena Wagner</span>
                                   <span class="discribe">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
                                   <span class="time">
@@ -433,12 +454,12 @@
 
                             <div class="media media-sm p-4 mb-0">
                               <div class="media-sm-wrapper">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <img src="images/user/user-sm-03.jpg" alt="User Image">
                                 </a>
                               </div>
                               <div class="media-body">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <span class="title mb-0">Sagge Hudson</span>
                                   <span class="discribe">On disposal of as landlord Afraid at highly months do things on at.</span>
                                   <span class="time">
@@ -450,12 +471,12 @@
 
                             <div class="media media-sm bg-warning-10 p-4 mb-0">
                               <div class="media-sm-wrapper">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <img src="images/user/user-sm-02.jpg" alt="User Image">
                                 </a>
                               </div>
                               <div class="media-body">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <span class="title mb-0">John Doe</span>
                                   <span class="discribe">Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible. Afraid
                                     at highly months do things on at.</span>
@@ -468,12 +489,12 @@
 
                             <div class="media media-sm p-4 mb-0">
                               <div class="media-sm-wrapper">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <img src="images/user/user-sm-04.jpg" alt="User Image">
                                 </a>
                               </div>
                               <div class="media-body">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <span class="title mb-0">Albrecht Straub</span>
                                   <span class="discribe"> Beatae quia natus assumenda laboriosam, nisi perferendis aliquid consectetur expedita non tenetur.</span>
                                   <span class="time">
@@ -488,12 +509,12 @@
 
                             <div class="media media-sm p-4 bg-light mb-0">
                               <div class="media-sm-wrapper bg-primary">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <i class="mdi mdi-calendar-check-outline"></i>
                                 </a>
                               </div>
                               <div class="media-body">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <span class="title mb-0">New event added</span>
                                   <span class="discribe">1/3/2014 (1pm - 2pm)</span>
                                   <span class="time">
@@ -505,12 +526,12 @@
 
                             <div class="media media-sm p-4 mb-0">
                               <div class="media-sm-wrapper bg-info-dark">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <i class="mdi mdi-account-multiple-check"></i>
                                 </a>
                               </div>
                               <div class="media-body">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <span class="title mb-0">Add request</span>
                                   <span class="discribe">Add Dany Jones as your contact.</span>
                                   <div class="buttons">
@@ -526,12 +547,12 @@
 
                             <div class="media media-sm p-4 mb-0">
                               <div class="media-sm-wrapper bg-info">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <i class="mdi mdi-playlist-check"></i>
                                 </a>
                               </div>
                               <div class="media-body">
-                                <a href="user-profile.html">
+                                <a href="user-profile">
                                   <span class="title mb-0">Task complete</span>
                                   <span class="discribe">Afraid at highly months do things on at.</span>
                                   <span class="time">
@@ -561,32 +582,32 @@
                     </button>
                     <ul class="dropdown-menu dropdown-menu-right">
                       <li>
-                        <a class="dropdown-link-item" href="user-profile.html">
+                        <a class="dropdown-link-item" href="user-profile">
                           <i class="mdi mdi-account-outline"></i>
                           <span class="nav-text">My Profile</span>
                         </a>
                       </li>
                       <li>
-                        <a class="dropdown-link-item" href="email-inbox.html">
+                        <a class="dropdown-link-item" href="email-inbox">
                           <i class="mdi mdi-email-outline"></i>
                           <span class="nav-text">Message</span>
                           <span class="badge badge-pill badge-primary">24</span>
                         </a>
                       </li>
                       <li>
-                        <a class="dropdown-link-item" href="user-activities.html">
+                        <a class="dropdown-link-item" href="user-activities">
                           <i class="mdi mdi-diamond-stone"></i>
                           <span class="nav-text">Activitise</span></a>
                       </li>
                       <li>
-                        <a class="dropdown-link-item" href="user-account-settings.html">
+                        <a class="dropdown-link-item" href="user-account-settings">
                           <i class="mdi mdi-settings"></i>
                           <span class="nav-text">Account Setting</span>
                         </a>
                       </li>
 
                       <li class="dropdown-footer">
-                        <a class="dropdown-link-item" href="sign-in.html"> <i class="mdi mdi-logout"></i> Log Out </a>
+                        <a class="dropdown-link-item" href="sign-in"> <i class="mdi mdi-logout"></i> Log Out </a>
                       </li>
                     </ul>
                   </li>
@@ -601,115 +622,481 @@
         ——— CONTENT WRAPPER
         ===================================== -->
         <div class="content-wrapper">
-          <div class="content">	<!-- ====================================
-	——— EMAIL WRAPPER
-	===================================== -->
-<div class="email-wrapper rounded border bg-white">
-  <div class="row no-gutters justify-content-center">
-    <div class="col-lg-4 col-xl-3 col-xxl-2">
-      <div class="email-left-column email-options p-4 p-xl-5">
-        <a href="#" class="btn btn-block btn-primary btn-pill mb-4 mb-xl-5">Action</a>
-        <ul class="pb-2">
-          <li class="d-block active mb-4">
-            <a href="verifyUsers.html">
-              <i class="mdi mdi-download mr-2"></i> Inbox</a>
-            <span class="badge badge-secondary">20</span>
-          </li>
-          <li class="d-block mb-4">
-            <a href="#">
-              <i class="mdi mdi-star-outline mr-2"></i> Favorite</a>
-            <span class="badge badge-secondary">56</span>
-          </li>
-         
-        </ul>
-      </div>
+          <div class="content"><div class="row no-gutters">
+  <div class="col-lg-5 col-xxl-4">
+    <div class="card card-default chat-left-sidebar">
+      <form class="card-header px-0">
+        <div class="input-group px-5">
+          <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="Search...">
+        </div>
+      </form>
+
+      <ul class="card-body px-0" data-simplebar style="height: 630px;">
+        <li class="mb-4 px-5 py-2">
+          <a href="javascript:void(0)" class="media media-message">
+            <div class="position-relative mr-3">
+              <img class="rounded-circle" src="images/user/user-sm-01.jpg" alt="User Image">
+              <span class="status away"></span>
+            </div>
+            
+            <div class="media-body">
+              <div class="message-contents">
+                <span class="d-flex justify-content-between align-items-center mb-1">
+                  <span class="username text-dark">Anna Patuary</span>
+                  <span class="">
+                    <span class="state text-smoke"><em>5min</em></span>
+                  </span>
+                </span>
+                
+                <p class="last-msg text-smoke">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam itaque doloremque
+                  odio, eligendi delectus vitae.</p>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="mb-4 px-5 py-2">
+          <a href="javascript:void(0)" class="media media-message">
+            <div class="position-relative mr-3">
+              <img class="rounded-circle" src="images/user/user-sm-02.jpg" alt="User Image">
+              <span class="status away"></span>
+            </div>
+            
+            <div class="media-body">
+              <div class="message-contents">
+                <span class="d-flex justify-content-between align-items-center mb-1">
+                  <span class="username text-dark">Riman Ghose</span>
+                  <span class="">
+                    <span class="badge badge-secondary">3</span>
+                    <span class="state text-smoke"><em>1hrs</em></span>
+                  </span>
+                </span>
+                
+                <p class="last-msg text-smoke">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam itaque doloremque
+                  odio, eligendi delectus vitae.</p>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="bg-primary mb-4 px-5 py-2">
+          <a href="javascript:void(0)" class="media media-message">
+            <div class="position-relative mr-3">
+              <img class="rounded-circle" src="images/user/user-sm-03.jpg" alt="User Image">
+              <span class="status active"></span>
+            </div>
+            
+            <div class="media-body">
+              <div class="message-contents">
+                <span class="d-flex justify-content-between align-items-center mb-1">
+                  <span class="username text-white">Anna Patuary</span>
+                  <span class="">
+                    <span class="state text-white"><em>11:59am</em></span>
+                  </span>
+                </span>
+                
+                <p class="last-msg text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam itaque doloremque
+                  odio, eligendi delectus vitae.</p>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="mb-4 px-5 py-2">
+          <a href="javascript:void(0)" class="media media-message">
+            <div class="position-relative mr-3">
+              <img class="rounded-circle" src="images/user/user-sm-04.jpg" alt="User Image">
+              <span class="status away"></span>
+            </div>
+            
+            <div class="media-body">
+              <div class="message-contents">
+                <span class="d-flex justify-content-between align-items-center mb-1">
+                  <span class="username text-dark">Riman Ghose</span>
+                  <span class="">
+                    <span class="state text-smoke"><em>10min</em></span>
+                  </span>
+                </span>
+                
+                <p class="last-msg text-smoke">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam itaque doloremque
+                  odio, eligendi delectus vitae.</p>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="mb-4 px-5 py-2">
+          <a href="javascript:void(0)" class="media media-message">
+            <div class="position-relative mr-3">
+              <img class="rounded-circle" src="images/user/user-sm-05.jpg" alt="User Image">
+              <span class="status away"></span>
+            </div>
+            
+            <div class="media-body">
+              <div class="message-contents">
+                <span class="d-flex justify-content-between align-items-center mb-1">
+                  <span class="username text-dark">Anna Patuary</span>
+                  <span class="">
+                    <span class="state text-smoke"><em>26-Jan-20</em></span>
+                  </span>
+                </span>
+                
+                <p class="last-msg text-smoke">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam itaque doloremque
+                  odio, eligendi delectus vitae.</p>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="mb-4 px-5 py-2">
+          <a href="javascript:void(0)" class="media media-message">
+            <div class="position-relative mr-3">
+              <img class="rounded-circle" src="images/user/user-sm-01.jpg" alt="User Image">
+              <span class="status active"></span>
+            </div>
+            
+            <div class="media-body">
+              <div class="message-contents">
+                <span class="d-flex justify-content-between align-items-center mb-1">
+                  <span class="username text-dark">Anna Patuary</span>
+                  <span class="">
+                    <span class="badge badge-secondary">4</span>
+                    <span class="state text-smoke"><em>2hrs</em></span>
+                  </span>
+                </span>
+                
+                <p class="last-msg text-smoke">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam itaque doloremque
+                  odio, eligendi delectus vitae.</p>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="mb-4 px-5 py-2">
+          <a href="javascript:void(0)" class="media media-message">
+            <div class="position-relative mr-3">
+              <img class="rounded-circle" src="images/user/user-sm-02.jpg" alt="User Image">
+              <span class="status away"></span>
+            </div>
+            
+            <div class="media-body">
+              <div class="message-contents">
+                <span class="d-flex justify-content-between align-items-center mb-1">
+                  <span class="username text-dark">Riman Ghose</span>
+                  <span class="">
+                    <span class="state text-smoke"><em>15-Jan-20</em></span>
+                  </span>
+                </span>
+                
+                <p class="last-msg text-smoke">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam itaque doloremque
+                  odio, eligendi delectus vitae.</p>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="mb-4 px-5 py-2">
+          <a href="javascript:void(0)" class="media media-message">
+            <div class="position-relative mr-3">
+              <img class="rounded-circle" src="images/user/user-sm-03.jpg" alt="User Image">
+              <span class="status away"></span>
+            </div>
+            
+            <div class="media-body">
+              <div class="message-contents">
+                <span class="d-flex justify-content-between align-items-center mb-1">
+                  <span class="username text-dark">Anna Patuary</span>
+                  <span class="">
+                    <span class="state text-smoke"><em>30min</em></span>
+                  </span>
+                </span>
+                
+                <p class="last-msg text-smoke">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam itaque doloremque
+                  odio, eligendi delectus vitae.</p>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="mb-4 px-5 py-2">
+          <a href="javascript:void(0)" class="media media-message">
+            <div class="position-relative mr-3">
+              <img class="rounded-circle" src="images/user/user-sm-04.jpg" alt="User Image">
+              <span class="status away"></span>
+            </div>
+            
+            <div class="media-body">
+              <div class="message-contents">
+                <span class="d-flex justify-content-between align-items-center mb-1">
+                  <span class="username text-dark">Riman Ghose</span>
+                  <span class="">
+                    <span class="state text-smoke"><em>01-Jan-20</em></span>
+                  </span>
+                </span>
+                
+                <p class="last-msg text-smoke">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam itaque doloremque
+                  odio, eligendi delectus vitae.</p>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="mb-4 px-5 py-2">
+          <a href="javascript:void(0)" class="media media-message">
+            <div class="position-relative mr-3">
+              <img class="rounded-circle" src="images/user/user-sm-05.jpg" alt="User Image">
+              <span class="status away"></span>
+            </div>
+            
+            <div class="media-body">
+              <div class="message-contents">
+                <span class="d-flex justify-content-between align-items-center mb-1">
+                  <span class="username text-dark">Anna Patuary</span>
+                  <span class="">
+                    <span class="badge badge-secondary">5</span>
+                    <span class="state text-smoke"><em>3hrs</em></span>
+                  </span>
+                </span>
+                
+                <p class="last-msg text-smoke">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam itaque doloremque
+                  odio, eligendi delectus vitae.</p>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="mb-4 px-5 py-2">
+          <a href="javascript:void(0)" class="media media-message">
+            <div class="position-relative mr-3">
+              <img class="rounded-circle" src="images/user/user-sm-04.jpg" alt="User Image">
+              <span class="status away"></span>
+            </div>
+            
+            <div class="media-body">
+              <div class="message-contents">
+                <span class="d-flex justify-content-between align-items-center mb-1">
+                  <span class="username text-dark">Riman Ghose</span>
+                  <span class="">
+                    <span class="state text-smoke"><em>31-Dec-19</em></span>
+                  </span>
+                </span>
+                
+                <p class="last-msg text-smoke">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam itaque doloremque
+                  odio, eligendi delectus vitae.</p>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="mb-4 px-5 py-2">
+          <a href="javascript:void(0)" class="media media-message">
+            <div class="position-relative mr-3">
+              <img class="rounded-circle" src="images/user/user-sm-05.jpg" alt="User Image">
+              <span class="status away"></span>
+            </div>
+            
+            <div class="media-body">
+              <div class="message-contents">
+                <span class="d-flex justify-content-between align-items-center mb-1">
+                  <span class="username text-dark">Anna Patuary</span>
+                  <span class="">
+                    <span class="state text-smoke"><em>26-Dec-19</em></span>
+                  </span>
+                </span>
+                
+                <p class="last-msg text-smoke">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam itaque doloremque
+                  odio, eligendi delectus vitae.</p>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="mb-4 px-5 py-2">
+          <a href="javascript:void(0)" class="media media-message">
+            <div class="position-relative mr-3">
+              <img class="rounded-circle" src="images/user/user-sm-01.jpg" alt="User Image">
+              <span class="status active"></span>
+            </div>
+            
+            <div class="media-body">
+              <div class="message-contents">
+                <span class="d-flex justify-content-between align-items-center mb-1">
+                  <span class="username text-dark">Anna Patuary</span>
+                  <span class="">
+                    <span class="state text-smoke"><em>10-Dec-19</em></span>
+                  </span>
+                </span>
+                
+                <p class="last-msg text-smoke">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam itaque doloremque
+                  odio, eligendi delectus vitae.</p>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="mb-4 px-5 py-2">
+          <a href="javascript:void(0)" class="media media-message">
+            <div class="position-relative mr-3">
+              <img class="rounded-circle" src="images/user/user-sm-02.jpg" alt="User Image">
+              <span class="status away"></span>
+            </div>
+            
+            <div class="media-body">
+              <div class="message-contents">
+                <span class="d-flex justify-content-between align-items-center mb-1">
+                  <span class="username text-dark">Riman Ghose</span>
+                  <span class="">
+                    <span class="badge badge-secondary">7</span>
+                    <span class="state text-smoke"><em>5hrs</em></span>
+                  </span>
+                </span>
+                
+                <p class="last-msg text-smoke">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam itaque doloremque
+                  odio, eligendi delectus vitae.</p>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="mb-4 px-5 py-2">
+          <a href="javascript:void(0)" class="media media-message">
+            <div class="position-relative mr-3">
+              <img class="rounded-circle" src="images/user/user-sm-03.jpg" alt="User Image">
+              <span class="status away"></span>
+            </div>
+            
+            <div class="media-body">
+              <div class="message-contents">
+                <span class="d-flex justify-content-between align-items-center mb-1">
+                  <span class="username text-dark">Anna Patuary</span>
+                  <span class="">
+                    <span class="state text-smoke"><em>01-Dec-19</em></span>
+                  </span>
+                </span>
+                
+                <p class="last-msg text-smoke">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam itaque doloremque
+                  odio, eligendi delectus vitae.</p>
+              </div>
+            </div>
+          </a>
+        </li>
+
+      </ul>
     </div>
-    <div class="col-lg-8 col-xl-9 col-xxl-10">
-      <div class="email-right-column p-4 p-xl-5">
-        <!-- Email Right Header -->
-        <div class="email-right-header mb-5">
-          <!-- head left option -->
-          <div class="head-left-options">
-            <button type="button" class="btn btn-icon btn-outline btn-rounded-circle">
-              <i class="mdi mdi-refresh"></i>
-            </button>
-          </div>
-          <!-- head right option -->
-          <div class="head-right-options">
-            <div class="btn-group" role="group" aria-label="Basic example">
-              <button type="button" class="btn border btn-pill">
-                <i class="mdi mdi-chevron-left"></i>
-              </button>
-              <button type="button" class="btn border btn-pill">
-                <i class="mdi mdi-chevron-right"></i>
-              </button>
+  </div>
+
+  <div class="col-lg-7 col-xxl-8">
+    <!-- Chat -->
+    <div class="card card-default chat-right-sidebar">
+      <div class="card-header">
+        <h2>Selena Wagner</h2>
+
+        <div class="dropdown">
+          <div class="dropdown">
+            <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            </a>
+
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="user-profile-settings">Profile</a>
+              <a class="dropdown-item" href="javascript:void(0)">Logout</a>
             </div>
           </div>
         </div>
-        <div class="border border-top-0 rounded table-responsive email-list">
-            <table id="productsTable" class="table table-hover table-product" style="width:100%">
-                <thead>
-                  <tr>
-                    <th>Profile Image</th>
-                    <th>UserName</th>
-                    <th>UserId</th>
-                    <th>Email</th>
-                    <th>Firtname</th>
-                    <th>SecondName</th>
-                    <th>User Activity</th>
-                    <th>DateReg</th>
-                    <th>Action</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-          
-                  <tr>
-                    <td class="py-0">
-                      <img src="images/products/products-xs-01.jpg" class="user-image rounded-circle" alt="Product Image">
-                    </td>
-                    <td>Coach Swagger</td>
-                    <td>24541</td>
-                    <td>27</td>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>
-                      <div id="tbl-chart-01"></div>
-                    </td>
-                    <td>4</td>
-                    <td>
-                      <button class="btn btn-warning"><i class=""></i></button>
-                      <button class="btn btn-danger"><i class=""></i></button>
-                      <button class="btn btn-success"><i class=""></i></button>
-                    </td>
-                  </tr>
-       
-                  <tr>
-                    <td class="py-0">
-                      <img src="images/products/products-xs-15.jpg" alt="Product Image">
-                    </td>
-                    <td>Headphones</td>
-                    <td>24555</td>
-                    <td>17</td>
-                    <td>6</td>
-                    <td>7</td>
-                    <td>
-                      <div id="tbl-chart-15"></div>
-                    </td>
-                    <td>6</td>
-                    <td>
-                      <button class="btn btn-warning"><i class=""></i></button>
-                      <button class="btn btn-danger"><i class=""></i></button>
-                      <button class="btn btn-success"><i class=""></i></button>
-                    </td>
-                  </tr>
-        
-          
-          
-          
-                </tbody>
-              </table>
+      </div>
+
+      <div class="card-body pb-0" data-simplebar style="height: 545px;">
+        <!-- Media Chat Left -->
+        <div class="media media-chat">
+          <img src="images/user/user-sm-01.jpg" class="rounded-circle" alt="Avata Image">
+          <div class="media-body">
+            <div class="text-content">
+              <span class="message">Hello my name is anna.</span>
+              <time class="time">5 mins ago</time>
+            </div>
+          </div>
         </div>
+
+        <!-- Media Chat Right -->
+        <div class="media media-chat media-chat-right">
+          <div class="media-body">
+            <div class="text-content">
+              <span class="message">Hello i am Riman.</span>
+              <time class="time">4 mins ago</time>
+            </div>
+
+            <div class="text-content">
+              <span class="message">I want to know about yourself</span>
+              <time class="time">3 mins ago</time>
+            </div>
+          </div>
+          <img src="images/user/user-sm-02.jpg" class="rounded-circle" alt="Avata Image">
+        </div>
+
+        <!-- Media Chat Left -->
+        <div class="media media-chat">
+          <img src="images/user/user-sm-01.jpg" class="rounded-circle" alt="Avata Image">
+          <div class="media-body">
+            <div class="text-content">
+              <span class="message">Its had resolving otherwise she contented therefore.</span>
+              <time class="time">1 mins ago</time>
+            </div>
+          </div>
+        </div>
+
+        <!-- Media Chat Right -->
+        <div class="media media-chat media-chat-right">
+          <div class="media-body">
+            <div class="text-content">
+              <span class="message">Hello i am Riman.</span>
+              <time class="time">4 mins ago</time>
+            </div>
+
+            <div class="text-content">
+              <span class="message">I want to know about yourself</span>
+              <time class="time">3 mins ago</time>
+            </div>
+          </div>
+          <img src="images/user/user-sm-02.jpg" class="rounded-circle" alt="Avata Image">
+        </div>
+
+        <!-- Media Chat Left -->
+        <div class="media media-chat">
+          <img src="images/user/user-sm-01.jpg" class="rounded-circle" alt="Avata Image">
+          <div class="media-body">
+            <div class="text-content">
+              <span class="message">Its had resolving otherwise she contented therefore.</span>
+              <time class="time">1 mins ago</time>
+            </div>
+          </div>
+        </div>
+
+        <!-- Media Chat Right -->
+        <div class="media media-chat media-chat-right">
+          <div class="media-body">
+            <div class="text-content">
+              <span class="message">Hello i am Riman.</span>
+              <time class="time">4 mins ago</time>
+            </div>
+
+            <div class="text-content">
+              <span class="message">I want to know about yourself</span>
+              <time class="time">3 mins ago</time>
+            </div>
+          </div>
+          <img src="images/user/user-sm-02.jpg" class="rounded-circle" alt="Avata Image">
+        </div>
+
+      </div>
+
+      <div class="chat-footer">
+        <form>
+          <div class="input-group input-group-chat">
+            <div class="input-group-prepend">
+              <span class="emoticon-icon mdi mdi-emoticon-happy-outline"></span>
+            </div>
+            <input type="text" class="form-control" aria-label="Text input with dropdown button">
+          </div>
+        </form>
       </div>
     </div>
   </div>
@@ -749,13 +1136,13 @@
 
                         <div class="media media-sm">
                           <div class="media-sm-wrapper">
-                            <a href="user-profile.html">
+                            <a href="user-profile">
                               <img src="images/user/user-sm-01.jpg" alt="User Image">
                               <span class="active bg-primary"></span>
                             </a>
                           </div>
                           <div class="media-body">
-                            <a href="user-profile.html">
+                            <a href="user-profile">
                               <span class="title">Selena Wagner</span>
                               <span class="discribe">Designer</span>
                             </a>
@@ -764,13 +1151,13 @@
 
                         <div class="media media-sm">
                           <div class="media-sm-wrapper">
-                            <a href="user-profile.html">
+                            <a href="user-profile">
                               <img src="images/user/user-sm-02.jpg" alt="User Image">
                               <span class="active bg-primary"></span>
                             </a>
                           </div>
                           <div class="media-body">
-                            <a href="user-profile.html">
+                            <a href="user-profile">
                               <span class="title">Walter Reuter</span>
                               <span>Developer</span>
                             </a>
@@ -779,12 +1166,12 @@
 
                         <div class="media media-sm">
                           <div class="media-sm-wrapper">
-                            <a href="user-profile.html">
+                            <a href="user-profile">
                               <img src="images/user/user-sm-03.jpg" alt="User Image">
                             </a>
                           </div>
                           <div class="media-body">
-                            <a href="user-profile.html">
+                            <a href="user-profile">
                               <span class="title">Larissa Gebhardt</span>
                               <span>Cyber Punk</span>
                             </a>
@@ -793,13 +1180,13 @@
 
                         <div class="media media-sm">
                           <div class="media-sm-wrapper">
-                            <a href="user-profile.html">
+                            <a href="user-profile">
                               <img src="images/user/user-sm-04.jpg" alt="User Image">
                             </a>
 
                           </div>
                           <div class="media-body">
-                            <a href="user-profile.html">
+                            <a href="user-profile">
                               <span class="title">Albrecht Straub</span>
                               <span>Photographer</span>
                             </a>
@@ -808,13 +1195,13 @@
 
                         <div class="media media-sm">
                           <div class="media-sm-wrapper">
-                            <a href="user-profile.html">
+                            <a href="user-profile">
                               <img src="images/user/user-sm-05.jpg" alt="User Image">
                               <span class="active bg-danger"></span>
                             </a>
                           </div>
                           <div class="media-body">
-                            <a href="user-profile.html">
+                            <a href="user-profile">
                               <span class="title">Leopold Ebert</span>
                               <span>Fashion Designer</span>
                             </a>
@@ -823,13 +1210,13 @@
 
                         <div class="media media-sm">
                           <div class="media-sm-wrapper">
-                            <a href="user-profile.html">
+                            <a href="user-profile">
                               <img src="images/user/user-sm-06.jpg" alt="User Image">
                               <span class="active bg-primary"></span>
                             </a>
                           </div>
                           <div class="media-body">
-                            <a href="user-profile.html">
+                            <a href="user-profile">
                               <span class="title">Selena Wagner</span>
                               <span>Photographer</span>
                             </a>
@@ -847,6 +1234,51 @@
                     <script src="plugins/simplebar/simplebar.min.js"></script>
                     <script src="https://unpkg.com/hotkeys-js/dist/hotkeys.min.js"></script>
 
+                    
+                    
+                    <script src="plugins/apexcharts/apexcharts.js"></script>
+                    
+                    
+                    
+                    <script src="plugins/DataTables/DataTables-1.10.18/js/jquery.dataTables.min.js"></script>
+                    
+                    
+                    
+                    <script src="plugins/jvectormap/jquery-jvectormap-2.0.3.min.js"></script>
+                    <script src="plugins/jvectormap/jquery-jvectormap-world-mill.js"></script>
+                    <script src="plugins/jvectormap/jquery-jvectormap-us-aea.js"></script>
+                    
+                    
+                    
+                    <script src="plugins/daterangepicker/moment.min.js"></script>
+                    <script src="plugins/daterangepicker/daterangepicker.js"></script>
+                    <script>
+                      jQuery(document).ready(function() {
+                        jQuery('input[name="dateRange"]').daterangepicker({
+                        autoUpdateInput: false,
+                        singleDatePicker: true,
+                        locale: {
+                          cancelLabel: 'Clear'
+                        }
+                      });
+                        jQuery('input[name="dateRange"]').on('apply.daterangepicker', function (ev, picker) {
+                          jQuery(this).val(picker.startDate.format('MM/DD/YYYY'));
+                        });
+                        jQuery('input[name="dateRange"]').on('cancel.daterangepicker', function (ev, picker) {
+                          jQuery(this).val('');
+                        });
+                      });
+                    </script>
+                    
+                    
+                    
+                    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+                    
+                    
+                    
+                    <script src="plugins/toaster/toastr.min.js"></script>
+
+                    
                     
                     <script src="js/mono.js"></script>
                     <script src="js/chart.js"></script>
