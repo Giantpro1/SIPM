@@ -11,6 +11,7 @@
 
   <!-- GOOGLE FONTS -->
   <link href="https://fonts.googleapis.com/css?family=Karla:400,700|Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
   <link href="plugins/material/css/materialdesignicons.min.css" rel="stylesheet" />
   <link href="plugins/simplebar/simplebar.css" rel="stylesheet" />
   <!-- PLUGINS CSS STYLE -->
@@ -25,14 +26,6 @@
   <!-- FAVICON -->
   <link href="images/favicon.png" rel="shortcut icon" />
 
-  <!--
-    HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
-  -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
   <script src="plugins/nprogress/nprogress.js"></script>
 </head>
 
@@ -592,8 +585,6 @@
                 </ul>
               </div>
             </nav>
-
-
           </header>
 
         <!-- ====================================
@@ -603,11 +594,11 @@
           <div class="content">	<!-- ====================================
 	——— EMAIL WRAPPER
 	===================================== -->
-<div class="email-wrapper rounded border bg-white">
+<div class="email-wrapper rounded border bg-white shadow">
   <div class="row no-gutters justify-content-center">
     <div class="col-lg-4 col-xl-3 col-xxl-2">
       <div class="email-left-column email-options p-4 p-xl-5">
-        <a href="email-compose" class="btn btn-block btn-primary btn-pill mb-4 mb-xl-5">Compose</a>
+        <a href="email-compose" class="btn btn-block btn-primary btn-pill mb-4 mb-xl-5">Action</a>
         <ul class="pb-2">
           <li class="d-block active mb-4">
             <a href="verifyUsers">
@@ -662,7 +653,6 @@
               </tr>
             </thead>
             <tbody>
-      
               <tr>
                 <td class="py-0">
                   <img src="images/products/products-xs-01.jpg" alt="Product Image">
@@ -677,9 +667,9 @@
                 </td>
                 <td>4</td>
                 <td>
-                  <button class="btn btn-warning"><i class=""></i></button>
-                  <button class="btn btn-danger"><i class=""></i></button>
-                  <button class="btn btn-success"><i class=""></i></button>
+                  <button class="btn btn-warning px-2"><i class="fa fa-trash" alt="disapprove"></i></button>
+                  <button class="btn btn-danger px-2"><i class="fa fa-times"></i></button>
+                  <button class="btn btn-success px-2"><i class="fa fa-eye"></i></button>
                 </td>
               </tr>
    
@@ -697,15 +687,11 @@
                 </td>
                 <td>6</td>
                 <td>
-                  <button class="btn btn-warning"><i class=""></i></button>
-                  <button class="btn btn-danger"><i class=""></i></button>
-                  <button class="btn btn-success"><i class=""></i></button>
+                  <a class="btn btn-warning px-2" alt="disapprove"><i class="fa fa-trash"></i></a>
+                  <a class="btn btn-danger px-2"><i class="fa fa-times"></i></a>
+                  <a class="btn btn-success px-2"><i class="fa fa-eye"></i></a>
                 </td>
               </tr>
-    
-      
-      
-      
             </tbody>
           </table>
 
