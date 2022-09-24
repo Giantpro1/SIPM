@@ -48,14 +48,14 @@
 
                     <h4 class="text-dark mb-6 text-center">Sign in for free</h4>
 
-                    <form action="/index.html">
+                    <form action="#" id="Admin_Log">
                       <div class="row">
                         <div class="form-group col-md-12 mb-4">
-                          <input type="email" class="form-control input-lg" id="email" aria-describedby="emailHelp"
+                          <input type="email" class="form-control input-lg" name="sipmAdminEmail" id="email" aria-describedby="emailHelp"
                             placeholder="email">
                         </div>
                         <div class="form-group col-md-12 ">
-                          <input type="password" class="form-control input-lg" id="password" placeholder="Password">
+                          <input type="password" class="form-control input-lg" name="sipmAdminPassword" id="password" placeholder="Password">
                         </div>
                         <div class="col-md-12">
 
@@ -70,10 +70,7 @@
 
                           </div>
 
-                          <button type="submit" class="btn btn-primary btn-pill mb-4">Sign In</button>
-
-                          <p>Don't have an account yet ?
-                            <a class="text-blue" href="sign-up.html">Sign Up</a>
+                          <button type="submit" id="Admin_LogBtn" class="btn btn-primary btn-pill mb-4">Sign In</button>
                           </p>
                         </div>
                       </div>
@@ -84,6 +81,9 @@
             </div>
           </div>
         </div>
-
+  <script src="plugins/jquery/jquery.min.js"></script>
+  <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/sweetAlert.js"></script>
 </body>
 </html>
