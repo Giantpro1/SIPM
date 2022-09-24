@@ -7,12 +7,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Mono - Responsive Admin & Dashboard Template</title>
+  <title>SIPM</title>
 
   <!-- GOOGLE FONTS -->
   <link href="https://fonts.googleapis.com/css?family=Karla:400,700|Roboto" rel="stylesheet">
   <link href="plugins/material/css/materialdesignicons.min.css" rel="stylesheet" />
   <link href="plugins/simplebar/simplebar.css" rel="stylesheet" />
+  <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
 
   <!-- PLUGINS CSS STYLE -->
   <link href="plugins/nprogress/nprogress.css" rel="stylesheet" />
@@ -604,7 +605,7 @@
           <div class="content">	<!-- ====================================
 	——— EMAIL WRAPPER
 	===================================== -->
-<div class="email-wrapper rounded border bg-white">
+<div class="email-wrapper rounded border bg-white shadow">
   <div class="row no-gutters justify-content-center">
     <div class="col-lg-4 col-xl-3 col-xxl-2">
       <div class="email-left-column email-options p-4 p-xl-5">
@@ -650,63 +651,20 @@
             <table id="productsTable" class="table table-hover table-product" style="width:100%">
                 <thead>
                   <tr>
+                    <th>S/n</th>
                     <th>Profile Image</th>
                     <th>UserName</th>
                     <th>UserId</th>
                     <th>Email</th>
                     <th>Firtname</th>
                     <th>SecondName</th>
-                    <th>User Activity</th>
+                    <th>User Status</th>
                     <th>DateReg</th>
                     <th>Action</th>
                     <th></th>
                   </tr>
                 </thead>
-                <tbody>
-          
-                  <tr>
-                    <td class="py-0">
-                      <img src="images/products/products-xs-01.jpg" class="user-image rounded-circle" alt="Product Image">
-                    </td>
-                    <td>Coach Swagger</td>
-                    <td>24541</td>
-                    <td>27</td>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>
-                      <div id="tbl-chart-01"></div>
-                    </td>
-                    <td>4</td>
-                    <td>
-                      <button class="btn btn-warning"><i class=""></i></button>
-                      <button class="btn btn-danger"><i class=""></i></button>
-                      <button class="btn btn-success"><i class=""></i></button>
-                    </td>
-                  </tr>
-       
-                  <tr>
-                    <td class="py-0">
-                      <img src="images/products/products-xs-15.jpg" alt="Product Image">
-                    </td>
-                    <td>Headphones</td>
-                    <td>24555</td>
-                    <td>17</td>
-                    <td>6</td>
-                    <td>7</td>
-                    <td>
-                      <div id="tbl-chart-15"></div>
-                    </td>
-                    <td>6</td>
-                    <td>
-                      <button class="btn btn-warning"><i class=""></i></button>
-                      <button class="btn btn-danger"><i class=""></i></button>
-                      <button class="btn btn-success"><i class=""></i></button>
-                    </td>
-                  </tr>
-        
-          
-          
-          
+                <tbody id="displayPendingUser">
                 </tbody>
               </table>
         </div>
@@ -734,110 +692,6 @@
 
       </div>
     </div>
-    
-                    <!-- Card Offcanvas -->
-                    <div class="card card-offcanvas" id="contact-off" >
-                      <div class="card-header">
-                        <h2>Contacts</h2>
-                        <a href="#" class="btn btn-primary btn-pill px-4">Add New</a>
-                      </div>
-                      <div class="card-body">
-
-                        <div class="mb-4">
-                          <input type="text" class="form-control form-control-lg form-control-secondary rounded-0" placeholder="Search contacts...">
-                        </div>
-
-                        <div class="media media-sm">
-                          <div class="media-sm-wrapper">
-                            <a href="user-profile">
-                              <img src="images/user/user-sm-01.jpg" alt="User Image">
-                              <span class="active bg-primary"></span>
-                            </a>
-                          </div>
-                          <div class="media-body">
-                            <a href="user-profile">
-                              <span class="title">Selena Wagner</span>
-                              <span class="discribe">Designer</span>
-                            </a>
-                          </div>
-                        </div>
-
-                        <div class="media media-sm">
-                          <div class="media-sm-wrapper">
-                            <a href="user-profile">
-                              <img src="images/user/user-sm-02.jpg" alt="User Image">
-                              <span class="active bg-primary"></span>
-                            </a>
-                          </div>
-                          <div class="media-body">
-                            <a href="user-profile">
-                              <span class="title">Walter Reuter</span>
-                              <span>Developer</span>
-                            </a>
-                          </div>
-                        </div>
-
-                        <div class="media media-sm">
-                          <div class="media-sm-wrapper">
-                            <a href="user-profile">
-                              <img src="images/user/user-sm-03.jpg" alt="User Image">
-                            </a>
-                          </div>
-                          <div class="media-body">
-                            <a href="user-profile">
-                              <span class="title">Larissa Gebhardt</span>
-                              <span>Cyber Punk</span>
-                            </a>
-                          </div>
-                        </div>
-
-                        <div class="media media-sm">
-                          <div class="media-sm-wrapper">
-                            <a href="user-profile">
-                              <img src="images/user/user-sm-04.jpg" alt="User Image">
-                            </a>
-
-                          </div>
-                          <div class="media-body">
-                            <a href="user-profile">
-                              <span class="title">Albrecht Straub</span>
-                              <span>Photographer</span>
-                            </a>
-                          </div>
-                        </div>
-
-                        <div class="media media-sm">
-                          <div class="media-sm-wrapper">
-                            <a href="user-profile">
-                              <img src="images/user/user-sm-05.jpg" alt="User Image">
-                              <span class="active bg-danger"></span>
-                            </a>
-                          </div>
-                          <div class="media-body">
-                            <a href="user-profile">
-                              <span class="title">Leopold Ebert</span>
-                              <span>Fashion Designer</span>
-                            </a>
-                          </div>
-                        </div>
-
-                        <div class="media media-sm">
-                          <div class="media-sm-wrapper">
-                            <a href="user-profile">
-                              <img src="images/user/user-sm-06.jpg" alt="User Image">
-                              <span class="active bg-primary"></span>
-                            </a>
-                          </div>
-                          <div class="media-body">
-                            <a href="user-profile">
-                              <span class="title">Selena Wagner</span>
-                              <span>Photographer</span>
-                            </a>
-                          </div>
-                        </div>
-
-                      </div>
-                    </div>
 
 
 
@@ -846,7 +700,8 @@
                     <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
                     <script src="plugins/simplebar/simplebar.min.js"></script>
                     <script src="https://unpkg.com/hotkeys-js/dist/hotkeys.min.js"></script>
-
+                    <script src="js/pendUser.js"></script>
+                    <script src="js/sweetAlert.js"></script>
                     
                     <script src="js/mono.js"></script>
                     <script src="js/chart.js"></script>

@@ -29,13 +29,27 @@ class Dbc extends Database{
         return (!empty($value));
    }
 
-   public function user_exitsEmail($sipmAdminEmail){
-    $sql = "SELECT sipmAdminEmail FROM simp_admin WHERE sipmAdminEmail=:sipmAdminEmail";
-    $stmt = $this->conn->prepare($sql);
-    $stmt->execute([
-     'sipmAdminEmail'=>$sipmAdminEmail
-    ]);
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    return $result;
- }
+    public function user_exitsEmail($sipmAdminEmail){
+        $sql = "SELECT sipmAdminEmail FROM simp_admin WHERE sipmAdminEmail=:sipmAdminEmail";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute([
+        'sipmAdminEmail'=>$sipmAdminEmail
+        ]);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    public function fetchPendingUser($value){
+        $sql = "SELECT * FROM sipmusers WHERE sipmUser_Verify = '$value'";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $row;
+    }
+
+
+
+
+
+
 }
