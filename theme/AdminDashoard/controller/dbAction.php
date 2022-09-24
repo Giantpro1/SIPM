@@ -35,7 +35,7 @@ if(isset($_POST['action']) && $_POST['action'] === 'displayUser'){
         <td>
         <button title="view user" class="btn btn-info px-2"><i class="fa fa-eye"></i></button>
         <button title="disapprover user" class="btn btn-warning px-2"><i class="fa fa-times"></i></button>
-        <button title="approve user" class="btn btn-success px-2"><i class="fa fa-check"></i></button>
+        <button title="approve user" id="'.$dataFetch['id'].'" class="btn btn-success verifyUser px-2"><i class="fa fa-check"></i></button>
         </td>
       </tr>';
     }
@@ -46,7 +46,7 @@ if(isset($_POST['action']) && $_POST['action'] === 'displayUser'){
  
 }
 
-
+// fetch verify users
 if(isset($_POST['action']) && $_POST['action'] === 'displayVerifyUser'){
   $output = '';
   $data = $Admindb->fetchVerifyUser(1);
@@ -87,3 +87,9 @@ if(isset($_POST['action']) && $_POST['action'] === 'displayVerifyUser'){
  }
 
 }
+
+    // verify users 
+    if(isset($_POST['verifyUser'])){
+        $id = $_POST['verifyUser'];
+        $verifyUser = $Admindb-> verifyUser($id, 1);
+    }
