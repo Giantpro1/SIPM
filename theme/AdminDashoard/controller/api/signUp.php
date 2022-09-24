@@ -30,7 +30,7 @@
                 if($dbs->validate_param($_POST['sipmAdminEmail'])){
                 $sipmAdminEmail = $dbs->test_input($_POST['sipmAdminEmail']);
             }else{
-                json_encode([
+              echo json_encode([
                     'message'=>'email field cannot be empty',
                     'status'=>404
                 ]);
@@ -38,7 +38,7 @@
                 if($dbs->validate_param(['sipmAdminPassword'])){
                     $sipmAdminPassword = $dbs->test_input($_POST['sipmAdminPassword']);
                 }else{
-                    json_encode([
+                  echo json_encode([
                         'message'=> 'password field cannot be empty',
                         'status'=>404
                     ]);

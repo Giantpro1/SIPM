@@ -15,7 +15,7 @@ class Dbc extends Database{
         return true;
     }
 
-    public function FunctionName($sipmAdminEmail){
+    public function logAdmin($sipmAdminEmail){
         $sql = "SELECT sipmAdminEmail, sipmAdminPassword FROM simp_admin WHERE sipmAdminEmail=:sipmAdminEmail ";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute([
