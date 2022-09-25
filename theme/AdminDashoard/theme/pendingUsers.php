@@ -675,6 +675,31 @@
 </div>
           
         </div>
+        <!-- modal for view -->
+        <div class="modal fade" id="viewUserDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header border-bottom-0">
+              <div class="">
+                  <h4 class="text-info">view user details <i class="fa fa-arrow-down"></i></h4>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body text-center">
+              <p class="text-dark text-weight"> User Profile pics:<span class="text-primary" id=""> </span></p>
+              <p class="text-dark text-weight"> UserName:<span class="text-primary" id="viewUserName"> </span></p>
+              <p class="text-dark text-weight"> UserEmail:<span class="text-primary" id="viewUserEmail"> </span></p>
+              <p class="text-dark text-weight"> UserUniqueId:<span class="text-primary" id="viewUserUnique"> </span></p>
+              <p class="text-dark text-weight"> userFirstname:<span class="text-primary" id="viewUserFistName"> </span></p>
+              <p class="text-dark text-weight"> userSecondname<span class="text-primary" id="viewUserSecondName"> </span></p>
+              <p class="text-dark text-weight"> userCommunityName:<span class="text-primary" id="viewUserComName"> </span></p>
+              </div>
+            </div>
+          </div>
+          </div>
         
           <!-- Footer -->
           <footer class="footer mt-auto">
