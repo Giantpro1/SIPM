@@ -640,6 +640,7 @@
           <table id="productsTable" class="table table-hover table-product" style="width:100%">
             <thead>
               <tr>
+                <th>S/N</th>
                 <th>Profile Image</th>
                 <th>UserName</th>
                 <th>UserId</th>
