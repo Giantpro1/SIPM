@@ -689,7 +689,7 @@
                 </button>
               </div>
               <div class="modal-body text-center">
-              <p class="text-dark text-weight"> User Profile pics:<span class="text-primary" id=""> </span></p>
+              <p class="text-dark text-weight"> User Profile pics:<span class="text-primary" id="viewProPic"> </span></p>
               <p class="text-dark text-weight"> UserName:<span class="text-primary" id="viewUserName"> </span></p>
               <p class="text-dark text-weight"> UserEmail:<span class="text-primary" id="viewUserEmail"> </span></p>
               <p class="text-dark text-weight"> UserUniqueId:<span class="text-primary" id="viewUserUnique"> </span></p>

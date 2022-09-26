@@ -63,7 +63,7 @@ $(document).ready(function(){
                   // console.log(data)
                   result = JSON.parse(data)
                   console.log(result)
-                  $("#viewUserProPic").html("<img class='product-thumb rounded-circle img-fluid' src='../"+result.sipmUser_ProfileImg+"'>")
+                  $("#viewUserProPic").html("<img class='product-thumb img-thumbnail img-fluid' src='../"+result.sipmUser_ProfileImg+"'>")
                   $("#viewUserName").text(result.simp_UserName)
                   $("#viewUserEmail").text(result.simpUser_Email)
                   $("#viewUserUnique").text(result.unique_id)
