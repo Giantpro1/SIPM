@@ -60,6 +60,13 @@ class Dbc extends Database{
         $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $row;
     }
+    public function fetchDisapprovedUser($value){
+        $sql = "SELECT * FROM sipmusers WHERE sipmUser_Verify = '$value'";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $row;
+    }
 
 
     public function verifyUser($id, $value){
