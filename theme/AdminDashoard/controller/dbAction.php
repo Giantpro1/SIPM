@@ -73,7 +73,7 @@ if(isset($_POST['action']) && $_POST['action'] === 'displayVerifyUser'){
         </td>
         <td>'.date('F j, Y', strtotime($dataFetch['simpUserReg_Date'])).'</td>
         <td>
-        <button title="view user" class="btn btn-info px-2"><i class="fa fa-eye"></i></button>
+        <button data-toggle="modal" title="view user" id="'.$dataFetch['id'].'" data-target="#viewUserDetails" class="btn btn-info viewUser px-2"><i class="fa fa-eye"></i></button>
         <button title="disapprover user" id="'.$dataFetch['id'].'"  class="btn btn-warning disapproveUser px-2"><i class="fa fa-times"></i></button>
         <button title="delete user" class="btn btn-danger px-2"><i class="fa fa-trash"></i></button>
         </td>
@@ -121,7 +121,7 @@ if(isset($_POST['action']) && $_POST['action'] === 'displayDisApproveUser'){
         </td>
         <td>'.date('F j, Y', strtotime($dataFetch['simpUserReg_Date'])).'</td>
         <td>
-        <button title="view user" class="btn btn-info px-2"><i class="fa fa-eye"></i></button>
+        <button data-toggle="modal" id="'.$dataFetch['id'].'" title="view user" data-target="#viewUserDetails" class="btn btn-info viewUser px-2"><i class="fa fa-eye"></i></button>
         <button title="delete user" class="btn btn-danger px-2"><i class="fa fa-trash"></i></button>
         <button title="verify user" class="btn btn-success px-2"><i class="fa fa-check"></i></button>
         </td>

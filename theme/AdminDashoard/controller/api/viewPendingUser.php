@@ -12,7 +12,8 @@ $dbs = new Dbc();
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
     if(isset($_POST['viewUser'])){
-        $data = $dbs->viewPendingUser();
+        $id = $_POST['viewUser'];
+        $data = $dbs->viewUserAccount(0, $id);
         echo json_encode([
             'message'=>$data,
             'status'=>200

@@ -46,10 +46,12 @@ class Dbc extends Database{
         $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $row;
     }
-    public function viewPendingUser(){
-        $sql = "SELECT * FROM sipmusers WHERE sipmUser_Verify = 0";
+    public function viewUserAccount($value, $id){
+        $sql = "SELECT * FROM sipmusers WHERE sipmUser_Verify ='$value' AND id=:id";
         $stmt = $this->conn->prepare($sql);
-        $stmt->execute();
+        $stmt->execute([
+            'id'=>$id
+        ]);
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         return $row;
     }
