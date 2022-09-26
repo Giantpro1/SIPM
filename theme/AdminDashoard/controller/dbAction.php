@@ -74,7 +74,7 @@ if(isset($_POST['action']) && $_POST['action'] === 'displayVerifyUser'){
         <td>'.date('F j, Y', strtotime($dataFetch['simpUserReg_Date'])).'</td>
         <td>
         <button title="view user" class="btn btn-info px-2"><i class="fa fa-eye"></i></button>
-        <button title="disapprover user" class="btn btn-warning px-2"><i class="fa fa-times"></i></button>
+        <button title="disapprover user" id="'.$dataFetch['id'].'"  class="btn btn-warning disapproveUser px-2"><i class="fa fa-times"></i></button>
         <button title="delete user" class="btn btn-danger px-2"><i class="fa fa-trash"></i></button>
         </td>
       </tr>';
