@@ -21,7 +21,7 @@ if(isset($_POST['action']) && $_POST['action'] === 'displayUser'){
         <tr>
         <td>'.++$i.'</td>
         <td class="py-0">
-          <img src="'.'.../images/uploadImg/'.$dataFetch['sipmUser_ProfileImg'].'" class="user-image rounded-circle" alt="profile Image">
+          <img src="'.'../../../images/uploadImg/'.$dataFetch['sipmUser_ProfileImg'].'" class="user-image rounded-circle" alt="profile Image">
         </td>
         <td>'.$dataFetch['simp_UserName'].'</td>
         <td>'.$dataFetch['unique_id'].'</td>
@@ -34,7 +34,7 @@ if(isset($_POST['action']) && $_POST['action'] === 'displayUser'){
         <td>'.date('F j, Y', strtotime($dataFetch['simpUserReg_Date'])).'</td>
         <td>
         <button data-toggle="modal" id="'.$dataFetch['id'].'" title="view user" data-target="#viewUserDetails" class="btn btn-info px-2 viewUser"><i class="fa fa-eye"></i></button>
-        <button title="disapprover user" class="btn btn-warning px-2"><i class="fa fa-times"></i></button>
+        <button title="disapprover user" id="'.$dataFetch['id'].'" class="btn btn-warning disapproveUser px-2"><i class="fa fa-times"></i></button>
         <button title="approve user" id="'.$dataFetch['id'].'" class="btn btn-success verifyUser px-2"><i class="fa fa-check"></i></button>
         </td>
       </tr>';
@@ -62,7 +62,7 @@ if(isset($_POST['action']) && $_POST['action'] === 'displayVerifyUser'){
         <tr>
         <td>'.++$i.'</td>
         <td class="py-0">
-          <img src="'.'.../images/adsImages/'.$dataFetch['sipmUser_ProfileImg'].'" class="user-image rounded-circle" alt="Product Image">
+          <img src="'.'.../images/uploadImg/'.$dataFetch['sipmUser_ProfileImg'].'" class="user-image rounded-circle" alt="Product Image">
         </td>
         <td>'.$dataFetch['simp_UserName'].'</td>
         <td>'.$dataFetch['unique_id'].'</td>
@@ -92,4 +92,9 @@ if(isset($_POST['action']) && $_POST['action'] === 'displayVerifyUser'){
     if(isset($_POST['verifyUser'])){
         $id = $_POST['verifyUser'];
         $verifyUser = $Admindb-> verifyUser($id, 1);
+    }
+
+    if(isset($_POST['DisapproveUser'])){
+        $id = $_POST['DisapproveUser'];
+        $verifyUser = $Admindb-> disapproveUser($id, 2);
     }
