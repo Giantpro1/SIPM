@@ -87,4 +87,13 @@ class Dbc extends Database{
         ]);
         return true;
     }
+    public function deleteUser($id, $value){
+        $sql = "UPDATE sipmusers SET sipmUser_Verify ='$value' WHERE id=:id";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute([
+            'id'=>$id
+        ]);
+        return true;
+    }
+
 }

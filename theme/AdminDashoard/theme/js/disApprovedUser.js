@@ -74,4 +74,36 @@ $(document).ready(function(){
                   })
                 
                 })
+
+                
+                            //delete User
+                            $('body').on('click', '.deleteUser', function(e){
+                              e.preventDefault()
+                              deleteUser = $(this).attr('id')
+                              swal.fire({
+                                title: 'Delete?',
+                                text: 'Are you sure you want to delete this User?',
+                                icon: 'warning',
+                                showCancelButton: true,
+                                confirmButtonColor: "#FF0000",
+                                cancelButtonColor: 'blue',
+                                confirmButtonText: 'Delete Ads'
+                              }).then((result)=>{
+                                if(result.value){
+                                  $.ajax({
+                                    url: '../controller/dbAction.php',
+                                    method: 'POST',
+                                    data: {deleteUser: deleteUser},
+                                    success: function(response){
+                                        swal.fire({
+                                          icon: 'success',
+                                          text: 'You have successfully deleted your User',
+                                          title: 'Ads Deleted'
+                                        }).then(location.reload())
+                                        displayVerifyUser()
+                                    }
+                                  })
+                                }
+                              })
+                            })
 });
