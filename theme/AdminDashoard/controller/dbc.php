@@ -87,7 +87,4 @@ class Dbc extends Database{
         ]);
         return true;
     }
-
-
-    
 }
