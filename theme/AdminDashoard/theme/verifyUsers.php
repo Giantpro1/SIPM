@@ -641,13 +641,13 @@
             <thead>
               <tr>
                 <th>S/N</th>
-                <th>Profile Image</th>
+                <th>DP</th>
                 <th>UserName</th>
                 <th>UserId</th>
                 <th>Email</th>
                 <th>Firtname</th>
                 <th>SecondName</th>
-                <th>User Activity</th>
+                <th>Status</th>
                 <th>DateReg</th>
                 <th>Action</th>
                 <th></th>

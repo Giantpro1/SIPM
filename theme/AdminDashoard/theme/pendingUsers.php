@@ -650,19 +650,19 @@
         <div class="border border-top-0 rounded table-responsive email-list">
             <table id="productsTable" class="table table-hover table-product" style="width:100%">
                 <thead>
-                  <tr>
-                    <th>S/n</th>
-                    <th>Profile Image</th>
-                    <th>UserName</th>
-                    <th>UserId</th>
-                    <th>Email</th>
-                    <th>Firtname</th>
-                    <th>SecondName</th>
-                    <th>User Status</th>
-                    <th>DateReg</th>
-                    <th>Action</th>
-                    <th></th>
-                  </tr>
+                <tr>
+                <th>S/N</th>
+                <th>DP</th>
+                <th>UserName</th>
+                <th>UserId</th>
+                <th>Email</th>
+                <th>Firtname</th>
+                <th>SecondName</th>
+                <th>Status</th>
+                <th>DateReg</th>
+                <th>Action</th>
+                <th></th>
+                </tr>
                 </thead>
                 <tbody id="displayPendingUser">
                 </tbody>
