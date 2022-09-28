@@ -96,4 +96,11 @@ class Dbc extends Database{
         return true;
     }
 
+    public function fetchAllPendingAds($value){
+        $sql = "SELECT * FROM sipmusersads LEFT JOIN sipmusersads_img ON sipmuser_PostId=simpUser_ImgId WHERE sipmUser_AdsVerified='$value' AND sipmUser_AdsImgVerified='$value' LIMIT 6";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $row;
+    }
 }

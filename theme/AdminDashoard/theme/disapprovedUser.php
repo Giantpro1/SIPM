@@ -707,7 +707,6 @@
                 document.getElementById("copy-year").innerHTML = year;
             </script>
           </footer>
-
       </div>
     </div>
     

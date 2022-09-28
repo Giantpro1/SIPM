@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Mono - Responsive Admin & Dashboard Template</title>
+  <title>SIPM</title>
 
   <!-- GOOGLE FONTS -->
   <link href="https://fonts.googleapis.com/css?family=Karla:400,700|Roboto" rel="stylesheet">
@@ -662,51 +662,7 @@
                     <th></th>
                   </tr>
                 </thead>
-                <tbody>
-          
-                  <tr>
-                    <td class="py-0">
-                      <img src="images/products/products-xs-01.jpg" class="user-image rounded-circle" alt="Product Image">
-                    </td>
-                    <td>Coach Swagger</td>
-                    <td>24541</td>
-                    <td>27</td>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>
-                      <div id="tbl-chart-01"></div>
-                    </td>
-                    <td>4</td>
-                    <td>
-                      <button class="btn btn-warning"><i class=""></i></button>
-                      <button class="btn btn-danger"><i class=""></i></button>
-                      <button class="btn btn-success"><i class=""></i></button>
-                    </td>
-                  </tr>
-       
-                  <tr>
-                    <td class="py-0">
-                      <img src="images/products/products-xs-15.jpg" alt="Product Image">
-                    </td>
-                    <td>Headphones</td>
-                    <td>24555</td>
-                    <td>17</td>
-                    <td>6</td>
-                    <td>7</td>
-                    <td>
-                      <div id="tbl-chart-15"></div>
-                    </td>
-                    <td>6</td>
-                    <td>
-                      <button class="btn btn-warning"><i class=""></i></button>
-                      <button class="btn btn-danger"><i class=""></i></button>
-                      <button class="btn btn-success"><i class=""></i></button>
-                    </td>
-                  </tr>
-        
-          
-          
-          
+                <tbody id="displayPendingAds">
                 </tbody>
               </table>
         </div>
@@ -739,7 +695,8 @@
                     <script src="js/chart.js"></script>
                     <script src="js/map.js"></script>
                     <script src="js/custom.js"></script>
-
+                    <script src="js/pendProduct.js"></script>
+                    <script src="js/sweetAlert.js"></script>
                     
 
 
