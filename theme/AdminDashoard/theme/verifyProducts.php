@@ -604,7 +604,7 @@
           <div class="content">	<!-- ====================================
 	——— EMAIL WRAPPER
 	===================================== -->
-<div class="email-wrapper rounded border bg-white">
+<div class="email-wrapper rounded border bg-white shadow">
   <div class="row no-gutters justify-content-center">
     <div class="col-lg-4 col-xl-3 col-xxl-2">
       <div class="email-left-column email-options p-4 p-xl-5">
