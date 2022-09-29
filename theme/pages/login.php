@@ -127,7 +127,7 @@ if (isset($_SESSION['ourUser'])) {
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-5 col-md-8 align-item-center">
-        <div class="border">
+        <div class="border shadow">
           <h3 class="bg-gray p-4">Login Now</h3>
           <p class="bg-danger text-white" id="form_Error"></p>
           <form action="#" id="simpUSer_login">

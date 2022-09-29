@@ -119,7 +119,7 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-5 col-md-8 align-item-center">
-        <div class="border border">
+        <div class="border border shadow">
           <h3 class="bg-gray p-4">Register Now</h3>
           <form action="#" id="simp_Register">
             <fieldset class="p-4">
