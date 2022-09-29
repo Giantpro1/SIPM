@@ -32,8 +32,8 @@ if(isset($_POST['action']) && $_POST['action'] === 'displayUser'){
         </td>
         <td>'.date('F j, Y', strtotime($dataFetch['simpUserReg_Date'])).'</td>
         <td>
-        <button data-toggle="modal" id="'.$dataFetch['id'].'" title="view user" data-target="#viewUserDetails" class="btn btn-info px-2 viewUser"><i class="fa fa-eye"></i></button>
-        <button title="approve user" id="'.$dataFetch['id'].'" class="btn btn-success verifyUser px-2"><i class="fa fa-check"></i></button>
+        <button data-toggle="modal" id="'.$dataFetch['id'].'" title="view user" data-target="#viewUserDetails" class="btn btn-info p-0 px-1 mb-1 viewUser"><i class="fa fa-eye"></i></button>
+        <button title="approve user" id="'.$dataFetch['id'].'" class="btn btn-success verifyUser p-0 px-1"><i class="fa fa-check"></i></button>
         </td>
       </tr>';
     }
@@ -72,8 +72,8 @@ if(isset($_POST['action']) && $_POST['action'] === 'displayVerifyUser'){
         </td>
         <td>'.date('F j, Y', strtotime($dataFetch['simpUserReg_Date'])).'</td>
         <td>
-        <button data-toggle="modal" title="view user" id="'.$dataFetch['id'].'" data-target="#viewUserDetails" class="btn btn-info viewUser px-2"><i class="fa fa-eye"></i></button>
-        <button title="disapprover user" id="'.$dataFetch['id'].'"  class="btn btn-warning disapproveUser px-2"><i class="fa fa-times"></i></button>
+        <button data-toggle="modal" title="view user" id="'.$dataFetch['id'].'" data-target="#viewUserDetails" class="btn btn-info viewUser p-0 px-1 mb-1"><i class="fa fa-eye"></i></button>
+        <button title="disapprover user" id="'.$dataFetch['id'].'"  class="btn btn-warning disapproveUser p-0 px-1"><i class="fa fa-times"></i></button>
         </td>
       </tr>';
     }
@@ -119,9 +119,9 @@ if(isset($_POST['action']) && $_POST['action'] === 'displayDisApproveUser'){
         </td>
         <td>'.date('F j, Y', strtotime($dataFetch['simpUserReg_Date'])).'</td>
         <td>
-        <button data-toggle="modal" id="'.$dataFetch['id'].'" title="view user" data-target="#viewUserDetails" class="btn btn-info viewUser px-2"><i class="fa fa-eye"></i></button>
-        <button title="delete user" id="'.$dataFetch['id'].'" class="btn btn-danger deleteUser px-2"><i class="fa fa-trash"></i></button>
-        <button title="verify user" id="'.$dataFetch['id'].'" class="btn btn-success verifyUser px-2"><i class="fa fa-check"></i></button>
+        <button data-toggle="modal" id="'.$dataFetch['id'].'" title="view user" data-target="#viewUserDetails" class="btn btn-info viewUser p-0 px-1 mb-1"><i class="fa fa-eye"></i></button>
+        <button title="delete user" id="'.$dataFetch['id'].'" class="btn btn-danger deleteUser p-0 px-1"><i class="fa fa-trash"></i></button>
+        <button title="verify user" id="'.$dataFetch['id'].'" class="btn btn-success verifyUser p-0 px-1"><i class="fa fa-check"></i></button>
         </td>
       </tr>';
     }
