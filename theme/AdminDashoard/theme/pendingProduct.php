@@ -16,6 +16,7 @@
 
   <!-- PLUGINS CSS STYLE -->
   <link href="plugins/nprogress/nprogress.css" rel="stylesheet" />
+  <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.css">
   
   <!-- MONO CSS -->
   <link id="main-css-href" rel="stylesheet" href="css/style.css" />

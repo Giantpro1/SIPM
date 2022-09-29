@@ -31,9 +31,8 @@ if(isset($_POST['action']) && $_POST['action'] === 'displayPendProduct'){
             </td>
             <td>'.date('F d, Y', strtotime($datas['simpUser_AdsDate'])).'</td>
             <td>
-              <button class="btn btn-warning"><i class=""></i></button>
-              <button class="btn btn-danger"><i class=""></i></button>
-              <button class="btn btn-success"><i class=""></i></button>
+              <button class="btn btn-info p-0 px-1 mb-1" title="view ads"><i class="fa fa-eye"></i></button>
+              <button class="btn btn-success p-0 px-1" title="veify ads"><i class="fa fa-check"></i></button>
             </td>
           </tr>';
         }
