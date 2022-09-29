@@ -650,6 +650,7 @@
             <table id="productsTable" class="table table-hover table-product" style="width:100%">
                 <thead>
                   <tr>
+                    <th>S/N</th>
                     <th>Product Image</th>
                     <th>Product Title</th>
                     <th>ProductPostId</th>

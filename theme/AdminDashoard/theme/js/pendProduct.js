@@ -9,9 +9,9 @@ $(document).ready(function(){
             data: {action: 'displayPendProduct'},
             success: function (response) {
                 console.log(response)
-                data  = JSON.parse(response)
-                console.log(data)
-            //    $("#displayPendingAds").html(response);
+                // data  = JSON.parse(response)
+                // console.log(response)
+               $("#displayPendingAds").html(response);
             }
         });
     }
