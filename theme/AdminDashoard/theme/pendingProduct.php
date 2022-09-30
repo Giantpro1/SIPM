@@ -259,7 +259,7 @@
                 <span class="sr-only">Toggle navigation</span>
               </button>
 
-              <span class="page-title">verify Products</span>
+              <span class="page-title">Pending Products</span>
 
               <div class="navbar-right ">
 
@@ -605,7 +605,7 @@
           <div class="content">	<!-- ====================================
 	——— EMAIL WRAPPER
 	===================================== -->
-<div class="email-wrapper rounded border bg-white">
+<div class="email-wrapper rounded border bg-white shadow">
   <div class="row no-gutters justify-content-center">
     <div class="col-lg-4 col-xl-3 col-xxl-2">
       <div class="email-left-column email-options p-4 p-xl-5">
@@ -658,7 +658,7 @@
                     <th>Product Description</th>
                     <th>Product Prices</th>
                     <th>Product Category</th>
-                    <th>User Activity</th>
+                    <th>Product Status</th>
                     <th>DatePosted</th>
                     <th>Action</th>
                     <th></th>
@@ -686,6 +686,36 @@
 
       </div>
     </div>
+
+        <!-- modal-viewProduct -->
+
+        <div class="modal fade" id="viewProductDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header border-bottom-0">
+              <div class="">
+                  <h4 class="text-info">view Products details <i class="fa fa-arrow-down"></i></h4>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body text-center">
+              <p class="text-dark text-weight"> Products Img:<span class="text-primary" id="productImg"> </span></p>
+              <p class="text-dark text-weight"> Product Title:<span class="text-primary" id="productTitle"> </span></p>
+              <p class="text-dark text-weight"> Product Post Id:<span class="text-primary" id="productPostId"> </span></p>
+              <p class="text-dark text-weight"> Product Description:<span class="text-primary" id="productDescription"> </span></p>
+              <p class="text-dark text-weight"> Product Type:<span class="text-primary" id="productType"> </span></p>
+              <p class="text-dark text-weight"> Product Category:<span class="text-primary" id="ProductCate"> </span></p>
+              <p class="text-dark text-weight"> Product contact Name:<span class="text-primary" id="ProductContactName"> </span></p>
+              <p class="text-dark text-weight"> product Address<span class="text-primary" id="ProductAddress"> </span></p>
+              <p class="text-dark text-weight"> product Email:<span class="text-primary" id="productEmail"> </span></p>
+              <p class="text-dark text-weight"> product contact:<span class="text-primary" id="productContact"> </span></p>
+              </div>
+            </div>
+          </div>
+          </div>
     
                     <script src="plugins/jquery/jquery.min.js"></script>
                     <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>

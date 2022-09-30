@@ -103,4 +103,13 @@ class Dbc extends Database{
         $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $row;
     }
+    public function ViewAllProduct($sipmuser_PostId, $value){
+        $sql = "SELECT * FROM sipmusersads LEFT JOIN sipmusersads_img ON sipmuser_PostId=simpUser_ImgId WHERE (sipmUser_AdsVerified='$value' AND sipmUser_AdsImgVerified='$value') AND sipmuser_PostId=:sipmuser_PostId";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute([
+            'sipmuser_PostId'=>$sipmuser_PostId
+        ]);
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $row;
+    }
 }
