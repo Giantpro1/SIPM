@@ -118,12 +118,12 @@
 
                 
                   <li  class="has-sub" >
-                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#product"
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#User"
                       aria-expanded="false" aria-controls="email">
                       <i class="mdi mdi-email"></i>
                       <span class="nav-text">Users</span> <b class="caret"></b>
                     </a>
-                    <ul  class="collapse"  id="product"
+                    <ul  class="collapse"  id="User"
                       data-parent="#sidebar-menu">
                       <div class="sub-menu">
                         
@@ -208,7 +208,7 @@
                         
                           
                             <li >
-                              <a class="sidenav-item-link" href="disapprovedUser">
+                              <a class="sidenav-item-link" href="disapproveProduct">
                                 <span class="nav-text">Disapproved Products</span>
                                 
                               </a>
