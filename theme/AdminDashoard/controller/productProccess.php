@@ -97,3 +97,13 @@ if(isset($_POST['viewProduct'])){
         echo $message;
     }
 }  
+
+// view verify product
+
+if(isset($_POST['viewVerifyProduct'])){
+  $sipmuser_PostId= $_POST['viewVerifyProduct'];
+  // $simpUser_ImgId= $_POST['viewProduct'];
+  $result = $Admindb->ViewAllProduct($sipmuser_PostId, 1);
+  echo json_encode($result);
+  // echo $result;
+}
