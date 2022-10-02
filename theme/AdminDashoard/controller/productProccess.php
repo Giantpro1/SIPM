@@ -50,3 +50,12 @@ if(isset($_POST['viewProduct'])){
     echo json_encode($result);
     // echo $result;
 }
+
+
+    // verify users 
+    if(isset($_POST['verifyProduct'])){
+      $sipmuser_PostId = $_POST['verifyProduct'];
+      $simpUser_ImgId = $_POST['verifyProduct'];
+      $verifyProduct = $Admindb-> verifyProduct(1, $sipmuser_PostId, $simpUser_ImgId);
+      echo $verifyProduct;
+  }
