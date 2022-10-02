@@ -114,7 +114,7 @@ class Dbc extends Database{
         return $row;
     }
 
-    public function verifyProduct($value, $sipmuser_PostId, $simpUser_ImgId){
+    public function productAction($value, $sipmuser_PostId, $simpUser_ImgId){
        $sql = "UPDATE sipmusersads SET sipmUser_AdsVerified='$value' WHERE sipmuser_PostId=:sipmuser_PostId";
        $stmt = $this->conn->prepare($sql);
        $stmt->execute([

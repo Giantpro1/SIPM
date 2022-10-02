@@ -44,4 +44,37 @@ $(document).ready(function(){
         });
     })
 
+           // disapprove Product 
+           $('body').on('click', '.verifyProduct', function(e){
+            e.preventDefault()
+            disapproveProduct = $(this).attr('id')
+            Swal.fire({
+              title: 'Verify?',
+              text: 'Are you sure you want to disapprove this product?',
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: "#FF0000",
+              cancelButtonColor: "blue",
+              confirmButtonText: 'disapprove Product'
+            }).then((result)=>{
+              if(result.value){
+                $.ajax({
+                    url:'../controller/productProccess.php',
+                  method:'POST',
+                  data: {disapproveProduct: disapproveProduct},
+                  success: function(response){
+                    console.log(response)
+                    Swal.fire({
+                    icon:'success',
+                    text:'You have successfully disapprove this product',
+                    title:'Product verified'
+                  })
+                  displayVerifyProduct()
+                  }
+                })
+              }
+            })
+           
+          })
+
 })

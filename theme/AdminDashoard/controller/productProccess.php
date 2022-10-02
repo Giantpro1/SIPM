@@ -56,7 +56,7 @@ if(isset($_POST['viewProduct'])){
     if(isset($_POST['verifyProduct'])){
       $sipmuser_PostId = $_POST['verifyProduct'];
       $simpUser_ImgId = $_POST['verifyProduct'];
-      $verifyProduct = $Admindb-> verifyProduct(1, $sipmuser_PostId, $simpUser_ImgId);
+      $verifyProduct = $Admindb-> productAction(1, $sipmuser_PostId, $simpUser_ImgId);
   }
 
   if(isset($_POST['action']) && $_POST['action'] === 'displayVerifyProduct'){
@@ -107,3 +107,10 @@ if(isset($_POST['viewVerifyProduct'])){
   echo json_encode($result);
   // echo $result;
 }
+
+    // disapprove product 
+    if(isset($_POST['disapproveProduct'])){
+      $sipmuser_PostId = $_POST['disapproveProduct'];
+      $simpUser_ImgId = $_POST['disapproveProduct'];
+      $verifyProduct = $Admindb-> productAction(2, $sipmuser_PostId, $simpUser_ImgId);
+  }
