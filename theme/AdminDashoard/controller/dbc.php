@@ -115,13 +115,21 @@ class Dbc extends Database{
     }
 
     public function verifyProduct($value, $sipmuser_PostId, $simpUser_ImgId){
-       $sql = "UPDATE sipmusersads LEFT JOIN sipmusersads_img ON (sipmuser_PostId=simpUser_ImgId) SET (sipmUser_AdsVerified='$value' AND sipmUser_AdsImgVerified='$value') WHERE (sipmuser_PostId=:sipmuser_PostId AND simpUser_ImgId=:simpUser_ImgId)";
+       $sql = "UPDATE sipmusersads SET sipmUser_AdsVerified='$value' WHERE sipmuser_PostId=:sipmuser_PostId";
        $stmt = $this->conn->prepare($sql);
        $stmt->execute([
-        'sipmuser_PostId'=>$sipmuser_PostId,    
-        'simpUser_ImgId'=>$simpUser_ImgId
+        'sipmuser_PostId'=>$sipmuser_PostId    
        ]);
-       return true;
+        if($stmt){
+            $sql = "UPDATE sipmusersads_img SET sipmUser_AdsImgVerified='$value' WHERE simpUser_ImgId=:simpUser_ImgId";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([
+                'simpUser_ImgId'=>$simpUser_ImgId
+            ]);
+        }
+        return true;
     }
+
 }
 // SELECT * FROM sipmusersads LEFT JOIN sipmusersads_img ON sipmuser_PostId=simpUser_ImgId WHERE (sipmUser_AdsVerified='$value' AND sipmUser_AdsImgVerified='$value')
+// LEFT JOIN sipmusersads_img ON (sipmuser_PostId=simpUser_ImgId) SET (sipmUser_AdsVerified='$value' AND sipmUser_AdsImgVerified='$value') WHERE (sipmuser_PostId=:sipmuser_PostId AND simpUser_ImgId=:simpUser_ImgId)

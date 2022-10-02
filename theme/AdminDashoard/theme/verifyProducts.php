@@ -13,6 +13,7 @@
   <link href="https://fonts.googleapis.com/css?family=Karla:400,700|Roboto" rel="stylesheet">
   <link href="plugins/material/css/materialdesignicons.min.css" rel="stylesheet" />
   <link href="plugins/simplebar/simplebar.css" rel="stylesheet" />
+  <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
 
   <!-- PLUGINS CSS STYLE -->
   <link href="plugins/nprogress/nprogress.css" rel="stylesheet" />
@@ -662,50 +663,7 @@
                     <th></th>
                   </tr>
                 </thead>
-                <tbody>
-          
-                  <tr>
-                    <td class="py-0">
-                      <img src="images/products/products-xs-01.jpg" class="user-image rounded-circle" alt="Product Image">
-                    </td>
-                    <td>Coach Swagger</td>
-                    <td>24541</td>
-                    <td>27</td>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>
-                      <div id="tbl-chart-01"></div>
-                    </td>
-                    <td>4</td>
-                    <td>
-                      <button class="btn btn-warning"><i class=""></i></button>
-                      <button class="btn btn-danger"><i class=""></i></button>
-                      <button class="btn btn-success"><i class=""></i></button>
-                    </td>
-                  </tr>
-       
-                  <tr>
-                    <td class="py-0">
-                      <img src="images/products/products-xs-15.jpg" alt="Product Image">
-                    </td>
-                    <td>Headphones</td>
-                    <td>24555</td>
-                    <td>17</td>
-                    <td>6</td>
-                    <td>7</td>
-                    <td>
-                      <div id="tbl-chart-15"></div>
-                    </td>
-                    <td>6</td>
-                    <td>
-                      <button class="btn btn-warning"><i class=""></i></button>
-                      <button class="btn btn-danger"><i class=""></i></button>
-                      <button class="btn btn-success"><i class=""></i></button>
-                    </td>
-                  </tr>
-        
-          
-          
+                <tbody id="displayVerifyProducts">
           
                 </tbody>
               </table>
@@ -737,6 +695,8 @@
                     <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
                     <script src="plugins/simplebar/simplebar.min.js"></script>
                     <script src="https://unpkg.com/hotkeys-js/dist/hotkeys.min.js"></script>
+                    <script src="js/sweetAlert.js"></script>
+                    <script src="js/verifyProduct.js"></script>
 
                     
                     <script src="js/mono.js"></script>
