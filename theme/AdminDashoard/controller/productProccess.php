@@ -155,4 +155,13 @@ if(isset($_POST['viewVerifyProduct'])){
 
   }
 
+  // view disapprove product
+
+if(isset($_POST['viewDisapproveProduct'])){
+  $sipmuser_PostId= $_POST['viewDisapproveProduct'];
+  // $simpUser_ImgId= $_POST['viewProduct'];
+  $result = $Admindb->ViewAllProduct($sipmuser_PostId, 2);
+  echo json_encode($result);
+  // echo $result;
+}
   
