@@ -153,10 +153,10 @@
             <ul>
               <li class="active"><a href="dashboard-my-ads"><i class="fa fa-user"></i> My Ads</a></li>
               <li><a href="dashboard-favourite-ads"><i class="fa fa-bookmark-o"></i> Verified Ads
-                  <span id="showVerify">5</span></a></li>
-              <li><a href="dashboard-archived-ads"><i class="fa fa-file-archive-o"></i>Archived Ads
-                  <span>12</span></a></li>
-              <li><a href="dashboard-pending-ads"><i class="fa fa-bolt"></i> Pending Approval<span id="showPend">23</span></a>
+                  <span id="showVerify">0</span></a></li>
+              <li><a href="dashboard-archived-ads"><i class="fa fa-file-archive-o"></i>Disapproved Ads
+                  <span></span></a></li>
+              <li><a href="dashboard-pending-ads"><i class="fa fa-bolt"></i> Pending Approval<span id="showPend"></span></a>
               </li>
               <li><a href="logout"><i class="fa fa-cog"></i> Logout</a></li>
               <li><a href="#!" data-toggle="modal" data-target="#deleteaccount"><i class="fa fa-power-off"></i>Delete Account</a></li>

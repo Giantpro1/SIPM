@@ -70,7 +70,7 @@
                             success: function(response){
                               // console.log(response)
                               data = JSON.parse(response)
-                              console.log(data)
+                              // console.log(data)
                               // $("#v_AdsImgs").val(data.simpUser_AdsImg)
                               $("#v_AdsImgs").html("<img class='product-thumb rounded-circle img-fluid' src='../images/adsImages/"+data.simpUser_AdsImg+"'>")
                               $("#v_AdsTitle").text(data.simpUser_AdsTitle)
