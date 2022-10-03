@@ -8,9 +8,9 @@ $(document).ready(function(){
             data: {action: 'displayDisapproveProduct'},
             success: function (response) {
                 // console.log(response)
-                data  = JSON.parse(response)
-                console.log(data)
-            //    $("#displayVerifyProducts").html(response);
+                // data  = JSON.parse(response)
+                // console.log(data)
+               $("#displayDisapproveProducts").html(response);
             }
         });
     }

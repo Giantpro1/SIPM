@@ -49,7 +49,7 @@ $(document).ready(function(){
             e.preventDefault()
             disapproveProduct = $(this).attr('id')
             Swal.fire({
-              title: 'Verify?',
+              title: 'Disapprove?',
               text: 'Are you sure you want to disapprove this product?',
               icon: 'warning',
               showCancelButton: true,

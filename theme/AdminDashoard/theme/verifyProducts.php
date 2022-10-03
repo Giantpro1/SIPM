@@ -208,7 +208,7 @@
                         
                           
                             <li >
-                              <a class="sidenav-item-link" href="disapprovedUser">
+                              <a class="sidenav-item-link" href="disapproveProduct">
                                 <span class="nav-text">Disapproved Products</span>
                                 
                               </a>

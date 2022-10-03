@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css?family=Karla:400,700|Roboto" rel="stylesheet">
   <link href="plugins/material/css/materialdesignicons.min.css" rel="stylesheet" />
   <link href="plugins/simplebar/simplebar.css" rel="stylesheet" />
-
+  <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.css">
   <!-- PLUGINS CSS STYLE -->
   <link href="plugins/nprogress/nprogress.css" rel="stylesheet" />
   
@@ -662,32 +662,7 @@
                     <th></th>
                   </tr>
                 </thead>
-                <tbody>
-          
-       
-                  <tr>
-                    <td class="py-0">
-                      <img src="images/products/products-xs-15.jpg" alt="Product Image">
-                    </td>
-                    <td>Headphones</td>
-                    <td>24555</td>
-                    <td>17</td>
-                    <td>6</td>
-                    <td>7</td>
-                    <td>
-                      <div id="tbl-chart-15"></div>
-                    </td>
-                    <td>6</td>
-                    <td>
-                      <button class="btn btn-warning"><i class=""></i></button>
-                      <button class="btn btn-danger"><i class=""></i></button>
-                      <button class="btn btn-success"><i class=""></i></button>
-                    </td>
-                  </tr>
-        
-          
-          
-          
+                <tbody id="displayDisapproveProducts">
                 </tbody>
               </table>
         </div>
