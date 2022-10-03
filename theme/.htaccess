@@ -8,4 +8,4 @@ RewriteRule ^([^\.]+)$ $1.php [NC,L]
 
 # This is for error page
 
-ErrorDocument 404 http://localhost/Giantpro/SIADS/theme/404
+ErrorDocument 404 http://localhost/Giantpro/SIPM/theme/404
