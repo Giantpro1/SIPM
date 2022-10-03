@@ -114,3 +114,10 @@ if(isset($_POST['viewVerifyProduct'])){
       $simpUser_ImgId = $_POST['disapproveProduct'];
       $verifyProduct = $Admindb-> productAction(2, $sipmuser_PostId, $simpUser_ImgId);
   }
+
+  if(isset($_POST['action']) && $_POST['action'] === 'displayDisapproveProduct'){
+    $output = '';
+    $data = $Admindb->fetchAllPendingAds(2);
+    echo json_encode($data);
+
+  }

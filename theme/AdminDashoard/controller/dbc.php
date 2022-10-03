@@ -130,6 +130,19 @@ class Dbc extends Database{
         return true;
     }
 
+    public function fetchDisapproveProduct($value){
+        $sql = "SELECT * FROM sipmusersads WHERE sipmUser_AdsVerified='$value'";
+        $stmt =$this->conn->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if($result){
+            $sql = "SELECT * FROM sipmusersads_img WHERE sipmUser_AdsImgVerified='$value'";
+            $stmt =$this->conn->prepare($sql);
+            $stmt->execute();
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+        return $result;
+    }
 }
 // SELECT * FROM sipmusersads LEFT JOIN sipmusersads_img ON sipmuser_PostId=simpUser_ImgId WHERE (sipmUser_AdsVerified='$value' AND sipmUser_AdsImgVerified='$value')
 // LEFT JOIN sipmusersads_img ON (sipmuser_PostId=simpUser_ImgId) SET (sipmUser_AdsVerified='$value' AND sipmUser_AdsImgVerified='$value') WHERE (sipmuser_PostId=:sipmuser_PostId AND simpUser_ImgId=:simpUser_ImgId)

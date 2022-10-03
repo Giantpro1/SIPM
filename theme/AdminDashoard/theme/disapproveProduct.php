@@ -664,25 +664,6 @@
                 </thead>
                 <tbody>
           
-                  <tr>
-                    <td class="py-0">
-                      <img src="images/products/products-xs-01.jpg" class="user-image rounded-circle" alt="Product Image">
-                    </td>
-                    <td>Coach Swagger</td>
-                    <td>24541</td>
-                    <td>27</td>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>
-                      <div id="tbl-chart-01"></div>
-                    </td>
-                    <td>4</td>
-                    <td>
-                      <button class="btn btn-warning"><i class=""></i></button>
-                      <button class="btn btn-danger"><i class=""></i></button>
-                      <button class="btn btn-success"><i class=""></i></button>
-                    </td>
-                  </tr>
        
                   <tr>
                     <td class="py-0">
@@ -739,6 +720,8 @@
                     <script src="https://unpkg.com/hotkeys-js/dist/hotkeys.min.js"></script>
 
                     
+                    <script src="js/disapproveProduct.js"></script>
+                    <script src="js/sweetAlert.js"></script>
                     <script src="js/mono.js"></script>
                     <script src="js/chart.js"></script>
                     <script src="js/map.js"></script>
