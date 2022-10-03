@@ -273,7 +273,7 @@ if(isset($_FILES['simpUser_AdsImg'])){
     }
 
     if(isset($_POST['action']) && $_POST['action'] === 'CountPendingAds'){
-        $CountPend = $sipmCur_User->countPendingAds($simp_Cid);
+        $CountPend = $sipmCur_User->countAdsStatus($simp_Cid, 0);
         echo $CountPend;
 
     }
@@ -326,10 +326,59 @@ if(isset($_POST['action']) && $_POST['action'] === 'dispayVerifiedAds'){
         echo "Non Of your Ads are verified Yet!";
     }
 
-    // count verify ads
-    if(isset($_POST['action']) && $_POST['action'] === 'CountVerifyAds'){
-        $CountVerify = $sipmCur_User->countVerifiedAds($simp_Cid);
-        echo $CountVerify;
+ 
+}
 
+   // count verify ads
+   if(isset($_POST['action']) && $_POST['action'] === 'CountVerifyAds'){
+    $CountVerify = $sipmCur_User->countAdsStatus($simp_Cid, 1);
+    echo $CountVerify;
+
+}
+
+if(isset($_POST['action']) && $_POST['action'] === 'dispayDis'){
+    $getDisapproveAds = $sipmCur_User->getDisapprovedAds($simp_Cid);
+    $output = '';
+    if($getDisapproveAds){
+        foreach($getDisapproveAds as $getDisaprrovedAd){
+            $getDisaprrovedAdsImg = $sipmCur_User->getDisapproveAdsImg($getDisaprrovedAd['sipmuser_PostId']);
+            if($getDisaprrovedAdsImg){
+                foreach($getDisaprrovedAdsImg as $getDisaprrovedAdImg){
+                $img ='<img width="80px" height="auto" src="'.'../images/adsImages/'.$getDisaprrovedAdImg['simpUser_AdsImg'].'" alt="image description"></td>';
+                }
+            }
+            $output .= '
+            <tr>
+            <td class="product-thumb">
+                '.$img.'
+            <td class="product-details">
+                <h3 class="title">'.$getDisaprrovedAd['simpUser_AdsTitle'].'</h3>
+                <span class="add-id"><strong>Ads Product Price:</strong>'.$getDisaprrovedAd['sipmUser_AdsPrice'].'</span>
+                <span><strong>Posted on: </strong><time>'.date('F d, Y', strtotime($getDisaprrovedAd['simpUser_AdsDate'])).'</time> </span>
+                <span class="status active"><strong>Status</strong>Active</span>
+                <span class="location"><strong>Location</strong>'.substr($getDisaprrovedAd['sipmUser_AdsContactAddress'],0,18).'</span>
+            </td>
+            <td class="product-category"><span class="categories">'.$getDisaprrovedAd['sipmUser_AdsCategory'].'</span></td>
+            <td class="action" data-title="Action">
+                <div class="">
+                    <ul class="list-inline justify-content-center">
+                        <li class="list-inline-item">
+                            <a data-toggle="tooltip" data-placement="top" title="View" class="view" href="category">
+                                <i class="fa fa-eye"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a data-toggle="tooltip" data-placement="top" title="Delete" class="delete" href="dashboard-favourite-ads">
+                                <i class="fa fa-trash"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </td>
+        </tr>';
+        }
+        echo $output;
+    }else{
+        echo "Non Of your Ads are disapprove Yet!";
     }
 }

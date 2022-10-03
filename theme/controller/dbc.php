@@ -247,8 +247,8 @@ class Dbc extends Database{
         }
 
         //count total pending Ads
-            public function countPendingAds($simp_Cid){
-            $sql = "SELECT * FROM sipmusersads WHERE simp_Cid=:simp_Cid AND sipmUser_AdsVerified=0";
+            public function countAdsStatus($simp_Cid, $value){
+            $sql = "SELECT * FROM sipmusersads WHERE simp_Cid=:simp_Cid AND sipmUser_AdsVerified='$value'";
             $stmt =$this->conn->prepare($sql);
             $stmt->execute([
                 'simp_Cid'=>$simp_Cid
@@ -266,6 +266,15 @@ class Dbc extends Database{
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             return $result;
         }
+            public function getDisapprovedAds($simp_Cid){
+            $sql ="SELECT * FROM sipmusersads WHERE simp_Cid=:simp_Cid AND sipmUser_AdsVerified=2";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([
+                'simp_Cid'=>$simp_Cid
+            ]);
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+        }
         public function getVerifiedAdsImg($simpUser_ImgId){
             $sql ="SELECT * FROM sipmusersads_img WHERE simpUser_ImgId=:simpUser_ImgId AND sipmUser_AdsImgVerified=1";
             $stmt = $this->conn->prepare($sql);
@@ -275,13 +284,13 @@ class Dbc extends Database{
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             return $result;
         }
-        public function countVerifiedAds($simp_Cid){
-            $sql = "SELECT * FROM sipmusersads WHERE simp_Cid=:simp_Cid AND sipmUser_AdsVerified=1";
-            $stmt =$this->conn->prepare($sql);
+        public function getDisapproveAdsImg($simpUser_ImgId){
+            $sql ="SELECT * FROM sipmusersads_img WHERE simpUser_ImgId=:simpUser_ImgId AND sipmUser_AdsImgVerified=2";
+            $stmt = $this->conn->prepare($sql);
             $stmt->execute([
-                'simp_Cid'=>$simp_Cid
+                'simpUser_ImgId'=>$simpUser_ImgId
             ]);
-          $result=   $stmt->rowCount();
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             return $result;
         }
         
