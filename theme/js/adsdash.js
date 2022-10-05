@@ -45,6 +45,7 @@
                         method: 'POST',
                         data: {deleteAds: deleteAds},
                         success: function(response){
+                          console.log(response)
                             swal.fire({
                               icon: 'success',
                               text: 'You have successfully deleted your Ads',
@@ -109,6 +110,22 @@
                               $("#adsPosterNumber").val(data.sipmUser_AdsContactNumber)
                               $("#adsType").val(data.sipmUser_AdsType)
                               $("#adsPostId").val(data.sipmuser_PostId)
+
+                              if(data.sipmUser_AdsType == "personal"){
+                                $("#adsType").attr("checked", "checked")
+                            }else if(data.sipmUser_AdsType == "business"){
+                                $("#adsType_").attr("checked", "checked")
+                            }else{
+                                
+                            }
+
+                            if(data.sipmUser_AdsNegotiation == "Negotiable"){
+                                $("#adsNegotiaion").attr("checked", "checked")
+                            }else if(data.sipmUser_AdsNegotiation == "Not Negotiable"){
+                                $("#adsNegotiaion_").attr("checked", "checked")
+                            }else{
+                                
+                            }
                             }
                           })
                         })
@@ -123,7 +140,7 @@
                               processData: false,
                               contentType: false,
                               cache: false,
-                              data: new FormData(this)+ {action : 'updateAds'},
+                              data: new FormData(this),
                               beforeSend: function(){
                                 $("#simpUserAds_UpdateBtn").attr('disabled', 'disabled')
                                 $("#simpUserAds_Update").css('opacity', '.5')
@@ -143,31 +160,73 @@
                               }
                             })
                         })
-                        countPendingAds()
-                        function countPendingAds() {
-                          $.ajax({
-                            url:'../controller/process.php',
-                            method: 'post',
-                            data: {action: 'CountPendingAds'},
-                            success: function(response){
-                              // console.log(response)
-                              $("#showPend").text(response)
-                              
-                            }
-                          })
-                        }
 
-                        // verify ads count
-                        countVerifyAds()
-                        function countVerifyAds() {
+                            countPendingAds()
+                              function countPendingAds() {
+                                $.ajax({
+                                  url:'../controller/process.php',
+                                  method: 'post',
+                                  data: {action: 'CountPendingAds'},
+                                  success: function(response){
+                                    // console.log(response)
+                                    if(response == ''){
+                                        $("#showPend").text(0)
+                                    }else{
+                                    $("#showPend").text(response)
+                                    }
+                                  }
+                                })
+                              }
+
+                              countAllUserAds()
+                              function countAllUserAds() {
+                                $.ajax({
+                                  url:'../controller/process.php',
+                                  method: 'post',
+                                  data: {action: 'countAllUserAds'},
+                                  success: function(response){
+                                    // console.log(response)
+                                    if(response == ''){
+                                        $("#showAll").text(0)
+                                    }else{
+                                    $("#showAll").text(response)
+                                    }
+                                  }
+                                })
+                              }
+
+                              // verify ads count
+                              countVerifyAds()
+                              function countVerifyAds() {
+                                $.ajax({
+                                  url:'../controller/process.php',
+                                  method: 'post',
+                                  data: {action: 'CountVerifyAds'},
+                                  success: function(response){
+                                    // console.log(response)
+                                    if(response == ''){
+                                        $("#showVerify").text(0)
+                                    }else{
+                                    $("#showVerify").text(response)
+                                    }
+                                  }
+                                })
+                              }
+
+                        
+                        countDisapprovedAds()
+                        function countDisapprovedAds() {
                           $.ajax({
                             url:'../controller/process.php',
                             method: 'post',
-                            data: {action: 'CountVerifyAds'},
+                            data: {action: 'countDisapprovedAds'},
                             success: function(response){
                               // console.log(response)
-                              $("#showVerify").text(response)
-                              
+                              if(response == ''){
+                                  $("#showDis").text(0)
+                              }else{
+                              $("#showDis").text(response)
+                              }
                             }
                           })
                         }

@@ -153,7 +153,7 @@
 					<!-- Dashboard Links -->
 					<div class="widget user-dashboard-menu shadow">
 						<ul>
-							<li><a href="dashboard-my-ads"><i class="fa fa-user"></i> My Ads</a></li>
+							<li><a href="dashboard-my-ads"><i class="fa fa-user"></i> My Ads <span id="showAll"></span></a></li>
 							<li>
 								<a href="dashboard-favourite-ads"><i class="fa fa-bookmark-o"></i> Verified Ads <span id="showVerify"></span></a>
 							</li>
@@ -244,7 +244,7 @@
                                   <h3>Post Your ad</h3>
                                 </div>
                                 <div class="col-lg-6">
-                                  <input type="hidden" id="adsPostId">
+                                  <input type="hidden" name="sipmuser_PostId" id="adsPostId">
                                   <h6 class="font-weight-bold pt-4 pb-1">Title Of Ad:</h6>
                                   <input type="text" name="simpUser_AdsTitle" id="adsTitle" class="form-control bg-white" placeholder="Ad title go There" required>
                                   <h6 class="font-weight-bold pt-4 pb-1">Ad Type:</h6>
@@ -254,7 +254,7 @@
                                       <label for="personal" class="py-2">Personal</label>
                                     </div>
                                     <div class="col-lg-4 mr-lg-4 my-2 pt-2 pb-1 rounded bg-white ">
-                                      <input type="radio" name="sipmUser_AdsType" id="adsType" value="business" id="business" required>
+                                      <input type="radio" name="sipmUser_AdsType" id="adsType_" value="business" id="business" required>
                                       <label for="business" class="py-2">Business</label>
                                     </div>
                                   </div>
@@ -287,7 +287,7 @@
                                         <label for="Negotiable" class="py-2">Negotiable</label>
                                       </div>
                                       <div class="col-lg-4 ml-lg-4 my-2 pt-2 pb-1 rounded bg-white ">
-                                        <input type="radio" id="adsNegotiaion"  name="sipmUser_AdsNegotiation" value="Not Negotiable" id="Negotiable">
+                                        <input type="radio" id="adsNegotiaion_"  name="sipmUser_AdsNegotiation" value="Not Negotiable" id="Negotiable">
                                         <label for="Negotiable" class="py-2">Not Negotiable</label>
                                       </div>
                                     </div>
@@ -298,7 +298,7 @@
                                       <span class="d-block">or</span>
                                       <span class="d-block btn bg-primary text-white my-3 select-files">Select files</span>
                                       <span class="d-block">Maximum upload file size: 5MB</span>
-                                      <input type="file" class="form-control-file d-none" id="file-upload" multiple name="simpUser_AdsImgUpadte[]">
+                                      <input type="file" class="form-control-file d-none" id="file-upload" multiple name="simpUser_AdsImgUpdates[]">
                                     </label>
                                   </div>
                                 </div>
@@ -485,7 +485,7 @@ Essential Scripts
 <script src="../plugins/raty/jquery.raty-fa.js"></script>
 <script src="../plugins/slick/slick.min.js"></script>
 <script src="../plugins/jquery-nice-select/js/sweetAlert.js"></script>
-<script src="../plugins/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+<!-- <script src="../plugins/jquery-nice-select/js/jquery.nice-select.min.js"></script> -->
 <!-- google map -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>
 <script src="../plugins/google-map/map.js" defer></script>

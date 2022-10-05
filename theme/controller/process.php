@@ -1,6 +1,7 @@
 <?php
 require 'session.php';
 
+    // update user profile
 if(isset($_FILES['sipmUser_ProfileImg'])){
     $sipmUser_FirstName =$sipmCur_User->test_input($_POST['sipmUser_FirstName']);
     $sipmUser_SecondName =$sipmCur_User->test_input($_POST['sipmUser_SecondName']);
@@ -20,7 +21,7 @@ if(isset($_FILES['sipmUser_ProfileImg'])){
 
 }
 
-
+    // upload ads
 
 if(isset($_FILES['simpUser_AdsImg'])){
     $sipmuser_PostId = rand(100,10000).'_'.time().'?';
@@ -94,7 +95,7 @@ if(isset($_FILES['simpUser_AdsImg'])){
 
    
     }
-
+    // change email
     if(isset($_POST['action']) && ($_POST['action'] === 'chang_Email')){
         $simp_UserCurEmail =$sipmCur_User->test_input($_POST['simp_UserCurEmail']);
         $simp_UserNewEmail = $sipmCur_User->test_input($_POST['simp_UserNewEmail']);
@@ -110,13 +111,15 @@ if(isset($_FILES['simpUser_AdsImg'])){
            
     }
 
+    // fetch all ads
+
     if(isset($_POST['action']) && $_POST['action'] === 'dispayAds'){
-        $simpUserAds = $sipmCur_User->get_SipmUSerAds($simp_Cid);
+        $simpUserAds = $sipmCur_User->get_SipmUSerAds($simp_Cid, 0);
         $output = '';
         if($simpUserAds){
             $output .= '';
             foreach($simpUserAds as $simpUserAd){
-                $simpUSerAdsImg = $sipmCur_User->get_SipmUSerAdsImg($simpUserAd['sipmuser_PostId']);
+                $simpUSerAdsImg = $sipmCur_User->get_SipmUSerAdsImg($simpUserAd['sipmuser_PostId'], 0);
                 if($simpUSerAdsImg){
                     foreach($simpUSerAdsImg as $simpUSerAdsImgs){
                         $img='<img width="80px" height="auto" src="'.'../images/adsImages/'.$simpUSerAdsImgs['simpUser_AdsImg'].'" alt="image description">';
@@ -144,12 +147,12 @@ if(isset($_FILES['simpUser_AdsImg'])){
                         </a>
                         </li> 
                         <li class="list-inline-item">
-                        <a class="edit editSimpUSerAd" data-toggle="modal" data-target="#editSimpUser_Ad" data-placement="top" id="'.$simpUserAd['sipmuser_PostId'].'" title="EditBtn" href="dashboard">
+                        <a  data-toggle="modal" data-target="#editSimpUser_Ad" class="edit editSimpUSerAd" data-placement="top" id="'.$simpUserAd['sipmuser_PostId'].'" title="EditBtn" href="">
                             <i class="fa fa-pencil"></i>
                         </a>
                         </li>
                         <li class="list-inline-item">
-                        <a class="delete deleteSimpUserAd" data-toggle="" data-target="#" data-placement="top" id="'.$simpUserAd['sipmuser_PostId'].'" title="DeleteBtn" href="dashboard">
+                        <a class="delete deleteSimpUserAd" data-toggle="" data-target="#" data-placement="top" id="'.$simpUserAd['sipmuser_PostId'].'" title="DeleteBtn" href="">
                             <i class="fa fa-trash"></i>
                         </a>
                         </li>
@@ -166,9 +169,10 @@ if(isset($_FILES['simpUser_AdsImg'])){
     // delete ads
     if(isset($_POST['deleteAds'])){
         $sipmuser_PostId =$_POST['deleteAds'];
-        $deleteSipmUserAds = $sipmCur_User->deleteSimpUserAds($sipmuser_PostId);
+        $deleteSipmUserAds = $sipmCur_User->deleteSimpUserAds(1, $sipmuser_PostId);
         if($deleteSipmUserAds){
-            $deleteSipmUserAdImg =$sipmCur_User->deleteSimpUserAdImg($simpUser_ImgId['sipmuser_PostId']);
+            $simpUser_ImgId =$_POST['deleteAds'];
+            $deleteSipmUserAdImg =$sipmCur_User->deleteSimpUserAdImg(1, $simpUser_ImgId);
         }
     }
 
@@ -184,19 +188,21 @@ if(isset($_FILES['simpUser_AdsImg'])){
         echo json_encode($result);
     }
 
-    //edit ads
+    //edit ads values grab
     if(isset($_POST['editSimpAds'])){
         $simp_Cid = $_POST['editSimpAds'];
         $viewSimpUserAds = $sipmCur_User->Viewget_SipmUSerAds($simp_Cid);
         echo json_encode($viewSimpUserAds);
     }
 
+    // update ads
     
     if(isset($_FILES['simpUser_AdsImgUpadte'])){
                 $sipmuser_PostId = $sipmCur_User->test_input($_POST['sipmuser_PostId']);
                 $simpUser_AdsTitle = $sipmCur_User->test_input($_POST['simpUser_AdsTitle']);
                 $sipmUser_AdsDescripion = $sipmCur_User->test_input($_POST['sipmUser_AdsDescripion']);
                 $sipmUser_AdsCategory = $sipmCur_User->test_input($_POST['sipmUser_AdsCategory']);
+                $sipmUser_AdsType = $sipmCur_User->test_input($_POST['sipmUser_AdsType']);
                 $sipmUser_AdsPrice = $sipmCur_User->test_input($_POST['sipmUser_AdsPrice']);
                 $sipmUser_AdsNegotiation = $sipmCur_User->test_input($_POST['sipmUser_AdsNegotiation']);
                 $sipmUser_AdsContactName = $sipmCur_User->test_input($_POST['sipmUser_AdsContactName']);
@@ -223,12 +229,12 @@ if(isset($_FILES['simpUser_AdsImg'])){
     // pending ads
 
     if(isset($_POST['action']) && $_POST['action'] === 'displayPendAds'){
-        $simpUserPendingAds = $sipmCur_User->getPendingAds($simp_Cid);
+        $simpUserPendingAds = $sipmCur_User->getPendingAds($simp_Cid, 0);
         $output = '';
         if($simpUserPendingAds){
             $output.='';
             foreach($simpUserPendingAds as $simpUserPendingAd){
-                $simpUserPendingAdsImg = $sipmCur_User->getPendingAdsImg($simpUserPendingAd['sipmuser_PostId']);
+                $simpUserPendingAdsImg = $sipmCur_User->getPendingAdsImg($simpUserPendingAd['sipmuser_PostId'], 0);
                 if($simpUserPendingAdsImg){
                     foreach($simpUserPendingAdsImg as $simpUserPendingAdImg){
                         $img='<img width="80px" height="auto" src="'.'../images/adsImages/'.$simpUserPendingAdImg['simpUser_AdsImg'].'" alt="image description">';
@@ -281,11 +287,11 @@ if(isset($_FILES['simpUser_AdsImg'])){
 // display vefified ads
 
 if(isset($_POST['action']) && $_POST['action'] === 'dispayVerifiedAds'){
-    $getVerifyAds = $sipmCur_User->getVerifiedAds($simp_Cid);
+    $getVerifyAds = $sipmCur_User->getVerifiedAds($simp_Cid, 0);
     $output = '';
     if($getVerifyAds){
         foreach($getVerifyAds as $getVerifyAd){
-            $getVerifyAdsImg = $sipmCur_User->getVerifiedAdsImg($getVerifyAd['sipmuser_PostId']);
+            $getVerifyAdsImg = $sipmCur_User->getVerifiedAdsImg($getVerifyAd['sipmuser_PostId'], 0);
             if($getVerifyAdsImg){
                 foreach($getVerifyAdsImg as $getVerifyAdImg){
                 $img ='<img width="80px" height="auto" src="'.'../images/adsImages/'.$getVerifyAdImg['simpUser_AdsImg'].'" alt="image description"></td>';
@@ -307,12 +313,12 @@ if(isset($_POST['action']) && $_POST['action'] === 'dispayVerifiedAds'){
                 <div class="">
                     <ul class="list-inline justify-content-center">
                         <li class="list-inline-item">
-                            <a data-toggle="tooltip" data-placement="top" id="'.$getVerifyAd['sipmuser_PostId'].'" title="View" class="view" href="">
+                            <a data-toggle="modal" data-placement="top" data-target="#viewVerifyModal" id="'.$getVerifyAd['sipmuser_PostId'].'" title="View" class="view viewSimpUserVerifyAd" href="">
                                 <i class="fa fa-eye"></i>
                             </a>
                         </li>
                         <li class="list-inline-item">
-                            <a data-toggle="tooltip" data-placement="top" id="'.$getVerifyAd['sipmuser_PostId'].'" title="Delete" class="delete" href="">
+                            <a data-toggle="tooltip" data-placement="top" id="'.$getVerifyAd['sipmuser_PostId'].'" title="Delete" class="delete deleteSimpUserVerifyAd" href="">
                                 <i class="fa fa-trash"></i>
                             </a>
                         </li>
@@ -336,12 +342,13 @@ if(isset($_POST['action']) && $_POST['action'] === 'dispayVerifiedAds'){
 
 }
 
+    // fetch disapprove ads
 if(isset($_POST['action']) && $_POST['action'] === 'dispayDis'){
-    $getDisapproveAds = $sipmCur_User->getDisapprovedAds($simp_Cid);
+    $getDisapproveAds = $sipmCur_User->getDisapprovedAds($simp_Cid, 0);
     $output = '';
     if($getDisapproveAds){
         foreach($getDisapproveAds as $getDisaprrovedAd){
-            $getDisaprrovedAdsImg = $sipmCur_User->getDisapproveAdsImg($getDisaprrovedAd['sipmuser_PostId']);
+            $getDisaprrovedAdsImg = $sipmCur_User->getDisapproveAdsImg($getDisaprrovedAd['sipmuser_PostId'], 0);
             if($getDisaprrovedAdsImg){
                 foreach($getDisaprrovedAdsImg as $getDisaprrovedAdImg){
                 $img ='<img width="80px" height="auto" src="'.'../images/adsImages/'.$getDisaprrovedAdImg['simpUser_AdsImg'].'" alt="image description"></td>';
@@ -368,7 +375,7 @@ if(isset($_POST['action']) && $_POST['action'] === 'dispayDis'){
                             </a>
                         </li>
                         <li class="list-inline-item">
-                            <a data-toggle="tooltip"  data-placement="top" id="'.$getDisaprrovedAd['sipmuser_PostId'].'" title="Delete" class="delete" href="">
+                            <a data-toggle="tooltip"  data-placement="top" id="'.$getDisaprrovedAd['sipmuser_PostId'].'" title="Delete" class="delete deleteSimpUserDisapprovedAd" href="">
                                 <i class="fa fa-trash"></i>
                             </a>
                         </li>
@@ -382,6 +389,8 @@ if(isset($_POST['action']) && $_POST['action'] === 'dispayDis'){
         echo "Non Of your Ads are disapprove Yet!";
     }
 }
+
+    // update disapprove ads
 
 if(isset($_FILES['simpUser_AdsImgUpdate'])){
     $sipmuser_PostId = $sipmCur_User->test_input($_POST['sipmuser_PostId']);
@@ -412,6 +421,7 @@ if(isset($_FILES['simpUser_AdsImgUpdate'])){
     }
 }
 
+//view dis approve ads for edit
 if(isset($_POST['viewSimpDisAds'])){
     $simp_Cid = $_POST['viewSimpDisAds'];
     $sipmuser_PostId = $_POST['viewSimpDisAds'];
@@ -419,6 +429,59 @@ if(isset($_POST['viewSimpDisAds'])){
     // echo $viewSimpUserAds;
     $viewSimpUserAdimg = $sipmCur_User->Viewget_SipmUSerDisAdsImg($sipmuser_PostId, 2);
     // echo $viewSimpUserAdimg;
+    $result = array_merge($viewSimpUserAds, $viewSimpUserAdimg);
+    echo json_encode($result);
+}
+
+if(isset($_POST['action']) && $_POST['action'] === 'countDisapprovedAds'){
+    $CountPend = $sipmCur_User->countAdsStatus($simp_Cid, 2);
+    echo $CountPend;
+
+}
+
+    // update pending ads
+
+if(isset($_FILES['simpUser_AdsImgUpdates'])){
+    $sipmuser_PostId = $sipmCur_User->test_input($_POST['sipmuser_PostId']);
+    $simpUser_AdsTitle = $sipmCur_User->test_input($_POST['simpUser_AdsTitle']);
+    $sipmUser_AdsDescripion = $sipmCur_User->test_input($_POST['sipmUser_AdsDescripion']);
+    $sipmUser_AdsCategory = $sipmCur_User->test_input($_POST['sipmUser_AdsCategory']);
+    $sipmUser_AdsType =$sipmCur_User->test_input($_POST['sipmUser_AdsType']);
+    $sipmUser_AdsPrice = $sipmCur_User->test_input($_POST['sipmUser_AdsPrice']);
+    $sipmUser_AdsNegotiation = $sipmCur_User->test_input($_POST['sipmUser_AdsNegotiation']);
+    $sipmUser_AdsContactName = $sipmCur_User->test_input($_POST['sipmUser_AdsContactName']);
+    $sipmUser_AdsContactNumber = $sipmCur_User->test_input($_POST['sipmUser_AdsContactNumber']);
+    $sipmUser_AdsContactEmail = $sipmCur_User->test_input($_POST['sipmUser_AdsContactEmail']);
+    $sipmUser_AdsContactAddress = $sipmCur_User->test_input($_POST['sipmUser_AdsContactAddress']);
+
+    $sipmCur_User->UpdateSimpUserPendAds($sipmuser_PostId, $simpUser_AdsTitle, $sipmUser_AdsPrice, $sipmUser_AdsCategory, $sipmUser_AdsType, $sipmUser_AdsDescripion, $sipmUser_AdsNegotiation, $sipmUser_AdsContactAddress, $sipmUser_AdsContactEmail, $sipmUser_AdsContactName, $sipmUser_AdsContactNumber, 0);
+
+    if(isset($_FILES['simpUser_AdsImgUpdates']) && ($_FILES['simpUser_AdsImgUpdates'])){
+
+        $simpUser_AdsImg = $_FILES['simpUser_AdsImgUpdates']['name'];
+            foreach ($simpUser_AdsImg as $i => $value){
+                $GTR = time(). '_' . rand(2000,100000). '_'.$simpUser_AdsImg[$i];
+                $folderForAdsImg = '../images/adsImages/';
+                $faiPath = $folderForAdsImg.$GTR;
+                $PathName = $_FILES['simpUser_AdsImgUpdates']['tmp_name'][$i];
+                move_uploaded_file($PathName,$faiPath);
+                $imgResult = $sipmCur_User->UpdateSimpUserDisAdsImg($sipmuser_PostId, $GTR, 0);
+            }
+    }
+}
+    // COUNT all ads
+if(isset($_POST['action']) && $_POST['action'] === 'countAllUserAds'){
+    $CountAll = $sipmCur_User->countAllUserAds($simp_Cid);
+    echo $CountAll;
+
+}
+// view user verify ads
+if(isset($_POST['viewSimpVerifyAds'])){
+    $simp_Cid = $_POST['viewSimpVerifyAds'];
+    $sipmuser_PostId = $_POST['viewSimpVerifyAds'];
+    $viewSimpUserAds = $sipmCur_User->Viewget_SipmUSerVerifyAds($simp_Cid, 1);
+    $viewSimpUserAdimg = $sipmCur_User->Viewget_SipmUSerAdsVerifyImg($sipmuser_PostId, 1);
+
     $result = array_merge($viewSimpUserAds, $viewSimpUserAdimg);
     echo json_encode($result);
 }

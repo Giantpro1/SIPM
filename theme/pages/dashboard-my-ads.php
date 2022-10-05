@@ -151,11 +151,11 @@
           <!-- Dashboard Links -->
           <div class="widget user-dashboard-menu shadow">
             <ul>
-              <li class="active"><a href="dashboard-my-ads"><i class="fa fa-user"></i> My Ads</a></li>
+              <li class="active"><a href="dashboard-my-ads"><i class="fa fa-user"></i> My Ads <span id="showAll"></span></a></li>
               <li><a href="dashboard-favourite-ads"><i class="fa fa-bookmark-o"></i> Verified Ads
                   <span id="showVerify"></span></a></li>
               <li><a href="dashboard-archived-ads"><i class="fa fa-file-archive-o"></i>Disapproved Ads
-                  <span></span></a></li>
+                  <span id="showDis"></span></a></li>
               <li><a href="dashboard-pending-ads"><i class="fa fa-bolt"></i> Pending Approval<span id="showPend"></span></a>
               </li>
               <li><a href="logout"><i class="fa fa-cog"></i> Logout</a></li>
@@ -245,9 +245,41 @@
               </div>
             </div>
 
-            <!-- edit ads modal -->
 
-        <div id="editSimpUser_Ad" class="modal fade editSimpUSerAd" role="dialog" tabindex="-1" aria-hidden="true">
+
+        <!-- pagination -->
+        <div class="pagination justify-content-center">
+          <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item">
+                <a class="page-link" href="dashboard" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                  <span class="sr-only">Previous</span>
+                </a>
+              </li>
+              <li class="page-item"><a class="page-link" href="dashboard">1</a></li>
+              <li class="page-item active"><a class="page-link" href="dashboard">2</a></li>
+              <li class="page-item"><a class="page-link" href="dashboard">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="dashboard" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <!-- pagination -->
+
+      </div>
+    </div>
+    <!-- Row End -->
+  </div>
+  <!-- Container End -->
+</section>
+
+            <!-- edit ads modal -->
+            <div id="editSimpUser_Ad" class="modal fade editSimpUSerAd" role="dialog" tabindex="-1" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered modal-md" role="document">
                 <div class="modal-content">
                   <div class="modal-header border-bottom-0">
@@ -267,7 +299,7 @@
                                   <h3>Post Your ad</h3>
                                 </div>
                                 <div class="col-lg-6">
-                                  <input type="hidden" id="adsPostId">
+                                  <input type="hidden" name="sipmuser_PostId" id="adsPostId">
                                   <h6 class="font-weight-bold pt-4 pb-1">Title Of Ad:</h6>
                                   <input type="text" name="simpUser_AdsTitle" id="adsTitle" class="form-control bg-white" placeholder="Ad title go There" required>
                                   <h6 class="font-weight-bold pt-4 pb-1">Ad Type:</h6>
@@ -277,7 +309,7 @@
                                       <label for="personal" class="py-2">Personal</label>
                                     </div>
                                     <div class="col-lg-4 mr-lg-4 my-2 pt-2 pb-1 rounded bg-white ">
-                                      <input type="radio" name="sipmUser_AdsType" id="adsType" value="business" id="business" required>
+                                      <input type="radio" name="sipmUser_AdsType" id="adsType_" value="business" id="business" required>
                                       <label for="business" class="py-2">Business</label>
                                     </div>
                                   </div>
@@ -310,7 +342,7 @@
                                         <label for="Negotiable" class="py-2">Negotiable</label>
                                       </div>
                                       <div class="col-lg-4 ml-lg-4 my-2 pt-2 pb-1 rounded bg-white ">
-                                        <input type="radio" id="adsNegotiaion"  name="sipmUser_AdsNegotiation" value="Not Negotiable" id="Negotiable">
+                                        <input type="radio" id="adsNegotiaion_"  name="sipmUser_AdsNegotiation" value="Not Negotiable" id="Negotiable">
                                         <label for="Negotiable" class="py-2">Not Negotiable</label>
                                       </div>
                                     </div>
@@ -364,37 +396,6 @@
                 </div>
               </div>
             </div>
-
-        <!-- pagination -->
-        <div class="pagination justify-content-center">
-          <nav aria-label="Page navigation example">
-            <ul class="pagination">
-              <li class="page-item">
-                <a class="page-link" href="dashboard" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-                  <span class="sr-only">Previous</span>
-                </a>
-              </li>
-              <li class="page-item"><a class="page-link" href="dashboard">1</a></li>
-              <li class="page-item active"><a class="page-link" href="dashboard">2</a></li>
-              <li class="page-item"><a class="page-link" href="dashboard">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="dashboard" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                  <span class="sr-only">Next</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <!-- pagination -->
-
-      </div>
-    </div>
-    <!-- Row End -->
-  </div>
-  <!-- Container End -->
-</section>
 
 <!--============================
 =            Footer            =
@@ -509,14 +510,15 @@ Essential Scripts
 <script src="../plugins/tether/js/tether.min.js"></script>
 <script src="../plugins/raty/jquery.raty-fa.js"></script>
 <script src="../plugins/slick/slick.min.js"></script>
-<script src="../plugins/jquery-nice-select/js/jquery.nice-select.min.js"></script>
-<script src="../plugins/jquery-nice-select/js/sweetAlert.js"></script>
+<!-- <script src="../plugins/jquery-nice-select/js/jquery.nice-select.min.js"></script> -->
+<!-- <script src="../plugins/jquery-nice-select/js/sweetAlert.js"></script> -->
 <!-- google map -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>
 <script src="../plugins/google-map/map.js" defer></script>
 
 <script src="../js/script.js"></script>
 <script src="../js/adsdash.js"></script>
+<script src="../js/sweetAlert.js"></script>
 
 </body>
 

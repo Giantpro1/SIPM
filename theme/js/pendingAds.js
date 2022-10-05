@@ -62,13 +62,29 @@ $(document).ready(function(){
                                     $("#adsCategory").val(data.sipmUser_AdsCategory)
                                     $("#adsDescription").val(data.sipmUser_AdsDescripion)
                                     $("#adsPrice").val(data.sipmUser_AdsPrice)
-                                    $("#adsNegotiaion").val(data.sipmUser_AdsNegotiation)
+                                    // $("#adsNegotiaion").val(data.sipmUser_AdsNegotiation)
                                     $("#adsPosterAddress").val(data.sipmUser_AdsContactAddress)
                                     $("#adsPosterEmail").val(data.sipmUser_AdsContactEmail)
                                     $("#adsPosterName").val(data.sipmUser_AdsContactName)
                                     $("#adsPosterNumber").val(data.sipmUser_AdsContactNumber)
-                                    $("#adsType").val(data.sipmUser_AdsType)
+                                    // $("#adsType").val(data.sipmUser_AdsType)
                                     $("#adsPostId").val(data.sipmuser_PostId)
+
+                                    if(data.sipmUser_AdsType == "personal"){
+                                      $("#adsType").attr("checked", "checked")
+                                  }else if(data.sipmUser_AdsType == "business"){
+                                      $("#adsType_").attr("checked", "checked")
+                                  }else{
+                                      
+                                  }
+
+                                  if(data.sipmUser_AdsNegotiation == "Negotiable"){
+                                      $("#adsNegotiaion").attr("checked", "checked")
+                                  }else if(data.sipmUser_AdsNegotiation == "Not Negotiable"){
+                                      $("#adsNegotiaion_").attr("checked", "checked")
+                                  }else{
+                                      
+                                  }
                                   }
                                 })
                               })
@@ -99,27 +115,29 @@ $(document).ready(function(){
                                         text: 'You have successfully Update your Ads',
                                         title: 'Ads Updated'
                                       })
-                                      displayAllUSerAds()
+                                      displayPendingAds()
                                     }
                                   })
                               })
 
 
-                                                // count verify ads
-
-                  countVerifyAds()
-                  function countVerifyAds() {
-                    $.ajax({
-                      url:'../controller/process.php',
-                      method: 'post',
-                      data: {action: 'CountVerifyAds'},
-                      success: function(response){
-                        // console.log(response)
-                        $("#showVerify").text(response)
-                        
-                      }
-                    })
-                  }
+                            // verify ads count
+                            countVerifyAds()
+                            function countVerifyAds() {
+                              $.ajax({
+                                url:'../controller/process.php',
+                                method: 'post',
+                                data: {action: 'CountVerifyAds'},
+                                success: function(response){
+                                  // console.log(response)
+                                  if(response == ''){
+                                      $("#showVerify").text(0)
+                                  }else{
+                                  $("#showVerify").text(response)
+                                  }
+                                }
+                              })
+                            }
 
                   countPendingAds()
                   function countPendingAds() {
@@ -129,8 +147,47 @@ $(document).ready(function(){
                       data: {action: 'CountPendingAds'},
                       success: function(response){
                         // console.log(response)
+                        if(response == ''){
+                            $("#showPend").text(0)
+                        }else{
                         $("#showPend").text(response)
-                        
+                        }
+                      }
+                    })
+                  }
+
+                  
+                  countAllUserAds()
+                  function countAllUserAds() {
+                    $.ajax({
+                      url:'../controller/process.php',
+                      method: 'post',
+                      data: {action: 'countAllUserAds'},
+                      success: function(response){
+                        // console.log(response)
+                        if(response == ''){
+                            $("#showAll").text(0)
+                        }else{
+                        $("#showAll").text(response)
+                        }
+                      }
+                    })
+                  }
+
+                  
+                  countDisapprovedAds()
+                  function countDisapprovedAds() {
+                    $.ajax({
+                      url:'../controller/process.php',
+                      method: 'post',
+                      data: {action: 'countDisapprovedAds'},
+                      success: function(response){
+                        // console.log(response)
+                        if(response == ''){
+                            $("#showDis").text(0)
+                        }else{
+                        $("#showDis").text(response)
+                        }
                       }
                     })
                   }

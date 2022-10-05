@@ -38,8 +38,22 @@ $(document).ready(function(){
                                     $("#adsPosterEmail").val(data.sipmUser_AdsContactEmail)
                                     $("#adsPosterName").val(data.sipmUser_AdsContactName)
                                     $("#adsPosterNumber").val(data.sipmUser_AdsContactNumber)
-                                    $("#adsType").val(data.sipmUser_AdsType)
                                     $("#adsPostId").val(data.sipmuser_PostId)
+                                    if(data.sipmUser_AdsType == "personal"){
+                                        $("#adsType").attr("checked", "checked")
+                                    }else if(data.sipmUser_AdsType == "business"){
+                                        $("#adsType_").attr("checked", "checked")
+                                    }else{
+                                        
+                                    }
+
+                                    if(data.sipmUser_AdsNegotiation == "Negotiable"){
+                                        $("#adsNegotiaion").attr("checked", "checked")
+                                    }else if(data.sipmUser_AdsNegotiation == "Not Negotiable"){
+                                        $("#adsNegotiaion_").attr("checked", "checked")
+                                    }else{
+                                        
+                                    }
                                   }
                                 })
                               })
@@ -72,4 +86,110 @@ $(document).ready(function(){
                                     }
                                   })
                               })
+
+
+
+                              countPendingAds()
+                              function countPendingAds() {
+                                $.ajax({
+                                  url:'../controller/process.php',
+                                  method: 'post',
+                                  data: {action: 'CountPendingAds'},
+                                  success: function(response){
+                                    // console.log(response)
+                                    if(response == ''){
+                                        $("#showPend").text(0)
+                                    }else{
+                                    $("#showPend").text(response)
+                                    }
+                                  }
+                                })
+                              }
+      
+                              // verify ads count
+                              countVerifyAds()
+                              function countVerifyAds() {
+                                $.ajax({
+                                  url:'../controller/process.php',
+                                  method: 'post',
+                                  data: {action: 'CountVerifyAds'},
+                                  success: function(response){
+                                    // console.log(response)
+                                    if(response == ''){
+                                        $("#showVerify").text(0)
+                                    }else{
+                                    $("#showVerify").text(response)
+                                    }
+                                  }
+                                })
+                              }
+
+                              
+                              countAllUserAds()
+                              function countAllUserAds() {
+                                $.ajax({
+                                  url:'../controller/process.php',
+                                  method: 'post',
+                                  data: {action: 'countAllUserAds'},
+                                  success: function(response){
+                                    // console.log(response)
+                                    if(response == ''){
+                                        $("#showAll").text(0)
+                                    }else{
+                                    $("#showAll").text(response)
+                                    }
+                                  }
+                                })
+                              }
+
+
+                              countDisapprovedAds()
+                              function countDisapprovedAds() {
+                                $.ajax({
+                                  url:'../controller/process.php',
+                                  method: 'post',
+                                  data: {action: 'countDisapprovedAds'},
+                                  success: function(response){
+                                    // console.log(response)
+                                    if(response == ''){
+                                        $("#showDis").text(0)
+                                    }else{
+                                    $("#showDis").text(response)
+                                    }
+                                  }
+                                })
+                              }
+
+
+                                                    //delete Ads
+                        $('body').on('click', '.deleteSimpUserDisapprovedAd', function(e){
+                            e.preventDefault()
+                            deleteAds = $(this).attr('id')
+
+                            swal.fire({
+                                title: 'Delete?',
+                                text: 'Are you sure you want to delete this Ads?',
+                                icon: 'warning',
+                                showCancelButton: true,
+                                confirmButtonColor: "#FF0000",
+                                cancelButtonColor: 'blue',
+                                confirmButtonText: 'Delete Ads'
+                            }).then((result)=>{
+                                if(result.value){
+                                $.ajax({
+                                    url: '../controller/process.php',
+                                    method: 'POST',
+                                    data: {deleteAds: deleteAds},
+                                    success: function(response){
+                                        swal.fire({
+                                        icon: 'success',
+                                        text: 'You have successfully deleted your Ads',
+                                        title: 'Ads Deleted'
+                                        }).then(location.reload())
+                                        displayDisapproveAds()
+                                    }
+                                })
+                                }
+                            })
+                            })
   })

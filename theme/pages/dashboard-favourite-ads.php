@@ -155,12 +155,12 @@
 					<!-- Dashboard Links -->
 					<div class="widget user-dashboard-menu shadow">
 						<ul>
-							<li><a href="dashboard-my-ads"><i class="fa fa-user"></i> My Ads</a></li>
+							<li><a href="dashboard-my-ads"><i class="fa fa-user"></i> My Ads <span id="showAll"></span></a></li>
 							<li class="active">
 								<a href="dashboard-favourite-ads"><i class="fa fa-bookmark-o"></i> Verified Ads <span id="showVerify"></span></a>
 							</li>
 							<li>
-								<a href="dashboard-archived-ads"><i class="fa fa-file-archive-o"></i>Disapproved Ads <span></span></a>
+								<a href="dashboard-archived-ads"><i class="fa fa-file-archive-o"></i>Disapproved Ads <span id="showDis"></span></a>
 							</li>
 							<li>
 								<a href="dashboard-pending-ads"><i class="fa fa-bolt"></i> Pending Approval<span id="showPend"></span></a>
@@ -253,6 +253,38 @@
 	</div>
 	<!-- Container End -->
 </section>
+
+
+        <!-- modal for view -->
+        <div id="viewVerifyModal" class="modal fade viewSimpUserVerifyAd" role="dialog" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+                <div class="modal-content">
+                  <div class="modal-header border-bottom-0">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                  <div class="modal-body">
+                  <h3 class="d-flex justify-content-center text-info"> View Ads here</h3>
+                  <h4 class="text-info">Img Ads</h4>
+                    <div id="v_AdsImgs">
+
+                    </div>
+                    
+                    <h4>Ads Details</h4>
+                    <p class="text-dark text-weight"> Ads Title:<span class="text-primary" id="v_AdsTitle"> </span></p>
+                    <p class="text-dark text-weight"> Ads Category:<span class="text-primary" id="v_AdsCategory"> </span></p>
+                    <p class="text-dark text-weight"> Ads Description: <span class="text-primary" id="v_AdsDescription"> </span></p>
+                    <p class="text-dark text-weight"> Ads Type:<span class="text-primary" id="v_AdsType"> </span></p>
+                    <p class="text-dark text-weight"> Ads Product Price:<span class="text-primary" id="v_AdsProductPrices"> </span></p>
+                    <p class="text-dark text-weight"> Ads Poster Address:<span class="text-primary" id="v_AdsAdress"> </span></p>
+                    <p class="text-dark text-weight"> Ads Poster Email:<span class="text-primary" id="v_AdsEmail"> </span></p>
+                    <p class="text-dark text-weight"> Ads Poster Name:<span class="text-primary" id="v_AdsPosterName"> </span></p>
+                    <p class="text-dark text-weight"> Ads Poster Number:<span class="text-primary" id="v_AdsNum"> </span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
 <!--============================
 =            Footer            =
 =============================-->
@@ -372,6 +404,7 @@ Essential Scripts
 
 <script src="../js/script.js"></script>
 <script src="../js/verifyAds.js"></script>
+<script src="../js/sweetAlert.js"></script>
 
 </body>
 
