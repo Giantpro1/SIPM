@@ -174,6 +174,42 @@ $(document).ready(function(){
                     })
                   }
 
+                                  //delete Account
+                $('body').on('click', '.deleteaccount', function(e){
+                  e.preventDefault()
+                  deleteAcct = $(this).attr('id')
+                  // console.log(deleteAcct)
+                  swal.fire({
+                    title: 'Delete?',
+                    text: 'Are you sure you want to delete this Account?',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: "#FF0000",
+                    cancelButtonColor: 'blue',
+                    confirmButtonText: 'Delete Account'
+                  }).then((result)=>{
+                    if(result.value){
+                      $.ajax({
+                        url: '../controller/process.php',
+                        method: 'POST',
+                        data: {deleteAcct: deleteAcct},
+                        success: function(response){
+                          console.log(response)
+                            swal.fire({
+                              icon: 'success',
+                              text: 'You have successfully deleted your Account',
+                              title: 'Ads Deleted'
+                            }).then(window.location = 'logout')
+                            displayAllUSerAds()
+                            if(true){
+                              // window.location = 'login'
+                            }
+                        }
+                      })
+                    }
+                  })
+                })
+
                   
                   countDisapprovedAds()
                   function countDisapprovedAds() {
