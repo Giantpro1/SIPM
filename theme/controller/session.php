@@ -26,3 +26,4 @@ if (!isset($_SESSION['ourUser'])) {
   $simpZipCode = $sipm_Data['simpUser_ZipCode'];
   $simpUserPass = $sipm_Data['simpUser_Password'];
   $simpUserRegDate = $sipm_Data['simpUserReg_Date'];
+  // $simpUserStatus = $sipm_Data['sipmUser_Verify'];

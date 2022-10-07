@@ -51,7 +51,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'simp_login'){
     $simp_UserName =$simpUSer->test_input($_POST['simp_UserName']);
     $simpUser_Password =$simpUSer->test_input($_POST['simpUser_Password']);
 
-    $simpLogUser = $simpUSer->simpUsers_Login($simp_UserName);
+    $simpLogUser = $simpUSer->simpUsers_Login($simp_UserName, 0);
     if ($simpLogUser != null){
         if (password_verify($simpUser_Password,$simpLogUser['simpUser_Password'])){
             echo "login";
