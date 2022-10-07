@@ -485,3 +485,8 @@ if(isset($_POST['viewSimpVerifyAds'])){
     $result = array_merge($viewSimpUserAds, $viewSimpUserAdimg);
     echo json_encode($result);
 }
+
+if(isset($_POST['deleteAcct'])){
+    $id =$_POST['deleteAcct'];
+    $deleteSipmUserAcct = $sipmCur_User->deleteSimpUserAccount(1, $id);
+}

@@ -44,8 +44,8 @@ class Dbc extends Database{
     }
     
     // user login
-     public function simpUsers_Login($simp_UserName){
-        $sql = "SELECT simp_UserName, simpUser_Password FROM sipmusers WHERE simp_UserName=:simp_UserName";
+     public function simpUsers_Login($simp_UserName, $value){
+        $sql = "SELECT simp_UserName, simpUser_Password FROM sipmusers WHERE simp_UserName=:simp_UserName AND simpUser_AccDelete='$value'";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute([
             'simp_UserName'=>$simp_UserName
@@ -413,6 +413,15 @@ public function Viewget_SipmUSerAdsVerifyImg($simpUser_ImgId, $value){
     ]);
     $fetchAds = $stmt->fetch(PDO::FETCH_ASSOC);
     return $fetchAds;
+}
+
+public function deleteSimpUserAccount($value, $id){
+    $sql = "UPDATE  sipmusers SET simpUser_AccDelete='$value' WHERE id=:id";
+    $stmt = $this->conn->prepare($sql);
+    $stmt->execute([
+        'id'=>$id
+    ]);
+    return true;
 }
 }
 // sipmusersads

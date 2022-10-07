@@ -159,14 +159,14 @@
               <li><a href="dashboard-pending-ads"><i class="fa fa-bolt"></i> Pending Approval<span id="showPend"></span></a>
               </li>
               <li><a href="logout"><i class="fa fa-cog"></i> Logout</a></li>
-              <li><a href="#!" data-toggle="modal" data-target="#deleteaccount"><i class="fa fa-power-off"></i>Delete Account</a></li>
+              <li><a href="#!" data-toggle="modal" class="deleteaccount" id="<?=$simp_Cid;?>" data-target="#deleteaccount"><i class="fa fa-power-off"></i>Delete Account</a></li>
             </ul>
           </div>
           
           <!-- delete-account modal -->
           <!-- delete account popup modal start-->
 <!-- Modal -->
-<div class="modal fade" id="deleteaccount" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+<!-- <div class="modal fade" id="deleteaccount" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
   aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -187,7 +187,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 <!-- delete account popup modal end-->
           <!-- delete-account modal -->
 
