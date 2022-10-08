@@ -8,7 +8,25 @@ $(document).ready(function(){
             data: {action: 'dispayDis'},
             success: function (response) {
                 // console.log(response)
-                $("#displayDisapprove").html(response)
+                // $("#displayDisapprove").html(response)
+
+                simpUserStatus = $(".status").attr('id')
+                // console.log(simpUserStatus)
+                if(simpUserStatus == 0){
+                  swal.fire({
+                    text: 'Yours Ads will display after your account have been verified!',
+                    icon: 'warning',
+                    title: 'Ooops!'
+                  }).then($("#displayDisapprove").text("wait after 24 hours till account would be verified"))
+                }else if(simpUserStatus == 2){
+                  swal.fire({
+                    text: 'Yours Ads will display after your account have been verified!',
+                    icon: 'warning',
+                    title: 'Ooops!'
+                  }).then($("#displayDisapprove").text("Your account have been disapproved!"))
+                }else{
+                  $("#displayDisapprove").html(response)
+                }
             }
         });
     }

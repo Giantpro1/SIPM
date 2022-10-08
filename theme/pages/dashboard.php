@@ -197,6 +197,7 @@
         <!-- Recently Favorited -->
         <div class="widget dashboard-container my-adslist shadow">
           <h3 class="widget-header">My Ads</h3>
+          <input type="hidden" class="status" id="<?=$simpUserStatus;?>"></input>
           <table class="table table-responsive product-dashboard-table">
             <thead>
               <tr>
@@ -207,7 +208,7 @@
               </tr>
             </thead>
             <tbody id="displaysimp_UserAds">
-
+            
 
             </tbody>
           </table>

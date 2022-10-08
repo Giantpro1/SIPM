@@ -11,8 +11,24 @@
                       data: {action: 'dispayVerifiedAds'},
                       success: function(response){
                         // console.log(response)
-                        $("#displayAllVerifyAds").html(response)
-
+                        // $("#displayAllVerifyAds").html(response)
+                        simpUserStatus = $(".status").attr('id')
+                        // console.log(simpUserStatus)
+                        if(simpUserStatus == 0){
+                          swal.fire({
+                            text: 'Yours Ads will display after your account have been verified!',
+                            icon: 'warning',
+                            title: 'Ooops!'
+                          }).then($("#displayAllVerifyAds").text("wait after 24 hours till account would be verified"))
+                        }else if(simpUserStatus == 2){
+                          swal.fire({
+                            text: 'Yours Ads will display after your account have been verified!',
+                            icon: 'warning',
+                            title: 'Ooops!'
+                          }).then($("#displayAllVerifyAds").text("Your account have been disapproved!"))
+                        }else{
+                          $("#displayAllVerifyAds").html(response)
+                        }
                       }
                     })
                   }

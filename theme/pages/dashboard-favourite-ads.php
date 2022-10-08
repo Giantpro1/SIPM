@@ -207,7 +207,8 @@
 			<div class="col-lg-8">
 				<!-- Recently Favorited -->
 				<div class="widget dashboard-container my-adslist shadow">
-					<h3 class="widget-header">Favourite Ads</h3>
+					<h3 class="widget-header">Verified Ads</h3>
+					<input type="hidden" class="status" id="<?=$simpUserStatus;?>"></input>
 					<table class="table table-responsive product-dashboard-table">
 						<thead>
 							<tr>

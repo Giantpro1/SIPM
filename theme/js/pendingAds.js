@@ -9,7 +9,25 @@ $(document).ready(function(){
             data: {action: 'displayPendAds'},
             success: function(response){
                 console.log(response)
-                $("#displayPendingAds").html(response)
+                // $("#displayPendingAds").html(response)
+
+                simpUserStatus = $(".status").attr('id')
+                // console.log(simpUserStatus)
+                if(simpUserStatus == 0){
+                  swal.fire({
+                    text: 'Yours Ads will display after your account have been verified!',
+                    icon: 'warning',
+                    title: 'Ooops!'
+                  }).then($("#displayPendingAds").text("wait after 24 hours till account would be verified"))
+                }else if(simpUserStatus == 2){
+                  swal.fire({
+                    text: 'Yours Ads will display after your account have been verified!',
+                    icon: 'warning',
+                    title: 'Ooops!'
+                  }).then($("#displayPendingAds").text("Your account have been disapproved!"))
+                }else{
+                  $("#displayPendingAds").html(response)
+                }
             }
         })
     }
