@@ -33,6 +33,8 @@ if (isset($_SESSION['ourUser'])) {
   <link href="../plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
   
   <link href="../css/style.css" rel="stylesheet">
+  <link href="../css/pass.css" rel="stylesheet">
+
 
 </head>
 
@@ -133,7 +135,8 @@ if (isset($_SESSION['ourUser'])) {
           <form action="#" id="simpUSer_login">
             <fieldset class="p-4">
               <input class="form-control mb-3" name="simp_UserName" type="text" placeholder="Username" required>
-              <input class="form-control mb-3" name="simpUser_Password" type="password" placeholder="Password" required>
+              <input class="form-control mb-3" id="password-field" name="simpUser_Password" type="password" placeholder="Password" required>
+              <span toggle="#password-field" class="fa fa-eye fieldIcon mr-3 password-Toggle"></span>
               <div class="loggedin-forgot">
                 <input type="checkbox" id="keep-me-logged-in">
                 <label for="keep-me-logged-in" class="pt-3 pb-2">Keep me logged in</label>

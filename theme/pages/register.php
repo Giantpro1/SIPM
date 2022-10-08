@@ -26,7 +26,7 @@
   <link href="../plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
   <!-- <link rel="stylesheet" href="../css/Sval.css"> -->
   <link href="../css/style.css" rel="stylesheet">
-
+  <link href="../css/pass.css" rel="stylesheet">
 </head>
 
 <body class="body-wrapper">
@@ -127,8 +127,10 @@
               <input class="form-control mb-3" name="simp_UserName" type="text" placeholder="Username*" required>
               <input class="form-control mb-3" name="simpUser_Email" type="email" placeholder="Email*" required>
                   <input class="form-control mb-3" id="simpUser_Password_val"  name="simpUser_Password" type="password" placeholder="Password*" required>
+                  <span toggle="#simpUser_Password_val" class="fa fa-eye fieldIcon mr-3 password-Toggle"></span>
                   <p class="bg-danger text-white" id="password_Strength_Status"></p>
                 <input class="form-control mb-3" id="simpUser_Password_con" type="password" placeholder="Confirm Password*" required>
+                <span toggle="#simpUser_Password_con" class="fa fa-eye fieldIcon mr-3 password-Toggle"></span>
               <div class="loggedin-forgot d-inline-flex my-3">
                 <input type="checkbox" id="registering" class="mt-1">
                 <label for="registering" class="px-2">By registering, you accept our <a class="text-primary font-weight-bold" href="terms-condition">Terms & Conditions</a></label>
