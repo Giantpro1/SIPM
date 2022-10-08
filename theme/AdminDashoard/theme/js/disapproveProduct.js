@@ -48,6 +48,11 @@ $(document).ready(function(){
            
           })
 
+          $("#reFreshBtn").click(function (e) {
+            e.preventDefault()
+            location.reload()
+            })
+
           $('body').on('click', '.viewProduct', function(e){
             e.preventDefault()
             viewDisapproveProduct = $(this).attr('id')

@@ -102,6 +102,11 @@ $(document).ready(function(){
         })
        
       })
+
+      $("#reFreshBtn").click(function (e) {
+        e.preventDefault()
+        location.reload()
+        })
 });
 
 

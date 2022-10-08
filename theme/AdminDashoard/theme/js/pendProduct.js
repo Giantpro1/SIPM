@@ -15,7 +15,10 @@ $(document).ready(function(){
             }
         });
     }
-
+    $("#reFreshBtn").click(function (e) {
+      e.preventDefault()
+      location.reload()
+      })
     // view prduct
 
     $('body').on('click', '.viewProduct', function(e){

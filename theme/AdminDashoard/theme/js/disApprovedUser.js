@@ -42,6 +42,10 @@ $(document).ready(function(){
                     });
                   })
 
+                  $("#reFreshBtn").click(function (e) {
+                    e.preventDefault()
+                    location.reload()
+                    })
 
                       // approve user account
                 $('body').on('click', '.verifyUser', function(e){

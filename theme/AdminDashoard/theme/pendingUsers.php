@@ -613,15 +613,9 @@
         <ul class="pb-2">
           <li class="d-block active mb-4">
             <a href="verifyUsers">
-              <i class="mdi mdi-download mr-2"></i> Inbox</a>
+              <i class="mdi mdi-download mr-2"></i>Total</a>
             <span class="badge badge-secondary">20</span>
           </li>
-          <li class="d-block mb-4">
-            <a href="#">
-              <i class="mdi mdi-star-outline mr-2"></i> Favorite</a>
-            <span class="badge badge-secondary">56</span>
-          </li>
-         
         </ul>
       </div>
     </div>
@@ -631,7 +625,7 @@
         <div class="email-right-header mb-5">
           <!-- head left option -->
           <div class="head-left-options">
-            <button type="button" class="btn btn-icon btn-outline btn-rounded-circle">
+            <button type="button" class="btn btn-icon btn-outline btn-rounded-circle" id="reFreshBtn">
               <i class="mdi mdi-refresh"></i>
             </button>
           </div>
