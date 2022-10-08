@@ -613,7 +613,7 @@
           <li class="d-block active mb-4">
             <a href="disapproveProduct">
               <i class="mdi mdi-download mr-2"></i>Total</a>
-            <span class="badge badge-secondary">20</span>
+            <span class="badge badge-secondary" id="showDis"></span>
           </li>
           <li class="d-block mb-4">
         </ul>

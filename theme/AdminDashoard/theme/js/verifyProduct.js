@@ -82,4 +82,20 @@ $(document).ready(function(){
             location.reload()
             })
 
+            countVerifyProducts()
+            function countVerifyProducts() {
+              $.ajax({
+                url:'../controller/productProccess.php',
+                method: 'post',
+                data: {action: 'CountVerifyProducts'},
+                success: function(response){
+                  // console.log(response)
+                  if(response == ''){
+                      $("#showVerify").text(0)
+                  }else{
+                  $("#showVerify").text(response)
+                  }
+                }
+              })
+            }
 })

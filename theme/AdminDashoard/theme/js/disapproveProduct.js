@@ -79,4 +79,22 @@ $(document).ready(function(){
                 }
             });
         })
+
+
+        countDisapprovedProducts()
+        function countDisapprovedProducts() {
+          $.ajax({
+            url:'../controller/productProccess.php',
+            method: 'post',
+            data: {action: 'countDisapprovedProducts'},
+            success: function(response){
+              // console.log(response)
+              if(response == ''){
+                  $("#showDis").text(0)
+              }else{
+              $("#showDis").text(response)
+              }
+            }
+          })
+        }
 })

@@ -165,3 +165,22 @@ if(isset($_POST['viewDisapproveProduct'])){
   // echo $result;
 }
   
+
+ // count pending ads
+
+ if(isset($_POST['action']) && $_POST['action'] === 'CountPendingProducts'){
+  $countPendAcct = $Admindb->countAdsStatus(0);
+  echo $countPendAcct;
+ }
+ // count verify ads
+
+ if(isset($_POST['action']) && $_POST['action'] === 'CountVerifyProducts'){
+  $countPendAcct = $Admindb->countAdsStatus(1);
+  echo $countPendAcct;
+ }
+ // count Disapprove ads
+
+ if(isset($_POST['action']) && $_POST['action'] === 'countDisapprovedProducts'){
+  $countPendAcct = $Admindb->countAdsStatus(2);
+  echo $countPendAcct;
+ }

@@ -151,6 +151,13 @@ class Dbc extends Database{
       $result=   $stmt->rowCount();
         return $result;
     }
+    public function countAdsStatus($value){
+        $sql = "SELECT * FROM sipmusersads WHERE sipmUser_AdsVerified='$value'";
+        $stmt =$this->conn->prepare($sql);
+        $stmt->execute();
+      $result=   $stmt->rowCount();
+        return $result;
+    }
 }
 // SELECT * FROM sipmusersads LEFT JOIN sipmusersads_img ON sipmuser_PostId=simpUser_ImgId WHERE (sipmUser_AdsVerified='$value' AND sipmUser_AdsImgVerified='$value')
 // LEFT JOIN sipmusersads_img ON (sipmuser_PostId=simpUser_ImgId) SET (sipmUser_AdsVerified='$value' AND sipmUser_AdsImgVerified='$value') WHERE (sipmuser_PostId=:sipmuser_PostId AND simpUser_ImgId=:simpUser_ImgId)

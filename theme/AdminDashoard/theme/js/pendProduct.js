@@ -80,4 +80,21 @@ $(document).ready(function(){
             })
            
           })
+
+          countPendingProducts()
+          function countPendingProducts() {
+            $.ajax({
+              url:'../controller/productProccess.php',
+              method: 'post',
+              data: {action: 'CountPendingProducts'},
+              success: function(response){
+                // console.log(response)
+                if(response == ''){
+                    $("#showPend").text(0)
+                }else{
+                $("#showPend").text(response)
+                }
+              }
+            })
+          }
 })
