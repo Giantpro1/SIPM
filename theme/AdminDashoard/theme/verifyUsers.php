@@ -603,7 +603,7 @@
           <li class="d-block active mb-4">
             <a href="verifyUsers">
               <i class="mdi mdi-download mr-2"></i>Total</a>
-            <span class="badge badge-secondary">20</span>
+            <span class="badge badge-secondary" id="showVerify"></span>
           </li>
         </ul>
       </div>

@@ -138,3 +138,20 @@ if(isset($_POST['action']) && $_POST['action'] === 'displayDisApproveUser'){
       $id = $_POST['deleteUser'];
       $deleteUser = $Admindb-> deleteUser($id, 3);
   }
+ // count pending acct
+
+ if(isset($_POST['action']) && $_POST['action'] === 'CountPendingAcct'){
+  $countPendAcct = $Admindb->countAccStatus(0);
+  echo $countPendAcct;
+ }
+
+// count verify acct
+ if(isset($_POST['action']) && $_POST['action'] === 'CountVerifyAcct'){
+  $countPendAcct = $Admindb->countAccStatus(1);
+  echo $countPendAcct;
+ }
+// count disapprove acct
+ if(isset($_POST['action']) && $_POST['action'] === 'CountDisapprovedAcct'){
+  $countPendAcct = $Admindb->countAccStatus(2);
+  echo $countPendAcct;
+ }

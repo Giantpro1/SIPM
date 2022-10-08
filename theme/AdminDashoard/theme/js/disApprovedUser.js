@@ -46,6 +46,24 @@ $(document).ready(function(){
                     e.preventDefault()
                     location.reload()
                     })
+                    
+
+                    countDisapprovedUsers()
+                    function countDisapprovedUsers() {
+                      $.ajax({
+                        url:'../controller/dbAction.php',
+                        method: 'post',
+                        data: {action: 'CountDisapprovedAcct'},
+                        success: function(response){
+                          // console.log(response)
+                          if(response == ''){
+                              $("#showDis").text(0)
+                          }else{
+                          $("#showDis").text(response)
+                          }
+                        }
+                      })
+                    }
 
                       // approve user account
                 $('body').on('click', '.verifyUser', function(e){

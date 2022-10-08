@@ -107,6 +107,23 @@ $(document).ready(function(){
         e.preventDefault()
         location.reload()
         })
+
+        countPendingUsers()
+        function countPendingUsers() {
+          $.ajax({
+            url:'../controller/dbAction.php',
+            method: 'post',
+            data: {action: 'CountPendingAcct'},
+            success: function(response){
+              // console.log(response)
+              if(response == ''){
+                  $("#showPend").text(0)
+              }else{
+              $("#showPend").text(response)
+              }
+            }
+          })
+        }
 });
 
 

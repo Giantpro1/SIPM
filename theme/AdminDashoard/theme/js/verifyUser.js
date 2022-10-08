@@ -78,4 +78,21 @@ $(document).ready(function(){
               e.preventDefault()
               location.reload()
               })
+
+              countVerifyUsers()
+              function countVerifyUsers() {
+                $.ajax({
+                  url:'../controller/dbAction.php',
+                  method: 'post',
+                  data: {action: 'CountVerifyAcct'},
+                  success: function(response){
+                    // console.log(response)
+                    if(response == ''){
+                        $("#showVerify").text(0)
+                    }else{
+                    $("#showVerify").text(response)
+                    }
+                  }
+                })
+              }
 });
