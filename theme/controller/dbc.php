@@ -423,6 +423,16 @@ public function deleteSimpUserAccount($value, $id){
     ]);
     return true;
 }
+
+
+public function fetchTrendingAds($value){
+    $sql = "SELECT * FROM (sipmusersads JOIN sipmusersads_img ON sipmuser_PostId=simpUser_ImgId) WHERE
+     (sipmUser_AdsVerified='$value' AND sipmUser_AdsImgVerified='$value') ORDER BY sipmusersads.sipmuser_PostId DESC";
+    $stmt = $this->conn->prepare($sql);
+    $stmt->execute();
+    $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $row;
+}
 }
 // sipmusersads
 // sipmusersads_img

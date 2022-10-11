@@ -206,6 +206,9 @@
 			<!-- offer 01 -->
 			<div class="col-lg-12">
 				<div class="trending-ads-slide">
+					<!-- <div id="diplayTrendingAds">
+						<
+					</div> -->
 					<div class="col-sm-12 col-lg-4">
 						<!-- product card -->
 						<div class="product-item bg-light">
@@ -342,7 +345,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> ''
 			</div>
 		</div>
 	</div>
@@ -637,6 +640,7 @@ Essential Scripts
 <script src="plugins/google-map/map.js" defer></script>
 
 <script src="js/script.js"></script>
+<script src="js/index.js"></script>
 
 </body>
 
