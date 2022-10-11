@@ -15,5 +15,21 @@ $(document).ready(function(){
      }
 
 
-     
+     $("#search_Btn").click(function (e) { 
+        e.preventDefault()
+        request = $("#product_Search").val();
+        if(request){
+            $.ajax({
+                url: "./controller/index.php",
+                type: "POST",
+                data: {
+                    request:request
+                },
+                success: function (response) {
+                    // console.log(response)
+                    $("#search_Result").html(response);
+                }
+            });
+        }
+     });
 })

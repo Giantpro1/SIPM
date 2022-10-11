@@ -103,13 +103,14 @@ class Dbc extends Database{
      }
 
  // ads img upload
-     public function simpUser_UploadingAdsImg($simp_Cid, $simpUser_ImgId, $simpUser_AdsImg){
+     public function simpUser_UploadingAdsImg($simp_Cid, $simpUser_ImgId, $simpUser_AdsImg, $simpUser_ImgName){
         $sql = "INSERT INTO sipmusersads_img (simp_Cid, simpUser_ImgId, simpUser_AdsImg) VALUES (:simp_Cid, :simpUser_ImgId, :simpUser_AdsImg)";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute([
             'simp_Cid'=>$simp_Cid,
             'simpUser_ImgId'=>$simpUser_ImgId,
-            'simpUser_AdsImg'=>$simpUser_AdsImg
+            'simpUser_AdsImg'=>$simpUser_AdsImg,
+            'simpUser_ImgName'=>$simpUser_ImgName
         ]);
         return true;
      }
@@ -433,6 +434,14 @@ public function fetchTrendingAds($value){
     $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $row;
 }
+
+    public function productSearch($request, $value){
+        $sql = "SELECT * FROM sipmusersads INNER JOIN sipmusersads_img ON sipmuser_PostId=simpUser_ImgId WHERE (simpUser_AdsTitle LIKE '%$request%' AND simpUser_ImgName LIKE '%$request%') AND (sipmUser_AdsVerified='$value' AND sipmUser_AdsImgVerified='$value') LIMIT 5";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $row;
+    }
 }
 // sipmusersads
 // sipmusersads_img

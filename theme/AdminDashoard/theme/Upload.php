@@ -13,7 +13,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Mono - Responsive Admin & Dashboard Template</title>
+  <title>SIPM</title>
 
   <!-- GOOGLE FONTS -->
   <link href="https://fonts.googleapis.com/css?family=Karla:400,700|Roboto" rel="stylesheet">
@@ -621,16 +621,6 @@
         <div class="email-left-column email-options p-4 p-xl-5">
           <a href="Upload" class="btn btn-block btn-primary btn-pill mb-4 mb-xl-5">Upload</a>
           <ul class="pb-2">
-            <li class="d-block active mb-4">
-              <a href="email-inbox">
-                <i class="mdi mdi-download mr-2"></i> Inbox</a>
-              <span class="badge badge-secondary">20</span>
-            </li>
-            <li class="d-block mb-4">
-              <a href="#">
-                <i class="mdi mdi-star-outline mr-2"></i> Favorite</a>
-              <span class="badge badge-secondary">56</span>
-            </li>
         </div>
       </div>
       <div class="col-lg-8 col-xl-9 col-xxl-10">
@@ -645,17 +635,44 @@
             <div class="form-group">
               <select name="" id="" class="form-control">
                 <option value="">Category</option>
-                <option value="">Select</option>
-                <option value="">Select</option>
-                <option value="">Select</option>
-                <option value="">Select</option>
+                <option value="Electronic/Gadget">Electronic/Gadget</option>
+                <option value="Furnitures">Furnitures</option>
+                <option value="Real Estate">Real Estate</option>
+                <option value="Job/Employments">Job/Employments</option>
+                <option value="Restaurant">Restaurant</option>
+                <option value="Pets">Pets</option>
+                <option value="Shopping">Shopping</option>
+                <option value="services">services</option>
               </select>
             </div>
             <div class="form-group">
               <input type="text" class="form-control" id="exampleEmail" placeholder="Price: ">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" id="exampleEmail" placeholder="AdsType: ">
+            <h6 class="font-weight-bold pt-4 pb-1">Ad Type:</h6>
+            <div class="row px-3">
+              <div class="col-lg-4 mr-lg-4 my-2 pt-2 pb-1 rounded bg-white">
+                <input type="radio" name="sipmUser_AdsType" value="personal" id="personal" required>
+                <label for="personal" class="py-2">Personal</label>
+              </div>
+              <div class="col-lg-4 mr-lg-4 my-2 pt-2 pb-1 rounded bg-white ">
+                <input type="radio" name="sipmUser_AdsType" value="business" id="business" required>
+                <label for="business" class="py-2">Business</label>
+              </div>
+            </div>
+            </div>
+            <div class="form-group">
+            <div class="row px-3">
+              <div class="col-lg-4 mr-lg-4 my-2 pt-2 pb-1 rounded bg-white">
+              <h6 class="font-weight-bold pt-4 pb-1">Price Status:</h6>
+                <input type="radio" name="sipmUser_AdsType" value="personal" id="personal" required>
+                <label for="personal" class="py-2">Negotiable</label>
+              </div>
+              <div class="col-lg-4 mr-lg-4 my-2 pt-2 pb-1 rounded bg-white ">
+                <input type="radio" name="sipmUser_AdsType" value="business" id="business" required>
+                <label for="business" class="py-2">Not Negotiable</label>
+              </div>
+            </div>
             </div>
             <div class="form-group">
               <label for="">Product Decription</label>
@@ -670,6 +687,26 @@
           <div class="border rounded mb-5">
             <form action="./" class="dropzone"></form>
           </div>
+
+        <fieldset class="border px-3 px-md-4 py-4 my-5 seller-information bg-gray">
+        <div class="row">
+          <div class="col-lg-12">
+            <h3>Seller Information</h3>
+          </div>
+          <div class="col-lg-6">
+            <h6 class="font-weight-bold pt-4 pb-1">Contact Name:</h6>
+            <input type="text" name="sipmUser_AdsContactName" placeholder="Contact name" class="form-control bg-white" required>
+            <h6 class="font-weight-bold pt-4 pb-1">Contact Number:</h6>
+            <input type="text" name="sipmUser_AdsContactNumber" placeholder="Contact Number" class="form-control bg-white" required>
+          </div>
+          <div class="col-lg-6">
+            <h6 class="font-weight-bold pt-4 pb-1">Contact Email:</h6>
+            <input type="email" name="sipmUser_AdsContactEmail" placeholder="name@yourmail.com" class="form-control bg-white" required>
+            <h6 class="font-weight-bold pt-4 pb-1">Contact Address:</h6>
+            <input type="text" name="sipmUser_AdsContactAddress" placeholder="Your address" class="form-control bg-white" required>
+          </div>
+        </div>
+      </fieldset>
           <button class="btn btn-primary btn-pill mb-5" type="submit">Upload Ads</button>
         </div>
       </div>

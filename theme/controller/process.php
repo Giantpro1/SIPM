@@ -55,7 +55,7 @@ if(isset($_FILES['simpUser_AdsImg'])){
                     $faiPath = $folderForAdsImg.$GTR;
                     $PathName = $_FILES['simpUser_AdsImg']['tmp_name'][$i];
                     move_uploaded_file($PathName,$faiPath);
-                    $imgResult = $sipmCur_User->simpUser_UploadingAdsImg($simp_Cid, $sipmuser_PostId, $GTR);
+                    $imgResult = $sipmCur_User->simpUser_UploadingAdsImg($simp_Cid, $sipmuser_PostId, $GTR, $simpUser_AdsTitle);
                 }
             }else{
                 echo "Image fields cannot be empty!";

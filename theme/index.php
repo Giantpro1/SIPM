@@ -158,7 +158,7 @@
 								<form>
 									<div class="form-row">
 										<div class="form-group col-xl-4 col-lg-3 col-md-6">
-											<input type="text" class="form-control my-2 my-lg-1" id="inputtext4"
+											<input type="text" class="form-control my-2 my-lg-1" id="product_Search"
 												placeholder="What are you looking for">
 										</div>
 										<div class="form-group col-lg-3 col-md-6">
@@ -173,8 +173,9 @@
 											<input type="text" class="form-control my-2 my-lg-1" id="inputLocation4" placeholder="Location">
 										</div>
 										<div class="form-group col-xl-2 col-lg-3 col-md-6 align-self-center">
-											<button type="submit" class="btn btn-primary active w-100">Search Now</button>
+											<button type="submit" id="search_Btn" class="btn btn-primary active w-100">Search Now</button>
 										</div>
+										<div id="search_Result"></div>
 									</div>
 								</form>
 							</div>
