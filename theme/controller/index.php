@@ -95,3 +95,9 @@ if(isset($_POST['request'])){
 }
 
 }
+
+// if(isset($_POST['singleProduct'])){
+// $simp_Cid = $_POST['singleProduct'];
+// $result = $ibc->viewSinglePageProduct(1, $simp_Cid,);
+//     echo json_encode($result);
+// }

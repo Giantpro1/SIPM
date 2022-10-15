@@ -32,4 +32,23 @@ $(document).ready(function(){
             });
         }
      });
+
+
+     $(".singlePage").click(function(e) { 
+        e.preventDefault()
+        singleProduct = $(this).attr('id')
+        console.log(singleProduct)
+
+            $.ajax({
+                url: "./controller/index.php",
+                type: "POST",
+                data: {
+                    singleProduct:singleProduct
+                },
+                success: function (response) {
+                    console.log(response)
+                    // $("#search_Result").html(response);
+                }
+            });
+     });
 })

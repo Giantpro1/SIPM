@@ -249,16 +249,16 @@ $ibc = new Dbc;
 									<div class="card">
 										<div class="thumb-content">
 											<div class="price"><?=$result['sipmUser_AdsPrice'] ?></div>
-											<a href="./pages/single" id="<?= $result['sipmUser_AdsPrice']?>">
+											<a href="./pages/single" class="singlePage" id="<?= $result['simp_Cid']?>">
 												<img class="card-img-top img-fluid productHeight" src="./images/adsImages/<?= $result['simpUser_AdsImg'] ?>"
 													alt="Card image cap">
 											</a>
 										</div>
 										<div class="card-body">
-											<h4 class="card-title"><a href="single"><?= $result['simpUser_AdsTitle'] ?></a></h4>
+											<h4 class="card-title"><a href="./pages/single" id="<?= $result['simp_Cid']?>"  class="singlePage"><?= $result['simpUser_AdsTitle'] ?></a></h4>
 											<ul class="list-inline product-meta">
 												<li class="list-inline-item">
-													<a href="./pages/single" id="<?= $result['sipmUser_AdsPrice']?>"><i
+													<a href="./pages/single" class="singlePage" id="<?= $result['simp_Cid']?>"><i
 															class="fa fa-folder-open-o"></i><?= $result['sipmUser_AdsCategory']?></a>
 												</li>
 												<li class="list-inline-item">

@@ -104,7 +104,7 @@ class Dbc extends Database{
 
  // ads img upload
      public function simpUser_UploadingAdsImg($simp_Cid, $simpUser_ImgId, $simpUser_AdsImg, $simpUser_ImgName){
-        $sql = "INSERT INTO sipmusersads_img (simp_Cid, simpUser_ImgId, simpUser_AdsImg) VALUES (:simp_Cid, :simpUser_ImgId, :simpUser_AdsImg)";
+        $sql = "INSERT INTO sipmusersads_img (simp_Cid, simpUser_ImgId, simpUser_AdsImg, simpUser_ImgName) VALUES (:simp_Cid, :simpUser_ImgId, :simpUser_AdsImg, :simpUser_ImgName)";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute([
             'simp_Cid'=>$simp_Cid,
@@ -442,6 +442,16 @@ public function fetchTrendingAds($value){
         $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $row;
     }
+
+    // public function viewSinglePageProduct($value, $simp_Cid){
+    //     $sql = "SELECT * FROM sipmusers INNER JOIN sipmusersads ON simp_Cid=id WHERE (simp_Cid=:simp_Cid) AND (sipmUser_Verify='$value' AND sipmUser_AdsVerified='$value')";
+    //     $stmt = $this->conn->prepare($sql);
+    //     $stmt->execute([
+    //         'simp_Cid'=>$simp_Cid
+    //     ]);
+    //     $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    //     return $row;
+    // }
 }
 // sipmusersads
 // sipmusersads_img
