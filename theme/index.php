@@ -246,19 +246,19 @@ $ibc = new Dbc;
 							<div class="col-sm-12 col-lg-4">
 							<!-- product card -->
 								<div class="product-item bg-light">
-									<div class="card">
+									<div class="card shadow">
 										<div class="thumb-content">
 											<div class="price"><?=$result['sipmUser_AdsPrice'] ?></div>
-											<a href="./pages/single" class="singlePage" id="<?= $result['simp_Cid']?>">
+											<a href="./pages/single?id=<?= $result['sipmuser_PostId']?>" class="singlePage" id="<?= $result['sipmuser_PostId']?>">
 												<img class="card-img-top img-fluid productHeight" src="./images/adsImages/<?= $result['simpUser_AdsImg'] ?>"
 													alt="Card image cap">
 											</a>
 										</div>
 										<div class="card-body">
-											<h4 class="card-title"><a href="./pages/single" id="<?= $result['simp_Cid']?>"  class="singlePage"><?= $result['simpUser_AdsTitle'] ?></a></h4>
+											<h4 class="card-title"><a href="./pages/single?id=<?= $result['sipmuser_PostId']?>" id="<?= $result['sipmuser_PostId']?>"  class="singlePage"><?= $result['simpUser_AdsTitle'] ?></a></h4>
 											<ul class="list-inline product-meta">
 												<li class="list-inline-item">
-													<a href="./pages/single" class="singlePage" id="<?= $result['simp_Cid']?>"><i
+													<a href="./pages/single?id=<?= $result['sipmuser_PostId']?>" class="singlePage" id="<?= $result['simp_Cid']?>"><i
 															class="fa fa-folder-open-o"></i><?= $result['sipmUser_AdsCategory']?></a>
 												</li>
 												<li class="list-inline-item">

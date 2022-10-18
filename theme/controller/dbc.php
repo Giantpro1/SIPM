@@ -443,15 +443,33 @@ public function fetchTrendingAds($value){
         return $row;
     }
 
-    // public function viewSinglePageProduct($value, $simp_Cid){
-    //     $sql = "SELECT * FROM sipmusers INNER JOIN sipmusersads ON simp_Cid=id WHERE (simp_Cid=:simp_Cid) AND (sipmUser_Verify='$value' AND sipmUser_AdsVerified='$value')";
-    //     $stmt = $this->conn->prepare($sql);
-    //     $stmt->execute([
-    //         'simp_Cid'=>$simp_Cid
-    //     ]);
-    //     $row = $stmt->fetch(PDO::FETCH_ASSOC);
-    //     return $row;
-    // }
+    public function viewSinglePPP($id){
+        $sql = "SELECT sipmUser_FirstName, sipmUser_SecondName, simp_UserName, sipmUser_ProfileImg, simpUserReg_Date FROM sipmusers WHERE id=:id";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute([
+            'id'=>$id
+        ]);
+        $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $row;
+    }
+    public function viewSinglePPD($simp_Cid){
+        $sql = "SELECT * FROM sipmusersads WHERE sipmuser_PostId=:sipmuser_PostId";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute([
+            'sipmuser_PostId'=>$simp_Cid
+        ]);
+        $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $row;
+    }
+    public function viewSinglePPI($simp_Cid){
+        $sql = "SELECT * FROM sipmusersads_img WHERE simpUser_ImgId=:simpUser_ImgId";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute([
+            'simpUser_ImgId'=>$simp_Cid
+        ]);
+        $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $row;
+    }
 }
 // sipmusersads
 // sipmusersads_img
