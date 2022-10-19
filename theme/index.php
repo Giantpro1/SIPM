@@ -50,90 +50,13 @@ $ibc = new Dbc;
 						<div class="collapse navbar-collapse" id="navbarSupportedContent">
 							<ul class="navbar-nav ml-auto main-nav ">
 								<li class="nav-item active">
-									<a class="nav-link" href="index">Home</a>
+									<a class="nav-link" href="index" title="">Home <i class="fa fa-home"></i></a>
 								</li>
-								<li class="nav-item dropdown dropdown-slide @@dashboard">
-									<a class="nav-link dropdown-toggle" data-toggle="dropdown"
-										href="#!">Dashboard<span><i class="fa fa-angle-down"></i></span>
-									</a>
-
-									<!-- Dropdown list -->
-									<ul class="dropdown-menu">
-										<li><a class="dropdown-item @@dashboardPage"
-												href="./pages/dashboard">Dashboard</a></li>
-										<li><a class="dropdown-item @@dashboardMyAds"
-												href="./pages/dashboard-my-ads">Dashboard My Ads</a></li>
-										<li><a class="dropdown-item @@dashboardFavouriteAds"
-												href="./pages/dashboard-favourite-ads">Dashboard Favourite Ads</a></li>
-										<li><a class="dropdown-item @@dashboardArchivedAds"
-												href="./pages/dashboard-archived-ads">Dashboard Archived Ads</a></li>
-										<li><a class="dropdown-item @@dashboardPendingAds"
-												href="./pages/dashboard-pending-ads">Dashboard Pending Ads</a></li>
-
-										<li class="dropdown dropdown-submenu dropright">
-											<a class="dropdown-item dropdown-toggle" href="#!" id="dropdown0501"
-												role="button" data-toggle="dropdown" aria-haspopup="true"
-												aria-expanded="false">Sub Menu</a>
-
-											<ul class="dropdown-menu" aria-labelledby="dropdown0501">
-												<li><a class="dropdown-item" href="index">Submenu 01</a></li>
-												<li><a class="dropdown-item" href="index">Submenu 02</a></li>
-											</ul>
-										</li>
-									</ul>
-								</li>
-								<li class="nav-item dropdown dropdown-slide @@pages">
-									<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
-										aria-haspopup="true" aria-expanded="false">
-										Pages <span><i class="fa fa-angle-down"></i></span>
-									</a>
-									<!-- Dropdown list -->
-									<ul class="dropdown-menu">
-										<li><a class="dropdown-item @@about" href="./pages/about-us">About Us</a></li>
-										<li><a class="dropdown-item @@contact" href="./pages/contact-us">Contact Us</a>
-										</li>
-										<li><a class="dropdown-item @@profile" href="./pages/user-profile">User
-												Profile</a></li>
-										<li><a class="dropdown-item @@404" href="404">404 Page</a></li>
-										<li><a class="dropdown-item @@package" href="./pages/package">Package</a></li>
-										<li><a class="dropdown-item @@singlePage" href="./pages/single">Single Page</a>
-										</li>
-										<li><a class="dropdown-item @@store" href="./pages/store">Store Single</a></li>
-										<li><a class="dropdown-item @@blog" href="./pages/blog">Blog</a></li>
-										<li><a class="dropdown-item @@singleBlog" href="./pages/single-blog">Blog
-												Details</a></li>
-										<li><a class="dropdown-item @@terms" href="./pages/terms-condition">Terms &amp;
-												Conditions</a></li>
-									</ul>
-								</li>
-								<li class="nav-item dropdown dropdown-slide @@listing">
-									<a class="nav-link dropdown-toggle" href="#!" data-toggle="dropdown"
-										aria-haspopup="true" aria-expanded="false">
-										Listing <span><i class="fa fa-angle-down"></i></span>
-									</a>
-									<!-- Dropdown list -->
-									<ul class="dropdown-menu">
-										<li><a class="dropdown-item @@category" href="./pages/category">Ad-Gird View</a>
-										</li>
-										<li><a class="dropdown-item @@listView" href="./pages/ad-list-view">Ad-List
-												View</a></li>
-
-										<li class="dropdown dropdown-submenu dropleft">
-											<a class="dropdown-item dropdown-toggle" href="#!" id="dropdown0201"
-												role="button" data-toggle="dropdown" aria-haspopup="true"
-												aria-expanded="false">Sub Menu</a>
-
-											<ul class="dropdown-menu" aria-labelledby="dropdown0201">
-												<li><a class="dropdown-item" href="index">Submenu 01</a></li>
-												<li><a class="dropdown-item" href="index">Submenu 02</a></li>
-											</ul>
-										</li>
-									</ul>
-								</li>
+								<li><a class="dropdown-item @@package" href="./pages/package" title="package">Package <i class="fa fa-gift"></i></a></li>
 							</ul>
 							<ul class="navbar-nav ml-auto mt-10">
 								<li class="nav-item">
-									<a class="nav-link login-button" href="./pages/login">Login</a>
+									<a class="nav-link login-button" href="./pages/user-profile" title="profile"><i class="fa fa-user fa-lg"></i></a>
 								</li>
 								<li class="nav-item">
 									<a class="nav-link text-white add-button" href="./pages/ad-listing"><i
@@ -207,7 +130,9 @@ $ibc = new Dbc;
 												<button type="submit" id="search_Btn"
 													class="btn btn-primary active w-100">Search Now</button>
 											</div>
-											<div class="d-flex inline-block" id="search_Result"></div>
+											<!-- <div class="row"> -->
+											<div class="row" id="search_Result"></div>
+											<!-- </div> -->
 										</div>
 									</form>
 								</div>

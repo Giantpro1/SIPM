@@ -22,19 +22,19 @@
   <meta name="generator" content="Themefisher Classified Marketplace Template v1.0">
 
   <!-- favicon -->
-  <link href="images/favicon.png" rel="shortcut icon">
+  <link href="../images/favicon.png" rel="shortcut icon">
 
   <!-- 
   Essential stylesheets
   =====================================-->
-  <link href="plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
-  <link href="plugins/bootstrap/bootstrap-slider.css" rel="stylesheet">
-  <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="plugins/slick/slick.css" rel="stylesheet">
-  <link href="plugins/slick/slick-theme.css" rel="stylesheet">
-  <link href="plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+  <link href="../plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <link href="../plugins/bootstrap/bootstrap-slider.css" rel="stylesheet">
+  <link href="../plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../plugins/slick/slick.css" rel="stylesheet">
+  <link href="../plugins/slick/slick-theme.css" rel="stylesheet">
+  <link href="../plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
   
-  <link href="css/style.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
 
 </head>
 
@@ -47,7 +47,7 @@
 			<div class="col-md-12">
 				<nav class="navbar navbar-expand-lg navbar-light navigation">
 					<a class="navbar-brand" href="index.html">
-						<img src="images/logo.png" alt="">
+						<img src="../images/logo.png" alt="">
 					</a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -160,7 +160,7 @@
 				<article>
 	<!-- Post Image -->
 	<div class="image">
-		<img class="img-fluid" src="images/blog/post-1.jpg" alt="article-01">
+		<img class="img-fluid" src="../images/blog/post-1.jpg" alt="article-01">
 	</div>
 	<!-- Post Title -->
 	<h3>Donec id dolor in erat imperdiet.</h3>
@@ -176,9 +176,9 @@
 				<!-- Article 02 -->
 				<article>
 					<div class="post-slider">
-					  <div class="item"><img src="images/blog/post-2.jpg" alt="Slider-Img-01"></div>
-					  <div class="item"><img src="images/blog/post-5.jpg" alt="Slider-Img-02"></div>
-					  <div class="item"><img src="images/blog/post-3.jpg" alt="Slider-Img-03"></div>
+					  <div class="item"><img src="../images/blog/post-2.jpg" alt="Slider-Img-01"></div>
+					  <div class="item"><img src="../images/blog/post-5.jpg" alt="Slider-Img-02"></div>
+					  <div class="item"><img src="../images/blog/post-3.jpg" alt="Slider-Img-03"></div>
 					</div>
 					<h3>Donec id dolor in erat imperdiet.</h3>
 					<ul class="list-inline">
@@ -191,9 +191,9 @@
 				<!-- Article 03 -->
 				<article>
 					<div class="video overly">
-						<img src="images/blog/post-3.jpg" alt="video-thumbnail">
+						<img src="../images/blog/post-3.jpg" alt="video-thumbnail">
 						<div class="video-button video-box" data-video-url="https://www.youtube.com/embed/g3-VxLQO7do?autoplay=1">
-							<span><img src="images/blog/video-icon.png" alt="video-icon"></span>
+							<span><img src="../images/blog/video-icon.png" alt="video-icon"></span>
 						</div>
 					</div>
 					<h3>Donec id dolor in erat imperdiet.</h3>
@@ -208,7 +208,7 @@
 				<article>
 	<!-- Post Image -->
 	<div class="image">
-		<img class="img-fluid" src="images/blog/post-4.jpg" alt="article-01">
+		<img class="img-fluid" src="../images/blog/post-4.jpg" alt="article-01">
 	</div>
 	<!-- Post Title -->
 	<h3>Donec id dolor in erat imperdiet.</h3>
@@ -225,7 +225,7 @@
 				<article>
 	<!-- Post Image -->
 	<div class="image">
-		<img class="img-fluid" src="images/blog/post-5.jpg" alt="article-01">
+		<img class="img-fluid" src="../images/blog/post-5.jpg" alt="article-01">
 	</div>
 	<!-- Post Title -->
 	<h3>Donec id dolor in erat imperdiet.</h3>
@@ -314,7 +314,7 @@
         <!-- About -->
         <div class="block about">
           <!-- footer logo -->
-          <img src="images/logo-footer.png" alt="logo">
+          <img src="../images/logo-footer.png" alt="logo">
           <!-- description -->
           <p class="alt-color">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -358,13 +358,13 @@
           <div class="mobile d-flex  align-items-center">
             <a href="index.html">
               <!-- Icon -->
-              <img src="images/footer/phone-icon.png" alt="mobile-icon">
+              <img src="../images/footer/phone-icon.png" alt="mobile-icon">
             </a>
             <p class="mb-0">Get the Dealsy Mobile App and Save more</p>
           </div>
           <div class="download-btn d-flex my-3">
-            <a href="index.html"><img src="images/apps/google-play-store.png" class="img-fluid" alt=""></a>
-            <a href="index.html" class=" ml-3"><img src="images/apps/apple-app-store.png" class="img-fluid" alt=""></a>
+            <a href="index.html"><img src="../images/apps/google-play-store.png" class="img-fluid" alt=""></a>
+            <a href="index.html" class=" ml-3"><img src="../images/apps/apple-app-store.png" class="img-fluid" alt=""></a>
           </div>
         </div>
       </div>
@@ -407,19 +407,19 @@
 <!-- 
 Essential Scripts
 =====================================-->
-<script src="plugins/jquery/jquery.min.js"></script>
-<script src="plugins/bootstrap/popper.min.js"></script>
-<script src="plugins/bootstrap/bootstrap.min.js"></script>
-<script src="plugins/bootstrap/bootstrap-slider.js"></script>
-<script src="plugins/tether/js/tether.min.js"></script>
-<script src="plugins/raty/jquery.raty-fa.js"></script>
-<script src="plugins/slick/slick.min.js"></script>
-<script src="plugins/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+<script src="../plugins/jquery/jquery.min.js"></script>
+<script src="../plugins/bootstrap/popper.min.js"></script>
+<script src="../plugins/bootstrap/bootstrap.min.js"></script>
+<script src="../plugins/bootstrap/bootstrap-slider.js"></script>
+<script src="../plugins/tether/js/tether.min.js"></script>
+<script src="../plugins/raty/jquery.raty-fa.js"></script>
+<script src="../plugins/slick/slick.min.js"></script>
+<script src="../plugins/jquery-nice-select/js/jquery.nice-select.min.js"></script>
 <!-- google map -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>
-<script src="plugins/google-map/map.js" defer></script>
+<script src="../plugins/google-map/map.js" defer></script>
 
-<script src="js/script.js"></script>
+<script src="../js/script.js"></script>
 
 </body>
 

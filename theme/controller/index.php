@@ -54,7 +54,7 @@ if(isset($_POST['request'])){
     if($searchResult){
         foreach($searchResult as $fetchs){
             $output.='
-            <div class="col-sm-12 col-lg-4">
+            <div class="col-md-4">
             <!-- product card -->
             <div class="product-item bg-light">
                 <div class="card shadow">
