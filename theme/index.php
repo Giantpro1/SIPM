@@ -2,8 +2,6 @@
 include './controller/dbc.php';
 $ibc = new Dbc;
 
-
-
 ?>
 <!DOCTYPE html>
 
@@ -53,6 +51,8 @@ $ibc = new Dbc;
 									<a class="nav-link" href="index" title="">Home <i class="fa fa-home"></i></a>
 								</li>
 								<li><a class="dropdown-item @@package" href="./pages/package" title="package">Package <i class="fa fa-gift"></i></a></li>
+								<li><a class="dropdown-item @@package" href="./pages/blog" title="package">Blog <i class="fa fa-hashtag"></i></a></li>
+								<li><a class="dropdown-item @@package" href="./pages/about-us" title="package">About Us <i class="fa fa-address-card"></i></a></li>
 							</ul>
 							<ul class="navbar-nav ml-auto mt-10">
 								<li class="nav-item">
@@ -166,7 +166,12 @@ $ibc = new Dbc;
 					<div class="trending-ads-slide">
 							<?php
 								$results = $ibc->fetchTrendingAds(1);
+								// $rowFetch = [];
+								// $user = $results[0];
+								// unset($user['simpUser_AdsImg']);
+								// $user['simpUser_AdsImg'] = [];
 								foreach ($results as $result):
+									// $user['simpUser_AdsImg'][] = $result['simpUser_AdsImg'];
 							?>
 							<div class="col-sm-12 col-lg-4">
 							<!-- product card -->
@@ -183,8 +188,7 @@ $ibc = new Dbc;
 											<h4 class="card-title"><a href="./pages/single?id=<?= $result['sipmuser_PostId']?>" id="<?= $result['sipmuser_PostId']?>"  class="singlePage"><?= $result['simpUser_AdsTitle'] ?></a></h4>
 											<ul class="list-inline product-meta">
 												<li class="list-inline-item">
-													<a href="./pages/single?id=<?= $result['sipmuser_PostId']?>" class="singlePage" id="<?= $result['simp_Cid']?>"><i
-															class="fa fa-folder-open-o"></i><?= $result['sipmUser_AdsCategory']?></a>
+													<a href="./pages/single?id=<?= $result['sipmuser_PostId']?>" class="singlePage" id="<?= $result['simp_Cid']?>"> <i class="fa fa-folder-open-o"></i><?= $result['sipmUser_AdsCategory']?></a>
 												</li>
 												<li class="list-inline-item">
 													<a href="./pages/category"><i class="fa fa-calendar"></i><?= date('F d, Y', strtotime($result['simpUser_AdsDate']))?></a>

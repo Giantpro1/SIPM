@@ -426,15 +426,23 @@ public function deleteSimpUserAccount($value, $id){
 }
 
 
+// public function fetchTrendingAds($value){
+//     $sql = "SELECT * FROM (sipmusersads JOIN sipmusersads_img ON sipmuser_PostId=simpUser_ImgId) WHERE
+//      (sipmUser_AdsVerified='$value' AND sipmUser_AdsImgVerified='$value') ORDER BY sipmusersads.sipmuser_PostId DESC";
+//     $stmt = $this->conn->prepare($sql);
+//     $stmt->execute();
+//     $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+//     return $row;
+// }
 public function fetchTrendingAds($value){
-    $sql = "SELECT * FROM (sipmusersads JOIN sipmusersads_img ON sipmuser_PostId=simpUser_ImgId) WHERE
-     (sipmUser_AdsVerified='$value' AND sipmUser_AdsImgVerified='$value') ORDER BY sipmusersads.sipmuser_PostId DESC";
+    $sql = "SELECT SQL_CALC_FOUND_ROWS * FROM sipmusersads LEFT JOIN sipmusersads_img ON sipmuser_PostId=simpUser_ImgId WHERE sipmUser_AdsVerified='$value' AND sipmUser_AdsImgVerified='$value'";
     $stmt = $this->conn->prepare($sql);
     $stmt->execute();
     $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $row;
 }
-
+// * FROM (sipmusersads JOIN sipmusersads_img ON sipmuser_PostId=simpUser_ImgId) WHERE
+//      (sipmUser_AdsVerified='$value' AND sipmUser_AdsImgVerified='$value') ORDER BY sipmusersads.sipmuser_PostId DESC
     public function productSearch($request, $value){
         $sql = "SELECT * FROM sipmusersads INNER JOIN sipmusersads_img ON sipmuser_PostId=simpUser_ImgId WHERE (simpUser_AdsTitle LIKE '%$request%' AND simpUser_ImgName LIKE '%$request%') AND (sipmUser_AdsVerified='$value' AND sipmUser_AdsImgVerified='$value') LIMIT 5";
         $stmt = $this->conn->prepare($sql);
@@ -444,7 +452,7 @@ public function fetchTrendingAds($value){
     }
 
     public function viewSinglePPP($id){
-        $sql = "SELECT sipmUser_FirstName, sipmUser_SecondName, simp_UserName, sipmUser_ProfileImg, simpUserReg_Date FROM sipmusers WHERE id=:id";
+        $sql = "SELECT unique_id, sipmUser_FirstName, sipmUser_SecondName, simp_UserName, sipmUser_ProfileImg, simpUserReg_Date FROM sipmusers WHERE id=:id";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute([
             'id'=>$id
@@ -469,6 +477,49 @@ public function fetchTrendingAds($value){
         ]);
         $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $row;
+    }
+    public function viewAllUSerInfo($id, $value){
+        $sql = "SELECT sipmUser_FirstName, sipmUser_SecondName, simp_UserName, sipmUser_ProfileImg, simpUserReg_Date FROM sipmusers WHERE id=:id AND sipmUser_Verify= '$value'";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute([
+            'id'=>$id
+        ]);
+        $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $row;
+    }
+    public function viewAllUserAdsD($simp_Cid, $value){
+        $sql = "SELECT * FROM sipmusersads WHERE simp_Cid=:simp_Cid AND sipmUser_AdsVerified= '$value'";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute([
+            'simp_Cid'=>$simp_Cid
+        ]);
+        $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $row;
+    }
+    public function viewAllUserAdsImg($simp_Cid, $value){
+        $sql = "SELECT * FROM sipmusersads_img WHERE simpUser_ImgId=:simpUser_ImgId sipmUser_AdsImgVerified= '$value'";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute([
+            'simpUser_ImgId'=>$simp_Cid
+        ]);
+        $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $row;
+    }
+
+    public function insertChat($incoming_id, $unique_id, $message){
+        $sql =  "INSERT INTO sipm_message (incomingMessId, outGoingMessId, sipmUser_Mess) VALUES ('$incoming_id', '$unique_id', '$message')";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        return true;
+    }
+    public function getChat($incoming_id, $unique_id){
+        $sql = "SELECT * FROM sipm_message LEFT JOIN sipmusers ON sipmusers.unique_id = sipm_message.outGoingMessId
+        WHERE (outGoingMessId = '$unique_id' AND incomingMessId = '$incoming_id')
+        OR (outGoingMessId = '$incoming_id' AND incomingMessId = '$unique_id') ORDER BY id";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
     }
 }
 // sipmusersads

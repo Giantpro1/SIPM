@@ -27,4 +27,4 @@ if (!isset($_SESSION['ourUser'])) {
   $simpUserPass = $sipm_Data['simpUser_Password'];
   $simpUserRegDate = $sipm_Data['simpUserReg_Date'];
   $simpUserStatus = $sipm_Data['sipmUser_Verify'];
-  // $simpUserUnique_Id = $sipm_Data['unique_id'];
+  $simpUserUnique_Id = $sipm_Data['unique_id'];

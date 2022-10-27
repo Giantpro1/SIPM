@@ -101,12 +101,18 @@ $ibc = new Dbc;
 									if($pp){
 										foreach($pp as $pps){
 											// echo json_encode($pps);
-										$img = $ibc->viewSinglePPI($_GET['id']);
+										$img = $ibc->viewSinglePPI($ppds['sipmuser_PostId']);
 											$uploadUser = $pps['simp_UserName'];
 											// echo $uploadUser;
 										if($img){
 											foreach($img as $imgs){
 												// echo json_encode($imgs);
+											// $imgRe =  unserialize(base64_decode($imgs['simpUser_AdsImg']));
+											if($imgs['simpUser_AdsImg'] > 1){
+												// $imgCount = count($imgs['simpUser_AdsImg']);
+											// echo base64_encode($imgs['simpUser_AdsImg']);
+												
+											}
 											}
 										}              
 									}  
@@ -130,7 +136,7 @@ $ibc = new Dbc;
 							<img class="img-fluid w-100" src="../images/adsImages/<?= $imgs['simpUser_AdsImg']; ?>" alt="product-img">
 						</div>
 						<div class="product-slider-item my-4" data-image="../images/adsImages/<?= $imgs['simpUser_AdsImg']; ?>">
-							<img class="d-block img-fluid w-100" src="../images/adsImages/<?= $imgs['simpUser_AdsImg']; ?>" alt="Second slide">
+							<img class="d-block img-fluid w-100" src="../images/adsImages/<?=$imgs['simpUser_AdsImg']; ?>" alt="Second slide">
 						</div>
 						<div class="product-slider-item my-4" data-image="../images/adsImages/<?= $imgs['simpUser_AdsImg']; ?>">
 							<img class="d-block img-fluid w-100" src="../images/adsImages/<?= $imgs['simpUser_AdsImg']; ?>" alt="Third slide">
@@ -269,11 +275,10 @@ $ibc = new Dbc;
 						<img class="rounded-circle img-fluid mb-5 px-5" src="<?=$pps['sipmUser_ProfileImg'] ?>" alt="">
 						<h4><a href="#"><?=$pps['sipmUser_FirstName']; ?> <i><?=$pps['sipmUser_SecondName']; ?></i></a></h4>
 						<p class="member-time">Member Since <?= date('F d, Y', strtotime($pps['simpUserReg_Date']));?></p>
-						<a href="#">See all ads</a>
+						<a href="viewAllUserAds?id=<?= $ppds['simp_Cid']?>">See all ads</a>
 						<ul class="list-inline mt-20">
 							<li class="list-inline-item"><a href="contact-us" class="btn btn-contact d-inline-block  btn-primary px-lg-5 my-1 px-md-3">Contact</a></li>
-							<li class="list-inline-item"><a href="single" class="btn btn-offer d-inline-block btn-primary ml-n1 my-1 px-lg-4 px-md-3">Make an
-									offer</a></li>
+							<li class="list-inline-item"><a href="chat?id=<?= $ppds['simp_Cid']?>" class="btn btn-offer d-inline-block btn-primary ml-n1 my-1 px-lg-4 px-md-3"> <i class="fa fa-comment"></i> </a></li>
 						</ul>
 					</div>
 					<!-- Map Widget -->

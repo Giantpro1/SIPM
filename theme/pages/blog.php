@@ -1,18 +1,11 @@
 <!DOCTYPE html>
 
-<!--
- // WEBSITE: https://themefisher.com
- // TWITTER: https://twitter.com/themefisher
- // FACEBOOK: https://www.facebook.com/themefisher
- // GITHUB: https://github.com/themefisher/
--->
-
 <html lang="en">
 <head>
 
   <!-- ** Basic Page Needs ** -->
   <meta charset="utf-8">
-  <title>Classimax | Classified Marketplace Template</title>
+  <title>SIPM</title>
 
   <!-- ** Mobile Specific Metas ** -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -45,89 +38,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<nav class="navbar navbar-expand-lg navbar-light navigation">
-					<a class="navbar-brand" href="index.html">
-						<img src="../images/logo.png" alt="">
-					</a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-					<div class="collapse navbar-collapse" id="navbarSupportedContent">
-						<ul class="navbar-nav ml-auto main-nav ">
-							<li class="nav-item @@home">
-								<a class="nav-link" href="index.html">Home</a>
-							</li>
-							<li class="nav-item dropdown dropdown-slide @@dashboard">
-								<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#!">Dashboard<span><i class="fa fa-angle-down"></i></span>
-								</a>
-
-								<!-- Dropdown list -->
-								<ul class="dropdown-menu">
-									<li><a class="dropdown-item @@dashboardPage" href="dashboard.html">Dashboard</a></li>
-									<li><a class="dropdown-item @@dashboardMyAds" href="dashboard-my-ads.html">Dashboard My Ads</a></li>
-									<li><a class="dropdown-item @@dashboardFavouriteAds" href="dashboard-favourite-ads.html">Dashboard Favourite Ads</a></li>
-									<li><a class="dropdown-item @@dashboardArchivedAds" href="dashboard-archived-ads.html">Dashboard Archived Ads</a></li>
-									<li><a class="dropdown-item @@dashboardPendingAds" href="dashboard-pending-ads.html">Dashboard Pending Ads</a></li>
-									
-									<li class="dropdown dropdown-submenu dropright">
-										<a class="dropdown-item dropdown-toggle" href="#!" id="dropdown0501" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sub Menu</a>
-					
-										<ul class="dropdown-menu" aria-labelledby="dropdown0501">
-											<li><a class="dropdown-item" href="index.html">Submenu 01</a></li>
-											<li><a class="dropdown-item" href="index.html">Submenu 02</a></li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-							<li class="nav-item dropdown dropdown-slide active">
-								<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									Pages <span><i class="fa fa-angle-down"></i></span>
-								</a>
-								<!-- Dropdown list -->
-								<ul class="dropdown-menu">
-									<li><a class="dropdown-item @@about" href="about-us.html">About Us</a></li>
-									<li><a class="dropdown-item @@contact" href="contact-us.html">Contact Us</a></li>
-									<li><a class="dropdown-item @@profile" href="user-profile.html">User Profile</a></li>
-									<li><a class="dropdown-item @@404" href="404.html">404 Page</a></li>
-									<li><a class="dropdown-item @@package" href="package.html">Package</a></li>
-									<li><a class="dropdown-item @@singlePage" href="single.html">Single Page</a></li>
-									<li><a class="dropdown-item @@store" href="store.html">Store Single</a></li>
-									<li><a class="dropdown-item active" href="blog.html">Blog</a></li>
-									<li><a class="dropdown-item @@singleBlog" href="single-blog.html">Blog Details</a></li>
-									<li><a class="dropdown-item @@terms" href="terms-condition.html">Terms &amp; Conditions</a></li>
-								</ul>
-							</li>
-							<li class="nav-item dropdown dropdown-slide @@listing">
-								<a class="nav-link dropdown-toggle" href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									Listing <span><i class="fa fa-angle-down"></i></span>
-								</a>
-								<!-- Dropdown list -->
-								<ul class="dropdown-menu">
-									<li><a class="dropdown-item @@category" href="category.html">Ad-Gird View</a></li>
-									<li><a class="dropdown-item @@listView" href="ad-list-view.html">Ad-List View</a></li>
-									
-									<li class="dropdown dropdown-submenu dropleft">
-										<a class="dropdown-item dropdown-toggle" href="#!" id="dropdown0201" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sub Menu</a>
-					
-										<ul class="dropdown-menu" aria-labelledby="dropdown0201">
-											<li><a class="dropdown-item" href="index.html">Submenu 01</a></li>
-											<li><a class="dropdown-item" href="index.html">Submenu 02</a></li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-						</ul>
-						<ul class="navbar-nav ml-auto mt-10">
-							<li class="nav-item">
-								<a class="nav-link login-button" href="login.html">Login</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link text-white add-button" href="ad-listing.html"><i class="fa fa-plus-circle"></i> Add Listing</a>
-							</li>
-						</ul>
-					</div>
-				</nav>
+			<?php include '../partial/header.php'; ?>
 			</div>
 		</div>
 	</div>
@@ -165,13 +76,13 @@
 	<!-- Post Title -->
 	<h3>Donec id dolor in erat imperdiet.</h3>
 	<ul class="list-inline">
-		<li class="list-inline-item">by <a href="user-profile.html">Admin</a></li>
+		<li class="list-inline-item">by <a href="user-profile">Admin</a></li>
 		<li class="list-inline-item">Nov 22,2016</li>
 	</ul>
 	<!-- Post Description -->
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores iusto tempore voluptatum blanditiis impedit alias magni ullam facilis perspiciatis magnam!</p>
 	<!-- Read more button -->
-	<a href="single-blog.html" class="btn btn-transparent">Read More</a>
+	<a href="single-blog" class="btn btn-transparent">Read More</a>
 </article>
 				<!-- Article 02 -->
 				<article>
@@ -182,11 +93,11 @@
 					</div>
 					<h3>Donec id dolor in erat imperdiet.</h3>
 					<ul class="list-inline">
-						<li class="list-inline-item">by <a href="user-profile.html">Admin</a></li>
+						<li class="list-inline-item">by <a href="user-profile">Admin</a></li>
 						<li class="list-inline-item">Nov 22,2016</li>
 					</ul>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores iusto tempore voluptatum blanditiis impedit alias magni ullam facilis perspiciatis magnam!</p>
-					<a href="single-blog.html" class="btn btn-transparent">Read More</a>
+					<a href="single-blog" class="btn btn-transparent">Read More</a>
 				</article>
 				<!-- Article 03 -->
 				<article>
@@ -198,11 +109,11 @@
 					</div>
 					<h3>Donec id dolor in erat imperdiet.</h3>
 					<ul class="list-inline">
-						<li class="list-inline-item">by <a href="user-profile.html">Admin</a></li>
+						<li class="list-inline-item">by <a href="user-profile">Admin</a></li>
 						<li class="list-inline-item">Nov 22,2016</li>
 					</ul>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores iusto tempore voluptatum blanditiis impedit alias magni ullam facilis perspiciatis magnam!</p>
-					<a href="single-blog.html" class="btn btn-transparent">Read More</a>
+					<a href="single-blog" class="btn btn-transparent">Read More</a>
 				</article>
 				<!-- Article 04 -->
 				<article>
@@ -213,13 +124,13 @@
 	<!-- Post Title -->
 	<h3>Donec id dolor in erat imperdiet.</h3>
 	<ul class="list-inline">
-		<li class="list-inline-item">by <a href="user-profile.html">Admin</a></li>
+		<li class="list-inline-item">by <a href="user-profile">Admin</a></li>
 		<li class="list-inline-item">Nov 22,2016</li>
 	</ul>
 	<!-- Post Description -->
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores iusto tempore voluptatum blanditiis impedit alias magni ullam facilis perspiciatis magnam!</p>
 	<!-- Read more button -->
-	<a href="single-blog.html" class="btn btn-transparent">Read More</a>
+	<a href="single-blog" class="btn btn-transparent">Read More</a>
 </article>
 				<!-- Article 05 -->
 				<article>
@@ -230,23 +141,23 @@
 	<!-- Post Title -->
 	<h3>Donec id dolor in erat imperdiet.</h3>
 	<ul class="list-inline">
-		<li class="list-inline-item">by <a href="user-profile.html">Admin</a></li>
+		<li class="list-inline-item">by <a href="user-profile">Admin</a></li>
 		<li class="list-inline-item">Nov 22,2016</li>
 	</ul>
 	<!-- Post Description -->
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores iusto tempore voluptatum blanditiis impedit alias magni ullam facilis perspiciatis magnam!</p>
 	<!-- Read more button -->
-	<a href="single-blog.html" class="btn btn-transparent">Read More</a>
+	<a href="single-blog" class="btn btn-transparent">Read More</a>
 </article>
 				<!-- Article 06 -->
 				<article>
 					<h3>Donec id dolor in erat imperdiet.</h3>
 					<ul class="list-inline">
-						<li class="list-inline-item">by <a href="user-profile.html">Admin</a></li>
+						<li class="list-inline-item">by <a href="user-profile">Admin</a></li>
 						<li class="list-inline-item">Nov 22,2016</li>
 					</ul>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores iusto tempore voluptatum blanditiis impedit alias magni ullam facilis perspiciatis magnam!</p>
-					<a href="single-blog.html" class="btn btn-transparent">Read More</a>
+					<a href="single-blog" class="btn btn-transparent">Read More</a>
 				</article>
 				<!-- Pagination -->
 				<nav aria-label="Page navigation example">
@@ -277,11 +188,11 @@
 						<!-- Widget Header -->
 						<h5 class="widget-header">Categories</h5>
 						<ul class="category-list">
-							<li><a href="category.html">Appearel <span class="float-right">(2)</span></a></li>
-							<li><a href="category.html">Accesories <span class="float-right">(5)</span></a></li>
-							<li><a href="category.html">Business<span class="float-right">(7)</span></a></li>
-							<li><a href="category.html">Entertaiment<span class="float-right">(3)</span></a></li>
-							<li><a href="category.html">Education<span class="float-right">(9)</span></a></li>
+							<li><a href="category">Appearel <span class="float-right">(2)</span></a></li>
+							<li><a href="category">Accesories <span class="float-right">(5)</span></a></li>
+							<li><a href="category">Business<span class="float-right">(7)</span></a></li>
+							<li><a href="category">Entertaiment<span class="float-right">(3)</span></a></li>
+							<li><a href="category">Education<span class="float-right">(9)</span></a></li>
 						</ul>
 					</div>
 					<!-- Archive Widget -->
@@ -289,11 +200,11 @@
 						<!-- Widget Header -->
 						<h5 class="widget-header">Archives</h5>
 						<ul class="archive-list">
-							<li><a href="ad-list-view.html">January 2017</a></li>
-							<li><a href="ad-list-view.html">February 2017</a></li>
-							<li><a href="ad-list-view.html">March 2017</a></li>
-							<li><a href="ad-list-view.html">April 2017</a></li>
-							<li><a href="ad-list-view.html">May 2017</a></li>
+							<li><a href="ad-list-view">January 2017</a></li>
+							<li><a href="ad-list-view">February 2017</a></li>
+							<li><a href="ad-list-view">March 2017</a></li>
+							<li><a href="ad-list-view">April 2017</a></li>
+							<li><a href="ad-list-view">May 2017</a></li>
 						</ul>
 					</div>
 				</div>
@@ -326,11 +237,11 @@
         <div class="block">
           <h4>Site Pages</h4>
           <ul>
-            <li><a href="dashboard-my-ads.html">My Ads</a></li>
-            <li><a href="dashboard-favourite-ads.html">Favourite Ads</a></li>
-            <li><a href="dashboard-archived-ads.html">Archived Ads</a></li>
-            <li><a href="dashboard-pending-ads.html">Pending Ads</a></li>
-            <li><a href="terms-condition.html">Terms & Conditions</a></li>
+            <li><a href="dashboard-my-ads">My Ads</a></li>
+            <li><a href="dashboard-favourite-ads">Favourite Ads</a></li>
+            <li><a href="dashboard-archived-ads">Archived Ads</a></li>
+            <li><a href="dashboard-pending-ads">Pending Ads</a></li>
+            <li><a href="terms-condition">Terms & Conditions</a></li>
           </ul>
         </div>
       </div>
@@ -339,12 +250,12 @@
         <div class="block">
           <h4>Admin Pages</h4>
           <ul>
-            <li><a href="category.html">Category</a></li>
-            <li><a href="single.html">Single Page</a></li>
-            <li><a href="store.html">Store Single</a></li>
-            <li><a href="single-blog.html">Single Post</a>
+            <li><a href="category">Category</a></li>
+            <li><a href="single">Single Page</a></li>
+            <li><a href="store">Store Single</a></li>
+            <li><a href="single-blog">Single Post</a>
             </li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="blog">Blog</a></li>
 
 
 
@@ -356,15 +267,15 @@
         <!-- App promotion -->
         <div class="block-2 app-promotion">
           <div class="mobile d-flex  align-items-center">
-            <a href="index.html">
+            <a href="../index">
               <!-- Icon -->
               <img src="../images/footer/phone-icon.png" alt="mobile-icon">
             </a>
             <p class="mb-0">Get the Dealsy Mobile App and Save more</p>
           </div>
           <div class="download-btn d-flex my-3">
-            <a href="index.html"><img src="../images/apps/google-play-store.png" class="img-fluid" alt=""></a>
-            <a href="index.html" class=" ml-3"><img src="../images/apps/apple-app-store.png" class="img-fluid" alt=""></a>
+            <a href="../index"><img src="../images/apps/google-play-store.png" class="img-fluid" alt=""></a>
+            <a href="../index" class=" ml-3"><img src="../images/apps/apple-app-store.png" class="img-fluid" alt=""></a>
           </div>
         </div>
       </div>
@@ -422,6 +333,6 @@ Essential Scripts
 <script src="../js/script.js"></script>
 
 </body>
-
 </html>
+
 

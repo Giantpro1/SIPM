@@ -52,7 +52,7 @@
         </div>
       </div>
       <div class="col-lg-4 col-md-6">
-        <div class="package-content bg-light border text-center p-5 my-2 my-lg-0">
+        <div class="package-content bg-light border shadow text-center p-5 my-2 my-lg-0">
           <div class="package-content-heading border-bottom">
             <i class="fa fa-paper-plane"></i>
             <h2>Basic Package</h2>
@@ -68,7 +68,7 @@
         </div>
       </div>
       <div class="col-lg-4 col-md-6">
-        <div class="package-content bg-light border text-center my-2 my-lg-0 p-5">
+        <div class="package-content bg-light border shadow text-center my-2 my-lg-0 p-5">
           <div class="package-content-heading border-bottom">
             <i class="fa fa-plane"></i>
             <h2>Standard Package</h2>
@@ -84,7 +84,7 @@
         </div>
       </div>
       <div class="col-lg-4 col-md-6 mx-sm-auto">
-        <div class="package-content bg-light border text-center p-5 my-2 my-lg-0">
+        <div class="package-content bg-light border shadow text-center p-5 my-2 my-lg-0">
           <div class="package-content-heading border-bottom">
             <i class="fa fa-rocket"></i>
             <h2>Premium Package</h2>
