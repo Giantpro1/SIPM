@@ -1,7 +1,7 @@
+<?php include '../controller/dbc.php';
+$action = new Dbc();
+?>
 <!DOCTYPE html>
-
-
-
 <html lang="en">
 <head>
 
@@ -39,89 +39,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<nav class="navbar navbar-expand-lg navbar-light navigation">
-					<a class="navbar-brand" href="../index">
-						<img src="../images/logo.png" alt="">
-					</a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-					<div class="collapse navbar-collapse" id="navbarSupportedContent">
-						<ul class="navbar-nav ml-auto main-nav ">
-							<li class="nav-item @@home">
-								<a class="nav-link" href="../index">Home</a>
-							</li>
-							<li class="nav-item dropdown dropdown-slide @@dashboard">
-								<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#!">Dashboard<span><i class="fa fa-angle-down"></i></span>
-								</a>
-
-								<!-- Dropdown list -->
-								<ul class="dropdown-menu">
-									<li><a class="dropdown-item @@dashboardPage" href="dashboard">Dashboard</a></li>
-									<li><a class="dropdown-item @@dashboardMyAds" href="dashboard-my-ads">Dashboard My Ads</a></li>
-									<li><a class="dropdown-item @@dashboardFavouriteAds" href="dashboard-favourite-ads">Dashboard Favourite Ads</a></li>
-									<li><a class="dropdown-item @@dashboardArchivedAds" href="dashboard-archived-ads">Dashboard Archived Ads</a></li>
-									<li><a class="dropdown-item @@dashboardPendingAds" href="dashboard-pending-ads">Dashboard Pending Ads</a></li>
-									
-									<li class="dropdown dropdown-submenu dropright">
-										<a class="dropdown-item dropdown-toggle" href="#!" id="dropdown0501" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sub Menu</a>
-					
-										<ul class="dropdown-menu" aria-labelledby="dropdown0501">
-											<li><a class="dropdown-item" href="../index">Submenu 01</a></li>
-											<li><a class="dropdown-item" href="../index">Submenu 02</a></li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-							<li class="nav-item dropdown dropdown-slide @@pages">
-								<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									Pages <span><i class="fa fa-angle-down"></i></span>
-								</a>
-								<!-- Dropdown list -->
-								<ul class="dropdown-menu">
-									<li><a class="dropdown-item @@about" href="about-us">About Us</a></li>
-									<li><a class="dropdown-item @@contact" href="contact-us">Contact Us</a></li>
-									<li><a class="dropdown-item @@profile" href="user-profile">User Profile</a></li>
-									<li><a class="dropdown-item @@404" href="404">404 Page</a></li>
-									<li><a class="dropdown-item @@package" href="package">Package</a></li>
-									<li><a class="dropdown-item @@singlePage" href="single">Single Page</a></li>
-									<li><a class="dropdown-item @@store" href="store">Store Single</a></li>
-									<li><a class="dropdown-item @@blog" href="blog">Blog</a></li>
-									<li><a class="dropdown-item @@singleBlog" href="single-blog">Blog Details</a></li>
-									<li><a class="dropdown-item @@terms" href="terms-condition">Terms &amp; Conditions</a></li>
-								</ul>
-							</li>
-							<li class="nav-item dropdown dropdown-slide active">
-								<a class="nav-link dropdown-toggle" href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									Listing <span><i class="fa fa-angle-down"></i></span>
-								</a>
-								<!-- Dropdown list -->
-								<ul class="dropdown-menu">
-									<li><a class="dropdown-item @@category" href="category">Ad-Gird View</a></li>
-									<li><a class="dropdown-item active" href="ad-list-view">Ad-List View</a></li>
-									
-									<li class="dropdown dropdown-submenu dropleft">
-										<a class="dropdown-item dropdown-toggle" href="#!" id="dropdown0201" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sub Menu</a>
-					
-										<ul class="dropdown-menu" aria-labelledby="dropdown0201">
-											<li><a class="dropdown-item" href="../index">Submenu 01</a></li>
-											<li><a class="dropdown-item" href="../index">Submenu 02</a></li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-						</ul>
-						<ul class="navbar-nav ml-auto mt-10">
-							<li class="nav-item">
-								<a class="nav-link login-button" href="login">Login</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link text-white add-button" href="ad-listing"><i class="fa fa-plus-circle"></i> Add Listing</a>
-							</li>
-						</ul>
-					</div>
-				</nav>
+        <?php include '../partial/header.php'; ?>
 			</div>
 		</div>
 	</div>
@@ -132,26 +50,33 @@
 			<div class="col-md-12">
 				<!-- Advance Search -->
 				<div class="advance-search nice-select-white">
-					<form>
+					<form id="product_Search">
 						<div class="form-row align-items-center">
 							<div class="form-group col-xl-4 col-lg-3 col-md-6">
-								<input type="text" class="form-control my-2 my-lg-0" id="inputtext4" placeholder="What are you looking for">
+								<input type="text" name="request" class="form-control my-2 my-lg-0" id="inputtext4" placeholder="What are you looking for">
 							</div>
 							<div class="form-group col-lg-3 col-md-6">
-								<select class="w-100 form-control my-2 my-lg-0">
+								<select class="w-100 form-control my-2 my-lg-0" name="productCat">
 									<option>Category</option>
-									<option value="1">Top rated</option>
-									<option value="2">Lowest Price</option>
-									<option value="4">Highest Price</option>
+                  <option value="Electronic/Gadget">Electronic/Gadget</option>
+                  <option value="Furnitures">Furnitures</option>
+                  <option value="Real Estate">Real Estate</option>
+                  <option value="Vehicles">Vehicles</option>
+                  <option value="Job/Employments">Job/Employments</option>
+                  <option value="Restaurant">Restaurant</option>
+                  <option value="Pets">Pets</option>
+                  <option value="Shopping">Shopping</option>
+                  <option value="services">services</option>
 								</select>
 							</div>
 							<div class="form-group col-lg-3 col-md-6">
-								<input type="text" class="form-control my-2 my-lg-0" id="inputLocation4" placeholder="Location">
+								<input type="text" name="productLoction" class="form-control my-2 my-lg-0" id="inputLocation4" placeholder="Location">
 							</div>
 							<div class="form-group col-xl-2 col-lg-3 col-md-6">
 
-								<button type="submit" class="btn btn-primary active w-100">Search Now</button>
+								<button type="submit" id="search_Btn" class="btn btn-primary active w-100">Search Now</button>
 							</div>
+              <div class="row mt-3" id="search_Result"></div>
 						</div>
 					</form>
 				</div>
@@ -164,7 +89,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="search-result bg-gray">
-					<h2>Results For "Electronics"</h2>
+					<h2>Results For "<?= $_GET['id'] ?>"</h2>
 					<p>123 Results on 12 December, 2017</p>
 				</div>
 			</div>
@@ -272,13 +197,20 @@
 						</div>
 					</div>
 				</div>
-
+        <?php 
+								if(isset($_GET['id']))
+									// echo $_GET['id'];
+									$result = $action->catProduct($_GET['id'], 1);
+									// echo json_encode($result);
+									foreach($result as $results):
+								
+								?>
 				<!-- ad listing list  -->
 				<div class="ad-listing-list mt-20">
     <div class="row p-lg-3 p-sm-5 p-4">
         <div class="col-lg-4 align-self-center">
             <a href="single">
-                <img src="../images/products/products-1.jpg" class="img-fluid" alt="">
+                <img src="../images/adsImages/<?=$results['simpUser_AdsImg']?>" class="img-fluid" alt="">
             </a>
         </div>
         <div class="col-lg-8">
@@ -286,13 +218,13 @@
                 <div class="col-lg-6 col-md-10">
                     <div class="ad-listing-content">
                         <div>
-                            <a href="single" class="font-weight-bold">11inch Macbook Air</a>
+                            <a href="single?id=<?= $results['sipmuser_PostId']?>" class="font-weight-bold"><?=$results['simpUser_AdsTitle']?></a>
                         </div>
                         <ul class="list-inline mt-2 mb-3">
-                            <li class="list-inline-item"><a href="category"> <i class="fa fa-folder-open-o"></i> Electronics</a></li>
-                            <li class="list-inline-item"><a href="category.htm"><i class="fa fa-calendar"></i>26th December</a></li>
+                            <li class="list-inline-item"><a href=""> <i class="fa fa-folder-open-o"></i><?=$results['sipmUser_AdsCategory']?></a></li>
+                            <li class="list-inline-item"><a href=""><i class="fa fa-calendar"></i><?= date('F d, Y', strtotime($results['simpUser_AdsDate']))?></a></li>
                         </ul>
-                        <p class="pr-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
+                        <p class="pr-5"><?= substr($results['sipmUser_AdsDescripion'],0,100) ?></p>
                     </div>
                 </div>
                 <div class="col-lg-6 align-self-center">
@@ -310,150 +242,7 @@
         </div>
     </div>
 </div>
-				<div class="ad-listing-list mt-20">
-    <div class="row p-lg-3 p-sm-5 p-4">
-        <div class="col-lg-4 align-self-center">
-            <a href="single">
-                <img src="../images/products/products-2.jpg" class="img-fluid" alt="">
-            </a>
-        </div>
-        <div class="col-lg-8">
-            <div class="row">
-                <div class="col-lg-6 col-md-10">
-                    <div class="ad-listing-content">
-                        <div>
-                            <a href="single" class="font-weight-bold">Study Table Combo</a>
-                        </div>
-                        <ul class="list-inline mt-2 mb-3">
-                            <li class="list-inline-item"><a href="category"> <i class="fa fa-folder-open-o"></i> Electronics</a></li>
-                            <li class="list-inline-item"><a href="category.htm"><i class="fa fa-calendar"></i>26th December</a></li>
-                        </ul>
-                        <p class="pr-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 align-self-center">
-                    <div class="product-ratings float-lg-right pb-3">
-                        <ul class="list-inline">
-                            <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-				<div class="ad-listing-list mt-20">
-    <div class="row p-lg-3 p-sm-5 p-4">
-        <div class="col-lg-4 align-self-center">
-            <a href="single">
-                <img src="../images/products/products-3.jpg" class="img-fluid" alt="">
-            </a>
-        </div>
-        <div class="col-lg-8">
-            <div class="row">
-                <div class="col-lg-6 col-md-10">
-                    <div class="ad-listing-content">
-                        <div>
-                            <a href="single" class="font-weight-bold">11inch Macbook Air</a>
-                        </div>
-                        <ul class="list-inline mt-2 mb-3">
-                            <li class="list-inline-item"><a href="category"> <i class="fa fa-folder-open-o"></i> Electronics</a></li>
-                            <li class="list-inline-item"><a href="category.htm"><i class="fa fa-calendar"></i>26th December</a></li>
-                        </ul>
-                        <p class="pr-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 align-self-center">
-                    <div class="product-ratings float-lg-right pb-3">
-                        <ul class="list-inline">
-                            <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-				<div class="ad-listing-list mt-20">
-    <div class="row p-lg-3 p-sm-5 p-4">
-        <div class="col-lg-4 align-self-center">
-            <a href="single">
-                <img src="../images/products/products-4.jpg" class="img-fluid" alt="">
-            </a>
-        </div>
-        <div class="col-lg-8">
-            <div class="row">
-                <div class="col-lg-6 col-md-10">
-                    <div class="ad-listing-content">
-                        <div>
-                            <a href="single" class="font-weight-bold">Study Table Combo</a>
-                        </div>
-                        <ul class="list-inline mt-2 mb-3">
-                            <li class="list-inline-item"><a href="category"> <i class="fa fa-folder-open-o"></i> Electronics</a></li>
-                            <li class="list-inline-item"><a href="category.htm"><i class="fa fa-calendar"></i>26th December</a></li>
-                        </ul>
-                        <p class="pr-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 align-self-center">
-                    <div class="product-ratings float-lg-right pb-3">
-                        <ul class="list-inline">
-                            <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-				<div class="ad-listing-list mt-20">
-    <div class="row p-lg-3 p-sm-5 p-4">
-        <div class="col-lg-4 align-self-center">
-            <a href="single">
-                <img src="../images/products/products-1.jpg" class="img-fluid" alt="">
-            </a>
-        </div>
-        <div class="col-lg-8">
-            <div class="row">
-                <div class="col-lg-6 col-md-10">
-                    <div class="ad-listing-content">
-                        <div>
-                            <a href="single" class="font-weight-bold">11inch Macbook Air</a>
-                        </div>
-                        <ul class="list-inline mt-2 mb-3">
-                            <li class="list-inline-item"><a href="category"> <i class="fa fa-folder-open-o"></i> Electronics</a></li>
-                            <li class="list-inline-item"><a href="category.htm"><i class="fa fa-calendar"></i>26th December</a></li>
-                        </ul>
-                        <p class="pr-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 align-self-center">
-                    <div class="product-ratings float-lg-right pb-3">
-                        <ul class="list-inline">
-                            <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+			<?php endforeach; ?>
 				<!-- ad listing list  -->
 
 				<!-- pagination -->
@@ -602,6 +391,7 @@ Essential Scripts
 <script src="../plugins/google-map/map.js" defer></script>
 
 <script src="../js/script.js"></script>
+<script src="../js/category.js"></script>
 
 </body>
 
