@@ -70,9 +70,9 @@
           <div class="widget user-dashboard-menu shadow">
             <ul>
               <li><a href="./dashboard">Savings Dashboard</a></li>
-              <li><a href="#">Saved Offer <span>(5)</span></a></li>
+              <li><a href="#">Messages<span>(5)</span></a></li>
               <li><a href="#">Favourite Stores <span>(3)</span></a></li>
-              <li><a href="#">Recommended</a></li>
+              <li><a href="logout">Logout</a></li>
             </ul>
           </div>
 				</div>

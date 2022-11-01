@@ -443,8 +443,8 @@ public function fetchTrendingAds($value){
 }
 // * FROM (sipmusersads JOIN sipmusersads_img ON sipmuser_PostId=simpUser_ImgId) WHERE
 //      (sipmUser_AdsVerified='$value' AND sipmUser_AdsImgVerified='$value') ORDER BY sipmusersads.sipmuser_PostId DESC
-    public function productSearch($request, $value){
-        $sql = "SELECT * FROM sipmusersads INNER JOIN sipmusersads_img ON sipmuser_PostId=simpUser_ImgId WHERE (simpUser_AdsTitle LIKE '%$request%' AND simpUser_ImgName LIKE '%$request%') AND (sipmUser_AdsVerified='$value' AND sipmUser_AdsImgVerified='$value') LIMIT 5";
+    public function productSearch($request, $productCat, $productLoction, $value){
+        $sql = "SELECT * FROM sipmusersads INNER JOIN sipmusersads_img ON sipmuser_PostId=simpUser_ImgId WHERE (simpUser_AdsTitle LIKE '%$request%' AND simpUser_ImgName LIKE '%$request%') AND (sipmUser_AdsCategory LIKE '%$productCat%' OR sipmUser_AdsContactAddress LIKE '%$productLoction%') AND (sipmUser_AdsVerified='$value' AND sipmUser_AdsImgVerified='$value') LIMIT 5";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -497,7 +497,7 @@ public function fetchTrendingAds($value){
         return $row;
     }
     public function viewAllUserAdsImg($simp_Cid, $value){
-        $sql = "SELECT * FROM sipmusersads_img WHERE simpUser_ImgId=:simpUser_ImgId sipmUser_AdsImgVerified= '$value'";
+        $sql = "SELECT * FROM sipmusersads_img WHERE simpUser_ImgId=:simpUser_ImgId AND sipmUser_AdsImgVerified= '$value'";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute([
             'simpUser_ImgId'=>$simp_Cid
@@ -521,6 +521,14 @@ public function fetchTrendingAds($value){
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
+
+    public function catProduct($catRequest, $value){
+        $sql = "SELECT * FROM sipmusersads LEFT JOIN sipmusersads_img ON sipmuser_PostId=simpUser_ImgId WHERE sipmUser_AdsCategory LIKE '%$catRequest%' AND (sipmUser_AdsVerified='$value' AND sipmUser_AdsImgVerified='$value') LIMIT 5";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }   
 }
 // sipmusersads
 // sipmusersads_img

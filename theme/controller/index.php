@@ -47,9 +47,11 @@ $ibc = new Dbc;
        
 //     }
 // }
-if(isset($_POST['request'])){
-    $request = $_POST['request'];
-    $searchResult = $ibc->productSearch($request, 1);
+if(isset($_POST['action']) && $_POST['action'] === 'searchPro'){
+    $request = $ibc->test_input($_POST['request']);
+    $productCat = $ibc->test_input($_POST['productCat']);
+    $productLoaction = $ibc->test_input($_POST['productLoction']);
+    $searchResult = $ibc->productSearch($request, $productCat, $productLoaction, 1);
     $output = '';
     if($searchResult){
         foreach($searchResult as $fetchs){

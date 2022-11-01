@@ -9,12 +9,12 @@
 						</button>
 						<div class="collapse navbar-collapse" id="navbarSupportedContent">
 							<ul class="navbar-nav ml-auto main-nav ">
-								<li class="nav-item active">
+								<li class="nav-item">
 									<a class="nav-link" href="../index" title="home">Home <i class="fa fa-home"></i></a>
 								</li>
 								<li><a class="dropdown-item @@package" href="./package" title="package">Package <i class="fa fa-gift"></i></a></li>
-								<li><a class="dropdown-item @@package" href="./blog" title="package">Blog <i class="fa fa-hashtag"></i></a></li>
-								<li><a class="dropdown-item @@package" href="./about-us" title="package">About Us <i class="fa fa-address-card"></i></a></li>
+								<li><a class="dropdown-item @@package" href="./blog" title="Blog">Blog <i class="fa fa-hashtag"></i></a></li>
+								<li><a class="dropdown-item @@package" href="./about-us" title="About Us">About Us <i class="fa fa-address-card"></i></a></li>
 							</ul>
 							<ul class="navbar-nav ml-auto mt-10">
 								<li class="nav-item">

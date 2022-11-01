@@ -32,6 +32,7 @@ $ibc = new Dbc;
   <link href="../plugins/slick/slick-theme.css" rel="stylesheet">
   <link href="../plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
   
+  <link href="../css/pass.css" rel="stylesheet">
   <link href="../css/style.css" rel="stylesheet">
 
 </head>
@@ -53,26 +54,33 @@ $ibc = new Dbc;
 			<div class="col-md-12">
 				<!-- Advance Search -->
 				<div class="advance-search nice-select-white">
-					<form>
+					<form id="product_Search">
 						<div class="form-row align-items-center">
 							<div class="form-group col-xl-4 col-lg-3 col-md-6">
-								<input type="text" class="form-control my-2 my-lg-0" id="inputtext4" placeholder="What are you looking for">
+								<input type="text" name="request" class="form-control my-2 my-lg-0" id="inputtext4" placeholder="What are you looking for">
 							</div>
 							<div class="form-group col-lg-3 col-md-6">
-								<select class="w-100 form-control my-2 my-lg-0">
-									<option>Category</option>
-									<option value="1">Top rated</option>
-									<option value="2">Lowest Price</option>
-									<option value="4">Highest Price</option>
-								</select>
+							<select class="w-100 form-control mt-lg-1 mt-md-2" name="productCat">
+								<option value="">category</option>
+								<option value="Electronic/Gadget">Electronic/Gadget</option>
+								<option value="Furnitures">Furnitures</option>
+								<option value="Real Estate">Real Estate</option>
+								<option value="Vehicles">Vehicles</option>
+								<option value="Job/Employments">Job/Employments</option>
+								<option value="Restaurant">Restaurant</option>
+								<option value="Pets">Pets</option>
+								<option value="Shopping">Shopping</option>
+								<option value="services">services</option>
+							</select>
 							</div>
 							<div class="form-group col-lg-3 col-md-6">
-								<input type="text" class="form-control my-2 my-lg-0" id="inputLocation4" placeholder="Location">
+								<input type="text" name="productLoction" class="form-control my-2 my-lg-0" id="inputLocation4" placeholder="Location">
 							</div>
 							<div class="form-group col-xl-2 col-lg-3 col-md-6">
 
-								<button type="submit" class="btn btn-primary active w-100">Search Now</button>
+								<button type="submit" id="search_Btn" class="btn btn-primary active w-100">Search Now</button>
 							</div>
+							<div class="row mt-3" id="search_Result"></div>
 						</div>
 					</form>
 				</div>
@@ -124,9 +132,9 @@ $ibc = new Dbc;
 					<h1 class="product-title"><?=$ppds['simpUser_AdsTitle'];?></h1>
 					<div class="product-meta">
 						<ul class="list-inline">
-							<li class="list-inline-item"><i class="fa fa-user-o"></i> By <a href="user-profile"><?=$uploadUser;?></a></li>
-							<li class="list-inline-item"><i class="fa fa-folder-open-o"></i> Category<a href="category"><?=$ppds['sipmUser_AdsCategory'];?></a></li>
-							<li class="list-inline-item"><i class="fa fa-location-arrow"></i> Location<a href="category"><?=$ppds['sipmUser_AdsContactAddress']; ?></a></li>
+							<li class="list-inline-item"><i class="fa fa-user-o"></i> By <a href=""><?=$uploadUser;?></a></li>
+							<li class="list-inline-item"><i class="fa fa-folder-open-o"></i> Category<a href=""><?=$ppds['sipmUser_AdsCategory'];?></a></li>
+							<li class="list-inline-item"><i class="fa fa-location-arrow"></i> Location<a href=""><?=$ppds['sipmUser_AdsContactAddress']; ?></a></li>
 						</ul>
 					</div>
 

@@ -108,22 +108,28 @@ $ibc = new Dbc;
 						<div class="container">
 							<div class="row justify-content-center">
 								<div class="col-lg-12 col-md-12 align-content-center">
-									<form>
+									<form id="product_Search">
 										<div class="form-row">
 											<div class="form-group col-xl-4 col-lg-3 col-md-6">
-												<input type="text" class="form-control my-2 my-lg-1" id="product_Search"
+												<input type="text" class="form-control my-2 my-lg-1" id="" name="request"
 													placeholder="What are you looking for">
 											</div>
 											<div class="form-group col-lg-3 col-md-6">
-												<select class="w-100 form-control mt-lg-1 mt-md-2">
-													<option>Category</option>
-													<option value="1">Top rated</option>
-													<option value="2">Lowest Price</option>
-													<option value="4">Highest Price</option>
+												<select class="w-100 form-control mt-lg-1 mt-md-2" name="productCat">
+													<option value="">category</option>
+													<option value="Electronic/Gadget">Electronic/Gadget</option>
+													<option value="Furnitures">Furnitures</option>
+													<option value="Real Estate">Real Estate</option>
+													<option value="Vehicles">Vehicles</option>
+													<option value="Job/Employments">Job/Employments</option>
+													<option value="Restaurant">Restaurant</option>
+													<option value="Pets">Pets</option>
+													<option value="Shopping">Shopping</option>
+													<option value="services">services</option>
 												</select>
 											</div>
 											<div class="form-group col-lg-3 col-md-6">
-												<input type="text" class="form-control my-2 my-lg-1" id="inputLocation4"
+												<input type="text" name="productLoction" class="form-control my-2 my-lg-1" id="inputLocation4"
 													placeholder="Location">
 											</div>
 											<div class="form-group col-xl-2 col-lg-3 col-md-6 align-self-center">
@@ -191,7 +197,7 @@ $ibc = new Dbc;
 													<a href="./pages/single?id=<?= $result['sipmuser_PostId']?>" class="singlePage" id="<?= $result['simp_Cid']?>"> <i class="fa fa-folder-open-o"></i><?= $result['sipmUser_AdsCategory']?></a>
 												</li>
 												<li class="list-inline-item">
-													<a href="./pages/category"><i class="fa fa-calendar"></i><?= date('F d, Y', strtotime($result['simpUser_AdsDate']))?></a>
+													<a href=""><i class="fa fa-calendar"></i><?= date('F d, Y', strtotime($result['simpUser_AdsDate']))?></a>
 												</li>
 											</ul>
 											<p class="card-text"><?= substr($result['sipmUser_AdsDescripion'],0,100) ?></p>
@@ -240,10 +246,10 @@ $ibc = new Dbc;
 									<h4>Electronics</h4>
 								</div>
 								<ul class="category-list">
-									<li><a href="./pages/category">Laptops <span>93</span></a></li>
-									<li><a href="./pages/category">Iphone <span>233</span></a></li>
-									<li><a href="./pages/category">Microsoft <span>183</span></a></li>
-									<li><a href="./pages/category">Monitors <span>343</span></a></li>
+									<li><a href="./pages/category?id=electronic/gadget" class="">Laptops <span>93</span></a></li>
+									<li><a href="./pages/category?id=electronic/gadget" class="">Iphone <span>233</span></a></li>
+									<li><a href="./pages/category?id=electronic/gadget" class="">Microsoft <span>183</span></a></li>
+									<li><a href="./pages/category?id=electronic/gadget" class="">Monitors <span>343</span></a></li>
 								</ul>
 							</div>
 						</div> <!-- /Category List -->
@@ -255,10 +261,10 @@ $ibc = new Dbc;
 									<h4>Restaurants</h4>
 								</div>
 								<ul class="category-list">
-									<li><a href="./pages/category">Cafe <span>393</span></a></li>
-									<li><a href="./pages/category">Fast food <span>23</span></a></li>
-									<li><a href="./pages/category">Restaurants <span>13</span></a></li>
-									<li><a href="./pages/category">Food Track<span>43</span></a></li>
+									<li><a href="./pages/category?id=Restaurants">Cafe <span>393</span></a></li>
+									<li><a href="./pages/category?id=Restaurants">Fast food <span>23</span></a></li>
+									<li><a href="./pages/category?id=Restaurants">Restaurants <span>13</span></a></li>
+									<li><a href="./pages/category?id=Restaurants">Food Track<span>43</span></a></li>
 								</ul>
 							</div>
 						</div> <!-- Category List -->
@@ -270,10 +276,10 @@ $ibc = new Dbc;
 									<h4>Real Estate</h4>
 								</div>
 								<ul class="category-list">
-									<li><a href="./pages/category">Farms <span>93</span></a></li>
-									<li><a href="./pages/category">Gym <span>23</span></a></li>
-									<li><a href="./pages/category">Hospitals <span>83</span></a></li>
-									<li><a href="./pages/category">Parolurs <span>33</span></a></li>
+									<li><a href="./pages/category?id=RealEstate">Farms <span>93</span></a></li>
+									<li><a href="./pages/category?id=RealEstate">Gym <span>23</span></a></li>
+									<li><a href="./pages/category?id=RealEstate">Hospitals <span>83</span></a></li>
+									<li><a href="./pages/category?id=RealEstate">Parolurs <span>33</span></a></li>
 								</ul>
 							</div>
 						</div> <!-- /Category List -->
@@ -285,10 +291,10 @@ $ibc = new Dbc;
 									<h4>Shoppings</h4>
 								</div>
 								<ul class="category-list">
-									<li><a href="./pages/category">Mens Wears <span>53</span></a></li>
-									<li><a href="./pages/category">Accessories <span>212</span></a></li>
-									<li><a href="./pages/category">Kids Wears <span>133</span></a></li>
-									<li><a href="./pages/category">It & Software <span>143</span></a></li>
+									<li><a href="./pages/category?id=Shopping">Mens Wears <span>53</span></a></li>
+									<li><a href="./pages/category?id=Shopping">Accessories <span>212</span></a></li>
+									<li><a href="./pages/category?id=Shopping">Kids Wears <span>133</span></a></li>
+									<li><a href="./pages/category?id=Shopping">It & Software <span>143</span></a></li>
 								</ul>
 							</div>
 						</div> <!-- /Category List -->
@@ -300,10 +306,10 @@ $ibc = new Dbc;
 									<h4>Jobs</h4>
 								</div>
 								<ul class="category-list">
-									<li><a href="./pages/category">It Jobs <span>93</span></a></li>
-									<li><a href="./pages/category">Cleaning & Washing <span>233</span></a></li>
-									<li><a href="./pages/category">Management <span>183</span></a></li>
-									<li><a href="./pages/category">Voluntary Works <span>343</span></a></li>
+									<li><a href="./pages/category?id=job/employments">It Jobs <span>93</span></a></li>
+									<li><a href="./pages/category?id=job/employments">Cleaning & Washing <span>233</span></a></li>
+									<li><a href="./pages/category?id=job/employments">Management <span>183</span></a></li>
+									<li><a href="./pages/category?id=job/employments">Voluntary Works <span>343</span></a></li>
 								</ul>
 							</div>
 						</div> <!-- /Category List -->
@@ -315,10 +321,10 @@ $ibc = new Dbc;
 									<h4>Vehicles</h4>
 								</div>
 								<ul class="category-list">
-									<li><a href="./pages/category">Bus <span>193</span></a></li>
-									<li><a href="./pages/category">Cars <span>23</span></a></li>
-									<li><a href="./pages/category">Motobike <span>33</span></a></li>
-									<li><a href="./pages/category">Rent a car <span>73</span></a></li>
+									<li><a href="./pages/category?id=Vehicles">Bus <span>193</span></a></li>
+									<li><a href="./pages/category?id=Vehicles">Cars <span>23</span></a></li>
+									<li><a href="./pages/category?id=Vehicles">Motobike <span>33</span></a></li>
+									<li><a href="./pages/category?id=Vehicles">Rent a car <span>73</span></a></li>
 								</ul>
 							</div>
 						</div> <!-- /Category List -->
@@ -330,10 +336,10 @@ $ibc = new Dbc;
 									<h4>Pets</h4>
 								</div>
 								<ul class="category-list">
-									<li><a href="./pages/category">Cats <span>65</span></a></li>
-									<li><a href="./pages/category">Dogs <span>23</span></a></li>
-									<li><a href="./pages/category">Birds <span>113</span></a></li>
-									<li><a href="./pages/category">Others <span>43</span></a></li>
+									<li><a href="./pages/category?id=pets">Cats <span>65</span></a></li>
+									<li><a href="./pages/category?id=pets">Dogs <span>23</span></a></li>
+									<li><a href="./pages/category?id=pets">Birds <span>113</span></a></li>
+									<li><a href="./pages/category?id=pets">Others <span>43</span></a></li>
 								</ul>
 							</div>
 						</div> <!-- /Category List -->
@@ -346,10 +352,10 @@ $ibc = new Dbc;
 									<h4>Services</h4>
 								</div>
 								<ul class="category-list">
-									<li><a href="./pages/category">Cleaning <span>93</span></a></li>
-									<li><a href="./pages/category">Car Washing <span>233</span></a></li>
-									<li><a href="./pages/category">Clothing <span>183</span></a></li>
-									<li><a href="./pages/category">Business <span>343</span></a></li>
+									<li><a href="./pages/category?id=services">Cleaning <span>93</span></a></li>
+									<li><a href="./pages/category?id=services">Car Washing <span>233</span></a></li>
+									<li><a href="./pages/category?id=services">Clothing <span>183</span></a></li>
+									<li><a href="./pages/category?id=services">Business <span>343</span></a></li>
 								</ul>
 							</div>
 						</div> <!-- /Category List -->

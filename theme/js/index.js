@@ -15,22 +15,20 @@ $(document).ready(function(){
      }
 
 
-     $("#search_Btn").click(function (e) { 
+     $("#product_Search").submit(function (e) { 
         e.preventDefault()
-        request = $("#product_Search").val();
-        if(request){
+        // request = $("#product_Search").val();
+        // if(request){
             $.ajax({
                 url: "./controller/index.php",
                 type: "POST",
-                data: {
-                    request:request
-                },
+                data: $(this).serialize()+'&action=searchPro',
                 success: function (response) {
                     // console.log(response)
                     $("#search_Result").html(response);
                 }
             });
-        }
+        // }
      });
 
 })
