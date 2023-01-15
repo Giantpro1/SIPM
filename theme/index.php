@@ -85,19 +85,19 @@ $ibc = new Dbc;
 							<h2>Popular Category</h2>
 							<ul class="list-inline">
 								<li class="list-inline-item">
-									<a href="./pages/category"><i class="fa fa-bed"></i> Hotel</a>
+									<a href="#"><i class="fa fa-bed"></i> Hotel</a>
 								</li>
 								<li class="list-inline-item">
-									<a href="./pages/category"><i class="fa fa-grav"></i> Fitness</a>
+									<a href="#"><i class="fa fa-grav"></i> Fitness</a>
 								</li>
 								<li class="list-inline-item">
-									<a href="./pages/category"><i class="fa fa-car"></i> Cars</a>
+									<a href="#"><i class="fa fa-car"></i> Cars</a>
 								</li>
 								<li class="list-inline-item">
-									<a href="./pages/category"><i class="fa fa-cutlery"></i> Restaurants</a>
+									<a href="#"><i class="fa fa-cutlery"></i> Restaurants</a>
 								</li>
 								<li class="list-inline-item">
-									<a href="./pages/category"><i class="fa fa-coffee"></i> Cafe</a>
+									<a href="#"><i class="fa fa-coffee"></i> Cafe</a>
 								</li>
 							</ul>
 						</div>
@@ -384,7 +384,7 @@ $ibc = new Dbc;
 						<ul class="list-inline mt-30">
 							<li class="list-inline-item"><a class="btn btn-main" href="./pages/ad-listing">Add
 									Listing</a></li>
-							<li class="list-inline-item"><a class="btn btn-secondary" href="./pages/category">Browser
+							<li class="list-inline-item"><a class="btn btn-secondary" href="">Browser
 									Listing</a></li>
 						</ul>
 					</div>

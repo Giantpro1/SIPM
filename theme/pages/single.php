@@ -99,9 +99,11 @@ $ibc = new Dbc;
 			<div class="col-lg-8">
 				<div class="product-details">
 					<?Php
+					  $imgOut = '';
 						if(isset($_GET['id'])){
 							$ppd = $ibc->viewSinglePPD($_GET['id']);
 							$output = '';
+							
 							if($ppd){
 								foreach($ppd as $ppds){
 									$pp = $ibc->viewSinglePPP($ppds['simp_Cid']);
@@ -113,14 +115,14 @@ $ibc = new Dbc;
 											$uploadUser = $pps['simp_UserName'];
 											// echo $uploadUser;
 										if($img){
+											// echo json_encode($img);
 											foreach($img as $imgs){
-												// echo json_encode($imgs);
-											// $imgRe =  unserialize(base64_decode($imgs['simpUser_AdsImg']));
-											if($imgs['simpUser_AdsImg'] > 1){
-												// $imgCount = count($imgs['simpUser_AdsImg']);
-											// echo base64_encode($imgs['simpUser_AdsImg']);
-												
-											}
+
+												$imgOut .= '
+												<div class="product-slider-item my-4" data-image="../images/adsImages/'.$imgs['simpUser_AdsImg'].'">
+												 <img class="img-fluid w-100" src="../images/adsImages/'.$imgs['simpUser_AdsImg'].'" alt="product-img">
+												</div>
+											';
 											}
 										}              
 									}  
@@ -133,28 +135,15 @@ $ibc = new Dbc;
 					<div class="product-meta">
 						<ul class="list-inline">
 							<li class="list-inline-item"><i class="fa fa-user-o"></i> By <a href=""><?=$uploadUser;?></a></li>
-							<li class="list-inline-item"><i class="fa fa-folder-open-o"></i> Category<a href=""><?=$ppds['sipmUser_AdsCategory'];?></a></li>
+							<li class="list-inline-item"><i class="fa fa-folder-open-o"></i> Category<a href="category?id=<?=$ppds['sipmUser_AdsCategory'];?>"><?=$ppds['sipmUser_AdsCategory'];?></a></li>
 							<li class="list-inline-item"><i class="fa fa-location-arrow"></i> Location<a href=""><?=$ppds['sipmUser_AdsContactAddress']; ?></a></li>
 						</ul>
 					</div>
 
 					<!-- product slider -->
+					
 					<div class="product-slider">
-						<div class="product-slider-item my-4" data-image="../images/adsImages/<?= $imgs['simpUser_AdsImg']; ?>">
-							<img class="img-fluid w-100" src="../images/adsImages/<?= $imgs['simpUser_AdsImg']; ?>" alt="product-img">
-						</div>
-						<div class="product-slider-item my-4" data-image="../images/adsImages/<?= $imgs['simpUser_AdsImg']; ?>">
-							<img class="d-block img-fluid w-100" src="../images/adsImages/<?=$imgs['simpUser_AdsImg']; ?>" alt="Second slide">
-						</div>
-						<div class="product-slider-item my-4" data-image="../images/adsImages/<?= $imgs['simpUser_AdsImg']; ?>">
-							<img class="d-block img-fluid w-100" src="../images/adsImages/<?= $imgs['simpUser_AdsImg']; ?>" alt="Third slide">
-						</div>
-						<div class="product-slider-item my-4" data-image="../images/adsImages/<?= $imgs['simpUser_AdsImg']; ?>">
-							<img class="d-block img-fluid w-100" src="../images/adsImages/<?= $imgs['simpUser_AdsImg']; ?>" alt="Third slide">
-						</div>
-						<div class="product-slider-item my-4" data-image="../images/adsImages/<?= $imgs['simpUser_AdsImg']; ?>">
-							<img class="d-block img-fluid w-100" src="../images/adsImages/<?= $imgs['simpUser_AdsImg']; ?>" alt="Third slide">
-						</div>
+						<?=$imgOut; ?>
 					</div>
 					<!-- product slider -->
 
@@ -196,8 +185,8 @@ $ibc = new Dbc;
 											<td>Apple</td>
 										</tr>
 										<tr>
-											<td>Model</td>
-											<td>2017</td>
+											<td>Seller Contact</td>
+											<td><?=$ppds['sipmUser_AdsContactNumber']; ?></td>
 										</tr>
 									</tbody>
 								</table>
@@ -321,7 +310,7 @@ $ibc = new Dbc;
 							your fellow users.
 						</p>
 						<!-- Submii button -->
-						<a href="single" class="btn btn-transparent-white">Submit Listing</a>
+						<a href="ad-listing" class="btn btn-transparent-white">Submit Listing</a>
 					</div>
 
 				</div>
@@ -369,7 +358,7 @@ $ibc = new Dbc;
           <h4>Admin Pages</h4>
           <ul>
             <li><a href="category">Category</a></li>
-            <li><a href="single">Single Page</a></li>
+            <li><a href="">Single Page</a></li>
             <li><a href="store">Store Single</a></li>
             <li><a href="single-blog">Single Post</a>
             </li>

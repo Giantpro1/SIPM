@@ -187,10 +187,10 @@ $action = new Dbc();
 								<strong>Views</strong>
 								<ul class="list-inline view-switcher">
 									<li class="list-inline-item">
-										<a href="category"><i class="fa fa-th-large"></i></a>
+										<a href="category?id=<?=$_GET['id']?>"><i class="fa fa-th-large"></i></a>
 									</li>
 									<li class="list-inline-item">
-										<a href="category" class="text-info"><i class="fa fa-reorder"></i></a>
+										<a href="category?id=<?=$_GET['id']?>" class="text-info"><i class="fa fa-reorder"></i></a>
 									</li>
 								</ul>
 							</div>
