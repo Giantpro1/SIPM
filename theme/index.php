@@ -177,6 +177,8 @@ $ibc = new Dbc;
 								// unset($user['simpUser_AdsImg']);
 								// $user['simpUser_AdsImg'] = [];
 								foreach ($results as $result):
+									$imgFetch = $ibc->fetchTrendingAdsImg(1, $result['sipmuser_PostId']);
+									foreach($imgFetch as $imgRes)
 									// $user['simpUser_AdsImg'][] = $result['simpUser_AdsImg'];
 							?>
 							<div class="col-sm-12 col-lg-4">
@@ -186,7 +188,8 @@ $ibc = new Dbc;
 										<div class="thumb-content">
 											<div class="price"><?=$result['sipmUser_AdsPrice'] ?></div>
 											<a href="./pages/single?id=<?= $result['sipmuser_PostId']?>" class="singlePage" id="<?= $result['sipmuser_PostId']?>">
-												<img class="card-img-top img-fluid productHeight" src="./images/adsImages/<?= $result['simpUser_AdsImg'] ?>"
+											
+												<img class="card-img-top img-fluid productHeight" src="./images/adsImages/<?= $imgRes['simpUser_AdsImg'] ?>"
 													alt="Card image cap">
 											</a>
 										</div>

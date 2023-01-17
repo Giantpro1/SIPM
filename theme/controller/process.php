@@ -112,19 +112,22 @@ if (isset($_POST['action']) && $_POST['action'] === 'dispayAds') {
     $simpUserAds = $sipmCur_User->get_SipmUSerAds($simp_Cid, 0);
     $output = '';
     if ($simpUserAds) {
-        $output .= '';
+        $output = '';
+        $img = '';
         foreach ($simpUserAds as $simpUserAd) {
             $simpUSerAdsImg = $sipmCur_User->get_SipmUSerAdsImg($simpUserAd['sipmuser_PostId'], 0);
             if ($simpUSerAdsImg) {
                 foreach ($simpUSerAdsImg as $simpUSerAdsImgs) {
-                    $img = '<img width="80px" height="auto" src="' . '../images/adsImages/' . $simpUSerAdsImgs['simpUser_AdsImg'] . '" alt="image description">';
+                    $img = '
+                    <img width="80px" height="auto" src="' . '../images/adsImages/' . $simpUSerAdsImgs['simpUser_AdsImg'] . '" alt="image description">
+                    ';
                 }
                 // echo $output;
             }
             $output .= '
                 <tr>
                 <td class="product-thumb">
-                    ' . $img . '</td>
+                    '.$img.'</td>
                 <td class="product-details">
                     <h3 class="title">' . $simpUserAd['simpUser_AdsTitle'] . '</h3>
                     <span class="add-id"><strong>Ads Product Price:</strong>' . $simpUserAd['sipmUser_AdsPrice'] . '</span>

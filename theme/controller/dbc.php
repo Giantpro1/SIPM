@@ -435,7 +435,15 @@ public function deleteSimpUserAccount($value, $id){
 //     return $row;
 // }
 public function fetchTrendingAds($value){
-    $sql = "SELECT DISTINCT SQL_CALC_FOUND_ROWS * FROM sipmusersads LEFT JOIN sipmusersads_img ON sipmuser_PostId=simpUser_ImgId WHERE sipmUser_AdsVerified='$value' AND sipmUser_AdsImgVerified='$value'";
+    $sql = "SELECT * FROM sipmusersads  WHERE sipmUser_AdsVerified='$value'";
+    $stmt = $this->conn->prepare($sql);
+    $stmt->execute();
+    $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $row;
+}
+
+public function fetchTrendingAdsImg($value, $postId){
+    $sql = "SELECT * FROM sipmusersads_img  WHERE sipmUser_AdsImgVerified='$value' AND simpUser_ImgId='$postId'";
     $stmt = $this->conn->prepare($sql);
     $stmt->execute();
     $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
